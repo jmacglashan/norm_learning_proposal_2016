@@ -1,0 +1,172 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Babes, {Munoz de Cote}, and
+  Littman}{2008}]{babes08}
+Babes, M.; {Munoz de Cote}, E.; and Littman, M.~L.
+\newblock 2008.
+\newblock Social reward shaping in the prisoner's dilemma.
+\newblock In {\em 7th International Joint Conference on Autonomous Agents and
+  Multiagent Systems},  1389--1392.
+
+\bibitem[\protect\citeauthoryear{Bowling and Veloso}{2002}]{bowling02}
+Bowling, M., and Veloso, M.
+\newblock 2002.
+\newblock Multiagent learning using a variable learning rate.
+\newblock {\em Artificial Intelligence} 136(2):215--250.
+
+\bibitem[\protect\citeauthoryear{Bowling}{2000}]{bowling00}
+Bowling, M.
+\newblock 2000.
+\newblock Convergence problems of general-sum multiagent reinforcement
+  learning.
+\newblock In {\em Proceedings of the Seventeenth International Conference on
+  Machine Learning},  89--94.
+
+\bibitem[\protect\citeauthoryear{Camerer}{2003}]{camerer03}
+Camerer, C.~F.
+\newblock 2003.
+\newblock {\em Behavioral Game Theory: Experiments in Strategic Interaction}.
+\newblock Princeton University Press.
+
+\bibitem[\protect\citeauthoryear{Conitzer and Sandholm}{2007}]{conitzer07}
+Conitzer, V., and Sandholm, T.
+\newblock 2007.
+\newblock {AWESOME}: {A} general multiagent learning algorithm that converges
+  in self-play and learns a best response against stationary opponents.
+\newblock {\em Machine Learning} 67:23--43.
+
+\bibitem[\protect\citeauthoryear{Crandall}{2014}]{crandall14}
+Crandall, J.~W.
+\newblock 2014.
+\newblock Non-myopic learning in repeated stochastic games.
+\newblock {\em CoRR}.
+
+\bibitem[\protect\citeauthoryear{Gal \bgroup et al\mbox.\egroup }{2004}]{gal04}
+Gal, K.; Pfeffer, A.; Marzo, F.; and Grosz, B.~J.
+\newblock 2004.
+\newblock Learning social preferences in games.
+\newblock In {\em AAAI-04},  226--231.
+
+\bibitem[\protect\citeauthoryear{Gomes and Kowalczyk}{2009}]{gomes09}
+Gomes, E.~R., and Kowalczyk, R.
+\newblock 2009.
+\newblock Dynamic analysis of multiagent {Q}-learning with e-greedy
+  exploration.
+\newblock In {\em Proceedings of the 2009 International Conference on Machine
+  Learning}.
+
+\bibitem[\protect\citeauthoryear{Greenwald and Hall}{2003}]{greenwald03}
+Greenwald, A., and Hall, K.
+\newblock 2003.
+\newblock Correlated-{Q} learning.
+\newblock In {\em Proceedings of the Twentieth International Conference on
+  Machine Learning},  242--249.
+
+\bibitem[\protect\citeauthoryear{Hu and Wellman}{2003}]{hu03}
+Hu, J., and Wellman, M.~P.
+\newblock 2003.
+\newblock Nash {Q}-learning for general-sum stochastic games.
+\newblock {\em Journal of Machine Learning Research} 4:1039--1069.
+
+\bibitem[\protect\citeauthoryear{Kahneman, Slovic, and
+  Tversky}{1982}]{kahnemanst82}
+Kahneman, D.; Slovic, P.; and Tversky, A., eds.
+\newblock 1982.
+\newblock {\em Judgment under uncertainty: {H}euristics and biases}.
+\newblock Cambridge University Press.
+
+\bibitem[\protect\citeauthoryear{Littman and Stone}{2001}]{littman01h}
+Littman, M.~L., and Stone, P.
+\newblock 2001.
+\newblock Implicit negotiation in repeated games.
+\newblock In {\em Eighth International Workshop on Agent Theories,
+  Architectures, and Languages (ATAL-2001)},  393--404.
+
+\bibitem[\protect\citeauthoryear{Littman}{1994a}]{littman94b}
+Littman, M.~L.
+\newblock 1994a.
+\newblock {M}arkov games as a framework for multi-agent reinforcement learning.
+\newblock In {\em Proceedings of the Eleventh International Conference on
+  Machine Learning},  157--163.
+
+\bibitem[\protect\citeauthoryear{Littman}{1994b}]{littman94}
+Littman, M.~L.
+\newblock 1994b.
+\newblock Memoryless policies: {T}heoretical limitations and practical results.
+\newblock In Cliff, D.; Husbands, P.; Meyer, J.-A.; and Wilson, S.~W., eds.,
+  {\em From Animals to Animats 3: {P}roceedings of the Third International
+  Conference on Simulation of Adaptive Behavior},  238--245.
+\newblock Cambridge, MA: The MIT Press.
+
+\bibitem[\protect\citeauthoryear{Littman}{2001}]{littman01d}
+Littman, M.~L.
+\newblock 2001.
+\newblock Friend-or-foe {Q}-learning in general-sum games.
+\newblock In {\em Proceedings of the Eighteenth International Conference on
+  Machine Learning},  322--328.
+\newblock Morgan Kaufmann.
+
+\bibitem[\protect\citeauthoryear{Megiddo and Farias}{2005}]{megiddo05}
+Megiddo, N., and Farias, D.
+\newblock 2005.
+\newblock Exploration-exploitation tradeoffs for experts algorithms in reactive
+  environments.
+\newblock {\em Advances in Neural Information Processing Systems} 17:409--416.
+
+\bibitem[\protect\citeauthoryear{Sandholm and Crites}{1995}]{sandholm95}
+Sandholm, T.~W., and Crites, R.~H.
+\newblock 1995.
+\newblock Multiagent reinforcement learning in the iterated prisoner's dilemma.
+\newblock {\em Biosystems} 37:144--166.
+
+\bibitem[\protect\citeauthoryear{Singh \bgroup et al\mbox.\egroup
+  }{2010}]{singh10}
+Singh, S.; Lewis, R.~L.; Barto, A.~G.; and Sorg, J.
+\newblock 2010.
+\newblock Intrinsically motivated reinforcement learning: {A}n evolutionary
+  perspective.
+\newblock {\em IEEE Transactions on Autonomous Mental Development} 2(2):70--82.
+
+\bibitem[\protect\citeauthoryear{Singh, Lewis, and Barto}{2009}]{singh09}
+Singh, S.; Lewis, R.~L.; and Barto, A.~G.
+\newblock 2009.
+\newblock Where do rewards come from?
+\newblock In {\em Proceedings of the Annual Conference of the Cognitive Science
+  Society}.
+
+\bibitem[\protect\citeauthoryear{Sodomka \bgroup et al\mbox.\egroup
+  }{2013}]{sodomka13}
+Sodomka, E.; Hilliard, E.; Littman, M.; and Greenwald, A.
+\newblock 2013.
+\newblock {C}oco-{Q}: {L}earning in stochastic games with side payments.
+\newblock {\em JMLR Workshop and Conference Proceedings: Proceedings of The
+  30th International Conference on Machine Learning} 28(3):1471--1479.
+
+\bibitem[\protect\citeauthoryear{Sutton and Barto}{1998}]{sutton98}
+Sutton, R.~S., and Barto, A.~G.
+\newblock 1998.
+\newblock {\em Reinforcement Learning: {A}n Introduction}.
+\newblock The MIT Press.
+
+\bibitem[\protect\citeauthoryear{Watkins and Dayan}{1992}]{Watkins92}
+Watkins, C. J. C.~H., and Dayan, P.
+\newblock 1992.
+\newblock Q-learning.
+\newblock {\em Machine Learning} 8(3):279--292.
+
+\bibitem[\protect\citeauthoryear{Wunder, Littman, and Babes}{2010}]{wunder10}
+Wunder, M.; Littman, M.; and Babes, M.
+\newblock 2010.
+\newblock Classes of multiagent {Q}-learning dynamics with epsilon-greedy
+  exploration.
+\newblock In {\em Proceedings of the Twenty-Seventh International Conference on
+  Machine Learning (ICML-10)},  1167--1174.
+
+\bibitem[\protect\citeauthoryear{Zinkevich, Greenwald, and
+  Littman}{2005}]{zinkevich05}
+Zinkevich, M.; Greenwald, A.~R.; and Littman, M.~L.
+\newblock 2005.
+\newblock Cyclic equilibria in {M}arkov games.
+\newblock In {\em Advances in Neural Information Processing Systems 18}.
+
+\end{thebibliography}

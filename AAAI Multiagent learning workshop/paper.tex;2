@@ -1,0 +1,617 @@
+\def\year{2015}
+%File: formatting-instruction.tex
+\documentclass[letterpaper]{article}
+\usepackage{aaai}
+\usepackage{times}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{graphicx}
+\frenchspacing
+\setlength{\pdfpagewidth}{8.5in}
+\setlength{\pdfpageheight}{11in}
+\pdfinfo{
+/Title (The Impact of Fairness Preferences in a Non-Zero-Sum Grid Game)
+/Author (Austerweil, Brawner, Greenwald, Ho, Littman, MacGlashan, Trimbach)}
+\setcounter{secnumdepth}{0}  
+ \begin{document}
+% The file aaai.sty is the style file for AAAI Press 
+% proceedings, working notes, and technical reports.
+%
+\title{The Impact of Fairness Preferences in a Non-Zero-Sum Grid Game}
+\author{Joseph L.\ Austerweil$^\dagger$ \and
+{\bf Stephen Brawner}$^*$ \and
+{\bf Amy Greenwald}$^*$ \and
+{\bf Mark Ho}$^\dagger$$^*$ \and \\
+{\Large
+{\bf Michael L.\ Littman}$^*$ \and
+{\bf James MacGlashan}$^*$ \and
+{\bf Carl Trimbach}$^*$} \\
+Brown University \\
+$^*$Department of Computer Science \\
+$^\dagger$Department of Cognitive, Linguistic, and Psychological Sciences \\
+Providence, RI 02912}
+\maketitle
+\begin{abstract}
+\begin{quote}
+We examined the behavior of a reinforcement-learning algorithm
+(specifically, Q-learning) in a set of two-player stochastic games
+played on a grid. These games were selected because they include both
+cooperative and competitive elements, highlighting the importance of
+adaptive collaboration between the players. We found that pairs of
+Q-learners were surprisingly good at discovering stable mutually
+beneficial behavior when such behaviors existed zzz. However, the
+performance of learners was was significantly improved when one of the
+players was given a subjective fairness preference. We found the same
+pattern in games involving human players.
+\end{quote}
+\end{abstract}
+
+\newcommand{\Q}{Q}
+
+% AMY
+
+\noindent The field of reinforcement learning~\cite{sutton98} is concerned with
+agents that improve their behavior in sequential environments through
+interaction.  One of the best known and most versatile
+reinforcement-learning (RL) algorithms is
+\Q-learning~\cite{Watkins92}, which is known to converge to
+optimal decisions in environments that can be
+characterized as Markov decision processes.
+\Q-learning is best suited for single-agent environments;
+nevertheless, it has been applied in multi-agent
+environments~\cite{sandholm95,gomes09,wunder10}, including
+non-zero-sum stochastic games, with varying degrees of
+success.
+% AMY: \commenta{not sure if these references are to non-zero-sum
+% games}
+
+Nash-\Q~\cite{hu03} is an attempt to adapt \Q-learning to the
+general-sum setting, but its update rule is inefficient and it lacks
+meaningful convergence guarantees~\cite{bowling00,littman01d}.
+Correlated-\Q~\cite{greenwald03} is an improvement over Nash-\Q\ in
+that, in exchange for access to a correlating device, its update rule
+is efficient.  However, there exist environments in which
+correlated-\Q\ does not converge to optimal
+decisions~\cite{zinkevich05}.  Minimax-\Q~\cite{littman94b} converges
+to provably optimal decisions, but only in zero-sum Markov games.
+Likewise, Friend-\Q\ and Foe-\Q~\cite{littman01d} provably converge,
+but only to optimal decisions in purely cooperative and purely
+competitive games, respectively.
+
+One significant shortcoming of explicitly multiagent learning
+algorithms is that they define their updates in a way that makes
+assumptions about their opponent without actually factoring in the
+opponent's observed behavior. In a sense, they are too stubborn. In
+contrast, single-agent learning algorithms like Q-learning are too
+flexible---they simply adapt to their opponents without consideration
+of how their behavior will impact the opponent. What is lacking in
+these existing algorithms is the ability to \emph{negotiate} a
+mutually beneficial outcome~\cite{gal04}.
+
+Algorithms have been designed that seek a best response against a
+fixed player and a mutually beneficial response against like
+players~\cite{conitzer07,bowling02}. Others attempt to ``lead'' a
+learning opponent to beneficial behavior~\cite{littman01h}. In this
+work, we return to the investigation of the behavior
+single-agent \Q-learning in multi-agent environments,
+% AMY: i want to say, somehow, ``which is arguably no less reliable
+% than any of the others'', 
+providing a kind of negotiating in the form of a preference for fair
+outcomes. Our approach goes beyond earlier attempts to nudge agents
+toward more cooperative behavior~\cite{babes08} by providing a general
+framework that separates objective and subjective
+rewards~\cite{singh10}. We investigate the behavior of this approach
+in agent--agent and agent--human interactions.
+
+\section{Experimental Testbed}
+
+For our work, we devised and adapted several two-agent grids that
+require differing levels of coordination, and also allow agents to
+defend against uncooperative partners. In each grid, agents choose one
+of five actions (north, south, east, west, wait), which are then
+executed simultaneously. Agent transition dynamics are deterministic,
+and there is no tie-breaking when two agents collide. Instead, both
+agents remain on their current location if their chosen actions would
+result in a collision with one another. zzz
+
+% Figure~\ref{fig:fivebyfivehardwalls} is the simplest example of a
+% coordinating grid game. The two agents moving toward their own goals
+% should not interfere with one another. However, a very competitive
+% agent might choose to interfere with the other agent's actions,
+% sacrificing their own best path.
+% 
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.8\columnwidth]{figures/fivebyfivehardwalls.png}
+% \caption{Five-by-five grid world require minimum coordination between
+% the agents to reach the goals simultaneously.}
+% \label{fig:fivebyfivehardwalls}
+% \end{figure}
+% 
+% The game in Figure~\ref{fig:fivebyfivenowalls} requires coordinating
+% for both agents to achieve a best-path toward their goals, which do
+% not interfere with one another. After initial repetitions of the game,
+% there is no motivation for either agent to deviate from the agreed
+% upon strategy.
+% 
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.8\columnwidth]{figures/fivebyfivenowalls.png}
+% \caption{Five by five grid world, which requires choosing a best-path that does not interfere with the other agent.}
+% \label{fig:fivebyfivenowalls}
+% \end{figure}
+% 
+% The grid world shown in Figure~\ref{fig:fivebyfivesemiwalls} includes
+% a semi-wall. There is a 50\% chance an agent that an agent who chooses
+% to pass through it will succeed. The expected number of turns to
+% proceed from the starting position, through the semi-wall to the goal
+% is 5, but a longer deterministic route of 6 steps exists for two
+% coordinating agents. Two agents that both choose to walk through the
+% semiwalls will lose one-third of the time reducing the utility for not
+% coordinating. However an agent that chooses to defect and attempt to
+% walk through the semi-wall while the other agent trusts and pursues
+% the longer route will win 50\%, tie 25\%, and lose 25\% of the time.
+% 
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.8\columnwidth]{figures/fivebyfivesemiwalls.png}
+% \caption{Five by five grid world with walls that have 50-50 chance of passing through each try. Coordination requires sacrificing the best path for a concrete path that allows both agents to reach the goal simultaneously}
+% \label{fig:fivebyfivesemiwalls}
+% \end{figure}
+% 
+% The grid world in Figure~\ref{fig:fivebyfivewalls} requires
+% coordinating which agent is to go down which corridor. However, before
+% a coordinating strategy has been agreed upon, two agents which pass
+% into the same corridor, must negotiate a coordination that allows both
+% to reach their goals. An agent that attempts to reverse course and go
+% back to the other corridor will lose. Instead, one agent must defend
+% and squat on the other's goal in that corridor to allow the agent to
+% pass by so they both can reach their goal simultaneously.
+% 
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.8\columnwidth]{figures/fivebyfivewalls.png}
+% \caption{Five by five grid with many walls, which require each agent to agree on a cooridor, or coordinate should they choose the some one.}
+% \label{fig:fivebyfivewalls}
+% \end{figure}
+
+The three-by-five grid in Figure~\ref{fig:threebyfive} (Hallway)
+allows both agents to coordinate through a strategy where one agent
+moves along the high road and the other along the low road without
+interfering with one another. However, an agent that notices that the
+other is stepping aside might choose to play by ``defecting'' and
+proceeding straight to the goal. There are strategies to defend
+against such a non-cooperative agent, however. For example, if the
+orange agent moves south initially to $(1,3)$ and blue moves west to
+$(4,2)$, the orange agent might choose to return and remain on its
+goal until the blue agent retreats to $(4,3)$ or $(4,1)$, at which
+point the players are equidistant from their goals and can continue
+safely from there. A more explicit defensive strategy for the orange
+agent would have it proceed east to $(2,3)$, and then choose to move
+north to $(2,2)$. If the blue agent is in $(3,2)$ and attempts to move
+west into $(2,2$), the agents would collide until one agent chooses a
+different action. It is in orange's best interest to continue choosing
+the north action to try to take $(2,2)$ and wait until blue surrenders
+and chooses to go north into $(3,3)$ to avoid collision. At this
+point, the agents are equidistant from their goals and can continue
+safely from there. This strategy, which we
+call \textit{cooperatively defensive} (CD), allows each agent to choose
+a mutually agreeable strategy while also defending against an agent
+that is uncooperative.
+
+% Figure~\ref{fig:threebyfivetwowalls} implies a
+% direction for each agent's coordination, while
+% figure~\ref{fig:threebyfive} does not.
+
+% \begin{figure}
+% \centering
+% \includegraphics[width=0.8\columnwidth]{figures/threebyfivetwowalls.png}
+% \caption{A three by five grid which requires both agents to sacrifice the best path to coordinate. The walls provide a suggestion each agents initial coordinating move to limit conflicts. Subsequent rounds allow one agent to take advantage of trusting agents by moving straight to the goal}
+% \label{fig:threebyfivetwowalls}
+% \end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.71\columnwidth]{figures/threebyfive.png}
+\caption{Hallway, a three-by-five grid that requires an
+agreed-upon coordination strategy to efficiently play the
+game. Several coordination strategies also allow the agent to defend
+against an uncooperative partner without losing the game.}
+\label{fig:threebyfive}
+\end{figure}
+
+The grid in Figure~\ref{fig:threebyfivehallways} (Intersection)
+requires the blue agent to defend against the possibility of an
+uncooperative orange agent by squatting on the orange goal. The orange
+agent should then move to $(3,1)$ where both agents are equidistant
+from their goals. This CD strategy requires more actions than a fully
+trusting strategy, where orange waits a single step before proceeding
+into its goal. However, blue does not have the opportunity to observe
+if orange will cooperate (wait) or defect (go north) and therefore cannot defend against
+orange if it heads straight toward its goal.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.71\columnwidth]{figures/threebyfivehallways.png}
+\caption{Intersection, a three-by-five grid that requires blue
+to defend orange's goal to encourage orange to cooperate and move to
+the end of the uppermost hallway.}
+\label{fig:threebyfivehallways}
+\end{figure}
+
+Figure~\ref{fig:threebyfivewindow} (Door) is a grid that requires
+coordination to navigate through the center space at $(3,2)$. The
+simplest CD strategy for this grid is asymmetrical and requires one
+agent to cede to the other agent the center square. For example, if
+orange chooses to cede that space, it should step west into $(2,3)$
+while blue steps south into $(3,2)$. Then, orange needs to step east
+back into $(3,3)$ to prevent blue from marching straight for the
+goal. Only when blue agrees to step aside to $(2,2)$ will they both be
+equidistant from their respective goals and in position to cooperate.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.71\columnwidth]{figures/threebyfivewindow.png}
+\caption{Door, a three-by-five grid that requires the partners
+to agree on an order to navigate through the center square.}
+\label{fig:threebyfivewindow}
+\end{figure}
+
+In the grid in Figure~\ref{fig:longhallway} (Long hall), the blue
+agent begins one step closer to its goal than does the orange
+agent. However, the orange agent can squat on the blue goal until the
+blue agent chooses to cooperate by stepping one square back. If the
+orange agent can predict when blue steps back, orange can pivot left
+and step one closer to the goal while blue attempts to step further
+away. The cooperative strategy that minimizes the risk to either
+requires the blue agent to wait one step initially, while the orange
+agent moves toward its goal.
+
+\begin{figure}
+\centering
+\includegraphics[width=1.0\columnwidth]{figures/longhallway.png}
+\caption{Long hall, a one-by-seven grid that allows orange to squat on
+the blue agent's goal should they choose to not cooperate.}
+\label{fig:longhallway}
+\end{figure}
+
+Our last grid, shown in Figure~\ref{fig:nocompromise} (No compromise),
+requires both agents to trust and cooperate with each other to arrive
+at the goals at the same time. No CD strategy exists for this
+game. For example, the orange agent may sit on the blue agent's goal
+to let it pass into square $(1,2)$. Then, the blue agent must wait two
+steps before both agents are equidistant from the goals. If the blue
+agent defects and moves north into $(1,1)$ while the orange agent
+moves south from $(2,1)$ into $(2,2)$, orange has the opportunity to
+step north to block blue from reaching the goal. However, if blue
+moves north into $(1,1)$ when orange steps east into $(3,2)$, blue
+will arrive at its goal sooner. Therefore, a trust spanning multiple
+games is required for the agents to effectively cooperate.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.71\columnwidth]{figures/nocompromise.png}
+\caption{No compromise, a two-by-five grid that requires one agent to
+sit on the other's goal and then move to its goal when the other agent
+has passed.}
+\label{fig:nocompromise}
+\end{figure}
+
+\section{Agent--Agent Experiments}
+\label{s:orps}
+
+% CARL
+
+The agents in our work are instilled with other-regarding
+preferences. They do not necessarily make decisions based solely upon
+the world as it pertains to themselves alone. They also consider the
+effects of their actions on the outcomes of the other agents operating
+in the world. We separate \emph{objective} and \emph{subjective}
+reward. Objective reward is simply the reward signal provided to the
+agent from the environment and by which behavior is judged. Standard
+reinforcement-learning algorithms seek to optimize quantity---we call
+this preference the ``selfish'' preference because it is only
+considered with the player's outcome. In some environments, however,
+it useful to distinguish this objective reward from subjective
+reward---the quantity the agent \emph{believes} it should be
+optimizing. Previous work has shown than optimizing subjective reward
+can sometimes lead agents to be more effective in their acquisition of
+objective reward~\cite{singh09}.
+
+In our work, the subjective reward is a combination of the agent's
+objective reward and the objective reward of its opponent. By
+adjusting the combining function appropriately, we are able to impart
+upon the agents a preference ordering over the various joint outcomes
+of each game. We denote the outcomes as pairs of letters, where {\bf
+G} means the agent reached the goal and {\bf N} means the agent did
+not reach the goal. The first letter in the pair represents the
+agent's own outcome and the second represents the opponent's
+outcome. For example, {\bf GN} is used to denote that the agent
+reaches its goal while the opponent does not.
+
+Through the use of subjective reward functions, we construct two
+distinct agent types, \emph{selfish} and \emph{fair}. The selfish
+agent's subjective reward is simply the objective reward.  Using this
+reward instills the following preference ordering in the agent: {\bf
+GG} $\sim$ {\bf GN} $\succ$ {\bf NG} $\sim$ {\bf NN}. That is,
+regardless of the opponent's outcome, this agent only prefers that it
+gets to its goal. The fair agent's subjective reward is the objective
+reward minus 25\% of the difference between its own and the opponent's
+objective rewards:
+$$r_{s} = r_{a} - 0.25 \left| r_{a} - r_{o} \right|,$$ where $r_{s}$
+is the agent's subjective reward, $r_{a}$ is the agent's objective
+reward, and $r_{o}$ is the opponent's objective reward.  By
+incorporating this fairness term into the agent's subjective reward,
+it prefers strictly the following order of outcomes: {\bf GG} $\succ$
+{\bf GN} $\succ$ {\bf NN} $\succ$ {\bf NG}.  That is, the agent
+prefers making it to its goal as opposed to not, but it additionally
+prefers that the opponent only get to its goal if the agent itself
+does as well. To say it another way, the fair agent wants its opponent
+to win with it or lose with it.
+
+We conducted experiments using these two different preference
+orderings both in self-play and against each other. For each of these
+matches, we conducted 50 independent runs that lasted for 30,000
+learning episodes each. We repeated this experiment in each of the
+five game boards described previously. On learning episodes that were
+not used in evaluating performance metrics, the agents were randomly
+placed into some starting position on the board. To ensure that the
+state space was adequately explored, any state that is feasibly
+reachable from the default initial state had some probability of being
+selected as the starting position. The agents' value functions were
+optimistically initialized with a value of 40 for all states and they
+used Boltzmann exploration with a temperature of 0.5. The agents were
+not charged any step costs and received objective rewards of 50 upon
+reaching their respective goals. Once any agent reached its goal (or
+100 moves were taken), the episode was terminated.  Agents used a
+discount factor $0.9$ and learning rate of zzz.
+
+
+
+
+% Betsy: convergence of Q-learning to CD strategies: 
+
+% The agent's subjective reward is set as
+% a function of the final state of the game and will be further
+% discussed in Section~\ref{s:preferences}.
+
+The agents' learning process consisted of playing 30,000 episodes
+against a simultaneously learning opponent. For each episode, the
+start state was randomly sampled from all states that are reachable
+from the original start state.
+
+Additionally, after every 100 games in the learning phase, we froze
+the agents' policies, played one game from the original start state
+(with no exploration) and recorded the value obtained by each
+agent. This data was used to produce a learning curve. (where is it?
+zzz)
+
+% We assume that an agent always prefers getting something to not
+% getting something, but that it does have some other regarding
+% preferences, there are eight preference orderings to consider. In our
+% experiments we let each pair of these nine agents learn against each
+% other 50 times and recorded each agent's average score from the trial
+% phase, type of policy (C, D, CD) at the end of learning, final state
+% (GG, GN, NG, NN) after learning and time to cooperation.
+
+A policy is classified as cooperatively defensive (CD) if the policy
+does not allow the opponent get to the goal before the agent but does
+allow for an opponent policy where both agents enter their goals
+simultaneously. Formally, policy $\pi$ is CD if there exists an
+opponent policy $\pi'$ such that {\bf GN} is a possible outcome of
+$\pi$ vs.\ $\pi'$ and there does not exist an opponent policy $\pi'$
+such that {\bf NG} is a possible outcome of $\pi$ vs.\ $\pi'$.
+
+There are several things to note about CD policies. First, an agent
+can enter its goal first ({\bf GN}) and still have played a CD
+policy. For the policy to be CD, an opponent policy with outcome {\bf
+GG} has to exist. However, the opponent may not play a policy such
+that it reaches a goal. Second, neither agent could end up in its goal
+({\bf NN}). This lose-lose outcome could occur if the opponent's
+policy is purely defensive (for example, stand on the agent's goal)
+and it could even happen if the two agents play ``mismatched'' CD
+policies. In Hallway, a mismatch could happen if both agents go north
+and then end up running into each other in the middle square of the
+top row.
+ 
+There are several CD strategies in Hallway. The key feature of a CD
+strategy in this grid is that the player does not move more than one
+step from its goal until its opponent has taken an ``extra'' step
+(either waiting or stepping north or south). For the strategy to allow
+for the opponent to also play a CD strategy, the first move must be to
+wait or take a step north or south. The most straightforward pair of
+CD strategies is for one player to take a step north and one to take a
+step south and then for the players to walk along their clear paths to
+their goals.
+
+% One figure showing the strategy in one of the games.
+
+% One bar graph showing the percentage of runs (one bar per grid) that
+% converged to CD strategies. (What did it find when if *didn't* find
+% CD? No convergence?)
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\columnwidth]{figures/SelfPlay.png}
+\caption{zzz.}
+\label{f:selfplay}
+\end{figure}
+
+Figure~\ref{f:selfplay} shows the result of the selfish and fair
+agents playing against others of the same type in each of our test
+games. In all five games, the fair agents are able to obtain higher
+total reward.
+
+
+
+
+\section{Human--Human Experiments}
+
+Ultimately, a major goal for developing machine agents that act
+intelligently in multiagent scenarios is to apply them to real world
+problems. Humans are already agents that machine agents interact with
+in some current multiagent environments (such as the stock
+market). Successfully expanding the scope of applications where
+multiagent learning can be applied in the real world necessitates
+studying how these agents interact with human agents. A machine agent
+that interacts optimally against other machine agents, but not against
+human agents, is not likely to be effective in environments that
+include human agents. Further, one major goal of developing machine
+agents is for them to solve tasks in collaboration with human
+agents. Given the controversial nature of rationality assumptions for
+human agents~\cite{kahnemanst82}, a machine agent that plans its
+collaboration by assuming the human agent will act rationally (or
+optimally) is unlikely to be successful in collaborating with the
+human agent. Thus, in this section, we investigate how human agents
+interact with each other and with fair and selfish learning agents in
+Hallway.
+
+A total of 40 human participants were recruited via Amazon Mechanical
+Turk and were randomly paired (20 pairs) with one another to play as
+one of the agents in the Hallway (Figure~\ref{fig:threebyfive}). One
+pair was not included in the analysis due to a technical
+error. Subjects received \$2.00 as a base payment and a bonus
+of \$0.10 per round where they reached their goal (regardless of
+whether the other agent also reached its goal). Before being paired
+with another human participant, each participant went through an
+instruction phase with a series of ``practice'' grids that taught them
+the dynamics of the environment: arrow keys to move north, south, east
+or west in the grid, spacebar to wait, both agents move
+simultaneously, when two agents try to enter the same square, their
+moves fail, and the round ends once either agent reaches a goal.
+Example grids demonstrated outcomes in which both agents reached a
+goal and in which only one did and the other did not. All transitions
+(including transitions that didn't involve changing location) were
+animated so participants could see that their action choice had
+registered. 
+% (the circle got smaller then
+%bigger to signal that the action was taken)
+%stay where they were (a ``bounce'' animation played ). 
+The instruction phase can be viewed at [link zzz]. After the
+instruction phase, each human participant was paired with another
+human participant. Each pair played 20 rounds, which ended when either
+or both players reached a goal or the round had taken 30 actions
+without either reaching a goal.
+
+Figure~\ref{f:human} plots the number of rounds an agent scored for
+each agent for each agent pair, which shows rich heterogeneity across
+participant pairs. An interface to view the actions taken by each pair
+of agents (and their feedback about the experiment) is available at
+http://research.clps.brown.edu/mkho/SigRL/Exp1/analysis/
+visualizer.html. The outcomes for a pair were encoded broadly into one
+of four patterns: trust (5/19), where each agent reached its goal in
+nearly every round; alternation (5/19), where agents reached their
+goals on every second round (letting the other agent reach its goal in
+alternating rounds); surrender (3/19), where one agent reached its
+goal most rounds and the other agent just got out of the way; and
+other, where some other pattern occurred (the majority of which were
+one agent reaching its goal most games and the other agent reaching
+its goal in about half of the games).
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\columnwidth]{figures/agentPairScores4.png}
+\caption{Outcomes of people playing against each other in Hallway.}
+\label{f:human}
+\end{figure}
+
+Contrary to the agent--agent results where all pairs converged to a
+cooperative strategy, only about one quarter of pairs of human agents
+behaved cooperatively. There are two possible (and not mutually
+exclusive) reasons for this difference: (1) Our learning agents were
+given 30,000 rounds to cooperate, whereas human pairs only interacted
+for 20 rounds, and (2) human agents use a learning strategy that often
+does not result in cooperation in this environment.
+
+To better understand whether human players could be induced to
+cooperate more reliably, and to understand what happens when a
+learning agent is paired with a person, we ran a follow up study in
+which people were paired with learning algorithms.
+
+
+\section{Agent--Human Experiments}
+
+Our first study investigated pairwise interactions between humans,
+revealing a range of different outcomes. Our second study investigated
+individual human behavior in Hallway when pitted against learning
+agents. Our goal was to provide baseline for studying how individuals'
+behavior is influenced by the subjective preferences of a learning
+agent.
+
+The experiment consisted of 19 participants who played against a
+learning agent programmed to estimate the participant's policy by
+simply counting the number of times an action was taken at each
+state. To accelerate learning, pseudo-counts of 0.1 were added to
+equivalent actions in states where the participant was in the same
+location on the grid. The human's estimated policy was that, at each
+state, the person would choose the action with the maximum count. At
+each step in the experiment, the learning agent used value iteration
+to generate a policy against the current estimate of the human's
+policy to maximize its subjective reward function.
+
+Participants were divided into two conditions. In the selfish-opponent
+condition ($n=9$), the subject played against an agent with the
+selfish subjective reward function (Section~\ref{s:orps}). In the
+fair-opponent condition ($n=10$), participants played against an agent
+with the fair subjective reward function. As in the human--human
+study, each participant was paid a \$2.00 base pay and \$0.10 for each
+time they reached the goal. They played a total of 20 rounds that each
+lasted up to 30 steps each.
+
+In line with our predictions, other-regarding preferences led to
+changes in participant performance. In particular, fair-opponent
+subjects scored significantly more than selfish-opponent subjects
+($t(9.0) = 2.37$, $p < 0.05$). Similarly, fair-opponent subjects
+tended to score consistently higher than selfish-opponent subjects
+across the experiment (Figure~\ref{f:people}). However, the learning
+agents themselves scored similarly between the two conditions. 
+
+Another interesting result from our data is that the number of
+collisions occurring over the 20 trials did not change, nor were they
+different between the two conditions. This result suggests that a
+clear ``norm'' of cooperation did not emerge between the human and
+artificial agents in either condition, and that the ``defensive'' part
+of agents' strategies was key to both scoring.
+
+\begin{figure*}
+\centering
+\includegraphics[width=0.6\columnwidth]{figures/learnergoals.png}
+\includegraphics[width=0.6\columnwidth]{figures/humangoals.png}
+\includegraphics[width=0.6\columnwidth]{figures/bothgoals.png}
+\caption{The impact of agent strategy on human--agent match ups in Hallway.}
+\label{f:people}
+\end{figure*}
+
+\section{Conclusions}
+
+In this work, we showed that augmenting Q-learning agents with
+other-regarding preferences that favored fairness resulted in improved
+cooperative performance. Other multi-agent learning algorithms like
+Coco-Q~\cite{sodomka13} and Friend-Q~\cite{littman94} could also be
+used to promote cooperation, but do not behave as well when faced with
+an uncooperative opponent. In contrast, Q-learning, with subjective
+rewards that were different from but consistent with the selfish
+rewards, is able to adapt its behavior to its observed opponent.
+
+Q-learning, even when given useful other-regarding preferences, takes
+many thousands of interactions to converge to good behavior. Our
+Amazon Mechanical Turk results showed that humans are able to converge
+to cooperative behavior much more quickly. We showed that a
+model-based approach that explicitly models its opponent's policy,
+could be paired with other-regarding preferences and were able to
+quickly converge to good behavior on timescales comparable to people.
+
+Ideally, we want agents that learn from experience which
+other-regarding preferences would be most appropriate within their
+population. Future work will investigate how to address this
+challenge. One solution might be to incorporate expert
+algorithms~\cite{crandall14,megiddo05} that learn over the strategies
+induced by different other-regarding preferences.
+
+
+\bibliography{../../papers/mlittman}
+\bibliographystyle{aaai}
+
+
+\end{document}

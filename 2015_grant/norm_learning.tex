@@ -1,0 +1,34 @@
+
+\section{Norm Learning}
+\label{sec:learning}
+
+Given our representation of norms by a social reward function that is
+parameterized by a family of bias functions, our approach to learning
+norms is simply to optimize those parameters to best match observed
+behavior.  We consider two forms of norm learning.  The first is
+\mydef{batch} learning, in which an agent learns offline from batches
+of demonstrations of other agents conforming to a norm.  The second is
+\mydef{interactive} learning in which an agent learns about the
+behavior of a set of unknown agents, while at the same time
+interacting with them and establishing norms.
+
+%We consider learning norms under two different conditions. First, when
+%an agent observes example behaviors of other agents conforming to a
+%norm, and also when an agent must interact with a set of unknown
+%agents and develop new norms that facilitate coordination. We refer to
+%the first learning situation as {\em batch} norm learning, since the
+%agent will receive batches of demonstrations and can perform norm
+%learning offline from them; we refer to the latter situation as {\em
+%  interactive} norm learning, since the agent must learn norms with
+%other agents while interacting with them.%
+
+%To perform both batch and interactive norm learning, we take an
+%approach in which the agent reasons about the multi-agent interaction
+%as a joint task to solve and then learns biases for behavior in the
+%joint task that when coupled with the overall joint task goal, results
+%in norm-following behavior. To formalize and solve this learning
+%problem, we build from Markov decision process and stochastic games
+%formalisms, and inverse reinforcement learning literature. We first
+%describe relevant background material on these topics and then
+%describe our norm-learning algorithms.
+

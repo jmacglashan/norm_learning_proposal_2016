@@ -1,0 +1,73 @@
+
+\section{Plan and Evaluation}
+The three year timeline for our proposed project is as follows:
+
+\begin{itemize}
+\item {\bf Year 1}: Complete the development of an experimental
+  testbed that pairs humans with a (single) artificial agent.
+  Demonstrate that the agent can successfully learn norms from batches
+  of demonstrations (offline), as well as online, while simultaneously
+  interacting with a human.
+
+\item {\bf Year 2}: Investigate methods for greater generalization
+  during learning, including methods to generalize norms between state
+  spaces and learning norms within {\em populations\/} of interacting
+  agents instead of just pairs of agents.
+
+\item {\bf Year 3}: Extend and evaluate our approach in real-world
+  applications such as robotic-human collaborations, and develop any
+  additional methods necessary to handle these scenarios.
+\end{itemize}
+
+In year one, we will develop evaluation metrics, beginning with
+experiments evaluating the interactive learning algorithm by comparing
+how often and how quickly humans are able to arrive at a social norm
+when playing with another artificial agent vs.\ another human.  For
+the batch learning component, we will develop new quantitative metrics
+to assess trajectory similarity.
+
+We will also develop ways for people to also assess how natural it is
+to interact with our artificial agents. For example, we could have two
+humans interact for awhile, and then, without notifying them, swap
+their partner with an artificial agent trained from the interaction
+history. Participants could then be asked if they noticed any change,
+and behavior would be compared between cases three cases: no swap,
+swapping in a trained agent, and swapping in an untrained agent.
+
+In year two, we will investigate how to transfer and generalize norms
+across environments. To facilitate generalization between state
+spaces, we will start by examining standard features and
+representations used in existing reinforcement-learning 
+%RL
+and IRL research (e.g., linear models, neural networks, etc.) and
+build from them, as necessary, approaches to better capture norms. We
+will evaluate generalization by first having users learn a norm in one
+grid. Afterwards, they will transfer to a new grid where a ``literal''
+norm cannot be directly applied (e.g., adding a wall in the path that
+one agent would normally take), but a more ``general'' norm can be
+transfered (e.g., I move above the other agent). We will evaluate
+these methods using the methods developed in year one.
+
+The algorithms described in this proposal are designed for learning
+among a set of agents all playing in same (one) game. We will extend
+our work to scenarios where agents play different games, with
+different subsets of agents drawn from the same population. We expect
+that a group of people can converge on a norm in a setting like this,
+and so will extend our algorithms as necessary to support this robust
+form of norm-learning. To evaluate our extensions, we will compare
+norm formation in purely human groups to hybrid human-machine groups.
+%One possible direction is to have the agent learn multiple norms using reward function clustering similar to that in multiple intention IRL\cite{babes11}, and then homogenize the clusters as the populations converges. 
+%To evaluate adaptivity in populations, we will compare the results of purely human populations with human-agent populations.
+
+In year three we will test our approach in a real-world domain:
+robot-human collaboration. Our simulated worlds suggest that our norm
+learning agents could collaborate better with people than traditional
+approaches, but the capabilities of robots may inhibit the
+effectiveness of our approach (e.g., robots might move slower than
+people expect). We will evaluate our algorithm in real-world scenarios
+by comparing its performance at controlling a robot to when another
+human controls the robot via teleoperation. We expect this to inspire
+novel problems tuned to real-world problems. For example, computation
+time may be a limiting factor to the success of our machine agents,
+and if so, we will develop more efficient implementations.
+

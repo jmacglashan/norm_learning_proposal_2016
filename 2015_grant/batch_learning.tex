@@ -1,0 +1,76 @@
+
+%\vspace{\up}
+\paragraph{Batch Learning}
+\label{sec:batch}
+
+The batch learning setting is similar to the standard IRL problem in
+that the algorithm is given a batch of demonstrations and a family of
+reward functions over which to search. In our case, however, the batch
+data consists of trajectories of states and joint actions in a
+stochastic game, and the reward function family is a social reward
+function family.  To learn the parameterization of the social reward
+function family that best captures the behavior exhibited in the
+demonstrations, we convert the stochastic game into an MDP,
+%(in which joint actions correspond to actions, etc.),
+and then use IRL to learn a parameterization of the reward function
+family in this MDP.
+
+\begin{algorithm}[t]
+\caption{Batch\_Learning($(I,S,A^I,T,R^I), \gamma, D, {\mathcal T}, B_\Theta$)}
+\label{alg:srl}
+\begin{algorithmic}
+\Require stochastic game $(I,S,A^I,T,R^I)$; discount factor $\gamma$; multi-agent norm-following demonstrations $D$; team function ${\mathcal T}$; and parameterized bias function family $B_\Theta$.
+\State $A^M := \times_i A^I$ \Comment{Joint action set}
+\State $R^M(s, a, s') := {\mathcal T}(R^I, s, a, s')$ \Comment{Team reward function}
+\State $R^S_\Theta(s, a, s') := R^M(s, a, s') + B_\Theta(s, a, s')$ \Comment{Social reward function family}
+\State $R^S_\theta :=$ IRL($(S,A^M,T,R^S_\Theta), \gamma, D$)
+\State \Return $R^S_\theta$ \Comment{Learned social reward function}
+\end{algorithmic}
+\end{algorithm}
+
+%The batch learning algorithm is shown in Algorithm~\ref{alg:srl}
+Pseudocode for the batch learning algorithm is shown in Algorithm~\ref{alg:srl}.
+%
+The algorithm takes as input a stochastic game; a discount factor; a
+set of multi-agent demonstrations (which perhaps shows adherence to
+some norm); a team function; and a family of bias functions defined by
+some parameter space $\Theta$. 
+%
+Since the demonstrations are a set of trajectories of state-joint
+action pairs, specifying the behavior of all the agents in the
+environment, the first step of the batch learning algorithm is to
+transform the stochastic game into an MDP. For the most part, this
+transformation is straightforward: the states are the same, the MDP
+action set is the space of joint actions, and the MDP transition
+dynamics still operate on joint actions (which is the action set in
+the MDP). A family of social reward functions is then defined as a
+linear combination of the input team function (which depends on the
+stochastic game's reward functions), and the family of bias
+functions.\footnote{A parameter controlling the linear
+combination of the team and bias function may be optimized as well.}
+%
+After learning a social reward function, any single agent can then
+behave by selecting a joint action from the policy that results from
+it, and then selecting their individual action from the joint. That
+is, agent $i$ takes action $j^i \in A^i$, where 
+$j \in \arg \max_j Q_{R^S_\theta}(s, j)$.
+
+%Additionally, we set the zero-horizon value of states in  RHIRL to the team value function. Setting the zero-horizon state values to the team value function allows RHIRL to use a short horizon a with bias function family that uses all of it representation power to express behavior biases rather than the ultimate task goals. To demonstrate that property, consider the fact that the RHC with a horizon of one and a bias function that always returns zero, always returns the original team value function when its horizon-zero state values are set to the team value function. The same is true for any horizon $h \ge 0$. As a result, the bias function only needs to focus its representation power on values that motivate norm-adhering behavior and the horizon used only needs to be large enough to motivate behavior that can exploit the bias values. Since computing the team value function only has to performed once and since we expect preferences for behavior to only require small horizons to exploit in practice, we expect the social reward function learning algorithm to be very computationally efficient.
+
+Although any off-the-shelf IRL algorithm would be applicable here, in
+practice we use \mydef{receding horizon IRL}
+(RHIRL)~\cite{macglashan15b}. IRL algorithms are typically
+computationally demanding because they require planning in their inner
+loops.
+%If the social reward function learning is going to be used in any
+%moderately interactive setting, this limitation may be prohibitive. 
+RHIRL addresses this limitation by replacing the usual
+infinite-horizon policy with a receding horizon controller (RHC) that
+only plans out to some finite horizon from any given state, thereby
+bounding computation time. An RHC tends to steer an IRL algorithm
+towards a reward function with shaping values: short-term rewards that
+guide the agent in the right direction without having to plan too far
+ahead. Since these are precisely the kinds of values we want our bias
+functions to capture, RHIRL allows us to plan with a short horizon,
+thereby saving on computation time, which enables interactive
+learning, described next.

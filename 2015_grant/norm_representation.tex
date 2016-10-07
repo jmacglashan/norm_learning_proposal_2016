@@ -1,0 +1,236 @@
+
+\section{Norm Representation}
+\label{sec:representation}
+
+Our norm representation and learning algorithms are best explained
+using the formalisms of Markov decision processes and stochastic
+games.  We start by providing the necessary background.
+%We provide background first, and then describe our representation.
+
+A \mydef{Markov Decision Process} (MDP) is a model of a single-agent
+decision making problem, defined by the tuple $(S, A, T, R)$, where
+$S$ is the set of states in the world; $A$ is the set of actions that
+the agent can take; $T(s' \mid s, a)$ defines the transition dynamics:
+the probability the environment transitions to state $s' \in S$
+after the agent takes action $a \in A$ in state $s \in S$; and 
+$R(s, a, s')$ is the reward function, which returns the reward the
+agent receives when environment transitions to state $s'$ after the
+agent takes action $a$ in state $s$.
+
+The goal of planning or learning in an MDP is to find a policy $\pi :
+S \rightarrow A$ (a mapping from states to actions) that maximizes the
+expected future discounted reward under that policy: $E^{\pi} \left[
+  \sum_{t=0}^\infty \gamma^t R(s_t, a_t, s_{t+1}) \right]$, where
+$\gamma \in [0, 1]$ is a discount factor specifying how much immediate
+rewards are favored over distant rewards. 
+%Since this sum goes to the infinite future, this objective is called an {\em infinite horizon} objective.
+
+To find an optimal policy, many algorithms compute the optimal state
+($V^*(s)$) and state-action ($Q^*(s,a)$) value functions that specify
+the expected future discount reward under the optimal policy from each
+state, and from taking an action in a state and then following the
+optimal policy respectively. 
+%These functions are defined recursively
+%by the Bellman equations:
+%%
+%\begin{equation}
+%V^*(s) = \max_{a \in A} \sum_{s' \in S} T(s' \mid s, a) \left[ R(s, a, s') + \gamma V^*(s') \right].
+%\end{equation}
+%and
+%\begin{equation}
+%Q^*(s,a) = \sum_{s' \in S} T(s' \mid s, a) \left[ R(s, a, s') + \gamma V^*(s') \right].
+%\end{equation}
+%\noindent
+Given these functions, the optimal policy is derived by taking an
+action in each state with the maximum Q-value: 
+$\pi(s) \in \arg\max_{a \in A} Q(s, a)$~\cite{bertsekas87}.
+
+\mydef{Inverse reinforcement learning} (IRL) is a class of a {\em
+  learning from demonstration} (LfD) problem. An LfD problem is a
+problem in which an agent is presented demonstrations of behaviors and
+must learn a policy of behavior that closely reproduces the observed
+behavior. In IRL, an agent learns this policy indirectly by learning a
+reward function for the MDP that describes an environment that would
+motivate an agent to behave in a way that is consistent with the
+observed behavior. A strength of the IRL formulation is that simple
+reward functions can often capture complex behavior. As a result, a
+learned reward function can often produce behavior that accurately
+generalizes the observed behavior to many states, including states not
+observed in the input demonstrations.
+
+Although there are multiple IRL formalizations and approaches, they
+all take as input an MDP together with a \mydef{family} of a reward
+functions $R_\Theta$ that is defined by some parameter space $\Theta$,
+and a dataset $D$ of trajectories (where a trajectory is a finite
+sequence of state-action pairs: $\langle (s_1, a_1), ..., (s_n, a_n)
+\rangle$). The algorithms then output a specific parameterized reward
+function $R_\theta \in R_\Theta$, which induces a policy that is
+consistent with the input trajectories.
+%
+Different IRL algorithms frame the objective function for policy
+consistency differently. One common approach is to treat the
+search problem as a probabilistic inference
+problem~\cite{babes11,lopes2009active,ramachandran2007bayesian,ziebart2008maximum}. 
+
+\comment{
+For example, in the maximum-likelihood setting~\cite{babes11}, the
+goal is to find a reward function parameterization that maximizes a
+likelihood function:
+%
+\begin{equation}
+\label{eq:mlirl}
+\theta \in \arg\max_{\theta} L(D \mid R_{\theta}) = \prod_{t \in D} \prod_i^{|t|} \pi_{\theta}(s_i, a_i),
+\end{equation}
+
+where $\pi_{\theta}(s, a)$ is a stochastic policy defining the
+probability of taking action $a$ in state $s$ when the parameterized
+reward function to be maximized is $R_{\theta}$. Typically, the
+Boltzmann (softmax) stochastic policy over the $Q$-values is used:
+$\pi_{\theta}(s, a) = \frac{e^{\beta Q_{\theta}(s,a)}}{\sum_{a' \in A}
+  e^{\beta Q_{\theta}(s,a')}}$, where $Q_\theta(s, a)$ is the $Q$-function
+when the reward function is parameterized by $\theta$.
+}
+
+The stochastic games formalism can be viewed as an extension of MDPs
+to the multi-agent case~\cite{littman1994markov}. 
+%In a stochastic game, each of the agents in the environment make decisions simultaneously at each discrete time step and can only observe the other agents' decisions after all decisions have been made and executed in the environment. 
+A \mydef{stochastic game} is defined by the tuple $(I, S, A^I, T,
+R^I)$, where $I$ is an index set of agents in the environment; $S$ is
+the set of states of the environment; $A^I$ is set of actions for each
+of the agents with $A^i$ denoting the action set for agent $i \in I$;
+$T(s' \mid s, j)$ is the transition dynamics specifying the
+probability of the environment transitioning to state $s' \in S$ when
+the {\em joint action} $j \in \times_i A^i$ of all agents is taken in
+state $s \in S$; and $R^I$ is a set of reward functions for each agent
+with $R^i(s, j, s')$ denoting the the reward received by agent
+$i \in I$ when the environment transitions to state $s' \in S$ after
+the agents take joint action $j \in \times_i A^i$ in state $s \in S$.
+
+The goal in a stochastic game is to find a joint strategy that
+satisfies some solution concept. Different solution concepts for
+stochastic games have been explored in the past including minimax,
+Nash, correlated, and CoCo equilibria
+\cite{GreenwaldHall:03,HuWellman03,Littman01,ZGL:06}. There are
+problems with these approaches, however. First, the resulting planners
+must solve for game-theoretic equilibria in an inner loop, a problem
+which in the case of Nash equilibrium, for example, is notorious for
+its computational intractability~\cite{daskalakis2009complexity}. Second, in the
+general case of non-constant sum games, none of the planners that make
+reasonable assumptions about agent behavior yield unique joint plans,
+and furthermore, none has solved the ensuing equilibrium selection
+problem suitably.
+
+Immediately generalizing from the case of MDPs, the goal of inverse
+reinforcement learning in stochastic games is to learn a set of reward
+functions for the stochastic game that describe an environment that
+would motivate the agents to behave in a way that is consistent with
+the observed behavior under some solution concept such as a Nash
+equilibrium~\cite{reddy2012inverse}.  This problem, however, is
+exceedingly difficult, because the planning that is necessary in the
+inner loop of an IRL algorithm is subject to the challenges identified
+by the equilibrium planners mentioned above.
+
+In this project, we plan to develop IRL algorithms that can explain
+norm-adhering behavior in a stochastic game.  In our preliminary
+studies, we assume players' rewards are known, and our goal is to
+recover a \mydef{social reward function} that combines these known
+rewards in such a way as to capture a social norm expressed in the
+joint play of the agents (when one exists).
+
+%This social reward function is our norm representation.
+
+Like the players' reward functions, a social reward function operates
+on states, joint actions, and next states: $R^S : S \times_i A^i
+\times S$.  In our initial model, we assume that this social reward
+function can be written as linear combination of a \mydef{team
+  function}, which represents team goals,
+%an \mydef{individual function}, which represents an individual's goals,
+and a family of what we call \mydef{bias functions} ($B_\Theta$)
+defined by some parameter space $\Theta$.  The team function takes as
+input a multi-agent reward function ($R^I)$, and returns a single
+numeric value for any state-joint action-next state triple that
+represents a team goal. One example of such a function is total
+welfare (i.e., the sum of all agent rewards): 
+${\mathcal T}(R^I, s, j, s') = \sum_i R^i(s, j, s')$.
+%
+The bias function family is similar in nature to a reward function
+family that would be input to a classic IRL algorithm, but operates on
+state-joint action-next state triples, thereby encoding a bias that
+motivates norm-adhering behavior in games.  In addition to the
+parameters of the bias function, the social reward function may also
+include a parameter
+%$\alpha$ 
+to trade-off the team rewards against the biases.
+%$R^S(s, j, s') = \alpha {\mathcal T}(R^I, s, j, s') + (1-\alpha) B_\Theta(s, j, s')$.
+%but in the simplest case, $\alpha = 0.5$.
+
+\comment{
+\commenta{The individual function \ldots} \jmnote{Do we want to add
+  an individual function here? Right now the social reward function
+  in the pseudocode (and results) do not include an individual term.
+  It also makes the batch mode less straight forward because
+  it means there would be a different social reward function
+  for each agent. Would that mean we run batch once for each agent?
+  I'm going to comment it out for now, but we can add it back.}
+}
+
+%\jmnote{Not sure this whole above paragraph that I added is needed here; maybe best to incorporate the ideas earlier, but I was trying to bridge to why we care about features}
+
+Recall our working definition of a social norm as a behavioral
+instruction that members of the community expect one another to
+follow.  This definition suggests that norms could potentially be
+learned in a supervised fashion simply by learning a function that
+maps states to joint actions directly, rather than capturing norms in
+a social reward function that motivates joint actions.
+%\commenta{do you mean just hard code a norm in the bias functions? 
+%does something like this next sentence capture what you mean?}
+%\commenta{This definition suggests that norms could be directly encoded in the bias functions of a social reward function as bonuses associated with specific joint actions.}
+However, as an environment and a target policy become more complex,
+directly learning the policy becomes more challenging, and
+generalizing from it likely less successful.  As with standard IRL,
+the advantage of learning a social reward function instead is that
+simple reward functions can often induce complex
+behaviors \emph{across states}.  For example, consider a seemingly
+straightforward norm that two agents approaching one another each stay
+to their right.  If the action space is over low-level controls (e.g.,
+rotations and small movements) and the policy is context dependent
+(e.g., navigating obstacles to get to the right side), implementing
+all the joint action rules necessary to make the agents pass on the
+right could be difficult to specify (and hence, learn).  However, a
+social reward function can simply define a bonus for when the agents
+move past each other on the right and the planning algorithm does the
+rest.
+
+%\commenta{this is a seaparte point}
+%trade offs between the team goal and biases for norms can be learned. 
+
+To facilitate social reward functions that generalize, the bias
+function family must operate on a set of useful features.  As part of
+this project, we plan to investigate whether existing state-of-the-art
+feature selection methods for
+RL~\cite{diuk2009adaptive,kolter2009regularization,li2009reinforcement,parr2008analysis}
+work well in our setting, and then to work towards developing new
+methods to the extent necessary.
+
+%A viable alternative might be to design the bias functions such that
+%agents can receive a bonus as they move past each other on the right.
+%The intent is that motivating the desired behavior in this way would
+%result in greater generalization power.  To facilitate this kind of
+%generalization, the bias function family must operate on a set of
+%useful features.  As part of this project, we plan to investigate
+%whether existing state-of-the-art feature selection methods for
+%RL~\cite{diuk2009adaptive,kolter2009regularization,li2009reinforcement,parr2008analysis}
+%work well in our setting, and then to work towards developing new
+%methods to the extent necessary.
+
+%\jmnote{I made a bit of a bold claim here saying that we would investigate feature selection. I say that because this might indeed be an interesting space that benefits from new kinds of features, but if we don't want to commit to this, we can just say its outside the scope of our work.}
+
+\comment{
+We believe that the choice to represent norms by a single social
+reward function is grounded in sound psychology because\commenta{JOE!!??}.
+%
+Furthermore, this assumption is essential for our approach to be
+tractable, because IRL in MDPs is becoming increasingly easier, while
+IRL in stochastic games remains enormously challenging.
+}
+

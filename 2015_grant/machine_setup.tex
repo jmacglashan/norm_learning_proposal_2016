@@ -1,0 +1,48 @@
+
+%\vspace{\up}
+\paragraph{Simulation Experiments}
+\label{sec:qlearning}
+
+We carried out a set of simulation experiments with \Q-learning in
+the grid games presented.
+%
+For each grid game, we conducted 50 independent runs in which two
+\Q-learners faced off.  
+%Runs lasted for 30,000 rounds each.  
+The agents' value functions were optimistically initialized with a
+value of 40 for all states and they used Boltzmann exploration with a
+temperature of $0.5$.  The discount factor was set to $0.9$, and the
+learning rate to $0.01$.  To ensure that the state space was
+adequately explored, any state that is reachable from the initial
+state had some probability of being selected as the starting position
+for a round.  Once either agent reached its goal (or 100 moves were
+taken), the round was terminated.  There were no step costs beyond discounting, and
+rewards were 50 for reaching a goal.
+
+We denote the outcome of a round using a pair of letters, where {\bf G} 
+means the agent reached the goal and {\bf N} means the agent did not
+reach the goal. The first letter in the pair represents the agent's
+own outcome and the second represents its opponent's outcome. For
+example, {\bf GN} is used to denote that the agent reaches its goal
+while its opponent does not.
+
+As two \Q-learning algorithms are not guaranteed to converge in
+self-play, we arbitrarily stopped the learning after 30,000 rounds,
+and checked the strategies learned.  In spite of \Q-learning not
+explicitly seeking outcomes with high social welfare, it very reliably
+identified cooperative strategies leading to {\bf GG} outcomes.
+% zzz do we provide results to reference?
+
+Only the No Compromise game posed a challenge to the \Q-learners.
+There, they tend to thrash about, finding a pair of strategies that
+work well together only to eventually discover that one of the agents
+has an opportunity to defect.  The defection is destabilizing, so a
+new search begins for strategies that work well together.  This result
+is not altogether unsurprising, because No Compromise is the only game
+in our testbed that does not possess a pair of CD strategies that
+constitute a Nash equilibrium.
+
+%Sometimes, \Q-learning finds strategies that are cooperative and stable,
+%but these strategies are brittle and would not be successful against
+%agents with other strategies.
+

@@ -1,0 +1,2315 @@
+% DARPA Seedling
+% Author: Bertram Malle, Matthias Scheutz, Michael Littman, and Joseph Austerweil
+% Version: 1
+% Last modified: 06/02/2015 
+
+\documentclass[12pt]{article}
+\usepackage[sort&compress]{natbib}
+%\usepackage{epsfig}
+%\usepackage{pslatex}
+\usepackage{latexsym}
+\usepackage{xspace}
+\usepackage{fancybox}
+%\usepackage{multicol}
+%\usepackage{helvet}
+%\usepackage{courier}
+%\usepackage{bookman}
+\usepackage{graphicx}
+%\usepackage{psfrag}
+\usepackage{amssymb}
+\usepackage{amsmath,amssymb}
+\usepackage{psfrag}
+\usepackage{subfigure}
+\usepackage{url}
+%\usepackage{cases}
+%\usepackage{stfloats}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{pifont}
+\usepackage{floatflt}
+\usepackage[pdfborder={0 0 0}]{hyperref}
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[small,compact]{titlesec}
+
+\usepackage{enumitem}
+
+% for type 1 fonts
+\usepackage{times}
+
+% one inch margins all around, letter size
+\setlength {\topmargin} {0 mm}
+\setlength {\headsep} {0 mm}
+\setlength {\headheight} {0 in}
+\setlength {\voffset} {0 mm}
+%\setlength {\footheight} {0.5 in}
+
+\setlength {\oddsidemargin} {0 mm}
+\setlength {\evensidemargin} {0 mm}
+\setlength {\hoffset} {0 mm}
+
+\setlength {\textwidth} {6.5 in}
+\setlength {\textheight} {9 in}
+
+% some basic commands
+\newcommand{\diarc}{DIARC\xspace}
+\newcommand{\ade}{ADE\xspace}
+
+\newcommand{\eg}{e.g.,\xspace}
+\newcommand{\ie}{i.e.,\xspace}
+\newcommand{\etc}{etc\@.\xspace}
+
+\newcommand{\tuple}[1]{\langle#1\rangle}
+
+\newcommand{\cd}{\centerdot}
+% paragraph
+\newcommand{\np}{\par \vspace{3 mm} \noindent}
+\newcommand{\nph}[1]{\par \vspace{2 mm} \noindent\textbf{#1}\xspace}
+%\vspace{1 mm}\noindent}
+
+\newcommand{\subsubsubsection}[1]{\par \vspace{2 mm}
+\noindent\begin{center}\textbf{#1}\xspace\end{center}\vspace{-1mm}}
+
+\newenvironment{scenario}%
+{\vspace{-0.1cm}\begin{list}{}%
+    {\setlength{\leftmargin}{0.5cm}}%
+  \item[]%
+  }
+  {\end{list}\vspace{-0.4cm}}
+
+
+\newenvironment{leftindentpar}[1]%
+     {\begin{list}{}%
+             {\setlength{\leftmargin}{#1}}%
+             \item[]%
+     }
+     {\end{list}}
+
+\thispagestyle{empty}
+\count0=1
+
+\hypersetup{
+ colorlinks=true,
+ citecolor=Plum,
+ linkcolor=Red,
+ urlcolor=Blue
+}
+
+
+
+% \count0=0
+\sloppy
+
+\begin{document}
+% center sections
+\titleformat{\section}[block]{\Large\bfseries\filcenter}{\thesection}{1em}{}
+
+% ===============================================================
+% 25 pages max
+% The cover page, executive summary slide, [table of contents if needed], brief bibliography, resumes and
+% current and pending project and proposal submissions information are
+% excluded from the page limitations.
+
+
+\begin{titlepage}
+
+% 1 page -- does not count towards limit
+
+\section*{Cover Sheet} 
+\vspace{5mm}
+\addcontentsline{toc}{section}{\protect\numberline{}Cover Sheet}
+
+\noindent \begin{tabular}{ll}
+
+\vspace{2mm}
+Proposal number: & {\bf DARPA-BAA-14-46}\\
+
+\vspace{2mm}
+Technical Area:          & Human--Machine Collaboration \\ 
+
+
+  Lead Organization: & Brown University, Providence, RI \\
+\vspace{2mm}
+  Type of Organization: & Other Educational\\
+  Other team members: & Joseph Austerweil and Michael
+Littman (Brown University), \\
+  & Matthias Scheutz (Tufts University)\\
+\vspace{2mm}
+  & Type of Organization for all: Other Educational\\
+
+Title:          & Foundations of Human--Machine Collaboration: \\ 
+\vspace{2mm}
+		& Networks of Social and Moral Norms in Human and Artificial Agents \\
+
+Technical POC:  & Bertram F. Malle, Ph.D.\\
+                & Department of Cognitive, Linguistic, and Psychological Sciences\\
+                & Brown University \\
+                & 190 Thayer Street \\
+                & Providence, RI 02912 \\
+           Tel: & (401) 863-6820 \\
+           Fax: & (401) 863-2255 \\
+\vspace{2mm}
+         Email: & bfmalle@brown.edu \\
+   Administrative PoC: & Mrs. Justyna Szulc\\
+                & Office of Sponsored Projects, Brown University \\
+                & 164 Angell Street, Box 1929\\
+                & Providence, RI 02912 \\
+          Tel:   & (401) 863-3630 \\
+\vspace{2mm}
+	Email: &  Justyna\textunderscore Szulc@brown.edu\\
+\vspace{2mm}
+          Total funds requested & Base award (9 months): \$413,092.45. Option (9 months): \$412,976.20\\ 
+
+          Proposal submitted &  June 10, 2015
+
+\end{tabular}
+
+\newpage
+\thispagestyle{empty}
+\section*{Official Transmittal Letter} 
+\addcontentsline{toc}{section}{\protect\numberline{}Official Transmittal Letter}
+
+
+\end{titlepage}
+
+\setcounter{page}{1}
+\centerline {\LARGE {\bf Volume 1 - Technical and Management Proposal}}
+\vspace{3mm}
+\section*{Section II: Summary of Proposal}
+% 5 pages max 
+
+% This section is the centerpiece of the proposal and should succinctly describe the  uniqueness and benefits of the proposed approach relative to the current state-of-art alternate approaches.
+
+\vspace{2mm}
+\subsection*{The Broad Problem: Cognitive and Social Foundations of 
+Collaboration}
+
+\noindent What is required for successful Human--Machine Collaboration?
+% I am using the "machine" language throughout because that's how Reza
+% has framed the problem.  I could see, however, swapping "robot" for
+% "machine" if you all prefer that.
+DARPA's Communicating with Computers (CwC) program highlights one such
+requirement: the communication and sharing of complex ideas between
+human and machine.  The framework we propose here takes a step back
+and focuses on two fundamental conditions for communication and social interaction in general: the
+\textbf{cognitive mechanisms} and the \textbf{social norms} that undergird social interaction.
+
+% JLA: "CwC DARPA call didn't really address non-linguistic human-machine  interactions and if we had some research saying that a large portion of human-human  interactions are non-linguistic while collaborating to solve a task, that could be some  strong empirical support for our already compelling argument. 
+
+Only if we make progress toward understanding and formalizing these fundamental 
+conditions can we make progress toward designing machines that are genuine 
+partners---machines that learn from and teach humans, help and collaborate with 
+humans, and are trustworthy, safe and effective.  
+
+The tremendous challenge in designing such {\bf machines as partners}
+lies in the complex dynamical system that unfolds when two autonomous,
+intelligent agents interact.  In the case of human--human interaction,
+at least four streams of processes unfold: (a) a vast number of mental
+states (goals, beliefs, desires, emotions, etc.) in one person
+co-exist and change in parallel with a vast number of mental states in
+the other person; (b) each person has a substantial number of
+metarepresentations (e.g., $P_1$'s belief that $P_2$ wants a screwdriver) and
+at least a modest number of meta-metarepresentations (e.g., $P_1$'s
+belief that $P_2$ thinks that $P_1$ knows where a
+screwdriver is); (c) the partners observe and communicate with one
+another, which demands ongoing real-time updating of these
+representations; and (d) each person's actions must fully take into
+account all of the above processes.
+
+Beginning to realize such dynamic, parallel, recursive processes in a
+computational system requires transformative advances in a domain in which current robots fall substantially short:
+% \footnote{These required advances stand above and  beyond the standard challenges of perception, planning, and action  in any extant computational system, as well as beyond the emerging  progress in the CwC program of human--machine communication.}
+%JLA: with respect to the footnote, do we want to point out precisely the advances we need that the current CwC program is not providing? We do some of this later, but I'm not sure we directly address it and link the dots.
+% BFM: I'll let Reza tell us if we need more.
+
+%we must return to this claim in the "Discussion of other approaches"
+\vspace{-1 mm}
+\begin{enumerate}[label= \arabic*., leftmargin=*,align=left]
+
+
+\item We must advance machine capabilities to instantiate rich, dynamic
+  representations of a collaboration partner's mental states and
+  actions---i.e., a machine's {\bf own social cognition}---and, as
+  part of this capability, models of the human partner's own
+  representations of the collaboration partner---i.e., a rich
+  computational {\bf model of human social cognition}.
+\end{enumerate}
+\vspace{-1 mm}
+%% How would it lead to some key scientific insight or technology after the broader time frame ends?
+
+To some extent, researchers and designers are aware of the enormous
+challenge presented by the abovementioned dynamic processes~\citep{williams_robot_2012,cangelosi_2015}. But rarely do they face them head-on.  {\em A new DARPA program
+dedicated to dynamic cognition in multi-agent interaction would
+provide substantial support in facing these challenges and be a
+catalyst for developing the technical means to build machines that
+could begin to thrive in real-world social interactions and that would be effective
+and trustworthy collaborators.}
+
+But success in this transformative endeavor requires, we argue, one
+more step back to tackle one determinant of dynamic social interaction
+that has been almost entirely overlooked in the AI community: the
+influence of norms, described next. 
+% insert succinct statement of this determinant?}]
+
+\subsubsection*{The Innovation: Norms for Interaction}
+
+\noindent As important as it is for a machine to have its own mechanisms of
+social cognition and to have an adequate model of human social cognition, 
+such a machine would still not be an effective, safe, and trustworthy partner 
+for humans.  This is because a fundamental element would be missing that 
+uniquely characterizes human social life: the presence and powerful 
+influence of {\bf social and moral norms}.
+
+Norms guide and constrain every cultural behavior, from eating and
+dressing to speaking and working. More importantly, humans expect one
+another to grasp and abide by a dizzying number of norms.  In fact,
+failure to follow some norms can result in disastrous consequences
+(e.g., a British tourist driving on the left side of the road in
+America). If humans interact with machines in genuinely collaborative
+situations, they will expect those machines to similarly grasp and
+abide by all the relevant social and moral norms.
+
+Thus, the broad challenge of designing machines as dynamic social partners requires advances in an additional, critical domain:
+
+\vspace{-1 mm}
+\begin{enumerate}[resume, label= \arabic*., leftmargin=*,align=left]
+\item We must advance machine capabilities to {\em learn, represent, activate, and
+    implement social and moral norms}---which we will call a machine's
+  {\bf norm capacity}.
+\end{enumerate}
+\vspace{-1 mm}
+
+\noindent Critically, we argue that advances in the domain of norm capacity 
+should be prioritized over advances in the first foundational domain---that of 
+human social cognition listed above.  We offer two main reasons.
+
+First, humans will reject collaboration partners that are
+unaware of or, worse yet, violate the social and moral norms that
+humans take for granted.  Second, without knowledge of these norms, machine social cognition would be a hopeless endeavor.  Norms have such a powerful impact on human behavior that only with progress in deciphering the cognitive underpinnings of the human norm system will machines succeed at modeling human mind and behavior.  
+
+\vspace{2mm}
+
+\noindent In sum, the present project takes a first step toward cognitive and
+social foundations of human--machine collaboration by focusing on the
+social-normative context in which such collaboration is inevitably
+embedded.  In particular, we will pursue {\bf three aims}:
+
+\begin{enumerate}[label=\bfseries Aim \arabic*:, leftmargin=*,align=left]
+
+\item Conducting innovative scientific experiments to reveal and
+  formalize the properties and underlying cognitive processes of the
+  human norm system.  \vspace{-1 mm}
+\item Developing conceptual and computational formalisms required for
+  equipping artificial agents with a norm system.  \vspace{-1 mm}
+\item Providing a proof of concept that computational algorithms can
+  learn norms in single- and multi-agent settings.
+
+\end{enumerate}
+
+The scientific and formal results of this project directly feed into
+the broad vision of building machines as partners---machines that have
+both their own mechanisms of social cognition and a model of human social cognition---for norm capacity is a core component of social
+cognition.  By acquiring a norm capacity, machines
+thereby acquire a key component of their social-cognitive
+abilities; and by acquiring a model of human norm capacity, machines
+thereby acquire a key component of their model of human social
+cognition.
+
+\subsubsection*{Impact and Applications}
+
+Human--machine teaming is an increasingly important goal for the DoD.
+Current expectations for robotic teammates are limited to autonomous
+transport vehicles (e.g., the Marine's SUMET vehicle) or surveillance
+robots (e.g., as envisioned for Squad X).  In the future, however, we
+expect autonomous robots to participate in complex, time-pressured
+search and rescue missions in unknown environments, and they may
+contribute to sensitive peace-keeping or negotiation missions in
+foreign territories, where knowledge of social norms must be
+constantly updated.  In such challenging situations, robot autonomy is
+not sufficient; the goal must be to design robots that can {\em
+  collaborate} with humans in a trusting, effective, and
+culturally-sensitive manner.
+
+A recent DARPA workshop in April 2015 clearly signaled the DoD's
+interest in human--machine collaboration.  An AFOSR-sponsored workshop
+on human--machine trust this coming August further strengthens this
+signal. Likewise, last month, the AFRL posted a presolicitation for work on 
+trust and human-machine teaming (BAA-AFRL-RQKH-2015-0008). And  
+the National Robotics Initiative's emphasis on ``co-robots" (robots that work 
+cooperatively with people) lays out the broad vision of enabling effective
+human--robot interactions---interactions in which robots may be
+partners to humans in challenging situations, from the battlefield to
+eldercare, from search and rescue to educational instruction.
+
+Figure~\ref{fig:visionobjective} indicates how the broad vision
+of machines as partners can be substantially advanced by pursuing the
+long-term objective of implementing social-cognitive capacities in 
+machines.  Importantly, it also indicates how the proposed short-term 
+project on norm capacity initiates a powerful and necessary first step in this 
+direction, promising novel scientific insight into human norm capacity (how 
+humans represent and acquire norms) and beginning to develop algorithms 
+that implement such capacity in artificial agents.
+
+\begin{figure}[h!]
+ \centering
+\includegraphics[width = 14 cm]{vision_objective_aim.pdf}
+  \caption{\small Embedded relationships of broader vision, long-term objective, and 
+present project}
+  \label{fig:visionobjective}
+  \end{figure}
+  
+
+\subsubsection*{Current Research in This Area}
+  \label{sec:OtherResearch}
+
+Social cognition is being recognized as important for human--machine collaboration; but norms have been largely ignored.  
+In the domain of robot ethics, moral agency is often cited as important for human-robot interaction, but no detailed analysis is available of the 
+cognitive-computational capacities entailed by such agency.  We have begun to delineate what it would take to build a morally competent robot, and it is clear that one of the foundational and necessary competences is having a network of norms~\citep{malle_ieee14}. 
+
+In sociology and experimental economics, the importance of norms has 
+been recognized~\citep{krupka09}, but the focus there is on accounting for 
+cooperation ``against one's rational self-interest."  For cases of 
+collaboration, cooperation is assumed, so insights about the facilitation of 
+cooperation through norms do not answer the central question posed here: 
+how norms operate cognitively and computationally in collaborations.  A 
+sizable set of studies has examined the automatic activation of norms by 
+situation cues---for example, garbage on the floor triggers the ``don't litter" 
+norm~\citep{cialdini91}; the sight of a library triggers the ``be quiet" norm~
+\citep{aarts03}.  But no detailed cognitive model has been offered to account 
+for these and other properties of norms, save for a general gesture toward 
+norms as ``knowledge structures"~\citep{harvey81,aarts03}.  
+
+There are promising directions of distinguishing computationally between agents that have norms as inputs to utility calculations and other agents that have ``internalized" norms  directly guiding action~\citep{andrigh10}.  
+Some insights from machine ethics~\citep{arkin09,anderson11} also highlight the importance of equipping robots with the ability to follow rules and laws.  But so far the approaches have not been able to handle any kind of norm learning and updating; nor are the cognitive models of norm networks sophisticated or psychologically plausible, which entails that the machine has no viable model of the norm networks of their human collaboration partners.  
+
+All in all, then, we currently do not know how to build a robot with norms.  
+ 
+\subsubsection*{Technical Rationale and Approach}
+
+\noindent Human interactions are governed by social and moral
+norms; for human--machine interactions and collaborations to be
+successful, machines must abide by these norms as well. But what does it mean
+to abide by norms?  Simple rule-following machines will not instill
+trust in human collaborators, because they are insensitive to
+variations in context.  Rather, machines must exhibit a norm capacity
+that approximates the human norm capacity, which seems to have such
+unique properties as context sensitivity, hierarchical relations,
+continuous updating, conflict resolution, and so on.  Surprisingly,
+however, research into the cognitive properties of human norm capacity
+has been rather limited. Similarly, but less surprisingly, efforts to
+design and implement even modest norm capacities in computational
+systems have been sparse.
+
+We therefore take a two-pronged approach: We must conduct empirical
+research on how humans learn, represent, activate, and implement
+social and moral norms; and we must design formalisms and algorithms
+that allow machines (especially robots) to learn, represent, activate,
+and implement social and moral norms.  The empirical research on human
+norm capacity plays a dual role in this project: it provides the
+necessary knowledge to build computational {\em models} of human
+norm-guided behavior (so robots can better understand and predict
+human behavior); and it informs and sets the standards for building
+computational {\em mechanisms} of machine norm capacities (so robots
+can take actions that comply with the relevant norms).
+
+%% Show that the path is not totally impossible.  Show that you can get moving.  
+
+The three aims of our project define three sets of tasks that will
+proceed in parallel and mutually influence one another.  In {\bf Task
+  1} we will develop experimental paradigms to investigate how human
+norms are represented and activated in specific contexts.  An
+initial conceptual theory of the major properties of human norm
+representation will be continuously refined and formalized into a
+testable computational model of human norm networks. The experimental
+paradigms will later serve as benchmarks to test the adequacy of any
+machine's norm capacity.
+
+In {\bf Task 2} we will develop formalisms that express the
+theoretical properties of human norm representation, and we will
+investigate how norms can both constrain and be derived from
+decision-theoretic frameworks such as reinforcement learning and
+inverse reinforcement learning.
+
+Finally, in {\bf Task 3} we will investigate how norms can emerge from
+multi-agent interactions in a shared context. We will do so by
+developing computational algorithms that derive effective coordination
+norms from repeated interactions and comparing their performance to
+the performance of human agents in corresponding behavioral
+experiments. This will produce a {\em coordination benchmark} that
+allows other researchers to evaluate their own computational
+algorithms against our baseline algorithms and against human
+performance.
+
+\subsubsection*{Deliverables}
+
+% All: Please check/edit — this is important!
+In outline, the project will have the following deliverables: 
+\vspace{-1.5mm}
+
+\begin{enumerate}[label= \arabic*., leftmargin=*,align=left]
+
+\item {\em Data from novel human experimental research} that demonstrate 
+fundamental principles of how human norms are represented and activated.
+\vspace{-2mm}
+
+\item {\em Systematic experimental paradigms} in which both humans
+  and artificial agents can engage and that thereby provide
+  testbeds for artificial agents to demonstrate their capacity to
+  represent and activate norms in context-appropriate ways. This will
+  result in a {\em computational benchmark} for guiding the
+  construction of more complex computational models of human norm
+  systems.
+\vspace{-2mm}
+
+\item A {\em logical formalism} for norm representations, reflecting the above experimental results. 
+\vspace{-2mm}
+
+\item Algorithms for norm inference and acquisition within frameworks of reinforcement learning and inverse reinforcement learning. 
+\vspace{-2mm}
+
+\item A {\em software infrastructure and algorithms} that enable the
+  emergence and learning of new norms in simulated coordination
+  problems among multiple agents.
+\vspace{-2mm}
+\item {\em Empirical evaluations} of the performance of both humans
+  and machines in such coordination problems, under varying conditions
+  of complexity and uncertainty. This will produce a {\em
+    coordination benchmark}, which will inspire other researchers to
+  build better coordination models.
+
+\end{enumerate}
+
+\noindent We intend to make no proprietary claims about any of the research
+results or software development within the scope of this project.
+\vspace{2mm}
+
+\subsubsection*{Organization Chart for Project Team}
+\vspace{-4mm}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=12.5cm]{OrganizationChart.pdf}
+  \vspace{-1.5mm}
+  \caption{\small Schematic collaborative organization among team
+    members}
+  \label{fig:orgchart}
+\end{figure}
+
+\vspace{-1mm}
+The organization of the research team is highly collaborative.  All
+responsibilities in the workflow involve at least two team members,
+and results from each task will feed back into at least one other task.
+Prime expertise in experiments of human cognition lies with Malle and Austerweil, and the results of these experiments feed into computational models of norm representation and learning, represented by Scheutz and Austerweil's expertise.  Development of theory and logical formalisms are strengths of Scheutz and Malle, and Littman brings unique expertise in developing machine learning algorithms.  The collaboration between Scheutz and Malle on an
+ongoing ONR MURI has already established excellent connections between
+their respective labs, and frequent in-person visits will continue.
+Austerweil and Littman have been collaborating as well for some time
+and co-advise students.  Malle and Austerweil have jointly developed
+the human experiments for this proposal and will co-advise a project
+assistant and a post-doctoral fellow.  All team members will expend
+effort throughout the year.
+
+% Exec summary slide is done
+
+% ______________________________________________________
+% Section III
+% ______________________________________________________
+
+\newpage
+\section*{Section III. Detailed Proposal }
+% The major portion of the proposal should consist of a clear
+% description of the technical approach being proposed. This discussion
+% should provide the technical foundation/justification for pursuing
+% this particular approach/direction and why one could expect it to
+% enable the objectives of the proposal to be met. Offerors should limit
+% the number of pages for this section to 25 pages.
+% \addcontentsline{toc}{section}{\protect\numberline{}Technical Approach and Justification}
+
+% \renewcommand\thesubsection{\arabic{subsection}}
+
+
+\vskip 0.1in
+\noindent {\Large\bf Motivation}
+\vskip 0.1in
+
+\noindent Autonomous robots will soon be expected to participate in
+complex tasks such as joint safety patrols in inner cities,
+collaborative search and rescue operations in unfamiliar and hostile
+environments, or sensitive negotiation missions in foreign
+territories.  Such situations require sophisticated cognitive and
+social capabilities that current machines do not even approximate.
+
+Nonetheless, we must take on the challenge to investigate what those
+capabilities might be and which ones may be most conducive to
+successful collaborations between humans and robots.  As sketched in
+Figure~\ref{fig:visionobjective},
+the broader vision of {\em machines as partners} can be substantially
+advanced by investigating social-cognitive capacities in humans,
+implementing them in autonomous robots, and refining their capacities
+so as to make robots acceptable to humans in collaborative tasks.
+Capacities needed for robots as partners include various {\em
+mechanisms of social cognition} (e.g., recognizing actions in behavior streams; judging intentionality; inferring beliefs, desires, and emotions; see~\citep{malle_tree_2015}) as well as {\em a
+  model} of human social cognition.\footnote{ The robot's model of
+  human social cognition is likely to be more extensive than the
+  robot's own social cognition. That is in part because of engineering
+  challenges with respect to certain mechanisms (e.g., simulation and
+  self-awareness), but also because the robot will not need certain
+  mechanisms (e.g., emotional empathy) but still must recognize that
+  people have such mechanisms and that their behavior is influenced by
+  them.}
+
+But even a machine with such sophisticated mechanisms of social cognition
+and a model of human social cognition would have enormous difficulties
+in predicting and understanding human behavior in social interaction
+and, more importantly, would not be an effective, safe, and
+trustworthy partner for humans.  That is because a fundamental element
+would be missing that uniquely characterizes human social life: {\em
+  the presence and powerful influence of social and moral norms}.  The
+proposed short-term project on norm capacity thus initiates a
+necessary first step toward the broad vision of {\em machines as
+  partners}, promising novel scientific insights into human norm
+capacity (how humans represent and acquire norms) and the development
+of first algorithms that realize {\em norm capacity} in artificial
+agents.
+
+\subsection*{Collaboration and Norms }
+
+\noindent A {\bf collaboration} can be defined as {\em a set of
+  actions coordinated among two or more agents in pursuit of one or
+  more joint goals}.  An agent's pursuit of {\em joint} goals (rather
+than merely individual ones) requires several unique capacities,
+such as social cognition, communication, and shared mental models with
+one's partner.  For example, each partner must be aware of the joint
+goals, which requires self-aware representations (``I am pursuing goal
+{\em G}'') and other-aware representations (``My partner is pursuing
+goal {\em G}''), integrated into a form of collective representation
+(``We are pursuing goal {\em G} together'').  To pursue such joint
+goals, partners must share and update a number of beliefs about the
+situation they are in as well as evaluations of the best ways to
+pursue their joint goals.
+
+An indispensable background to all these capacities is the fact that
+humans share {\em norm systems} that enable, facilitate, and refine
+social interactions.  A working definition of a
+{\bf norm} is the following (see~\citep{bicchieri06}): \vspace{-1mm}
+
+\begin{quote}
+  {\em An instruction to (not) perform a specific or general class of
+    action, whereby a sufficient number of individuals in a community
+    (a) indeed follow this instruction and (b) expect others in the
+    community to follow the instruction}
+\end{quote}
+\label{workdef}
+
+\vspace{-1mm}
+
+By putting such socially distributed constraints on action, norms
+substantially facilitate social cognition and social interaction, and
+thereby enable multi-agent collaborations.  Specifically, norms have at least three benefits.
+
+First, norms increase predictability of other people's behavior. This
+is because any social perceiver can assume that other people will
+abide by norms, which greatly reduces the number of possible actions
+they might perform.  Second, norms provide guidance for a person's own
+action selection, for norms directly tag possible actions as desirable
+or undesirable in the relevant community.  Third, norms improve coordination among
+collaborators.  That is because a collaboration involves many
+requests, agreements, and commitments, which bind the individual to a
+course of action.  A public promise, for example, is a prototypical
+commitment to a norm: The declaration ``I promise {\em X}'' imposes a
+norm on oneself to strive toward {\em X}, which involves others'
+expectations for the person to strive toward {\em X}, the person's
+desire to meet those expectations, and the possible sanctions other
+people may impose if the person fails to achieve {\em X}.
+
+\subsubsection*{Norms for Robots}
+
+\noindent Because norms are indispensable for human social life, and
+because they have so many benefits for individuals in social
+communities, norms are indispensable for robots in human societies as
+well---otherwise people will not perceive robots as suitable partners in {\em
+  effective, safe, and trusting} collaborations.  In fact, whenever
+scientists, designers, or practitioners demand that human--machine
+collaborations have these desired properties, they presuppose a
+complex norm system without making it explicit.  Here is an attempt to
+make it explicit.
+
+{\em Effective} collaborations are ones in which the collaborators'
+joint goals are in fact achieved.  Thus, collaborators must be aware
+of their jointly adopted goals and take actions that advance them.
+Besides many basic capacities that lead to collaboration success
+(e.g., cognitive and material skills, tool availability), successful
+collaborations require a unique tradeoff: to pursue joint goals,
+collaborators must set aside some of their individual goals. Classic
+formulations of game theory pit individual goals and joint goals
+against each other (e.g., the options of ``defect'' vs. ``cooperate'' in the Prisoner's Dilemma game). In ordinary social interactions,
+however, and particularly in voluntary collaborations, people
+prioritize joint goals over individual goals by way of mutual
+commitments to norms, which guide both the specific interaction at
+hand, the collaborators' overarching relationship, and similar types
+of social interactions more generally.
+
+{\em Safe} collaborations are ones in which each partner takes only
+actions that are unlikely to cause harm to the other partner, be it
+physical or psychological.  Safety is an objective concept in that it
+concerns the actual and successful efforts of each partner to limit
+such harm.  Any agent with even a rudimentary norm system will
+represent and abide by the norm to not harm others.
+
+{\em Trusting} collaborations, finally, are ones in which each partner is
+confident that the other partner is committed to the joint goals,
+pursues them with best effort, and supports the partner's welfare,
+especially when that person is in a vulnerable position.  Trust
+is a subjective concept in that it requires not just the partners'
+actual commitment to their joint goals, efforts, and mutual welfare,
+but the felt confidence that the partner holds these commitments.
+Such commitments constitute specific norms that the collaborators
+abide by and expect each other to abide by.
+
+Asimov's famous three laws of robotics~\citep{asimov_1950} can be construed as an
+early attempt to define norms for robots. The extent to which these
+laws have been discussed in popular culture and scholarly work
+attests to a general consensus that robots must obey norms to be safe
+and productive members of society.  For robots to adhere to norms,
+these norms must be defined computationally. However, efforts to
+design and implement formally defined norm systems for robots have
+been rare (but see~\citep{arkin09,scheutz_roman_2015}), so
+current robots have no ability to represent, learn, and employ human
+norms in their behavior.  Without these abilities, however, an
+otherwise autonomous robot will be unable to participate in
+human--machine collaborations, because people do not trust and are
+thus less willing to collaborate with other agents who do not follow
+norms. Human--machine interactions without norm capacity on the
+machine's side will be unnatural, ineffective, and may not only hamper
+the development of trust but lead to team conflict and human harm.
+
+Thus, building effective robotic teammates, and machines as partners
+more generally, critically requires us to develop computational
+mechanisms for social and normal norm processing.  But we can do so
+only if we have substantial knowledge of how human norm systems work,
+for robot norms and their cognitive properties will have to match
+those of humans for the robot to be socially acceptable.  Surprisingly
+little research is available on the cognitive and computational
+properties of human norm systems, so we must make substantial advances
+in the cognitive science of human norms and, in parallel, we must make
+equally substantial advances in designing computational algorithms
+that implement such norms.
+
+
+\subsubsection*{Project Aims}
+
+For the present seedling project, we have three specific aims.
+
+\vspace{-1mm}
+\begin{enumerate}[label=\bfseries Aim \arabic*:, leftmargin=*,align=left]
+
+\item To use novel human experiments to accumulate and formalize
+  innovative scientific knowledge about the properties and underlying
+  processes of the human norm system---in particular, the
+  representation and activation of norms.
+
+\item To develop conceptual and computational formalisms required for
+  representing and learning different types of social and moral norms
+  in artificial agents.
+
+\item To provide proof of concept that norms are learnable by a
+  computational mechanism; develop and evaluate prototype algorithms
+  for norm learning in multi-agent settings.
+\end{enumerate}
+
+
+
+
+\vskip 0.1in
+\noindent {\Large\bf A Framework of Norm Systems}
+\vskip 0.1in
+
+\noindent Until recently, scholars have examined primarily the
+behavioral consequences of human norms and values~\citep{schwartz92, cialdini91}; the
+cognitive underpinnings of this system have remained a black
+box.  We want to illuminate this black box by delineating the
+cognitive structure and operating principles of norms.
+
+To guide these efforts, we rely on an organizing framework that (A)
+defines core concepts, (B) posits four functional components of any
+norm system, and (C) proposes four specific properties of the human
+norm system---properties that an artificial agent must model and
+itself functionally implement. The definitions and functional
+components represent the theoretical and conceptual analysis of the
+scientific problem and are therefore not empirical hypotheses. The
+specific properties of norm systems are empirically testable research
+hypotheses that we will examine in this project.  As a result of these
+tests, concrete guidelines can be developed for how a computational
+architecture must implement norms.
+
+\newpage
+\noindent {\em A.  Defining Core Concepts}
+\label{sec:core}
+\vskip 0.1in
+
+\noindent First, we introduce a general logical form of  norms as
+consisting of three elements: a {\em context precondition}, a {\em
+  deontic operator} (``obligatory'', ``forbidden'', or ``permitted''),
+and an argument that can be either an {\em action} or a {\em state}.
+
+Specifically, let $C$ be a context expression in a given formal
+language $\mathcal{L}$, and let {\bf O}, {\bf F}, and {\bf P} denote
+the modal operators, respectively, for ``obligatory'', ``forbidden'',
+and ``permissable'' (e.g., {\bf O}$\phi$ means ``it is obligatory that
+$\phi$'' and {\bf O}$\phi \leftrightarrow${\bf
+  F}$\neg\phi \leftrightarrow\neg${\bf P}$\neg\phi$).  Then we can provide
+a general schema for capturing a simple norm $\mathcal{N}$ as follows ($\phi$ here
+denotes either an action $\alpha$ or a state $\sigma$):\footnote{Note
+  that obligations, prohibitions, and permissions to maintain or bring
+  about a {\em state} are a ``short-hand'' for referring to {\em all the
+    possible actions} the agent is capable of performing so as to (not) 
+    bring about the specified state.  The reason for
+  this short-hand is that in some cases it is easier to give
+  state-based descriptions of what should or should not be the case
+  rather than a potentially infinite class of action-based descriptions.  In
+  philosophy, the phrase ``see to it that $\phi$'' is typically used to
+  cover all actions one could perform to make $\phi$ true and {\bf
+    O}(see-to-it-that)$\phi$ is then used to convey the obligation to
+  perform whatever action will make $\phi$ true (the same goes for
+  {\bf F} and {\bf P}).  An obligation for ``a clean room," for example, is really
+  an obligation to perform whatever actions are possible (and permissable)
+  to bring about the state of the room being clear.  }
+  
+\vskip 0.1in
+$\mathcal{N}$ = $C \rightarrow$($\neg$)\{{\bf O},{\bf P},{\bf F}\}\{$\phi$\}
+\vskip 0.1in
+
+The deontic operators themselves can be analyzed cognitively by tying
+them to the earlier working definition of {\em norm} (\pageref{workdef}).  To
+cognitively represent something as {\em obligatory} ({\em forbidden}),
+three conditions must be met:
+\vspace{-1mm}
+
+\begin{enumerate}[label= (\roman*), leftmargin=*,align=left]
+\vspace{-1mm}
+
+\item The agent represents an instruction to (not) perform a specific
+  or general class of action. 
+\vspace{-1mm}
+
+\item The agent believes that a sufficient\footnote{ The threshold of
+    sufficiency will typically be a majority but may vary by norm type
+    and community.}  number of individuals in the reference community
+  in fact (do not) follow the instruction.
+\vspace{-1mm}
+
+\item The agent believes that a sufficient number of individuals in
+  the reference community expects others in the community to (not)
+  follow the instruction.\footnote{ This is the cognitive definition
+    of a norm, and it allows for an agent to hold an illusory
+    norm---when all three conditions are met but community members do
+    not in fact follow the instruction and do not in fact expect
+    others to follow the instruction.  If we want to model and predict
+    the agent's behavior, however, we can still consider the person to
+    follow a perceived norm~\citep{aarts03}.}
+
+\end{enumerate}
+\vspace{-1mm}
+
+Conditions (ii) and (iii) are critical.  During the learning of a new
+norm and during continued application of a familiar norm, the agent
+must be able to update beliefs about what community members do and
+what they expect. If the agent notices that few community members
+follow the instruction in question, then the instruction is so weak
+that it can no longer be considered a norm.  And if
+the agent notices that few community members expect others to follow
+the instruction, the instruction becomes optional and also loses its
+character as a norm.
+
+These features distinguish norms from goals and habits, because the
+latter can hold even when individuals completely disregard other
+community members' actions or expectations.  Consider the action of
+parking one's car nose-in (in parking lots with spots like these: / /
+/ /).  If a majority of people perform this action but nobody expects
+others to do it, the action is a widely prevalent habit, not governed
+by a norm.  If very few people perform the action even though many
+expect others to do so, no social norm exists (and many people are
+hypocritical).  If a particular agent performs the action, expects
+others to do it, but knows that few others share that expectation (let
+alone perform the behavior), the particular agent acts on a goal (and
+a hope for others to share it) but does not act according to a social
+norm.
+ 
+The notion of {\em context} must also be analyzed
+further. Pretheoretically, context is the restricted domain of
+application of a given norm---the conditions under which the norm
+applies. The exact role of context in cognitive representations of
+norms is a critical research question we hope to answer in Task 1
+described below.
+ 
+% Saving this for later.  
+% To set the stage, we can sketch two
+% competing models.  According to the first, context is a latent
+% construct that, when activated, triggers a bundle of interconnected
+% norms.  Context cannot be directly observed but people have to infer
+% it from features of the given environment, such as features of the
+% agents in question (social category, rank, goal, means), features of
+% space and location (e.g., indoor/outdoor, private/public,
+% nature/culture), temporal features (e.g., in the morning, before
+% serving food), or social features (e.g., formal/informal,
+% individual/institutional).  A particular context may then be
+% identifiable as a weighted combination of such features, and norms
+% that share sufficiently similar combinations of features will be
+% triggered as a bundle.  During learning and through repeated
+% activation, these norms develop direct associative connections (in
+% learning theory, corresponding to R-R connections).
+
+% Alternatively we may consider a minimalist model of context.
+% According to this model, contexts are nothing but co-occurring
+% objects in the environment (e.g., the presence of a book), and each
+% object triggers its own norm or norms, making norms "properties" of
+% the object concepts.  To the extent that objects co-occur in
+% reality, the norms that they trigger will also be co-activated, but
+% not because of special connections among the norms but because of
+% their simultaneous independent activation by their respective
+% objects.  (For more detail, see Task 1.)
+
+% We may not need the following for now.  It may become important
+% later on.  A final core concept is that of {\em perspective}. Human
+% agents, and capable machine agents, can process norms from two
+% perspectives: (1) {\bf actor}: the agent considers norms when
+% planning or evaluating its own actions; (2) {\bf observer}: the
+% agent observes other agents' behaviors and either learns their norms
+% or judges their behavior in light of already existing
+% norms.
+
+% For our initial theoretical model, most claims should hold for both
+% perspectives.  But implementing the model into a computational
+% architecture requires careful separation of the actor and observer
+% perspectives.
+
+\vskip 0.1in
+\noindent {\em B.  Functional Components of Norm Systems}
+\vskip 0.1in
+
+\noindent Any norm system, natural or artificial, must meet certain
+functional requirements (see Figure~\ref{fig:fourfunctional}, left panel). Norms
+must be {\em learnable} from a combination of observation, inference,
+and verbal instructions.  The system must {\em store and retrieve} norms in
+an organized manner such that relevant norms are {\em activated} as
+they are needed.  Finally, the system must be able to {\em update} its
+norm representations and their organization.  Any model of norms must answer how
+these functional components are instantiated cognitively and
+computationally.
+\vskip 0.1in
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=15cm]{NewFigure3.pdf}
+ \caption{\small Four functional components of any norm system and the human norm system's four properties that implement those components}
+  \label{fig:fourfunctional}
+
+  \end{figure}
+
+\vskip 0.1in
+\noindent {\em C.  Specific Properties of the Human Norm System}
+\vskip 0.1in
+
+\noindent Our initial model of the human norm system consists of four
+postulated properties that implement the four functional components
+of norms (Figure~\ref{fig:fourfunctional}, right panel). The first property of
+human norms is that they are acquired through numerous {\em
+  flexible learning methods}, including conditioning, imitation and habit formation,
+observation and inference, and verbal instruction.  However, despite the variety of inputs  (e.g., visual, linguistic) and engaged processes (e.g., memory, reasoning), the representational format of norms is likely to be general---because a norm, once learned by one method, must be retrievable by any method.    
+
+% After initial norm systems are learned, the process of learning future norm systems will be influenced by initial norm systems. One prediction following from this postulate is that salient features that vary between initial norm systems are more likely to be more malleable than features shared by most norm systems (e.g., how to greet a guest vs.\ whether homicide is acceptable).
+
+% \begin{figure}[h!] \centering \includegraphics[width=9cm]{fourproperties.pdf} \caption{\small Specific properties of the human norm system } \label{fig:fourproperties}\end{figure}
+
+The second property is that norm systems are encoded using {\em
+ structured representations}, systematically organized in at least three ways: 
+ vertically (as hierarchical layers of abstraction, ranging
+from action rules to general values), horizontally (as bundles of
+covarying norms tied together by the contexts in which they apply),
+and temporally (as ``scripts'' \citep{schank77} that prescribe
+normative action sequences in a particular context, such as in scripts
+of a restaurant visit, greeting a friend, or airplane boarding). Each
+aspect of the structure of norm systems will need to be investigated
+using human experiments and then formalized into an evolving
+computational framework. For example, we expect that similar to the
+horizontal organization of conceptual representations \citep{rosch76}, the horizontal organization of norm
+systems will follow a basic-level structure (e.g., so that most sports
+fans who are asked about baseball norms such as pre-game rituals will
+refer to norms for general baseball games rather than specific norms
+applicable to Red Sox games).
+
+As a third property, we suggest that {\em specific contexts rapidly
+activate norms} as connected bundles. As introduced above, each norm
+has one or more preconditions, which correspond to contexts in which
+the norm applies or variants of contexts in which the norm is
+specifically suspended. When any of these contexts are detected, they
+rapidly activate the norms for which they are a precondition.  Thus,
+when norms share at least one precondition (typically established
+during learning) they are activated together as a ``bundle''---that
+is, there are reliable covariations among sets of norms.
+
+% During learning and through repeated activation, these norms develop
+% direct associative connections (in learning theory, corresponding to
+% R-R connections).
+
+However, there are at least two different models of how such
+covariation can come about.  In the {\em directly-connected} model,
+norms are separate representational nodes with ``connection weights''
+between them, indicating the strength of association (see~\cite{harvey81}).  Contexts then
+activate networks of norms that, through learning and repeated
+activation, have strong interconnections.  Alternatively, according to
+the {\em indirectly-connected} model, features of contexts (e.g.,
+objects in a scene) could independently activate norms as some of
+their ``properties'' and sets of norms would then co-emerge as bundles
+solely because their triggering features typically co-occur, not
+because of any direct connection among the norms themselves.  For
+example, holding the fork a certain way and holding the knife a
+certain way while eating at the table may be a connected pair of norms
+that is activated as a bundle by the sight of a set table;
+alternatively, the fork may activate its normative use and the knife
+may activate its normative use and the two norms are co-activated
+merely because the knife and the fork are both present.
+
+Finally, the fourth property suggests that this system of organized
+norms is {\em continuously updated}, for example, when a new norm is
+learned or a new context is added to a previously learned norm---that is,
+a precondition is added determining when the norm applies or is
+suspended.  Such a change would immediately change the co-occurrence
+likelihoods among norms because these likelihoods are a direct function of the number of shared preconditions between norms.
+
+The four properties are related to one another in important
+ways. First, because norms are stored in context-conditioned ways,
+features of a specific context activate the {\em relevant} (and not
+all possible) norms. Second, because norms are organized
+hierarchically, both invariance and variance across context can be
+represented in the same system.  Equivalence classes (invariance) at
+one level of the hierarchy can connect to distinctions (variance) at a
+next level (down) of the hierarchy. (The hierarchy also accommodates
+more abstract concepts of {\em values} and ethical {\em principles}.)
+
+Any machine system that has a model of norm-guided human behavior must incorporate these four system properties into its model in order to accurately predict human behavior. For example, the system must know that, in a given community, a specific context $C$will rapidly activate, in virtually all community members, a covarying set of norms $N$.  In addition, any machine system
+that is itself norm-guided must incorporate these properties because humans
+will expect robots to have them and would not trust an agent that operates without them.
+
+
+% ==================== Statement of Work  =====================
+\vskip 0.1in
+\noindent {\Large\bf Statement of Work}
+\vskip 0.1in
+
+\noindent In this 9-month project (with a possible 9-month follow-up
+project), we will provide the empirical and formal foundations for
+autonomous norm-learning agents that can acquire the normative
+structure of a social environment from observation of their own and
+other agents' behaviors.
+
+We propose to pursue three sets of parallel tasks in the first 9
+months of the project: In {\bf Task 1} we will develop systematic
+experimental paradigms to investigate how humans represent and
+activate norms in response to contexts; in {\bf Task 2} we will
+investigate different representational formats for norms and how these
+interact with policy-based representations used in utility-theoretic
+learning and decision-making frameworks (such as reinforcement
+learning and inverse reinforcement learning); and in {\bf Task 3} we
+will investigate how norms can be learned in multi-agent coordination
+problems---involving humans, machines, or both.
+
+% More on B. Description of the results, products, transferable
+% technology, and expected technology transfer path ? to the extent
+% applicable
+
+% Clearly identify any tasks/subtasks (prime or subawarded) that will be accomplished on-campus at a university.
+% Identification of the primary organization responsible for task execution (prime, sub, team member, by name, etc.);
+% The completion criteria for each task/activity - a product, event or milestone that defines its completion;
+% Define all deliverables (reporting, data, reports, software, etc.) to be provided to the Government in support of the proposed research tasks/activities; and
+
+
+\vskip 0.1in
+\noindent {\large\bf Task 1: Experimental Studies of Human Norm Representation}
+\label{sec:task1}
+\vskip 0.1in
+
+\noindent {\em Primary performers: Malle, Austerweil (Brown University).}
+
+\subsection*{First Phase (Months 1-9)}
+
+
+% Weave in comparison with other ongoing research indicating advantages and disadvantages of the proposed effort.
+
+%\vskip 0.1in \noindent {\bf Task 1.1}: {\em To theoretically ground our experiments we will refine the above model of properties of the human norm system by integrating research from classical learning theory (context conditioning) and sociological norm theories.} 
+
+Our work begins with an examination of a first fundamental property of
+human norm networks---the structured organization of norms both
+vertically (as hierarchical layers of abstraction) and horizontally
+(as bundles of covarying norms linked together by contexts).
+
+\vskip 0.1in
+\noindent {\bf Task 1.1}: {\em Building an empirical benchmark:
+  Designing and implementing an experimental paradigm testing the
+  vertical and horizontal structure of norm networks} 
+ \vspace{1mm}
+
+\noindent We will examine this structural organization of norms by
+developing a variant of the semantic fluency task.  In the original
+form of the task \citep{bousfield44}, participants are given a
+particular category (e.g., ``animals'') and asked to recall all
+instances of the category (e.g.,``cat,'' ``dog,'' ``cow'').  Research
+has consistently found that people recall such instances in clusters
+of subcategories (e.g., pet animals, farm animals, wild animals), with
+fast access times for instances within a given cluster and delayed
+access times when switching from one cluster to the next
+\citep{troyer97}. 
+% In fact, impaired performance on such tasks is diagnostic of neurological disorders such as Alzheimer's dementia \citep{troster89}.  
+These clusterings and patterns of access times are
+taken to reflect the representational organization of the semantic
+network in the brain. Fascinatingly, human performance on these tasks
+mirrors optimal foraging \citep{charnov78}: People switch from a
+current cluster to a new cluster when the time taken to retrieve the
+next category member from the current cluster increases above the
+overall average time to retrieve an item from the category
+\citep{hills12}.
+
+% Although one might suppose a complex search process would be necessary to 
+% exhibit such behavior, we have found that the clusterings and patterns of access 
+% times are mimicked by a simple process on a standard structured representation: a 
+% random walk over a semantic network \citep{abbott15}.
+
+Under the theoretical assumption that norm networks in the brain are
+represented in similarly structured ways as are semantic category
+networks, we can adapt this experimental paradigm to identify the
+representational organization of norm networks---something that, to
+our knowledge, has never been done before.
+
+Participants will be presented with a variety of different contexts
+that range from very broad (e.g., ``Think about married life'') to
+very specific (e.g., ``Think about driving your friend to the
+airport'').  After introducing participants to each context, we will
+probe their norm networks by asking either (a) ``List everything that
+one is \emph{obligated} to do here''; (b) ``List everything that one
+is \emph{forbidden} from doing here'', or (c) ``List everything that
+one \emph{is permitted} to do here''. For each context, people are
+asked only one probe question, but across contexts, they answer each
+probe question several times.
+
+%JLA: Should we list the contexts we are thinking of starting with?  ? a few more  examples would be good.  perhaps they could already vary in the kinds of features we think might be most salient)  
+
+In light of our theoretical framework, we can develop several
+predictions. First, we predict that people will recall norms in
+clusters of subcontexts (e.g., for ``marriage'', clusters might be
+``wedding activities'', ``house chores'', ``relationships with
+others''); second, we predict that recall rates and access times will
+cluster in a manner consistent with optimal foraging theory; and
+third, that norms of obligation and prohibition will have faster
+access times than permissions, because the latter are a residual open
+class.  (If confirmed, one implication of the last prediction would be
+that the deontic logic of norms should be founded on the operators of
+``Obligated'' and ``Forbidden'', with ``Permitted'' being a derived
+operator.)  A fourth prediction is that in norm networks (more so than
+in semantic networks), structural organization will also occur in two
+additional ways: {\em vertically} (relating concrete rules to more
+general norms or abstract values) and {\em temporally} (recalling
+actions in chains of normative scripts---e.g., the context ``on a
+cruise ship'' will elicit norms about embarking on the cruise before
+norms about evening activities).
+
+We will test these hypotheses by recording people's written and spoken
+responses and analyzing their order patterns and production times.
+Independent groups of participants will make (a) similarity judgments
+on the produced norms (presented in randomized pairs) to yield a
+measure of clustering and subcontexts; (b) inclusion judgments (e.g.,
+``Is {\em X} a way to fulfill {\em Y}?'') to yield a measure of
+hierarchical ordering; and (c) temporal proximity and sequence
+judgments (e.g., ``Does {\em X} occur right after {\em Y}?'') in order
+to yield a measure of temporal organization.
+
+Products resulting from this task will be: a reliable, generalizable
+experimental paradigm; experimental results providing scientific
+insights into human norm representation and activation; database of
+results that provides norm distributions over a broad range of
+contexts; catalogue of activation patterns that provide empirical
+benchmarks for {\bf Task 1.2}.
+
+\vskip 0.1in
+\noindent {\bf Task 1.2}: {\em Building a computational benchmark:
+  Establishing a baseline model of human norm system representations}
+\vspace{1mm}
+
+\noindent Complex behavior is typically taken as evidence that complex
+processes are producing the behavior. Although one might suppose a
+complex search process would be necessary to exhibit optimal foraging
+behavior in semantic memory, we have found that the clusterings and
+patterns of access times are mimicked by a simple process on a
+standard structured representation: a random walk over a semantic
+network \citep{abbott15}. Adapted to norms, can a simple process
+(random walks) on a structured representation (a semantic network with
+attached ``norm properties'') pass the proposed empirical benchmark?
+This random-walk model will serve as a baseline for alternative, more
+complex models, and it will provide specific quantitative benchmarks,
+such as: How probable are human norm responses under the norm model?
+How many inappropriate norms are retrieved and appropriate norms are
+not retrieved in each context?
+
+More formally, a mathematical network $G$ contains two components:
+$V$, a set of nodes (or vertices), and $E$, a set of edges that
+connect nodes together. Typically, $E$ is represented as a matrix
+whose rows and columns correspond to the nodes of the network and an
+element's value ($E_{ij} \geq 0$) denotes whether the two nodes are
+connected. $E_{ij}=0$ encodes that there is no connection from node
+$i$ to node $j$.  $E_{ij} > 0$ encodes that there is a connection, and
+larger values denote stronger connections.  A random walk on a network
+starts at one node (given by some initial probability distribution
+${\bf p}_0$) and at each time step, chooses an edge to ``walk over''
+with probability proportional to each edge's weight. Thus, the edge
+matrix defines the transition matrix $P$ of a Markov chain
+${\bf x} = (x_1, x_2, \ldots),$ where $P_{ij} = E_{ij}/\sum_k{E_{kj}}$
+is the probability of moving to node $i$ from node $j$. When a random
+walk visits a node, it retrieves whatever information is associated
+with it (e.g., words that label the node in the case of a semantic
+network).
+
+To formulate a baseline norm network model, we will extend a standard
+network by attaching norms to nodes as additional properties. We will
+do so by aligning the context prompts and responses from the results
+of {\bf Task 1.1} to a semantic network (one constructed from the USF
+free association data set \citep{nelson04} following
+\citep{abbott15}). For example, if given the marriage context with the
+prompt to list the obligations of a husband and the participant says
+``has to wash dishes'', the node corresponding to the label ``dishes''
+will get attached to it an ``obligation property'' with value
+``husband has to wash'' and context ``marriage''. This extends our
+original mathematical network $G$ to now contain a third component
+$A: V \rightarrow F$, which is a map from each node to its set of
+properties. A norm associated with each node will be in this set of
+properties (as will any other properties, such as ``can fly'' for the
+node ``robin'').
+
+With the norms added as properties attached to nodes in the semantic
+network, how will we evaluate the model on the {\em empirical
+  benchmark}? Rather than just using the raw edge values as the basis
+for defining the transition matrix of the Markov chain (which defines
+the random walk), we will integrate the raw edge values with a
+probability distribution defined by the distance between the current
+node and all of the nodes connected to the current node. Although we
+will experiment with different possibilities, one straightforward
+method would be
+
+\begin{equation}
+P_{ij} = \frac{\delta E_{ij} + (1-\delta) \exp \left\{ -d(a(i),a(j)) \right\}}{\sum_k{ \delta 
+E_{kj} + (1-\delta) \exp \left\{ -d(a(k),a(j)) \right\} }}, \label{eq:ranWalkWFeats}
+\end{equation}
+\vskip 1mm
+ 
+\noindent where $0 \leq \delta \leq 1$ weights how important
+similarity between two nodes is and
+$d: F \times F \rightarrow \mathbb{R}^+$ measures the distance between
+two nodes by comparing their properties in some manner ($\mathbb{R}^+$
+is the set of non-negative real numbers). The distance function might
+be as simple as counting the number of shared properties or more
+complex, such as including weights for each property that depend on
+the current context and/or taking into account partial matching of the
+values of two properties. The random walk then starts at a node
+defined by its initial distribution (defined to be uniform over all
+nodes consistent with the current context) and transitions through the
+network according to Equation \ref{eq:ranWalkWFeats}.  The walk then
+retrieves the properties associated with the node it moves to
+(outputting any norms it comes across) and then repeats this process
+indefinitely.
+
+Note that it is plausible (in fact likely) that simply adding norms as
+extra properties attached to nodes in a semantic network (the {\em
+  indirectly-connected} model) will be too impoverished a
+representation to capture the empirically derived network data in
+1.1. There are several possibilities for enriching the
+representation. Norms may need to be nodes themselves in the network,
+and explicit relations between norms (whether as properties or nodes)
+may need to be encoded (as in the {\em directly-connected} model). We
+expect that the enrichments will be informed by the results of {\bf
+  Task 2} (the exploration of representational formats for norms used
+by artificial agents). Regardless, this is beyond the scope of phase
+1, which serves to set up a baseline benchmark that will aid the
+development of future models, which would warrant added complexity if
+this complexity allows the model to ``beat'' this {\em computational
+  benchmark}.
+
+\vskip 0.1in
+\noindent {\bf Task 1.3}: {\em Developing a scene inference paradigm
+  to examine the hypothesis that norms are activated as bundles with
+  shared context preconditions. }  \vspace{1mm}
+
+\noindent Participants will be presented with photos of particular
+contexts, at varying levels of generality (e.g., battlefield, a
+doctor's office). They will again be asked what is obligatory,
+prohibited, or permissible in this scene.  We will record their
+responses and develop descriptive statistical models of norm frequency
+distributions and conditional probability distributions between norms.
+In addition, we will ask a separate group of participants to make
+judgments about the first group's norms with respect to vertical
+(hierarchical) and temporal organization.
+
+In light of our theoretical model, we predict, first, that each
+context activates an organized bundle of norms structured in
+horizontal and temporal ways. Second, we predict there should be less
+vertical organization because abstract values are unlikely to be
+important in visually perceived scenes where {\em acting} in
+norm-appropriate ways is immediately important.  This favoring of
+action-oriented vs. value-oriented norms should be even stronger when
+people are not just shown photos but are in the actual physical
+context and/or when they are given a goal for that context~\citep{aarts03}.
+
+%JLA: I actually think the citation in this paragraph is one of the original rosch papers (there were a few fairly incredible papers)
+
+Interesting variants of this basic paradigm can refine our theoretical
+conclusions.  First, we may vary presentation times from a comfortable
+5 s to a challenging 0.5 s in order to assess whether norms are
+organized in a ``concentric'' way, from a core set of prototypical
+(consensually mentioned) norms to a set of peripheral (more
+idiosyncratic) norms.  Such an organization (also found for many
+concepts; \citep{rips73,smith78}) would predict activation of core norms under
+short presentation times and activation of peripheral norms only under
+longer presentation times.  A model according to which norms are
+activated ``locally'', by specific features or objects in scene, would
+instead predict that norms will be activated as a function of which
+part of the picture people happened to glance at in the 0.5 seconds of
+presentation.
+
+We can also manipulate the scene photos themselves in order to
+differentiate between the two models of norm covariation described
+earlier.  If norms within a context-specific bundle are directly
+connected to one another (the {\em directly-connected} model), then
+even an impoverished scene photo (e.g., one that has several areas
+covered up) would activate the whole bundle, because even a few
+directly activated norms would themselves activate other norms.
+However, if norms are directly activated only by specific features or
+objects in a scene (the {\em indirectly-connected} model), then we
+would expect impoverished scene photos to elicit ``incomplete" norm
+bundles.  The opposite effect should hold when we embed a foreign
+object into a scene (e.g., a baseball in a fine-dining restaurant).
+According to the {\em directly-connected} model of norms, a foreign
+object would have little effect on the elicited bundle of norms,
+because once an overall context triggers its bundle of norms, any
+effect of specific features would be drowned out (or at least be
+notably delayed).  Not so for the {\em indirectly-connected} model,
+according to which norms are activated individually by specific
+features/objects, in which case the baseball would have a marked
+effect on the set of activated norms, because people cannot help but
+bring to mind whatever one may (or may not) do with a baseball, even
+in a fine-dining restaurant.
+
+
+% [The original 1.4 is just continuing the theme of two models of covarying norms; we have better tests above, and this one is focused entirely on the idea of salient features, which I am beginning to doubt is viable.  So I am blanking it out.] 
+% {\bf Task 1.4}: We will examine a context switch paradigm to examine the hypothesis that contexts are distinguished by salient features that are widely shared by people. 
+% In this paradigm, we introduce a starting context (either verbally or pictorially) and ask the familiar question of either what is obligatory, prohibited, or permissible.  Then we randomly select one of the norms and ask ``What would have to change" (deliberately vaguely formulated) such that this norm would no longer apply.  For example, in an American marriage context, for the norm of staying faithful to one another, one change could be the husband sleeping with another person (note that this may not be the case in other marriage contexts, e.g., polygamous marriages in Saudi Arabia). Then we select a second norm and ask the same context-change question.  This induced context-change is repeated for a set of other contexts.  Across participants we will then collect the aspects of contexts that were changed and derive consensual features of context differentiation(e.g., geographic location, rank of person, time of day), which could vary by the type of norm (obligation, prohibition).  
+
+% In a subsequent study, we will manipulate these derived salient features to show that they indeed systematically change the applicability of norms. We will also compare context-matching features(e.g., feature1 was derived from context1 and is manipulated in context1) with context-mismatching features (e.g., feature1 was derived from context1 but is manipulated in context2).  This manipulation can reveal to what extent salient features have different levels of impact for different contexts or have consistent levels of impact across contexts. {\bf TODO:} Insert a good example. JLA is having trouble as most he's come up with, the answer would be obvious (e.g., a Saudi couple moved to America or paying at the end of a meal in a restaurant vs. at a colleague's house -- unless your friend tells you the cost of the ingredients).
+
+\subsection*{Second Phase (Months  10-18)}
+
+Once we have gathered systematic insight into the representational
+organization and activation patterns of norms, we will be able to
+design subsequent studies on how humans learn norms and update their
+norm network.  Building on the identified organizational principles of
+norm representations, we will develop experimental paradigms that
+tackle the dynamic information processing during novel norm learning.
+
+In an {\em observation learning paradigm}, participants will observe
+interactions among multiple agents from an unfamiliar culture.  In an
+initial set of studies we will show people interactions in formal
+mixed-motive games, followed by studies that display more complex
+natural interactions such as engaging at a dinner party.  In each
+setting, participants will need to infer both the norms prevalent in
+this context and each individual agent's goals.  This is a challenging
+inference problem.  A given agent's actions can be explained either by
+individual interest (``she wants this'') or by collective norms
+(``that's what people are expected to do here''), or both; and the
+absence of certain actions may be explained by general lack of
+interest (``nobody wants this'') or by a norm of prohibition (``this
+is not permitted here'').
+% [I see a problem with this example.  It's not clear why one would infer that this is a norm rather than a wide-spread desire in this community.  "However, if one observes multiple people do a similar  action that is not a norm in one's own culture (e.g,, ``washing one's hands when entering a house''), it becomes increasingly likely that this is a norm and not just a  characteristic of an individual (e.g., ``Jane washed her hands because she is a  hypochondriac'').]  
+There is a sizable literature in social psychology on how people
+resolve similar kinds of inference problems about personality
+characteristics~\citep{jones65,kelley67}, and we will build on
+this literature when examining how people make inferences about norms.
+
+In increasingly complex variants of the observation learning paradigm,
+participants will gather information over extended
+time. Placing participants in immersive virtual environments
+(e.g., Second Life or adapted games) will allow us to
+systematically manipulate context features (e.g., agent rank, game
+type, time of day) and therefore assess people's ability to learn
+context-varying norms.  We will also be able present other agents'
+moral sanctions of a given agent's norm violations and therefore assess
+people's ability to extract the importance of norms from the intensity
+(or prevalence) of sanctioning behavior.  Both for young
+children and artificial agents, this is likely to be a critical piece of
+information because it helps distinguish mere conventions and
+etiquette (mild if any sanctions) from serious moral norms (serious
+sanctions, even by bystanders).
+
+\vskip 0.1in
+\noindent {\large\bf Task 2: Reinforcement-based Norm Learning from
+  Introspection \\and Observation}
+\vskip 0.1in
+
+\noindent {\em Primary performers: Scheutz (subaward to Tufts University), in collaboration with Malle, Littman (Brown University).}
+\vskip 0.1in
+
+\noindent We will start with the general logical form of norms described in an earlier section (p. ~\pageref{sec:core}):
+
+\vskip 0.1in
+$C \rightarrow$($\neg$)\{{\bf O},{\bf P},{\bf F}\}\{$\alpha$,$\sigma$\}
+\vskip 0.1in
+
+\noindent and explore different levels of context descriptions required
+to capture different levels of norms and their specificity.  Our work
+will be guided by the empirical experiments in {\bf Task 1}, especially by the
+results from the comparison between the {\em directly-connected} and the {\em indirectly-connected} model of norm networks.  These results will clarify to what extent simultaneously activated norms are activated simply because their context descriptions
+share properties (e.g., subformulas or formulas implied by
+subformulas) or because they share direct associative connections.  If the latter ({\em direct-connection}) model is true, then the explicit connection weights between norms must be
+explicitly represented in the formalism---for example, as additions to context representations.
+
+\subsection*{First Phase (Months 1-9): Unsupervised norm learning}
+
+\noindent Among the necessary representational vehicles required for
+integrating norm processing into a cognitive robotic architecture in
+the future are at the very least the following: (1) a formal logical
+language (possibly augmented by probabilistic representations, e.g.,
+as in~\citep{nunzeetal13}), (2) deontic modal operators (such as
+``obligatory'', ``forbidden'', ``permissible'', etc.), (3) predicates
+for developing structured state representations of task-based and
+environmental states, and (4) modal operators or predicates for
+capturing mental states of human and non-human agents.
+
+\vskip 0.05in
+\noindent{\bf Task 2.1}: {\em Investigate different logical forms of norm
+  representations.} 
+  \vskip 0.05in
+  
+\noindent  Norm representations must both be abstract enough to be independent of
+  the perceptual modality used to detect that the
+  precondition is satisfied (``norm applicability detection'') and
+  concrete enough to be useful for the agent's decision making and
+  action execution (``norm application'').  
+  
+ The outcome of this
+  subtask will be a set of different norm representations together
+  with an analysis of their advantages and disadvantages for different
+  aspects of norm processing.  
+
+Given formal norm representation schemes, the {\em online norm
+  learning problem} can be formulated as follows: given a context or
+set of contexts together with observations or instructions of
+permissible or obligatory behaviors or states of affairs, derive the
+norm scheme representations (e.g., the above rule-like
+representations) such that the scheme can be integrated into an
+agent's decision-making and action-execution components (and thus
+immediately be used during action execution).
+
+For the development of our basic ``norm learning agent,'' we consider
+agents within a reinforcement learning (RL) framework where the
+learner has {\em rich explicit logical state representations} for each
+state $\sigma \in \mathcal{L}$ in the set of possible states instead
+of the typical {\em atomic states}.  An example of such a
+representation would be:
+
+\vskip 0.1in
+\noindent $agent(a_1) \land agent(a_2) \land at(a_1,l) \land at(a_2,l) \land
+higherrank(a_1,a_2) \land speaking(a_1) \land indoor(l) \land
+time(noon)$,
+\vskip 0.1in
+
+\noindent which says that in this state there are two co-located
+agents in an indoor location at noon, one of which is speaking and of
+higher rank than the other agent.
+
+Given such an agent together with it's $Q$-function and action policy
+$\pi$, we will develop algorithms that can extract the normative
+structure underlying the agent's (learned) action policy $\pi$.
+Specifically, we will consider equivalence classes of such rich state
+descriptions $[\sigma]_\pi$ with respect to all states in the agent's
+current policy $\pi$ such that the formal state descriptions have a {\em relevant aspect} in common (e.g., as expressed by a subformula or by a
+set of commonly implied formulas).  In the above example, the relevant
+aspect might be that two agents of different rank are co-located and
+the high-rank agent is speaking.
+
+\vskip 0.05in
+\noindent{\bf Task 2.2}: {\em Investigate different ways of performing
+  state abstractions.}
+  \vskip 0.05in
+    
+\noindent Developing successful state abstraction algorithms requires addressing  what constitutes those ``relevant aspects" that formal state descriptions have in common.  It also requires exploring to what extent
+  logical or probabilistic inference should be used to determine such
+  equivalent states (as the state description per se might not always
+  reveal the similarity or identity of the underlying logical
+  structure). 
+  
+  The outcome of this subtask will be a set of different
+  strategies for performing state abstractions across different sets
+  of states that can yield meaningful normative principles.  
+
+In a next step, we will determine whether all states in such a state
+equivalence class share the highest utility action based on the
+agent's current policy $\pi$, i.e., whether there is an action
+$\alpha^*$ such that $\alpha^* = \pi(\sigma)$ for all
+$\sigma \in [\sigma_\pi]$.  For example, it may turn out that in all
+states where another higher-ranked agent is talking, the best action
+for the RL agent is to listen, in which case the RL agent can extract
+the following rule and thus obligation:
+
+\vskip 0.1in
+\noindent $agent(a_1) \land agent(a_2) \land at(a_1,l) \land at(a_2,l) \land
+higherrank(a_1,a_2) \land speaking(a_1)$ 
+
+$\rightarrow$ {\bf
+  O}$listen(a_2,a_1)$
+\vskip 0.1in
+
+Similarly, in case not all actions are the same, it is still possible
+that all actions lead to the same ``type of state''.  Hence, we can
+examine whether the best actions recommended by the RL agent's policy
+$\pi$ for all states sigma $\sigma \in [\sigma_\pi]$ end up in another
+equivalence class $[\sigma'_\pi]$, in which case, regardless of the
+action, the agent should then make such subsequent states (e.g.,
+$know(a_2,said(a_1))$) instead of the actions leading to them
+obligatory:
+
+\vskip 0.1in
+\noindent $agent(a_1) \land agent(a_2) \land at(a_1,l) \land at(a_2,l) \land
+higherrank(a_1,a_2) \land speaking(a_1)$
+
+$\rightarrow${\bf  O}$know(a_2,said(a_1))$
+\vskip 0.1in
+
+Note that in both cases we extract rules that generalize the
+social/moral principle to states outside the agent's policy.  This
+generalization, in turn, can be useful for the agent in refining its
+policy (e.g., if it has not attempted all actions in a known state)
+and speed up learning (e.g., for states it has not visited before at
+all or only visited infrequently).
+
+\vskip 0.05in
+\noindent{\bf Task 2.3}: {\em Investigate when state generalizations
+  (outside the agent's policy) are appropriate and whether we can
+  still reasonably extract such principles even when the policy does
+  not recommend the same action in all states and some of these
+  actions lead to states that are not in the same equivalence
+  class.} 
+  \vskip 0.05in  
+ \noindent The outcome of this subtask will be a set of different
+  principles for meaningful norm generalizations beyond the state
+  space of the agent's policy.  
+
+Here the distinction between directly-connected vs.\
+indirectly-connected norm networks will come to bear as well.  The
+activation of associated directly-connected norms even when the agent's
+current state descriptions have nothing in common (i.e.,
+no common subformula and no shared implications) might lead to a
+refinement of the agent's state description altogether and thus to a
+richer, more expressive state structure.  The richer representations,
+in turn, would allow the agent to make finer-grained distinctions that
+can improve its overall performance.  For example, the listening agent
+in the above example might learn that it is permitted to speak if the
+higher-ranked talking agent welcomes questions, effectively adding
+belief states such as: $agent(a_1) \land agent(a_2) \land ${\bf Bel}$(a_2,questionsOK(a_1))$
+about other agents to the agent's own state structure.
+
+\vspace{2mm}
+\noindent Finally, given a way to extract norms from an agent's action
+policy, we can then apply ``inverse RL'' (IRL) techniques to the
+problem of learning policies and thus norms from observations.
+Specifically, we will use IRL to learn an observed agent $A$'s
+reward function $R_A$, which can be used to learn its $Q_A$-function
+and thus its policy $\pi_A$, from which we can extract the set of A's
+norms $\mathcal{N}_A$.
+
+\vskip 0.05in
+\noindent{\bf Task 2.4:} {\em Investigate the applicability of
+inverse reinforcement learning techniques for norm extraction from
+observation of other agents' behaviors (e.g., in light of different,
+potentially conflicting reward functions in multiple agents). } 
+\vskip 0.05in
+\noindent The outcome of this subtask will be a set of advantages and
+disadvantages of using IRL for learning norms through observation of
+other agents and their behaviors.  This is an important step in the
+direction of {\bf Task 3} which specifically investigates the utility
+of norms in social interactions.  We can then also use an agent's own
+norms (extracted from its own policy as described in {\bf Task 2.2})
+and generalize it to other agents' policies (using the generalizations
+developed in {\bf Task 2.3}) in cases where an agent's representation
+of other agent policies is sparse and incomplete.  This will allow the
+agent to better estimate another agent's decision policy and, in
+turn, allow it to make better decisions. One additional advantage of IRL algorithms over traditional supervised approaches is that they can learn from evidence about the {\em absence} of action. If it knows that an action is possible (and perhaps valuable) in a situation but observes that other agents don't take it, it can infer that the action is not allowed for some other reason.
+
+% {\bf MS: I don't understand the following (whoever put it in, please  explain):}  BFM: From Michael's email I rephrased;  hope it's clearer. 
+
+\subsection*{Second Phase (Months 10-18): Supervised norm learning
+  from instructions}
+
+Different from extracting normative principles from an RL agent's own
+or another agent's observed action policy, a supervised
+instruction-based approach does not depend on an RL framework and thus
+the required assumptions about agents following decision policies.
+Rather, in the supervised setting an agent is directly informed of
+norms through {\em instructions} which could come in different forms:
+mediated through natural language, through visual demonstrations, or a
+mixture of both, or directly in the form of the norm representations
+used by the agent (e.g., another robot could directly communicate such
+norms or the agent could retrieve them from a norm database).
+Moreover, the instruction-based approach can be used to learn both
+obligations and prohibitions equally (while it is currently unclear
+whether permissibility rules could be meaningfully extracted in the RL
+approach).  For example, consider two co-located agents of
+different rank, with the higher-rank agent speaking, and consider the following
+instruction of a prohibition: 
+\vspace{-1mm}
+
+\begin{quote}
+ {\em When a higher-ranked agent is speaking to a lower-ranked agent
+   in the same place, the lower-ranked person is forbidden to
+   interrupt the speaker.}
+\end{quote}
+\vspace{-1mm}
+\noindent This instruction can be translated into a rule using the prohibition
+operator {\bf F} as follows:
+
+\vskip 0.1in
+\noindent $agent(a_1) \land agent(a_2) \land at(a_1,l) \land at(a_2,l) \land
+higherrank(a_1,a_2) \land speaking(a_1)$
+
+$ \rightarrow${\bf F}$interrupt(a_2,a_1)$
+\vskip 0.1in
+
+% I [bfm] don't understand the following : 
+% Note that it is possible to identify ``the speaker'' with the
+% ``speaking agent'' (since we are given that $a_1$ is speaking) and
+% thus can infer $interrupt(a_2,a_1)$ for $a_1$.
+
+\vskip 0.05in
+\noindent As part of this second phase we will investigate the natural
+language constructs that can be used to instruct a robot about simple
+norms (including syntactic, semantic, and pragmatic aspects) and
+develop formal translations into the rule-like norm representation
+scheme (based on our previous work on instruction-based rule learning
+\citep{cantrelletal12hri} and pragmatic rule representations
+\citep{williamsetal15aaai}).
+
+In addition, we will investigate how the previously developed RL-based
+norm learning algorithms and the newly developed instruction-based
+algorithms can be used to improve each other's performance. For
+example, the instruction-based approach could be used to bootstrap the
+RL-based approach, and the RL-based approach could be used to
+constrain instruction-based norm representations, particularly the
+antecedents of norms.
+
+
+\vskip 0.1in
+\noindent {\large\bf Task 3: The Emergence of Norms in Multi-Agent Interactions}
+\vskip 0.1in
+\label{sec:task3}
+
+\noindent {\em Primary performers: Littman, Austerweil (Brown University).}
+\vspace{2mm}
+
+\noindent The goal of {\bf Task 3} is to develop algorithms that can create and
+establish norms arising from shared context and relatively commonplace
+coordination goals. Consider a simple norm of saying ``Ready?'' to
+make sure you have your partner's attention before handing off a
+delicate item.  Although some people learn this specific norm from
+verbal instruction, it is a prime example of a norm arising as the
+solution to a coordination problem. This kind of {\em spontaneous
+  establishment of norms} is a very important component of human norm
+acquisition.  And because norms help people predict one another's
+behavior, coordination tasks can be solved efficiently if both
+collaborators base their predictions on shared norms.
+ 
+The main computational challenge is to identify algorithms that derive
+effective coordination norms from repeated interaction. Are simple
+reinforcement-learning algorithms (such as $Q$-learning) sufficient?
+Under what conditions and in what environments will they fail to
+uncover efficient norms?  Do people develop norms from repeated
+interaction in the same simple manner? And do they fail under the same
+conditions?  Or do people develop norms in an entirely different
+manner that needs to be captured by more complex computational
+methods?
+
+One deliverable from this task will be the development of a {\em
+  coordination benchmark}, established by the results of behavioral
+experiments testing human--human and human--machine interactions
+across different environments with varying affordances and degrees of
+uncertainty.  In these environments, an agent's successful achievement
+of a goal depends on coordination with another agent making decisions
+independently.  To constrain possible solutions, the only available
+actions are movements in the environment, without verbal
+communication.  People are quite adept at signaling to each other
+their intentions---and reading those intentions---without using
+language~\citep{pentland08}. Successful human--robot interaction will
+similarly rely on robots being able to read such signals embedded in
+people's actions and in turn to provide readable signals to people.
+
+To establish performance benchmarks in these environments, studies in
+Phase 1 establish the following standard rules:
+
+\begin{enumerate}[label=\bfseries Rule \arabic*:, leftmargin=*,align=left]
+
+\item Each agent has one or more goals offering reward to the agent.
+  \vspace{-2mm}
+
+\item The current run ends when at least one agent reaches its goal.
+\vspace{-2mm}
+
+\item In each round, agents select their next actions in pursuit of
+  their goal and then perform the actions simultaneously.
+  \vspace{-2mm}
+
+\item The environments are deterministic and fully observable to each
+  agent (i.e., assuming they can be performed, actions always produce
+  their intended consequence, each agent gets the same information as
+  the other agent, and there is no uncertainty in environmental
+  states).  \vspace{-2mm}
+
+\item A goal is a target location in a two-dimensional environment (a
+  matrix of squares), and the set of possible actions to pursue the
+  goal are moving up, down, left, or right by one square, or staying
+  put.  \vspace{-2mm}
+
+\item If two agents attempt to move into the same square, they would
+  collide with each other and therefore are forced to stay in their
+  previous square (i.e., there is no consequence to either of their
+  actions with respect to the state of the environment).
+\end{enumerate}
+\vspace{-2mm}
+
+Later work (Phase 2 and beyond) will relax some of these assumptions
+to create increasingly complex and realistic environments. For
+example, we will investigate environments in which observations and
+rewards are only partially observable; where agents can be benevolent
+or adversarial (their reward is dependent on the other agent's reward,
+but the other agent might not know that); where agents differ in their
+reasoning capacities (as is the case when children and adults attempt
+coordination); or where agents' costs of acting differ (as is the case
+when adolescents and elderly individuals attempt coordination).
+
+% Weave in comparison with other ongoing research indicating advantages and disadvantages of the proposed effort.
+
+\subsection*{First Phase (Months 1-9)}
+
+
+\noindent{\bf Task 3.1}: {\em Creating a software infrastructure for
+  networked multi-agent interaction, including human--machine
+  interaction } 
+
+\vskip 0.05in 
+\noindent Before we can investigate how norms arise from
+multi-agent interactions (whether human--human, human--machine, or
+machine--machine interactions), we need a software infrastructure in
+which multiple agents (human or machine) can perform actions in the
+same environment. {\bf Task 3.1} implements such a multi-agent
+networked software infrastructure for which we can leverage our prior
+extensive work on building agent-based simulation frameworks (e.g.,
+\citep{scheutzharris11swages}).
+
+The software will be comprised of three components: a server, clients
+(either a human agent or an artificial agent in the form of a computer
+algorithm), and a graphical user interface (for human agents to
+navigate in the virtual environment). The server provides each client
+with pertinent information (e.g., the world state, its observations,
+the set of possible actions), signals to clients it is ready for
+actions, registers each client's planned actions, calculates the
+consequences of all actions happening simultaneously, and relays these
+consequences to clients.  Client software will directly pass
+information between an artificial agent and the server, but a
+graphical user interface will be available for interactions that
+involve at least one human agent.  In these cases, human participants
+will navigate virtual environments during online behavioral
+experiments (with participants recruited through Amazon Mechanical
+Turk).
+
+Our algorithms will be built on top of BURLAP, the Brown--UMBC
+reinforcement-learning and planning library, which is available for
+download at {\small \url{http://burlap.cs.brown.edu}}.  Likewise, we
+will make our algorithms and benchmark tasks freely available after
+the 9-month period (or after an initial publication, whichever comes
+first).  We hope this infrastructure will stimulate other scientists
+to conduct further research in this area.
+
+% Is this needed?  "...because it will lower some of the current overhead costs for carrying out work in the area."
+
+\vskip 0.05in
+
+\noindent {\bf Task 3.2}: {\em Baseline conditions for norms
+  developing from multi-agent interactions}
+
+\vskip 0.05in 
+\noindent What does it mean for a norm to develop from multi-agent
+interaction? Consider the environment displayed in
+Figure~\ref{fig:grid}, where two agents (represented by the colored
+circles) start at each other's goal locations (represented by a square
+of its color).  Even for such a simple setup, the coordination problem
+is non-trivial, and coordination of some kind is necessary for agents
+to reach their respective goals. In particular, if both agents simply
+move greedily towards their goals (Blue to right and Green to left),
+they will block each other and never get to their goals.  If both move
+greedily and then one agent waits until the last second to move into
+another row (up or down), then this agent can be exploited by the
+other agent (it can continue greedily and beat the first agent to its
+goal). Thus, somewhat paradoxically, it is beneficial to move up or
+down early on, so that the agent can ``signal'' to the other agent
+that it wants to coordinate on different rows to move through despite
+the cost of an extra action (relative to the greedy solution). An
+agent wants to signal early so that it cannot be exploited: If the
+other agent does not also take an action to coordinate on different
+rows to move through and get to each other's goals at the same time,
+the first agent can still move back and stop the other agent from
+getting to its goal (resulting in a stalemate, which is worse for both
+players than cooperating). We refer to performing an action that does
+not get an agent closer to its goal as {\em optimal suboptimality}
+because the optimal solution for getting to the goal is suboptimal (in
+the sense that it is more costly than the shortest-path
+solution). This idea is similar to the game-theoretic notion of
+executing non-Nash actions to avoid low-scoring equilibria. We predict
+that optimal suboptimality will be a common phenomenon among agents
+who successfully establish norms in environments requiring
+coordination without verbal communication.
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=7.5cm]{grid.pdf}
+ \caption{\small Simple gridworld with two agents that start at
+   opposite sides of the grid. It is symmetric and the goals are in
+   the same row---they must coordinate to pass by each other.}
+ \label{fig:grid}
+\end{figure}
+
+% \vspace{2mm}
+% [Figure X: Simple gridworld with two agents that start at opposite sides of the grid. It 
+% is symmetric and the goals are in the same row---they must coordinate to pass by 
+% each other.]
+% \vspace{2mm}
+
+Interestingly, two simple agents controlled by simple
+reinforcement-learning algorithms that interact for multiple rounds in
+this environment (Figure~\ref{fig:grid}) will generally converge on a
+solution that ``signals'' and ``coordinates'' with the other
+agent. For example, the left agent can go up and the right agent can
+go down, resulting in a ``walk on the right'' norm which can then be
+extracted and made explicit using the algorithms from {\bf Task 2}.
+We consider this environment a baseline condition for norms developing
+from multi-agent interactions because it is simple yet ``unsolvable''
+in a game-theoretic sense.  Note that ``fairness'' or ``cooperation''
+is not pre-programmed into the reinforcement-learning agents. The
+agents are each acting selfishly to maximize their own reward and it
+just so happens that coordination can arise from the interaction of
+two selfish agents (by settling on norms).
+
+% \vspace{2mm}
+% [Figure Y: Representative RL solution resulting in a coordination norm to the gridworld 
+% of Figure~\ref{fig:grid}. Joe: I envision it to have two rows (one for each agent) and four columns 
+% (one each representative phase of RL). I asked Betsy and James about producing 
+% this, but I'm not sure how reasonable of a request that was.]
+% \vspace{2mm}
+
+Although learning-based machine--machine interactions in this
+environment result in norm-like coordination, we do not know how
+people interact in this environment.  Will they adopt a similar norm?
+If they do, on what basis of learning?  If they don't, what conditions
+would facilitate norm adoption?  We hypothesize that human--human
+coordination systems will emerge in a very different manner than those
+that emerge from two simple reinforcement-learning agents. For
+example, in a pilot study, we have observed human players making
+implicit offers of collaboration and teaching a norm by
+example. Standard reinforcement-learning algorithms are not capable of
+making this kind of sophisticated plan and simply react
+opportunistically to positive outcomes that take place by
+chance. Thus, it is unclear whether a successful coordination system
+for both agents will emerge when one agent is a human and the other is
+controlled by a reinforcement-learning algorithm.
+
+Thus, in addition to the purely computational experiments described
+above, we will compare the emergence of machine--machine coordination
+patterns in this environment with patterns resulting from humans as
+one or both of the participants. We will do so using online behavioral
+experimentation (human participants recruited through Amazon
+Mechanical Turk) via the software infrastructure produced in {\bf Task
+  3.1}.  We will measure the performance of machine algorithms by way
+of four metrics: (1) Is the algorithm successful at establishing a
+coordination norm with a human agent? (2) Does it establish a
+coordination norm with a human agent in the same manner/rapidity as
+two human agents establish a coordination norm? (3) Do independent
+human observers, who don't know that one player is a machine
+algorithm, judge either agent as natural? (4) How much reward does any
+system of two agents receive over the course of multiple interactions?
+We will assess machine agents quantitatively on all four of these
+measures and make the results available as benchmarks for
+norm-learning algorithms that other researchers may want to develop.
+
+\vskip 0.05in
+\noindent {\bf Task 3.3}: {\em Generalizing via norms: The key to
+  learning to coordinate} 
+\vskip 0.05in
+
+\noindent In {\bf Task 3.2}, we established a simple environment where two
+agents need to coordinate to reach their respective goals. However,
+the coordination solution that emerges from the two
+reinforcement-learning agents interacting in a world like
+Figure~\ref{fig:grid} will be highly unstable and not robust. For
+example, consider the Figure~\ref{fig:grid2}. If we assume that in
+previous interactions Blue and Green coordinated by having Blue move
+down and Green move up (if the opposite, then simply flip the grid
+over a horizontal axis), this norm does not generalize to this
+grid. Traditional reinforcement learning agents will fail to
+generalize their coordination strategy properly to this grid. Further,
+they would also have trouble learning a coordination norm over
+multiple interactions, where each grid is only used once. However, we
+suspect that people will have no problem adjusting their coordination
+norm to this and other related situations.
+
+\begin{figure}[h!]
+ \centering
+\includegraphics[width=7cm]{grid2.pdf}
+\caption{\small Simple gridworld with two agents that start at
+  opposite sides of the grid, but now walls are introduced as obstacles 
+  inside the grid (the thick black lines). Agents cannot move through
+  the walls.}
+  \label{fig:grid2}
+\end{figure}
+%i just realized we could also introduce variation of grids during norm formation as well and people will probably be fine, but i suspect a simple RL agent might freak out.
+
+In this task, we will explore how people learn coordination norms over
+different situations and generalize them appropriately to novel
+situations. The first experiment of {\bf Task 3.3} will have two
+conditions. In the {\em same-training} condition, the two agents will
+interact in the grid world from {\bf Task 3.2} (Figure~\ref{fig:grid})
+until they reach a coordination norm. Afterwards, they will be given a
+different grid on each trial with randomly generated walls (under the
+constraint that both agents can reach their goals). In the {\em
+  varied-training} condition, the two agents will always interact in
+randomly generated grids (we will generate these ahead of time so
+every pair of agents in the same condition will get the same sequence
+of grids). We will ensure to include grids, such as the grid of
+Figure~\ref{fig:grid2}, that require more complex transfer of
+coordination norms. How will the different agents coordinate (or fail
+to coordinate) in these two conditions?
+
+Strictly speaking, a reinforcement-learning agent should learn from
+scratch every time it enters a new environment. However, in some
+sense, one can construe each grid to be the same environment, where
+different actions are permissible each time (depending on where the
+walls get randomly placed). One simple strategy for the
+reinforcement-learning agent to transfer knowledge of which action to
+take in each state (its $Q$ function) from one grid world to another
+would be to modify the same $Q$ function. Actions that used to be
+permissible but are no longer permissible in a given state will be
+given infinite negative value (storing its old value in case it is
+permissible in a future trial). Actions that used to be impermissible
+that become permissible in a given state will be restored to their old
+value (or its initial value in the case where it was never permissible
+in any past grid world). Although this will enable the agent to
+transfer to some grids (and possibly even learn to coordinate in the
+varied-training condition), it will not be robust and will likely
+behave very differently than two human agents do (and so humans are
+likely to find the machine agent untrustworthy and ineffective).
+
+To explore agents that can coordinate in a more robust manner, we will
+develop agents that perform \emph{k-level reasoning from a learned
+  basis}.  In a perfectly observable environment, $k$-level reasoning
+agents choose actions to optimize their reward given they know the
+actions that the other agent will take in every state.
+% ; and if the other agent does the same, the level of k rises quickly.  
+Strategies form a \emph{cognitive hierarchy} of increasingly
+sophisticated agents.  This hierarchy captures a form of bounded
+rationality, where an agent forms a strategy to win in a scenario with
+another agent that is one level less sophisticated than itself. For
+this iterative process to work, a 0-level reasoner must be defined.
+We define it to move randomly in the environment, but agents will
+modify their assumption given past shared experience.  The 1-level
+agent plans its moves under the assumption that the other agent is a
+0-level reasoner (e.g., compare this to the tasks and different
+reflective agents investigated in our prior work
+\citep{schermerhornscheutz07adaptivebehavior}).  
+% (with probability proportional to each action it has taken in its
+% past).
+Thus, a $k$-level agent acts to optimize its reward under the
+assumption that the other agent is a $(k-1)$-level
+agent.\footnote{This is only the case for perfectly observable
+  worlds. When the level or plans of the other agent are unknown, the
+  $k$-level agent forms its plan based on optimizing its reward given
+  some distribution of lower-level agents.} As $k \rightarrow \infty$,
+the $k$-level agent will often act in accordance with the Nash optimal
+decision strategy. Thus, the cognitive hierarchy ranging from 0-level
+to $\infty$-level provides a space of boundedly rational agents.
+% (assuming the hierarchy converges, such that 
+% there is some $k$ such that the policies of the k- and (k+1)-level agents are the 
+% same).
+
+% {\bf MS: we have done quite a bit of work on what we called ``MATE''
+%   tasks for ``Multi-Agent Terrority Exploration'' where agents had to
+%   visit all given checkpoints in an environment as quickly as
+%   possible; we deinfed simple reactive agents with a greedy policy and
+%   then 1-level agents that took the greedy policy into account in
+%   their decision-making, etc. might be relevant here, can provide the
+%   citations.  Also, we have developed several agent-based simulation
+%   environments that might come in handy as well.}
+
+% [paragraph about how k-level reasoners transfer effectively and what they use to transfer is another sense of norm.]
+
+%For example, if a new agent is 
+%introduced and knows that the other agent is controlled by a reinforcement-learning 
+%algorithm, it will be easy for the new agent to exploit the other agent (by simply going 
+%to the goal greedily). When this happens, the coordination system breaks down (the 
+%original RL agent will need to adapt to no longer receiving the same reward it expects). In fact, we believe that many participants in {\bf 
+%Task 3.2} who interact in this environment with a reinforcement learner will take this 
+%strategy and exploit the machine rather than maintain a coordination norm. If this is 
+%the case, what computational algorithm are people using to recognize the strategy 
+%used by the other agent and plan a strategy that exploits the other agent's strategy?
+%JLA: ok, we'll focus on generalization instead
+% I am not sure I share the intuition above, and I am not sure we want to delve into the big theme of cooperation vs. exploitation that experimental economists make a living off.  I presumed that we'd want to set up games in which cooperation is a rational strategy and defection is, in a relatively short time, dangerous for the agent.  That's the premise of norm emergence --- that partners have power to enforce the arising norms and thus all benefit from compliance.    
+
+
+%Applied to the environment of {\bf Task 3.2}, the 1-level agent should move greedily 
+%to its goal, effectively ignoring the movements of the 0-level agent. The 2-level 
+%agent will sit in the other agent's goal because it can only lose against a 1-level 
+%agent (if it tries to coordinate, the 1-level agent will move past it to the goal). The 
+%3-level agent will also never move because the 2-level agent never moves and 
+%so, the hierarchy has converged to its (unsatisfying!) solution. However, what is 
+%interesting is whether human--machine interactions will be more successful with a k-level agent who receives information about the average human policy from the results of {\bf 
+%Task 3.2} (for both the human-reinforcement learning agent and human-human 
+%results). {\bf JLA to MLL}: I'm a bit unsatisfied with this as really the observed results 
+%will be the mixture of two policies (one where left goes up and the other where left 
+%goes down, and so the average might not produce something sensible for the k-level hierarchy to get at without it learning this from observing the human play for a 
+%bit and inferring which of the two it does. At any rate, i'm not sure what we want to do 
+%here, but fleshed out our current plan as much as possible, so we can discuss it later.
+
+% I don't understand the purpose or use of the k-level reasoning exercise.  What do we learn about the emergence or learning of norms? JLA: me iether. it was a bad example. sorry!
+
+
+%\noindent{\bf Task 3.2}: {\em Algorithms such as the ``k-level reasoning'' algorithm from behavioral game theory will be studied in this context and evaluated for its impact on artificial agents' game performance.  Their performance will be compared to that of people in terms of the total amount of reward received and the time course along which norms are established.}%
+%``Optimal suboptimality'' a signature of signaling the desire to coordinate or establish a norm with another agent?
+
+\subsection*{Second Phase (Months  10-18)}
+
+%\noindent{\bf Task 3.3}: {\em The algorithm will be generalized to
+%    other ``recursive social reasoning'' scenarios to make it possible
+%    to assess its applicability to a variety of human-machine
+%    collaboration problems.}
+
+In general, it is unrealistic to assume that an agent knows with
+certainty the actions another agent will take in a perfectly
+observable environment. However, it is straightforward to extend these
+methods to cases where the actions taken by another agent are only
+partially known and, thus, the agent must infer how the agent will act
+while planning its own actions. Intriguingly, the optimal strategy for
+$k$-level reasoners may include actions that do not directly aid in
+reaching their own goals but aid merely in discovering how the other
+agent reacts to their actions---a form of querying to gain information.
+We plan to implement this approach in the second phase. We also plan
+to investigate how coordination norms and signaling emerge in
+environments where the goal is unknown to one agent but is known to
+the other, and when the signals are costly.
+
+% All of the latter seems far more relevant to this grant's objectives
+% than the k-level work.
+
+% \begin{figure}[h!]
+%  \centering
+% 
+% \includegraphics[width=\linewidth]{gridWorlds_2GreenGoals}
+% \caption{\small Example environments with two agents (green and
+% blue), where the precise goal of one agent is unknown to the other
+% agent. The blue agent has one goal (the blue square) and the green
+% agent has two possible goals (the green squares). A solid black line
+% denotes a wall, meaning that agents cannot move through it. Further,
+% the two agents cannot occupy the same square. In this environment,
+% each turn occurs by both agents entering their action and then
+% simultaneously performing that action.  On a given trial, the green
+% agent will only have one of the two goals, but the blue agent is not
+% given this information (she does not know which of the two possible
+% green goals that the green agent “wants” this game). Figure ZB is
+% like Figure ZA except it also contains red squares. A red square is
+% a penalty square that agents lose points if they enter. Each agent
+% is deducted points for each action it takes, depending on what its
+% action is and where it is in the environment. For example, moving to
+% the left might cost 2 points, taking no action might cost 1 point,
+% an agent might lose 2 extra points for entering a red square, and
+% gain 10 extra points for entering their goal.}
+%  \label{fig:grid2greengoals}
+%    \end{figure}
+%    Figure~\ref{fig:grid2greengoals} illustrates a simple environment
+%    where the precise goal of the Green agent is unknown to the Blue
+%    agent and so it behooves Green to signal to Blue and for both of
+%    them to coordinate (see caption for details about the environment
+%    itself). If Green moves to the left or right on the first turn,
+%    then Blue might infer that Green’s goal on this trial is in the
+%    same direction as Green’s movement. If Blue knows Green will act
+%    in this manner, then it would behoove Blue to move up on the
+%    first turn (in this environment, each turn occurs by both agents
+%    entering their action and then simultaneously performing that
+%    action). If both agents try to move up/ down on the same side,
+%    they would bump into each other and take more time to get to
+%    their goals (which would cost them points)! Thus, they both have
+%    incentives to coordinate (Blue to move up, Green to move to the
+%    direction of her goal, and then both to take the shortest paths
+%    from there to their goals). Because neither agent occurs a cost
+%    from signaling in this situation, we refer to this as “free
+%    signaling”.  Figure~\ref{fig:grid2greengoals}B illustrates a
+%    simple environment where signaling is costly (“costly
+%    signaling”). It is costly because if Green moves to the left or
+%    right to signal her goal on the first turn, she will have to
+%    incur a cost for moving into one of the penalty squares (the red
+%    squares). Will Green pay the cost to signal in this case?  Does
+%    it depend on the magnitude of the penalty?
+
+Further, we would expand the first-phase algorithms to integrate the
+human experimental findings from Task 1 on context-dependent norm
+representations to model emergence of norms in one context and
+conditions of generalization to other contexts.  We would also
+computationally represent the discovered algorithms within the formal
+framework developed in Task 2, especially to meet the recursive social
+reasoning challenges arising in Task 3.3. Future work will integrate
+the findings from Task 3 into actual robotic systems that exhibit
+coordination and collaboration on, for example, a shared construction
+task.
+
+Future work will integrate the findings from {\bf Task 3} into actual
+robotic systems.  
+% \footnote{{\bf JLA}: is this something we actually
+%   want to propose? I don't do robots myself, but it seems like a nice
+%   way to translate some of our abstracted theoretical problems into
+%   real-world contexts (I think that is something that DARPA wants,
+%   right?)} 
+For example, the coordination game from {\bf Task 3.2} and {\bf Task
+  3.3} are simplified forms of a common coordination problem that
+arises when walking in crowded environments: when you and another
+person are walking towards each other and will collide if neither
+moves, how do you coordinate with the other person which direction you
+each will walk so that you can get past each other? Normally this is
+solved by people without any communication. The typical norm is for
+each person to move to their right, which allows each person to get by
+without colliding.  However, as everyone has experienced, people do not
+always adhere to this norm (sometimes both people move in a direction
+such that they will still collide if they moved forward after
+attempting to move out of the way). Further, this coordination problem
+is rarely solved by verbal communication. If one of the agents in this
+example were replaced by a robot, how should the robot coordinate with
+the other person? The robot needs to update its movement plan flexibly
+in coordination with the person, neither blindly following some norm
+(e.g., always going right regardless of the person's actions) nor sit
+still and wait for the person to pass it (that would be inefficient
+and also be unnatural for the person). This is just one example of how
+the results of Task 3 can translate into improved human--machine
+interactions in real-world scenarios.
+% I like this!  Can you think of other examples? Building something together? 
+% \footnote{{\bf JLA}: is this something we actually want to propose?
+% I don't do robots myself, but it seems like a nice way to translate
+% some of our abstracted theoretical problems into real-world contexts
+% (I think that is something that DARPA wants, right?)} For example,
+% the coordination game from {\em Task 3.2} and {\bf 3.3} are
+% simplified forms of a common coordination problem that arises when
+% walking in crowded environments: when you and another person are
+% walking towards each other and will collide if neither moves, how do
+% you coordinate with the other person which direction you each will
+% walk so that you can get past each other? Normally this is solved by
+% people without any communication. The typical norm is for each
+% person to move to their right, which allows each person to get by
+% without colliding. However, as everyone has experienced, people do
+% not always adhere to this norm (sometimes both people move in a
+% direction such that they will still collide if they moved forward
+% after attempting to move out of the way). Further, this coordination
+% problem is rarely solved by verbal communication. If one of the
+% agents in this example were replaced by a robot, how should the
+% robot coordinate with the other person? The robot needs to update
+% its movement plan flexibly in coordination with the person, neither
+% blindly following some norm (e.g., always going right regardless of
+% the person's actions) nor sit still and wait for the person to pass
+% it (that would be inefficient and also be unnatural for the
+% person). This is just one example of how the results of Task 3 can
+% translate into improved human--machine interactions in real-world
+% scenarios.
+% % I like this!  Can you think of other examples? Building something together? 
+
+% Just saw that the above was comment out... here was my concern:
+% {\bf MS: I am a bit worried about the above paragraph for several
+%   reasons: (1) this is an example of a norm that has been solved
+%   already in robotics, withouth requiring explicit norm
+%   representation; (2) I'm not sure people will always go to the right,
+%   just look at what happens in malls, this is rather dynamic and
+%   people have proposed dynamic systems models for that; and (3) Reza
+%   has much more complex robotic situations in mind in my view and we
+%   don't want to give something as simple as dynamic obstacle avoidance
+%   as an example of what we mean by ``coordination'' -- I'd rather talk
+%   about coordinating activies with different tools in different rooms
+%   or different assembly tasks (e.g., two people needing a screw driver
+%   but there being only one, etc.), something that is a bit more
+%   complex to coordinate}
+
+\section*{Alternative Research Approaches}
+
+As discussed in Section II (p. \pageref{sec:OtherResearch}), the literature on the representation and learning of norms is surprisingly sparse, both in psychology and computer science.  The strongest contributors on the study of norms have been sociology, social psychology, and more recently experimental economics.  In psychology, much research has gone into measuring abstract values and their variance and invariance across people, nations, and cultures~\citep{schwartz92}.  A small number of studies examined the power of contexts to trigger norms~\citep{harvey81,aarts03}.  And most recently, one research team has explored under what conditions children acquire new norms and to what extent these norms are specific to contexts or generalized across them~\citep{wyman09,rakoczy08}.  Most agent-based modeling has examined behavior patterns that reflect collective norms~\citep{centola05,elsenbroich14}. The most promising agent-based approach has tackled the notion of ``internalized norms"~\citep{andrigh10}, but detailed cognitive-computational models of norms, their organization, and deployment have been lacking. Finally, the cognitive architecture community has shown some interest in integrating rudimentary forms of moral reasoning (e.g., the Companion
+architecture \cite{blass15} or Clarion\cite{Licatoetal14}), there is virtually no work in the mainstream
+cognitive architectures (e.g., ACT-R, Soar) on moral cognition, let alone norm representations.  And
+even though architectures like Soar support reinforcement learning, there is no support for the types of state abstractions that are necessary for extracting normative principles and generalizing them
+across new contexts (as proposed here).  
+%% In computer science, ... \texttt{[say something about ACT-R or the like]}. 
+
+Additional literatures are topic-related to our endeavor (e.g., standard learning theory, the broader memory literature), and they will offer inspiration and methodological guidance for our work.  They leave the fundamental question of our project unanswered, however: how people acquire, represent, activate, and implement norms and how these processes can be translated into computational algorithms and implemented in embodied robots.
+
+%  \texttt{[These next two paragraphs are just stand-ins for possibly more material]}. In this project we take a novel step by integrating experimental research, computational modeling, designing logical formalisms, and testing machine learning algorithms methods to tackle these questions head on. Of course, the overall problem  cannot be solved in 9 months, or even 3 years, but important immediate steps are possible, which will pave the way for even more significant progress later on.  
+
+% We must acknowledge some of the great challenges that neither previous research has addressed nor our project can meet:  to document all the learning mechanisms {\em and their interactions} that humans rely on when acquiring norms: .  Selecting the most easily computable mechanisms and implementing them on machine platforms...  If robots' norm learning, representation, and activation can be scaled up and sped up, humans will be better able to interact with, trust, and collaborate with robots.  
+
+
+
+% ================ End Main Research Narrative ===========================
+% ================ but rest still counts against page limit!=======================
+
+\section*{Previous Accomplishments}
+
+% Discussion of proposer’s previous accomplishments and work in closely related research areas.
+% May need to write a narrative because there isn't enough space for 8 pages of biosketches.
+\textbf{PI  Bertram F. Malle} is a social psychologist and cognitive scientist with expertise in developing theories and experimental paradigms in the fields of social cognition and moral psychology, with increasing applications to human-robot interaction.  After Master’s degrees in philosophy/linguistics (1987) and psychology (1989) at the University of Graz, Austria, he received his Ph.D. in psychology at Stanford University in 1995.  Malle received the Society of Experimental Social Psychology Outstanding Dissertation award in 1995 and a National Science Foundation CAREER award in 1997.  Until 2008 he was Professor of Psychology at the University of Oregon, where he also served as Director of the Institute of Cognitive and Decision Sciences (2001-2007).  He joined Brown University in 2008 as Professor in the Department of Cognitive, Linguistic, and Psychological Sciences, where he is currently Associate Chair and co-leader of Brown's Humanity-Centered Robotics Initiative.  He is a Fellow of the Association of Psychological Science and of the Society of Experimental Social Psychology, past president of the Society of Philosophy and Psychology, and Associate Editor of the Journal of Human-Robot Interaction. Malle’s research, funded by NSF, Army, Templeton Foundation, and ONR, investigates what kind of social and moral competences humans expect of social robots and how this competence could be implemented computationally.   
+
+\vspace{1mm}
+\noindent \textbf{co-PI Joseph Austerweil} is a psychologist and cognitive scientist who specializes in computational models of cognition, higher-level cognition, and representation learning.  He received an MA in Statistics (2011) and a PhD in Psychology (2012), both from the University of California, Berkeley.   In his research he explores problems at the intersection of perception and higher-level cognition. He uses recent advances in statistics and computer science to formulate ideal learner models to see how they solve these problems and then to test the model predictions using traditional behavioral experimentation.  This method yields novel machine learning methods and leads to the discovery of new psychological principles.  His laboratory has  developed open source tools to perform fast (GPU-based using OpenCL) and easy (written for use in Python) inference for Bayesian nonparametric models.  
+ 
+\vspace{1mm}
+\noindent \textbf{co-PI  Michael Littman's} research in machine learning examines algorithms for decision making under uncertainty.   He received his Ph.D. in computer science from Brown University in 1996 and was a professor at Duke University and Rutgers University before joining Brown in 2012. He is a National Science Foundation CAREER award recipient, co-leader of Brown University's  Humanity-Centered Robotics Initiative, Fellow of the Association for the Advancement of Artificial Intelligence, and an expert in multi-agent reinforcement learning.  He has earned multiple awards for teaching, and his research has been recognized with three best-paper awards on the topics of meta-learning for computer crossword solving, complexity analysis of planning under uncertainty, and algorithms for efficient reinforcement learning.  Littman has served on the editorial boards for the Journal of Machine Learning Research and the Journal of Artificial Intelligence Research.  He was general chair of International Conference on Machine Learning 2013 and program chair of the Association for the Advancement of Artificial Intelligence Conference 2013.
+
+\vspace{1mm}
+\noindent \textbf{co-PI  Matthias Scheutz} is a computer scientist, cognitive scientist and roboticist with expertise in integrated robotic architectures, natural
+language understanding, and human-robot interaction.  He holds a joint
+Ph.D. in computer and cognitive science from Indiana University,
+Bloomington (1999) and a PhD in philosophy from the University of
+Vienna (1995).  He is currently Professor at Tufts University in
+the Department of Computer Science and an Adjunct Full Professor in the
+Department of Psychology, and he also directs the Human-Robot
+Interaction Laboratory.  For close to twenty years he has worked on complex robotic systems with natural language capabilities for human-robot interactions with support
+from NSF, ARL, ONR, DTRA, the EU Commission, and other programs
+(including  PI for two ONR MURI programs).  He is also the
+technical co-chair for the IEEE TC on Robot Ethics and has recently
+published on moral competence in robotic architectures and ways to
+integrate norm processing into the robotic action execution system.  
+
+\section*{Facilities}
+
+\textbf{Bertram Malle's} Social Cognitive Science Research Center is located
+in the Metcalf Research Laboratories building on Brown University’s
+campus.  This laboratory space includes (a) a group interaction room and a dyadic interaction room, both fully AV equipped to record behavior and speech from human-human or human-robot interactions; (b) a control room that collects the AV recordings on a lab server (Apple PowerMac) and makes them available for editing and analysis; (c) a room dedicated to eye-tracking experiments using an SMI RED Binocular 120 Hz system, for the recording of pupil dilation and eye movements during reading or viewing tasks on the computer.  Malle also uses and manages shared laboratory space in the same building, including (a) an audio recording studio (to develop experimental test stimuli); (b) a testing suite for computer-presented experiments in which up to 6 participants can be run at the same time (Metcalf 420A-H), and (c) a physiology lab with equipment for electrodermal responses, heart rate, facial EMG, and others.
+
+\vspace{1 mm} 
+
+\noindent {\bf Joseph Austerweil's} research lab is in the Metcalf
+Research Building on Brown University’s campus. It contains a common
+office space and two testing booths. Each testing booth is nearly
+soundproof and is equipped with a new Dell workstation and a 24” ASUS
+PA246Q wide angle, color-calibrated monitors.  Additionally, lab members have access to two high performance
+GPU servers, one of which contains 4 GeForce GTX 770, each of which
+has 1536 cores running at approximately 1000 MHz and the other
+contains 3 GeForce GTX 770 GPU cards and 1 Tesla K40 GPU card, which
+has 2880 cores running at approximately 900 MHz. 
+
+\vspace{1 mm} 
+\noindent \textbf{Michael Littman's} work space is situated in the Computer Science building on Brown campus. It provides leading-edge computing technology to all its faculty and students, with a large number of custom-built machines configured and assembled by the department's
+technical staff, running Linux, OSX, or Windows.  Littman's programming tasks, simulations, and empirical studies (with participants drawn from Amazon Mechanical Turk) are supported by dedicated lab machines and a data center with fully redundant servers, at  approximately 343TB of RAID-6 storage, 181 computational servers providing 1828 cores and over 4TB of combined memory. 
+
+\vspace{1 mm} 
+\noindent \textbf{Matthias Scheutz's} Human-Robot Interaction Laboratory
+is located at Tufts
+University in Medford, MA, will be used for primarily conceptual and
+computational work.  It provides one conference room, an
+experimentation room with over 1500 square feet, a robot server room
+with robot maintenance area, an open office space with five desks
+(only four depicted) for graduate students, and two small offices with
+two desks each for postdoctoral fellows and visitors.  For the
+duration of the project, one Linux Desktop PCs will be available for
+the postdoc to be supported on this project.  A dual-CPU six-core Dell
+Xenon server with 96GB of RAM running Linux will be available for
+developing and testing all algorithms. The lab's main server will host
+all project-related code and paper repositories for work performed at
+Tufts.
+
+
+\section*{Cost, Schedules, Milestones}
+ 
+% including estimates of cost for each task in each year of the effort delineated by the primes and major subawardees, total cost, and any company cost share. (Note: Measurable milestones should capture key development points in tasks and should be clearly articulated and defined in time relative to start of effort.) Where the effort consists of multiple portions which could reasonably be partitioned for purposes of funding, these should be identified as options with separate cost estimates for each. Additionally, proposals should clearly explain the technical approach(es) that will be employed to meet or exceed each program metric and provide ample justification as to why the approach(es) is/are feasible. The milestones must not include proprietary information.
+
+\vspace{1mm}
+\noindent {\bf Support and formal agreements}. There will a sub-award to Tufts University to perform theoretical,
+logical, and computational work, focused primarily on Task 2.  This
+work will be performed by Scheutz and one post-doctoral fellow
+supervised by him.
+
+\vspace{1mm}
+\noindent {\bf Research Team.} PI Malle will coordinate all project activities.  He will meet with
+the staff members hired for the project on a weekly basis to
+check on the progress, plan the activities for the next week, and
+discuss potential obstacles.  The system of interconnected pairwise
+collaborations (see Figure~\ref{fig:orgchart}) and the close proximity
+of team members will facilitate innovative ideas and timely, effective
+products.
+
+Additional budgeted staff will help with the dense task load during
+this short-term project.  One post-doctoral fellow, co-advised
+by Austerweil and Malle, and one full-time research assistant,
+supervised by Malle, will be responsible for programming and running
+human experiments, performing content and data analyses, and reporting
+results to the team.  One post-doctoral fellow supervised by Scheutz
+will help develop the formal language and the RL algorithms for norm
+inference from observations in simulated environments.  Informed by
+these results, Malle will work with the Brown post-doc on refining the
+conceptual theory of norms.  Graduate students working with Littman
+and co-advised by Austerweil will focus on developing the software
+environment and algorithmic benchmarks and conduct multi-agent studies
+involving machines and humans.
+
+Co-PI Scheutz will work with a post-doctoral researcher at Tufts on the
+formal framework and the different types of norm learning algorithms
+as described in {\bf Task 2}.  He will also support the Brown team on
+the other two tasks.
+
+\vspace{1mm}
+\noindent {\bf Equipment.} Few technical equipment will be needed, most of it already available
+in the research team's labs.  Three iPads are requested to conduct
+studies of norm activation and updating {\em in situ} (e.g., two
+participants probed in slightly different contexts, such as entering
+vs. exiting a library or restaurant).  They could also be used (during
+the optional Months 10-18) for innovative experiments combining Task 1
+and Task 3 paradigms, allowing two participants to work simultaneously
+on coordination problems while being probed for norm activation.
+
+\vspace{1mm}
+\noindent {\bf Reports.} We plan to produce technical reports on theoretical developments, empirical insights, computational algorithms, and formal systems.  We plan to prepare a comprehensive final project report that summarizes all accomplishments during the project tenure. Psychological and Cognitive Science journals typically demand multi-study papers and have slow turnaround, so we don't expect published products over 9 months but rather an accumulation of
+novel scientific results that can be submitted soon after the end of Phase I.
+Typical Computer Science outlets are conference proceedings, so we
+will heed the relevant deadlines for key conferences in the field.
+
+\vspace{1mm}
+\noindent {\bf Milestones.} The task structure of our proposal lends itself easily to establish
+key development points and measurable milestones for the project.
+Figure~\ref{fig:Milestones} lays out this structure of the three parallel tasks with
+breakdowns into subtasks, lead researchers, associated staff,
+as well as metrics and products.  Because much of the budget is spent on
+added personnel beyond PI and co-PI involvement, not every subtask can be associated with a separate cost portion.
+ 
+
+\begin{figure}[h!]
+ \includegraphics[width=16.7cm]{Milestones.pdf}
+  \caption{\small Tasks, milestones, personnel, and cost breakdown}
+  \label{fig:Milestones}
+  \end{figure}
+
+% ================ Bibliography ===========================
+
+% \thispagestyle{empty}
+% \renewcommand{\thepage}{}
+{\small
+\bibliographystyle{abbrv}
+\bibliography{norms}}
+
+\newpage
+
+\section*{Section IV. Additional Information}
+
+
+\vspace{3mm}
+\input{biblio.tex}
+% \input{biosketches.tex}
+
+
+\end{document}

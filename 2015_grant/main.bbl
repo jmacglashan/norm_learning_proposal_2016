@@ -1,0 +1,423 @@
+\begin{thebibliography}{10}
+
+\bibitem{austerweil13}
+J.~L. Austerweil and T.~L. Griffiths.
+\newblock A nonparametric {B}ayesian framework for constructing flexible
+  feature representations.
+\newblock {\em Psychological Review}, 120:817--851, 2013.
+
+\bibitem{babes11}
+Monica Babes, Vukosi~N. Marivate, Michael~L. Littman, and Kaushik Subramanian.
+\newblock Apprenticeship learning about multiple intentions.
+\newblock In {\em International Conference on Machine Learning}, pages
+  897--904, 2011.
+
+\bibitem{baker09}
+C.~L. Baker, R.~Saxe, and J.~B. Tenenbaum.
+\newblock Action understanding as inverse planning.
+\newblock {\em Cognition}, 113:329--349, 2009.
+
+\bibitem{baker14}
+C.~L. Baker and J.~B. Tenenbaum.
+\newblock Modeling human plan recognition using {B}ayesian theory of mind.
+\newblock In G.~Sukthankar, R.~P. Goldman, C.~Geib, D.~Pynadath, and H.~Bui,
+  editors, {\em Plan, Activity and Intent Recognition: Theory and Practice},
+  pages 177--204. Morgan Kaufmann, 2014.
+
+\bibitem{bertsekas87}
+Dimitri~P. Bertsekas.
+\newblock {\em Dynamic Programming: {D}eterministic and Stochastic Models}.
+\newblock Prentice-Hall, Englewood Cliffs, NJ, 1987.
+
+\bibitem{bicchieri2005grammar}
+Cristina Bicchieri.
+\newblock {\em The grammar of society: The nature and dynamics of social
+  norms}.
+\newblock Cambridge University Press, 2005.
+
+\bibitem{binmore2010social}
+Ken Binmore.
+\newblock Social norms or social preferences?
+\newblock {\em Mind \& Society}, 9(2):139--157, 2010.
+
+\bibitem{blanco11}
+M.~Blanco, D.~Englemann, and H.~T. Normann.
+\newblock A within-subject analysis of other-regarding preferences.
+\newblock {\em Games and Economic Behavior}, 72:321--338, 2011.
+
+\bibitem{Camerer:2003}
+C.~F. Camerer.
+\newblock {\em Behavioral Game Theory: Experiments in Strategic Interaction}.
+\newblock Princeton University Press, Princeton, NJ, 2003.
+
+\bibitem{chomsky59}
+N.~Chomsky.
+\newblock A review of {B.F Skinner's Verbal Behavior}.
+\newblock {\em Language}, 31:26--58, 1959.
+
+\bibitem{cooper03}
+D.~J. Cooper and J.~B. {Van Huyck}.
+\newblock Evidence on the equivalence of the strategic and extensive form
+  representation of games.
+\newblock {\em Journal of Economic Theory}, 110(2):290--308, 2003.
+
+\bibitem{cooper94}
+R.~Cooper, D.~{DeJ}ong, B.~Forsythe, and T.~Ross.
+\newblock Alternative institutions for resolving coordination problems:
+  Experimental evidence on forward induction and preplay communication.
+\newblock In J.~Friedman, editor, {\em Problems of Coordination in Economic
+  Activity}, pages 129--146. Kluwer, Dordrecht, 1994.
+
+\bibitem{daskalakis2009complexity}
+Constantinos Daskalakis, Paul~W Goldberg, and Christos~H Papadimitriou.
+\newblock The complexity of computing a nash equilibrium.
+\newblock {\em SIAM Journal on Computing}, 39(1):195--259, 2009.
+
+\bibitem{dennett87}
+D.~C. Dennett.
+\newblock {\em The intentional stance}.
+\newblock MIT Press, Cambridge, MA, 1987.
+
+\bibitem{desjardins13}
+Marie desJardins and Michael~L. Littman.
+\newblock {AAAI}-13 preface.
+\newblock In {\em AAAI 2013}, 2013.
+
+\bibitem{devetag08}
+G.~Devetag and M.~Warglien.
+\newblock Playing the wrong game: An experimental analysis of relational
+  complexity and strategic misrepresentation.
+\newblock {\em Games and Economic Behavior}, 62:364--382, 2008.
+
+\bibitem{diguida13}
+S.~{Di Guida} and G.~Devetag.
+\newblock Feature-based choice and similarity perception in normal-form games:
+  An experimental study.
+\newblock {\em Games}, 4(4):776--794, 2013.
+
+\bibitem{diuk2009adaptive}
+Carlos Diuk, Lihong Li, and Bethany~R Leffler.
+\newblock The adaptive k-meteorologists problem and its application to
+  structure learning and feature selection in reinforcement learning.
+\newblock In {\em Proceedings of the 26th Annual International Conference on
+  Machine Learning}, pages 249--256. ACM, 2009.
+
+\bibitem{fehr1999theory}
+Ernst Fehr and Klaus~M Schmidt.
+\newblock A theory of fairness, competition, and cooperation.
+\newblock {\em Quarterly journal of Economics}, pages 817--868, 1999.
+
+\bibitem{fisman07}
+R.~Fisman, S.~Kariv, and D.~Markovits.
+\newblock Individual preferences for giving.
+\newblock {\em The American Economic Review}, 97(5):1858--1876, 2007.
+
+\bibitem{forsythe94}
+R.~Forsythe, J.~L. Horowitz, N.~E. Savin, and M.~Sefton.
+\newblock Fairness in simple bargaining experiments.
+\newblock {\em Games and Economic Behavior}, 6:347--369, 1994.
+
+\bibitem{gergely95}
+G.~Gergely, Z.~N\'{a}dasdy, G.~Csibra, and S.~Bir\'{o}.
+\newblock Taking the intentional stance at 12 months of age.
+\newblock {\em Cognition}, 56:165--193, 1995.
+
+\bibitem{tada:jack}
+T.~Goff, A.~Greenwald, E.~Hilliard, W.~Ketter, A.~Loomis, and E.~Sodomka.
+\newblock {JACK}: A {J}ava auction configuration kit.
+\newblock In {\em Agent-Mediated Electronic Commerce. Designing Trading
+  Strategies and Mechanisms for Electronic Markets.}, volume 136 of {\em
+  Lecture Notes in Business Information Processing}, pages 45--60. Springer,
+  2013.
+
+\bibitem{gopalan15}
+Nakul Gopalan and Stefanie Tellex.
+\newblock Modeling and solving human-robot collaborative tasks using {POMDP}s.
+\newblock In {\em Robotics: science and systems 2015: workshop on model
+  learning for human-robot communication}, 2015.
+
+\bibitem{GreenwaldHall:03}
+A.~Greenwald and K.~Hall.
+\newblock Correlated \uppercase{$Q$}-learning.
+\newblock In {\em Proceedings of the Twentieth International Conference on
+  Machine Learning}, pages 242--249, 2003.
+
+\bibitem{seqauc:nips}
+A.~Greenwald, J.~Li, and E.~Sodomka.
+\newblock Approximating equilibria in sequential auctions with incomplete
+  information and multi-unit demand.
+\newblock In {\em NIPS '12: Advances in {N}eural {I}nformation {P}rocessing
+  {S}ystems}, volume~25, pages 2330--2338, December 2012.
+
+\bibitem{efgs:rldm}
+A.~Greenwald, J.~Li, E.~Sodomka, and M.~L. Littman.
+\newblock Solving for best-responses in extensive-form games using
+  reinforcement learning methods.
+\newblock In {\em RLDM '13: Proceedings of 1st Multidisciplinary Conference
+  Reinforcement Learning and Decision Making}, pages 116--120, October 2013.
+
+\bibitem{tada:quibids}
+A.~Greenwald, E.~Sodomka, E.~Stix, J.~Stix, and D.~Storch.
+\newblock An empirical analysis of auctioneer profitability in {Q}uibids penny
+  auctions.
+\newblock In {\em Agent-Mediated Electronic Commerce. Designing Trading
+  Strategies and Mechanisms for Electronic Markets.}, volume 197 of {\em
+  Lecture Notes in Business Information Processing}, pages 56--68. Springer,
+  2014.
+
+\bibitem{guth82}
+W.~G{\"u}th, R.~Schmittberger, and B.~Schwarze.
+\newblock An experimental analysis of ultimatum bargaining.
+\newblock {\em Journal of Economic Behavior and Organization}, 3:367--388,
+  1982.
+
+\bibitem{hamlin13}
+J.~K. Hamlin, T.~Ullman, J.~B. Tenenbaum, N.~Goodman, and C.~Baker.
+\newblock The mentalistic basis of core social cognition: experiments in
+  preverbal infants and a computational model.
+\newblock {\em Developmental Science}, 16:209--226, 2013.
+
+\bibitem{hamlin07}
+J.~K. Hamlin, K.~Wynn, and P.~Bloom.
+\newblock Social evaluation by preverbal infants.
+\newblock {\em Nature}, 450:557--559, 2007.
+
+\bibitem{heider44}
+F.~Heider and M.~A. Simmel.
+\newblock An experimental study of apparent behavior.
+\newblock {\em American Journal of Psychology}, 57:243--245, 1944.
+
+\bibitem{henrich05}
+J.~Henrich, R.~Boyd, S.~Bowles, C.~Camerer, E.~Fehr, H.~Gintis, R.~{McE}lreath,
+  M.~Alvard, A.~Barr, J.~Ensminger, N.~S. Henrich, K.~Hill, F.~{Gil-W}hite,
+  M.~Gurven, F.~W. Marlowe, J.~Q. Patton, and D.~Tracer.
+\newblock "economic man" in cross-cultural perspective: Behavioral experiments
+  in 15 small-scale societies.
+\newblock {\em Behavioral and Brain Sciences}, 28:795--855, 2005.
+
+\bibitem{ho96}
+T.~Ho and K.~Weigelt.
+\newblock Task complexity, equilibrium selection, and learning: An experimental
+  study.
+\newblock {\em Managment Science}, 42:659--679, 1996.
+
+\bibitem{HuWellman03}
+J.~Hu and M.~Wellman.
+\newblock Nash {$Q$}-learning for general-sum stochastic games.
+\newblock {\em Machine Learning Research}, 4:1039--1069, 2003.
+
+\bibitem{hutchins10}
+E.~Hutchins.
+\newblock Cognitive ecology.
+\newblock {\em Topics in Cognitive Science}, 2:705--715, 2010.
+
+\bibitem{kahneman86}
+D.~Kahneman, J.~L. Knetsch, and R.~Thaler.
+\newblock Fairness as a constraint on profit seeking: Entitlements in the
+  market.
+\newblock {\em American Economic Review}, 76:728--741, 1986.
+
+\bibitem{kahnemanst82}
+D.~Kahneman, P.~Slovic, and A.~Tversky, editors.
+\newblock {\em Judgment under uncertainty: {H}euristics and biases}.
+\newblock Cambridge University Press, 1982.
+
+\bibitem{kolter2009regularization}
+J~Zico Kolter and Andrew~Y Ng.
+\newblock Regularization and feature selection in least-squares temporal
+  difference learning.
+\newblock In {\em Proceedings of the 26th annual international conference on
+  machine learning}, pages 521--528. ACM, 2009.
+
+\bibitem{li2009reinforcement}
+Lihong Li, Jason~D Williams, and Suhrid Balakrishnan.
+\newblock Reinforcement learning for dialog management using least-squares
+  policy iteration and fast feature selection.
+\newblock In {\em INTERSPEECH}, pages 2475--2478, 2009.
+
+\bibitem{list06}
+J.~A. List.
+\newblock Friend or foe? a natural experiment of the prisoner's dilemma.
+\newblock {\em The Review of Economics and Statistics}, 88(3):463--471, 2006.
+
+\bibitem{Littman01}
+M.~Littman.
+\newblock Friend or foe \uppercase{$Q$}-learning in general-sum
+  \uppercase{M}arkov games.
+\newblock In {\em Proceedings of Eighteenth International Conference on Machine
+  Learning}, pages 322--328, June 2001.
+
+\bibitem{littman1994markov}
+Michael~L Littman.
+\newblock Markov games as a framework for multi-agent reinforcement learning.
+\newblock In {\em Proceedings of the eleventh international conference on
+  machine learning}, volume 157, pages 157--163, 1994.
+
+\bibitem{loftin14b}
+Robert Loftin, James MacGlashan, Michael~L. Littman, Matthew~E. Taylor,
+  David~L. Roberts, and Jeff Huang.
+\newblock A strategy-aware technique for learning behaviors from discrete human
+  feedback.
+\newblock In {\em Proceedings of the Twenty-Eighth Association for the
+  Advancement of Artificial Intelligence Conference (AAAI-14)}, 2014.
+
+\bibitem{lopes2009active}
+Manuel Lopes, Francisco Melo, and Luis Montesano.
+\newblock Active learning for reward estimation in inverse reinforcement
+  learning.
+\newblock In {\em Machine Learning and Knowledge Discovery in Databases}, pages
+  31--46. Springer, 2009.
+
+\bibitem{luce57}
+R.~D. Luce and H.~Raiffa.
+\newblock {\em Games and decisions}.
+\newblock Dover, New York, 1957.
+
+\bibitem{macglashan15}
+J.~MacGlashan, M.~Babes-Vroman, M.~desJardins, M.~Littman, S.~Muresan,
+  S.~Squire, S.~Tellex, D.~Arumugam, and L.~Yang.
+\newblock Grounding english commands to reward functions.
+\newblock In {\em Proceedings of Robotics: Science and Systems}, 2015.
+
+\bibitem{macglashan15b}
+James MacGlashan and Michael~L. Littman.
+\newblock Between imitation and intention learning.
+\newblock In {\em Proceedings of IJCAI}, 2015.
+
+\bibitem{poi:aamas}
+B.~Mayer, E.~Sodomka, and A.~Greenwald.
+\newblock The price of independence in simultaneous auctions.
+\newblock In {\em AAMAS '13: Proceedings of the 12th {I}nternational
+  {C}onference on {A}utonomous {A}gents and {M}ultiagent {S}ystems}, pages
+  1227--1228, May 2013.
+
+\bibitem{poi:ec}
+B.~Mayer, E.~Sodomka, A.~Greenwald, and M.P. Wellman.
+\newblock Accounting for price dependencies in simultaneous sealed-bid
+  auctions.
+\newblock In {\em EC '13: Proceedings of the 14th {ACM} {C}onference on
+  {E}lectronic {C}ommerce}, pages 679--696, June 2013.
+
+\bibitem{parr2008analysis}
+Ronald Parr, Lihong Li, Gavin Taylor, Christopher Painter-Wakefield, and
+  Michael~L Littman.
+\newblock An analysis of linear models, linear value-function approximation,
+  and feature selection for reinforcement learning.
+\newblock In {\em Proceedings of the 25th international conference on Machine
+  learning}, pages 752--759. ACM, 2008.
+
+\bibitem{ramachandran2007bayesian}
+Deepak Ramachandran and Eyal Amir.
+\newblock Bayesian inverse reinforcement learning.
+\newblock {\em International Joint Conference on Artificial Intelligence,},
+  pages 2586--2591, 2007.
+
+\bibitem{rand13}
+D.~G. Rand and M.~A. Nowak.
+\newblock Human cooperation.
+\newblock {\em Trends in Cognitive Sciences}, 17(8):413--425, 2013.
+
+\bibitem{rapoport88}
+A.~Rapoport.
+\newblock Experiments with n-person social traps i: Prisoner's dilemma, weak
+  prisoner's dilemma, volunteer's dilemma, and largest number.
+\newblock {\em The Journal of Conflict Resolution}, 32(3):457--472, 1988.
+
+\bibitem{rapoport97}
+A.~Rapoport.
+\newblock Order of play in strategically equivalent games in extensive form.
+\newblock {\em International Journal of Game Theory}, 26:113--136, 1997.
+
+\bibitem{reddy2012inverse}
+Tummalapalli~Sudhamsh Reddy, Vamsikrishna Gopikrishna, Gergely Zaruba, and
+  Manfred Huber.
+\newblock Inverse reinforcement learning for decentralized non-cooperative
+  multiagent systems.
+\newblock In {\em Systems, Man, and Cybernetics (SMC), 2012 IEEE International
+  Conference on}, pages 1930--1935. IEEE, 2012.
+
+\bibitem{sally95}
+D.~Sally.
+\newblock Conversation and cooperation in social dilemmas: A meta-analysis of
+  experiments from 1958 to 1992.
+\newblock {\em Rationality and Society}, 18:455--487, 1995.
+
+\bibitem{Savage1954}
+Leonard~J. Savage.
+\newblock {\em The Foundations of Statistics}.
+\newblock Wiley Publications in Statistics, 1954.
+
+\bibitem{searle1995construction}
+John~R. Searle.
+\newblock {\em The construction of social reality}.
+\newblock Simon and Schuster, 1995.
+
+\bibitem{singh2009rewards}
+Satinder Singh, Richard~L Lewis, and Andrew~G Barto.
+\newblock Where do rewards come from.
+\newblock In {\em Proceedings of the annual conference of the cognitive science
+  society}, pages 2601--2606, 2009.
+
+\bibitem{sodomka13}
+Eric Sodomka, Elizabeth Hilliard, Michael Littman, and Amy Greenwald.
+\newblock {C}oco-{Q}: {L}earning in stochastic games with side payments.
+\newblock {\em JMLR Workshop and Conference Proceedings: Proceedings of The
+  30th International Conference on Machine Learning}, 28(3):1471--1479, 2013.
+
+\bibitem{tomasello2005understanding}
+Michael Tomasello, Malinda Carpenter, Josep Call, Tanya Behne, and Henrike
+  Moll.
+\newblock Understanding and sharing intentions: {The} origins of cultural
+  cognition.
+\newblock {\em Behavioral and brain sciences}, 28(05):675--691, 2005.
+
+\bibitem{ullman09}
+T.~D. Ullman, C.~L. Baker, O.~Macindoe, O.~Evans, N.~D. Goodman, and J.~B.
+  Tenenbaum.
+\newblock Help or hinder: Bayesian models of social goal inference.
+\newblock In Y.~Bengio, D.~Schuurmans, J.D. Lafferty, C.K.I. Williams, and
+  A.~Culotta, editors, {\em Advances in Neural Information Processing Systems
+  22}, pages 1874--1882. Curran Associates, Inc., 2009.
+
+\bibitem{ur14}
+Blase Ur, Elyse McManus, Melwyn Pak~Yong Ho, and Michael~L. Littman.
+\newblock Practical trigger-action programming in the smart home.
+\newblock In {\em Proceedings of the ACM SIGCHI Conference on Human Factors in
+  Computing Systems (CHI)}, 2014.
+
+\bibitem{vonneumann44}
+J.~v.~Neumann and O.~Morgenstern.
+\newblock {\em The Theory of Games and Economic Behavior}.
+\newblock Princeton University Press, Princeton, NJ, 1944.
+
+\bibitem{tac:book}
+M.~Wellman, A.~Greenwald, and P.~Stone.
+\newblock {\em Autonomous Bidding Agents: Strategies and Lessons from the
+  Trading Agent Competition}.
+\newblock Intelligent Robotics and Autonomous Agents. MIT Press, Cambridge,
+  2007.
+
+\bibitem{simspsb:uai}
+M.~P. Wellman, E.~Sodomka, and A.~Greenwald.
+\newblock Self-confirming price prediction strategies for simultaneous one-shot
+  auctions.
+\newblock In {\em UAI '12: Proceedings of the 20th {C}onference on
+  {U}ncertainty in {A}rtificial {I}ntelligence}, pages 893--902, August 2012.
+
+\bibitem{wilson02}
+M.~Wilson.
+\newblock Six views of embodied cognition.
+\newblock {\em Psychonomic Bulletin \& Review}, 9(4):625--636, 2002.
+
+\bibitem{ziebart2008maximum}
+Brian~D Ziebart, Andrew~L Maas, J~Andrew Bagnell, and Anind~K Dey.
+\newblock Maximum entropy inverse reinforcement learning.
+\newblock In {\em AAAI}, pages 1433--1438, 2008.
+
+\bibitem{ZGL:06}
+M.~Zinkevich, A.~Greenwald, and M.~Littman.
+\newblock Cyclic equilibria in {M}arkov games.
+\newblock In {\em Advances in Neural Information Processing Systems 18}, page
+  To Appear. {MIT} Press, 2006.
+
+\end{thebibliography}

@@ -1,0 +1,184 @@
+\section{Introduction}
+\label{sec:intro}
+
+Autonomous robots will soon be expected to collaborate with their
+human counterparts on complex tasks such as safety patrols in inner
+cities, \commenta{list two more friendly (non-DOD) collaborative
+  activities.  driving, for instance!}
+%collaborative search and rescue operations in unfamiliar and hostile environments, 
+%and sensitive negotiation missions in foreign territories.  
+Such situations require sophisticated cognitive and social
+capabilities that current machines do not even approximate.
+Consequently, we, as researchers, are presently facing the enormous
+challenge of identifying what those capabilities are, and then
+focusing our efforts on developing those which are deemed most
+essential to successful collaborations between humans and robots.
+
+%As sketched in Figure~\ref{fig:visionobjective}
+It has been argued\commenta{need citation} that the broad vision of
+``machines as partners'' can be substantially advanced by investigating
+social-cognitive capacities in humans, implementing them in autonomous
+robots, and then refining their capacities so as to make robots
+acceptable to humans in collaborative tasks.  Capacities needed for
+robots as partners include various mechanisms of their own social
+cognition (e.g., recognizing actions in behavior streams; judging
+intentionality; inferring beliefs, desires, and emotions;
+see~\cite{malle_tree_2015}) as well as a model of human social
+cognition.%
+%\footnote{The robot's model of human social cognition is likely to be
+%  more extensive than the robot's own social cognition. That is in
+%  part because of engineering challenges with respect to certain
+%  mechanisms (e.g., simulation and self-awareness), but also because
+%  the robot might not need certain mechanisms (e.g., emotional
+%  empathy) but still must recognize that people have such mechanisms
+%  and that their behavior is influenced by them.}
+
+But even machines equipped with sophisticated mechanisms of their own
+social cognition would have enormous difficulties predicting and
+understanding human behavior in many social interactions because a
+fundamental element would still be missing that uniquely characterizes
+human social life: {\em the powerful influence of (omnipresent) social
+  norms}.  
+
+The goal of the proposed project is to endow machines with a
+\textbf{norm capacity}, thereby providing
+%a missing link, which is 
+for machines a key component of their social-cognitive abilities.
+Specifically, our project promises novel scientific insights into
+\emph{norm representation\/} in AI agents, as well as the development
+of the first algorithms that realize \emph{norm learning}.  By so
+doing, this project initiates a necessary first step toward the broad
+vision of ``machines as partners.''
+
+
+\subsection{Collaboration and Norms}
+
+\noindent A {\bf collaboration} can be defined as {\em a set of
+  actions coordinated among two or more agents in pursuit of one or
+  more joint goals}.  An agent's pursuit of {\em joint} goals (rather
+than merely individual ones) requires several unique capacities,
+such as social cognition, communication, and shared mental models with
+one's partner.  For example, each partner must be aware of the joint
+goals, which requires self-aware representations (``I am pursuing goal
+{\em G}'') and other-aware representations (``My partner is pursuing
+goal {\em G}''), integrated into a form of collective representation
+(``We are pursuing goal {\em G} together'').  To pursue such joint
+goals, partners must share and update a number of beliefs about the
+situation they are in as well as evaluations of the best ways to
+pursue their joint goals.
+
+An indispensable background to all these capacities is the fact that
+humans share {\em norm systems} that enable, facilitate, and refine
+social interactions.  A working definition of a
+{\bf norm} is the following (see~\cite{bicchieri06}):
+
+\begin{quote}
+  {\em An instruction (not) to perform a specific or a general class
+    of action, whereby a sufficient number of individuals in a
+    community (a) indeed follow this instruction and (b) expect others
+    in the community to follow the instruction.}
+\end{quote}
+
+\noindent
+By imposing socially distributed constraints on our actions, norms
+substantially facilitate social interaction, thereby enabling
+multi-agent collaborations.\commenta{citation?}
+
+Specifically, norms have at least three benefits.  First, norms
+increase the predictability of other people's behavior. This is
+because any social perceiver can assume that other people will abide
+by norms, which greatly reduces the number of possible actions they
+might perform.  Second, norms provide guidance for a person's own
+action selection, for norms directly tag possible actions as desirable
+or undesirable in the relevant community.  Third, norms improve
+coordination among collaborators.  That is because a collaboration
+involves many requests, agreements, and commitments, which bind the
+individual to a course of action.  A public promise, for example, is a
+prototypical commitment to a norm: The declaration ``I promise {\em
+  X}'' imposes a norm on oneself to strive toward {\em X}, which
+involves others' expectations for the person to strive toward {\em X},
+the person's desire to meet those expectations, and the possible
+sanctions other people may impose if the person fails to achieve {\em
+  X}.
+
+
+\subsection{Norms for Robots}
+
+\noindent Because norms are indispensable for human social life, and
+because they have so many benefits for individuals in social
+communities, norms will be indispensable to robots that operate in
+human societies as well.  Without them, people will not perceive
+robots as suitable partners in {\em effective, safe, and
+  trustworthy\/} collaborations.  In fact, whenever scientists,
+designers, or practitioners demand that human-machine collaborations
+have these desired properties, they presuppose a complex norm system
+without making it explicit.\commenta{needs citation} Here is an
+attempt to make it explicit.
+
+{\em Effective\/} collaborations are ones in which the collaborators'
+joint goals are in fact achieved.  Thus, collaborators must be aware
+of their jointly adopted goals and take actions that advance them.
+Besides many basic capacities that lead to collaboration success
+(e.g., skills, resources, etc.), successful collaborations require a
+unique tradeoff: to pursue joint goals, collaborators must set aside
+some of their own individual goals. Classic formulations of game
+theory pit individual goals and joint goals against each other (e.g.,
+the ``defect'' vs. ``cooperate'' options in the Prisoners' Dilemma
+game). In many ordinary social interactions, however, such as
+voluntary collaborations, people prioritize joint goals over
+individual goals by way of mutual commitments to norms.
+
+%which guide both the specific interaction at hand, the relationship
+%among the collaborators, and similar types of social interactions more generally.
+
+{\em Safe\/} collaborations are ones in which each partner takes only
+actions that are unlikely to cause harm to the other, be it physical
+or psychological.  Safety is an objective concept in that it concerns
+the efforts of each partner to limit such harm.  Any agent with even a
+rudimentary norm system should represent and abide by the norm to not
+harm others.
+
+{\em Trustworthy\/} collaborations, finally, are ones in which each
+partner is confident that the other partner is committed to the joint
+goals, pursues them with best effort, and supports the partner's
+welfare, especially when that person is in a vulnerable position.
+Trust is a subjective concept in that it requires not just the
+partners' actual commitment to their joint goals, efforts, and mutual
+welfare, but the felt confidence that the partner holds these
+commitments.  Such commitments constitute specific norms that the
+collaborators abide by and expect each other to abide by.
+
+For robots to adhere to norms, these norms must be defined
+computationally.  Asimov's famous three laws of
+robotics~\cite{asimov_1950} can be construed as an early attempt to
+define norms for robots. The extent to which these laws have been
+discussed in popular culture and scholarly work attests to a general
+consensus that robots must obey norms to be safe and trustworthy
+members of society.
+
+Thus, the broad challenge of designing machines as social partners
+requires that we advance machine capabilities to {\em learn,
+  represent, activate, and implement social norms}---which we will
+call a machine's {\bf norm capacity}.  Critically, we argue that
+advances in the domain of norm capacity should be prioritized over
+advances in human social cognition.  We offer two main reasons.
+
+First, humans will reject collaboration partners that are unaware of
+or, worse yet, violate the social norms that humans take for granted.
+Second, without norm capacity, machine social cognition would be a
+hopeless endeavor.  Norms have such a powerful impact on human
+behavior that only by endowing machines with norm capacity can
+machines succeed at modeling human behavior.
+
+However, efforts to design and implement formally-defined \emph{norm
+  systems\/} for robots have been rare (but
+see~\cite{arkin09,scheutz_roman_2015}), so current robots have norm
+capacity---no ability to represent, learn, and employ norms in their
+behavior.  Without these abilities, however, robots will be unable to
+participate in human-machine collaborations, because people do not
+trust\commenta{need citation!}  and are thus less willing to
+collaborate with other agents who do not follow norms.  Human-machine
+interactions without norm capacity on the machine's side will be
+unnatural, ineffective, and may not only hamper the development of
+trust, but could even lead to team conflict and human harm.
+

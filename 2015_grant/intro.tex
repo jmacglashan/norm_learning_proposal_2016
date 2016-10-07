@@ -1,0 +1,191 @@
+
+\section{Introduction}
+\label{sec:intro}
+
+Much of human social life occurs in contexts where people must 
+coordinate their actions with those of others.  From organizing a
+party to flying a rocket ship to the moon, groups of people have
+accomplished great things by reasoning as a team and engaging in
+jointly intentional behavior~\cite{searle1995construction}.  Indeed,
+some have argued that because most other animals lack the capacity to
+work adaptively as cohesive unit across many domains, team reasoning
+may be the hallmark of human sociality~\cite{tomasello2005understanding}.
+%As artificial agents become ubiquitous in everyday life, can they be
+%successfully designed to join in human collectivity?
+
+%But what are the psychological processes and computational mechanisms underlying this phenomenon?
+
+Artificial agents are becoming ubiquitious in everyday life.  However,
+as we all have experienced, collaborating with an artificial agent is
+not as easy as collaborating with a (real) person.  On the contrary,
+such collaborations sometimes require that we behave strangely so that
+we can direct the artificial agent towards productive actions.  An
+artificial agent capable of engaging in human-like jointly intentional
+behavior or team reasoning would be preferable.  But how can we design
+artificial agents to collaborate with people in a human-like manner?
+
+This proposal is founded on the assumption that social norms hold the
+key to collaboration.  A working definition of a \mydef{social norm}
+is the following (see~\cite{bicchieri2005grammar}):
+%
+%\begin{quote}
+  {\em An instruction (not) to perform a specific or a general class
+    of action, whereby a sufficient number of individuals in a
+    community (a) indeed follow this instruction and (b) expect others
+    in the community to follow the instruction.}
+%\end{quote}
+%
+\noindent
+%\commenta{do we need an example here? driving on left or right?}
+For example, American drivers drive on the right and expect others to do the same.
+%
+Using game theory to model interaction among agents (human or
+artificial), we use social norms to disambiguate the uncertainty that
+each agent might otherwise have as to what role they will play in
+determining the outcome of the game.
+
+While some behavioral game theorists have claimed that social norms
+emerge as a consequence of \mydef{other-regarding
+  preferences}~\cite{fehr1999theory} (preferences over outcomes that
+affect others, not just oneself), Binmore~\cite{binmore2010social}
+argues to the contrary that norms are not effectively captured by
+other-regarding preferences and instead are better modeled by direct
+preferences for joint outcomes.  Our view (norms as disambiguating) is
+closer to Binmore's; however, we contend that the computational
+process by which norms emerge does depend quite heavily on social
+preferences.
+
+%we propose that shared preferences for a solution to a joint task 
+%are a mechanism that supports norm creation.
+
+
+Specifically, the computational process is thus:
+1.~agents update their estimate of a \mydef{social utility function} in the environment
+(which by definition incorporates social preferences);
+2.~agents make plans to act;
+3.~agents act, simultaneously or sequentially, and (let us assume) observe one another's actions.
+%4.~agents update their \emph{joint\/} utility function, 
+This process repeats so long as the interaction continues.
+
+%this process didn't come out of thin air
+Support for this process can be found in the work of
+philosophers~\cite{dennett87} and psychologists~\cite{heider44} who
+have long argued that people understand and predict the actions of
+others in terms of their mental states (beliefs, desires, intentions,
+etc.).  For example, if you see your son pour cereal into a bowl and
+then walk over to the refrigerator, you probably assume he is hungry,
+wants milk, and believes there is milk in the refrigerator. If you
+were close to the refrigerator, he may have asked you to bring him
+milk, or you may have brought it to him instinctively. Furthermore,
+you likely get pleasure from your son---an other---achieving his goals.
+
+%neither did the idea of social preferences
+Perhaps surprisingly, recent work suggests that infants are capable of
+inferring the goals of others~\cite{gergely95}, and seem to prefer
+agents who help others achieve their goals~\cite{hamlin13,hamlin07}.
+Somewhat analogously, reinforcement-learning algorithms can be
+used to infer human social goals from their actions~\cite{baker09},
+and whether another person plans to help or hinder your own
+plans~\cite{ullman09}.
+
+In the proposed project, we seek to model social preferences using a
+social utility function.  A social utility function is an immediate
+generalization of the usual notion of an individual's utility
+function, but it ascribes value to the goals of all agents in the
+environment.  That is, a social utility function combines the
+individual utilities of all the agents in some way.  For example, one
+social utility function might be utilitarian (seeking to maximize the
+total agent welfare), and another egalitarian (seeking to maximize the
+minimum welfare across agents).
+
+Recall the computational process we put forth.  When agents make a
+plan that optimizes a social utility function, they choose actions
+that jointly optimize the behavior of the collective.
+%, as specified by
+%the social preferences encoded in that function.  
+Likewise, when
+agents update their estimate of the social utility function, they do
+so using the observed history of actions in the environment.
+%%%can we guarantee convergence!!??
+If this process stabilizes, the social utility function represents the
+preferences of the community as a whole, and the social norm
+implements a joint plan of action that optimizes that utility
+function.  Indeed, in the computational model we put forth, the
+emergent social norm and the social preferences are expected to
+reinforce one another.
+%%%perhaps assuming stationary agent behavior, but what does that mean here? that the individual agents are really optimizing individual utility functions that are unchanging over time?
+
+In this proposal, we set out to demonstrate that this computational
+model has legs.  We present a preliminary set of simulation results
+showing how reinforcement-learning agents 
+%interacting in a grid game environment 
+can use a social utility function to represent a social norm, and can
+then learn that norm via an interactive learning algorithm that mimics
+the aforementioned computational process so that eventually the
+emergent social norm and the learned social preferences reinforce one
+another.  We then go one step further and show that our approach can
+also learn (in an off-line, batch fashion) from traces of human data
+so that the social norms produced mimic the social norms represented
+by the trace data.  While these two experiments (on machine-machine,
+interactive and human-human, batch data) are indeed promising, it
+remains to extend these techniques to human-machine interactive and
+batch data.
+
+Economists use utility functions as a potential model of why people
+behave the way that they do.  It is not that they believe people
+necessarily possess such a thing as a utility function; it is simply
+that human behavior can perhaps be described ``as if'' people
+did~\cite{Savage1954}.  One strong assumption that we have employed in
+our work so far is that the social preferences of the entire
+population can be represented by a \emph{single\/} social utility
+function---in other words, the collective behavior of agents can be
+understood ``as if'' there were one social utility function.  Under
+this assumption, planning can be carried out by decentralized agents,
+and coordination on a joint plan of action can still be achieved.
+This result holds so long as the agents all observe, and learn from,
+the same joint history (so there exists a unique optimal joint plan).
+%In particular, they learn the social utility function from that
+%history, based on which they (independently) compute a joint plan and
+%(independently) carry out their corresponding role.
+
+One important direction for future research is to understand the
+extent to which we can relax this assumption and instead assume that
+individual agents behave ``as if'' they had their own individual
+(social) utility functions.  Two of the PIs on this project have
+extensive experience with multi-agent reinforcement-learning
+algorithms in games where each agent has its own individual
+(non-social) utility function.  Many of these learning algorithms are
+fraught with difficulty, however, because planning tends to yield
+multiple equilibria, and consequently, coordination on a joint plan of
+action is difficult, if not impossible, to achieve in a decentralized
+manner.
+
+We are proposing to get around this problem by updating the usual
+model of an agent's utility function, which ordinarily depends only on
+their own material benefits, with a social utility function that
+incorporates their material benefits as well as a social component.
+Moreover, that social component is to be learned through interaction.
+Because the agents will learn the social component from a shared joint
+history, it seems plausible that such interaction could once again
+lead to a situation in which an emergent social norm and the learned
+social preferences reinforce one another.
+
+The ultimate goal in developing artificial agents that act
+intelligently in multi-agent scenarios is to apply them to real-world
+problems.  To a limited extent, this goal has already been achieved:
+artificial agents trade stocks and bid in online ad auctions.  In
+these two market environments, rationality may well be an appropriate
+model of behavior for the participating agents.  However,
+%given the plethora of experimental results demonstrating that human
+%behavior does not abide by standard definitions of
+%rationality~\cite{Camerer:2003,kahnemanst82}, 
+an artificial agent that plans its collaboration by assuming the
+humans in its environment will act rationally is unlikely to be
+successful in its collaborations~\cite{Camerer:2003,kahnemanst82}.
+Instead of rationality as the underlying principle guiding human
+behavior, this proposal is grounded in the assumption that humans
+abide by social norms.  \emph{We propose an interactive approach to
+  simultaneously learning social norms and social preferences that
+  reinforce one another.}
+
+%Our ultimate goal is to expand the scope of applications where machines can collaborate to with humans.  To do this, a deeper understanding of human-machine interaction is required.  Thus our proposal includes complementary computational and behavioral studies. Before describing our planned studies and preliminary results, we review related prior work in more detail.
