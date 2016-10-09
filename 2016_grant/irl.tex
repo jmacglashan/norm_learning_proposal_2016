@@ -1,0 +1,65 @@
+
+\section{Learning from Demonstration} 
+
+In \mydef{learning from demonstration}, an agent learns how to behave
+in an environment by observing an expert.  That is, an agent is
+presented with a data set consisting of multiple examples of behaviors
+(e.g., state-action trajectories through a Markov decision process),
+and is tasked with the objective of learning a policy capable of
+(closely) reproducing the data.
+
+Two widely studied approaches to this problem include
+\mydef{imitation} and \mydef{intention} learning.
+Imitation learning is a supervised learning approach, in which
+an agent learns a mapping from states to actions,
+with the expert's behavior serving as training data.
+After training, a learner need only follow its learned policy directly.
+
+Learning intentions, in contrast, is often framed as an 
+\mydef{inverse reinforcement learning} (IRL) problem.
+Here, the agent's goal is to learn rewards that motivate the expert's
+behavior, after which it applies a planning algorithm to derive a
+policy that is consistent with those learned rewards.
+A strength of the IRL framework is that even simple reward functions
+can capture complex behavior, leading to greater generalization
+capabilities (i.e., appropriate behavior in unobserved states) than
+the more direct approach taken by imitation learning.
+
+
+\paragraph{Inverse reinforcement learning}
+
+Although there are multiple IRL formalizations and approaches, they
+all take as input an MDP together with a \mydef{family} of a reward
+functions $R_\Theta$ that is defined by some parameter space $\Theta$,
+and a dataset $D$ of trajectories (where a trajectory is a finite
+sequence of state-action pairs: $\langle (s_1, a_1), ..., (s_n, a_n)
+\rangle$). The algorithms then output a specific parameterized reward
+function $R_\theta \in R_\Theta$, which induces a policy that is
+consistent with the input trajectories.
+%
+Different IRL algorithms frame the objective function for policy
+consistency differently. One common approach is to treat the
+search problem as a probabilistic inference
+problem~\cite{babes11,lopes2009active,ramachandran2007bayesian,ziebart2008maximum}. 
+
+For example, in the maximum-likelihood setting~\cite{babes11}, the
+goal is to find a reward function parameterization that maximizes a
+likelihood function:
+%
+\begin{equation}
+\label{eq:mlirl}
+\theta \in \arg\max_{\theta} L(D \mid R_{\theta}) = \prod_{t \in D} \prod_i^{|t|} \pi_{\theta}(s_i, a_i),
+\end{equation}
+
+where $\pi_{\theta}(s, a)$ is a stochastic policy defining the
+probability of taking action $a$ in state $s$ when the parameterized
+reward function to be maximized is $R_{\theta}$. Typically, the
+Boltzmann (softmax) stochastic policy over the $Q$-values is used:
+$\pi_{\theta}(s, a) = \frac{e^{\beta Q_{\theta}(s,a)}}{\sum_{a' \in A}
+  e^{\beta Q_{\theta}(s,a')}}$, where $Q_\theta(s, a)$ is the $Q$-function
+when the reward function is parameterized by $\theta$.
+
+\commenta{Bayesian IRL!}
+
+\commenta{Nonparametric Bayesian IRL?}
+
