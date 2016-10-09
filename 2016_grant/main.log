@@ -1,0 +1,593 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2015.1.6)  9 OCT 2016 12:29
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main
+(./main.tex
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 4 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+))
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 137.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2014/04/23 v3.0j Driver-dependant file (DPC,SPQR)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+\epsfxsize=\dimen105
+\epsfysize=\dimen106
+)
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen107
+\WF@size=\dimen108
+\c@WF@wrappedlines=\count88
+\WF@box=\box26
+\WF@everypar=\toks15
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/home/amy/tex/sty/fullpage.sty
+Style Option FULLPAGE Version 2 as of 15 Dec 1988
+) (/home/amy/tex/sty/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen109
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen110
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count89
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count90
+\leftroot@=\count91
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count92
+\DOTSCASE@=\count93
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen111
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count94
+\c@MaxMatrixCols=\count95
+\dotsspace@=\muskip11
+\c@parentequation=\count96
+\dspbrk@lvl=\count97
+\tag@help=\toks17
+\row@=\count98
+\column@=\count99
+\maxfields@=\count100
+\andhelp@=\toks18
+\eqnshift@=\dimen112
+\alignsep@=\dimen113
+\tagshift@=\dimen114
+\tagwidth@=\dimen115
+\totwidth@=\dimen116
+\lineht@=\dimen117
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/home/amy/tex/sty/mathsymb.sty
+Package: mathsymb 1994/09/22 1.0 mathsymb.sty for C R N Q K
+\symmsbm=\mathgroup4
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen118
+\captionmargin@=\dimen119
+\captionwidth=\dimen120
+\caption@tempdima=\dimen121
+\caption@indent=\dimen122
+\caption@parindent=\dimen123
+\caption@hangindent=\dimen124
+)
+\c@ContinuedFloat=\count101
+Package caption Info: wrapfig package is loaded.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+\c@subfigure=\count102
+\c@subtable=\count103
+)
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count104
+\float@exts=\toks21
+\float@box=\box29
+\@float@everytoks=\toks22
+\@floatcapt=\box30
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks23
+\c@algorithm=\count105
+)
+(/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count106
+\c@ALG@rem=\count107
+\c@ALG@nested=\count108
+\ALG@tlm=\skip46
+\ALG@thistlm=\skip47
+\c@ALG@Lnr=\count109
+\c@ALG@blocknr=\count110
+\c@ALG@storecount=\count111
+\c@ALG@tmpcounter=\count112
+\ALG@tmplength=\skip48
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (./defs.sty
+\c@theorem=\count113
+) (./macros.sty) (./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count114
+\scratchdimen=\dimen125
+\scratchbox=\box31
+\nofMPsegments=\count115
+\nofMParguments=\count116
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count117
+\MPscratchDim=\dimen126
+\MPnumerator=\count118
+\makeMPintoPDFobject=\count119
+\everyMPtoPDFconversion=\toks25
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./intro.tex)
+(./grid_games.tex
+LaTeX Font Info:    Try loading font information for U+msb on input line 16.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<../2015_grant/figures/threebyfive.png, id=7, 801.99625pt x 435.6275pt>
+File: ../2015_grant/figures/threebyfive.png Graphic file (type png)
+
+<use ../2015_grant/figures/threebyfive.png>
+Package pdftex.def Info: ../2015_grant/figures/threebyfive.png used on input li
+ne 104.
+(pdftex.def)             Requested size: 91.60228pt x 49.75377pt.
+
+<../2015_grant/figures/threebyfivehallways.png, id=9, 801.49437pt x 436.12938pt
+>
+File: ../2015_grant/figures/threebyfivehallways.png Graphic file (type png)
+ <use ../2015_grant/figures/threebyfivehallways.png>
+Package pdftex.def Info: ../2015_grant/figures/threebyfivehallways.png used on 
+input line 111.
+(pdftex.def)             Requested size: 91.60228pt x 49.84438pt.
+
+<../2015_grant/figures/threebyfivewindow.png, id=10, 802.49812pt x 437.635pt>
+File: ../2015_grant/figures/threebyfivewindow.png Graphic file (type png)
+
+<use ../2015_grant/figures/threebyfivewindow.png>
+Package pdftex.def Info: ../2015_grant/figures/threebyfivewindow.png used on in
+put line 118.
+(pdftex.def)             Requested size: 91.60228pt x 49.94966pt.
+
+<../2015_grant/figures/longhallway.png, id=11, 1079.03125pt x 147.04938pt>
+File: ../2015_grant/figures/longhallway.png Graphic file (type png)
+
+<use ../2015_grant/figures/longhallway.png>
+Package pdftex.def Info: ../2015_grant/figures/longhallway.png used on input li
+ne 125.
+(pdftex.def)             Requested size: 86.20107pt x 11.74623pt.
+
+<../2015_grant/figures/nocompromise.png, id=12, 757.32938pt x 291.0875pt>
+File: ../2015_grant/figures/nocompromise.png Graphic file (type png)
+
+<use ../2015_grant/figures/nocompromise.png>
+Package pdftex.def Info: ../2015_grant/figures/nocompromise.png used on input l
+ine 132.
+(pdftex.def)             Requested size: 86.20107pt x 33.13013pt.
+ [1]) (./results_figures.tex
+<../2015_grant/figures/joint_scores_team.png, id=22, 578.16pt x 433.62pt>
+File: ../2015_grant/figures/joint_scores_team.png Graphic file (type png)
+
+<use ../2015_grant/figures/joint_scores_team.png>
+Package pdftex.def Info: ../2015_grant/figures/joint_scores_team.png used on in
+put line 4.
+(pdftex.def)             Requested size: 140.92792pt x 105.69196pt.
+
+<../2015_grant/figures/joint_scores_individual.png, id=23, 578.16pt x 433.62pt>
+File: ../2015_grant/figures/joint_scores_individual.png Graphic file (type png)
+
+<use ../2015_grant/figures/joint_scores_individual.png>
+Package pdftex.def Info: ../2015_grant/figures/joint_scores_individual.png used
+ on input line 10.
+(pdftex.def)             Requested size: 140.92792pt x 105.69196pt.
+
+<../2015_grant/figures/SelfPlay.png, id=24, 371.9496pt x 232.2276pt>
+File: ../2015_grant/figures/SelfPlay.png Graphic file (type png)
+
+<use ../2015_grant/figures/SelfPlay.png>
+Package pdftex.def Info: ../2015_grant/figures/SelfPlay.png used on input line 
+16.
+(pdftex.def)             Requested size: 140.92792pt x 87.98872pt.
+
+Underfull \hbox (badness 2818) in paragraph at lines 17--17
+[]\OT1/cmr/m/n/10 Figure 4: |Av-er-age score of
+ []
+
+) (./machine_setup.tex [2 <../2015_grant/figures/threebyfive.png> <../2015_gran
+t/figures/threebyfivehallways.png> <../2015_grant/figures/threebyfivewindow.png
+> <../2015_grant/figures/longhallway.png> <../2015_grant/figures/nocompromise.p
+ng>]) (./machine_results.tex
+
+LaTeX Warning: Citation `singh2009rewards' on page 3 undefined on input line 20
+.
+
+[3 <../2015_grant/figures/joint_scores_team.png> <../2015_grant/figures/joint_s
+cores_individual.png> <../2015_grant/figures/SelfPlay.png>]) (./human_setup.tex
+) (./human_results.tex [4]
+
+LaTeX Warning: Citation `blanco11' on page 5 undefined on input line 171.
+
+
+LaTeX Warning: Citation `fisman07' on page 5 undefined on input line 171.
+
+) (./norm_representation.tex
+
+LaTeX Warning: Citation `bertsekas87' on page 5 undefined on input line 46.
+
+
+LaTeX Warning: Citation `babes11' on page 5 undefined on input line 73.
+
+
+LaTeX Warning: Citation `lopes2009active' on page 5 undefined on input line 73.
+
+
+
+LaTeX Warning: Citation `ramachandran2007bayesian' on page 5 undefined on input
+ line 73.
+
+
+LaTeX Warning: Citation `ziebart2008maximum' on page 5 undefined on input line 
+73.
+
+[5]
+
+LaTeX Warning: Citation `littman1994markov' on page 6 undefined on input line 9
+5.
+
+
+LaTeX Warning: Citation `GreenwaldHall:03' on page 6 undefined on input line 11
+3.
+
+
+LaTeX Warning: Citation `HuWellman03' on page 6 undefined on input line 113.
+
+
+LaTeX Warning: Citation `Littman01' on page 6 undefined on input line 113.
+
+
+LaTeX Warning: Citation `ZGL:06' on page 6 undefined on input line 113.
+
+
+LaTeX Warning: Citation `daskalakis2009complexity' on page 6 undefined on input
+ line 117.
+
+
+LaTeX Warning: Citation `reddy2012inverse' on page 6 undefined on input line 12
+8.
+
+[6]
+
+LaTeX Warning: Citation `diuk2009adaptive' on page 7 undefined on input line 21
+1.
+
+
+LaTeX Warning: Citation `kolter2009regularization' on page 7 undefined on input
+ line 211.
+
+
+LaTeX Warning: Citation `li2009reinforcement' on page 7 undefined on input line
+ 211.
+
+
+LaTeX Warning: Citation `parr2008analysis' on page 7 undefined on input line 21
+1.
+
+) (./norm_learning.tex) (./batch_learning.tex
+
+LaTeX Warning: Citation `macglashan15b' on page 7 undefined on input line 62.
+
+) (./interactive_learning.tex [7]) (./norm_learning_results.tex
+<../2015_grant/figures/batch1.pdf, id=59, 419.5675pt x 226.8475pt>
+File: ../2015_grant/figures/batch1.pdf Graphic file (type pdf)
+
+<use ../2015_grant/figures/batch1.pdf>
+Package pdftex.def Info: ../2015_grant/figures/batch1.pdf used on input line 49
+.
+(pdftex.def)             Requested size: 129.17975pt x 69.84085pt.
+
+<../2015_grant/figures/batch2.pdf, id=60, 419.5675pt x 226.8475pt>
+File: ../2015_grant/figures/batch2.pdf Graphic file (type pdf)
+
+<use ../2015_grant/figures/batch2.pdf>
+Package pdftex.def Info: ../2015_grant/figures/batch2.pdf used on input line 57
+.
+(pdftex.def)             Requested size: 129.17975pt x 69.84085pt.
+
+<../2015_grant/figures/batch3.pdf, id=61, 418.56375pt x 226.8475pt>
+File: ../2015_grant/figures/batch3.pdf Graphic file (type pdf)
+
+<use ../2015_grant/figures/batch3.pdf>
+Package pdftex.def Info: ../2015_grant/figures/batch3.pdf used on input line 65
+.
+(pdftex.def)             Requested size: 129.17975pt x 70.01047pt.
+ [8]
+<../2015_grant/figures/interactive1.pdf, id=65, 419.5675pt x 464.73625pt>
+File: ../2015_grant/figures/interactive1.pdf Graphic file (type pdf)
+
+<use ../2015_grant/figures/interactive1.pdf>
+Package pdftex.def Info: ../2015_grant/figures/interactive1.pdf used on input l
+ine 103.
+(pdftex.def)             Requested size: 84.55244pt x 93.65472pt.
+
+<../2015_grant/figures/interactive2.pdf, id=66, 419.5675pt x 464.73625pt>
+File: ../2015_grant/figures/interactive2.pdf Graphic file (type pdf)
+
+<use ../2015_grant/figures/interactive2.pdf>
+Package pdftex.def Info: ../2015_grant/figures/interactive2.pdf used on input l
+ine 110.
+(pdftex.def)             Requested size: 84.55244pt x 93.65472pt.
+
+<../2015_grant/figures/interactive3.pdf, id=67, 418.56375pt x 464.73625pt>
+File: ../2015_grant/figures/interactive3.pdf Graphic file (type pdf)
+
+<use ../2015_grant/figures/interactive3.pdf>
+Package pdftex.def Info: ../2015_grant/figures/interactive3.pdf used on input l
+ine 117.
+(pdftex.def)             Requested size: 84.55244pt x 93.87456pt.
+
+<../2015_grant/figures/interactive4.pdf, id=68, 418.56375pt x 464.73625pt>
+File: ../2015_grant/figures/interactive4.pdf Graphic file (type pdf)
+
+<use ../2015_grant/figures/interactive4.pdf>
+Package pdftex.def Info: ../2015_grant/figures/interactive4.pdf used on input l
+ine 124.
+(pdftex.def)             Requested size: 84.55244pt x 93.87456pt.
+
+<../2015_grant/figures/interactive5.pdf, id=69, 418.56375pt x 464.73625pt>
+File: ../2015_grant/figures/interactive5.pdf Graphic file (type pdf)
+
+<use ../2015_grant/figures/interactive5.pdf>
+Package pdftex.def Info: ../2015_grant/figures/interactive5.pdf used on input l
+ine 131.
+(pdftex.def)             Requested size: 84.55244pt x 93.87456pt.
+) (./norm_learning_human.tex
+[9 <../2015_grant/figures/batch1.pdf> <../2015_grant/figures/batch2.pdf> <../20
+15_grant/figures/batch3.pdf> <../2015_grant/figures/interactive1.pdf> <../2015_
+grant/figures/interactive2.pdf> <../2015_grant/figures/interactive3.pdf> <../20
+15_grant/figures/interactive4.pdf> <../2015_grant/figures/interactive5.pdf>])
+(./plan.tex) (./deliverables.tex) (./evaluation.tex) (./impact.tex [10])
+(./prior.tex
+
+LaTeX Warning: Citation `tada:jack' on page 11 undefined on input line 10.
+
+
+LaTeX Warning: Citation `seqauc:nips' on page 11 undefined on input line 10.
+
+
+LaTeX Warning: Citation `efgs:rldm' on page 11 undefined on input line 10.
+
+
+LaTeX Warning: Citation `tada:quibids' on page 11 undefined on input line 10.
+
+
+LaTeX Warning: Citation `poi:aamas' on page 11 undefined on input line 16.
+
+
+LaTeX Warning: Citation `poi:ec' on page 11 undefined on input line 16.
+
+
+LaTeX Warning: Citation `simspsb:uai' on page 11 undefined on input line 16.
+
+
+LaTeX Warning: Citation `loftin14b' on page 11 undefined on input line 52.
+
+
+LaTeX Warning: Citation `macglashan15' on page 11 undefined on input line 52.
+
+
+LaTeX Warning: Citation `macglashan15b' on page 11 undefined on input line 52.
+
+
+LaTeX Warning: Citation `desjardins13' on page 11 undefined on input line 59.
+
+) [11]
+No file main.bbl.
+(./main.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4551 strings out of 494978
+ 69115 string characters out of 6180204
+ 131433 words of memory out of 5000000
+ 7620 multiletter control sequences out of 15000+600000
+ 10005 words of font info for 38 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 38i,10n,38p,1138b,497s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (12 pages, 797910 bytes).
+PDF statistics:
+ 253 PDF objects out of 1000 (max. 8388607)
+ 167 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+

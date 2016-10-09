@@ -1,0 +1,44 @@
+%abbreviations
+\newcommand{\nb}{{\em n.b.\/}}
+\newcommand{\ie}{{\em i.e.\/}}
+\newcommand{\eg}{{\em e.g.\/}}
+\newcommand{\st}{{\mbox{\em s.t.\/}}}
+\newcommand{\etal}{{\em et al.\/}}
+
+%theorem environments
+\@ifundefined{theorem}{
+\newtheorem{theorem}{Theorem}
+}
+
+\@ifundefined{definition}{
+\newtheorem{definition}[theorem]{Definition}
+}
+
+\@ifundefined{lemma}{
+\newtheorem{lemma}[theorem]{Lemma}
+}
+
+\@ifundefined{corollary}{
+\newtheorem{corollary}[theorem]{Corollary}
+}
+
+\@ifundefined{remark}{
+\newtheorem{remark}[theorem]{Remark}
+}
+
+\@ifundefined{open}{
+\newtheorem{open}[theorem]{Open Problem}
+}
+
+\@ifundefined{conjecture}{
+\newtheorem{conjecture}[theorem]{Conjecture}
+}
+
+\@ifundefined{fact}{
+\newtheorem{fact}[theorem]{Fact}
+}
+
+\@ifundefined{proposition}{
+\newtheorem{observation}[theorem]{Proposition}
+}
+

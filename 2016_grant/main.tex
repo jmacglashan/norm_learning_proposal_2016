@@ -1,0 +1,95 @@
+\documentclass[10pt]{article}
+\usepackage{helvet}
+
+\long\def\comment#1{}
+
+\long\def\commenta#1{{\bf **Amy: #1**}}
+\long\def\commentm#1{{\bf **Michael: #1**}} 
+
+%\long\def\commenta#1{}
+%\long\def\commentm#1{}
+
+\usepackage{url}
+\usepackage[usenames,dvipsnames]{color}		
+\usepackage{epsfig}
+\usepackage{wrapfig}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{mathsymb}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{graphicx}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\usepackage{defs}
+\usepackage{macros}
+
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
+\newcommand*{\Resize}[2]{\resizebox{#1}{!}{$#2$}}%
+
+\newcommand{\jmnote}[1]{\textcolor{Green}{\textbf{[JM: #1]}}}
+
+\newcommand{\mydef}[1]{\textbf{\boldmath{#1}}}
+
+\newcommand{\up}{-2.5mm}
+\newcommand{\down}{1mm}
+\newcommand{\width}{5.25in}
+%\renewcommand{\baselinestretch}{0.975}
+
+\begin{document}
+
+\thispagestyle{empty}
+{\bf WE NEED A SUMMARY!}
+%%%\input{summary}
+
+\newpage
+\setcounter{page}{1}
+
+% 2 pages
+\input{intro}
+%%%\input{goals}
+
+% 2 pages
+%%%\input{literature}
+
+% 2 pages
+\input{grid_games}
+
+% 1.5 pages
+\input{results_figures}
+\input{machine_setup}
+\input{machine_results}
+
+% 1.5 pages
+\input{human_setup}
+\input{human_results}
+
+% 5 pages
+\input{norm_representation}
+\input{norm_learning}
+\input{batch_learning}
+\input{interactive_learning}
+\input{norm_learning_results}
+\input{norm_learning_human}
+
+% 1 page
+\input{plan}
+\input{deliverables}
+\input{evaluation}
+
+% 1 page
+\input{impact}
+\input{prior}
+
+\newpage
+\setlength{\itemsep}{0pt}
+\setcounter{page}{1}
+
+\bibliographystyle{plain}
+\bibliography{grant}
+
+\end{document}
+

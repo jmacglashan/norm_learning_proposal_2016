@@ -1,0 +1,89 @@
+
+%\vspace{\up}
+\paragraph{Batch Norm Learning on Human Data}
+\label{sec:norm_learning_human}
+
+\begin{table}
+\begin{subtable}[t]{0.49\textwidth}
+\begin{center}
+{\small
+\begin{tabular}{|c|c|c|}
+\hline
+~			& Human vs Human	& Batch Norm IRL	\\ \hline  
+Trust			& 76\%			& 72\%			\\ \hline
+CD			& 16\%			& 4\%			\\ \hline
+Stalemate		& 0\%			& 24\%			\\ \hline
+Surrender		& 8\%			& 0\%			\\ \hline
+\end{tabular}}
+\caption{The percentage classifications of game outcomes for the Amazon Turk experiments and the batch norm learning algorithm trained on the Turk experimental data. The total number of games was $25$.}
+\label{tab:batch_human}
+\end{center}
+\end{subtable}
+%
+\hfill
+\begin{subtable}[t]{0.49\textwidth}
+\begin{center}
+{\small
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+~			& Trust	& CD	& Stalemate	& Surrender 	\\ \hline
+Trust			& 60\%	& 0\%	& 16\%		& 0\%		\\ \hline
+CD			& 8\%	& 4\%	& 4\%		& 0\%		\\ \hline
+Stalemate		& 0\%	& 0\%	& 0\%		& 0\%		\\ \hline
+Surrender		& 4\%	& 0\%	& 4\%		& 0\%		\\ \hline
+\end{tabular}}
+\caption{The confusion matrix showing how games were classified in the human experiments (row) vs.\ the batch norm learning experiments (column).}
+\label{tab:confusion}
+\end{center}
+\end{subtable}
+\end{table}
+
+Finally, we trained our batch norm learning algorithm using data
+collected in our 
+%human vs.\ human 
+Amazon Turk team treatment experiments. The final $10$ trajectories of
+each pair of human players was used to train a batch learner that made
+decisions for both agents jointly. Table~\ref{tab:batch_human} shows
+the classifications of the strategies learned in the $25$ games, while
+Table~\ref{tab:confusion} illustrates the learner's ability to create
+joint strategies that are classified in the same way as the human
+strategies.
+%
+Like the humans, we can see that the algorithm learned to be trusting
+in many cases, and to cooperate defensively in a few.  But the learner
+was sometimes unsuccessful at learning a strategy that led either
+agent to the goal (even when the humans had managed to reach the
+goals), resulting in a fair number of games ending in Stalemate.
+%Since the algorithm was making decisions in joint policy space, no surrender strategies were learned.  
+Overall, $64\%$ of the policies learned exactly matched the
+classification of the human data that was used in training.
+Undoubtedly, feature selection plays a major role here,
+%Different features would lead to learned strategies that match the training data more or less consistently,
+and will be the subject of future research.
+
+%\begin{table}
+%\begin{tabular}{|c|c|}
+%\hline
+%~							& Human $\rightarrow$ Batch Norm IRL	\\ \hline  
+%Trust $\rightarrow$ Trust			& 60\%							\\ \hline
+%CD $\rightarrow$ CD				& 4\%							\\ \hline
+%CD $\rightarrow$ Trust			& 8\%							\\ \hline
+%Surrender $\rightarrow$ Trust		& 4\%							\\ \hline
+%Surrender $\rightarrow$ Stalemate	& 4\%							\\ \hline
+%Trust $\rightarrow$ Stalemate		& 16\%							\\ \hline
+%CD $\rightarrow$ Stalemate		& 4\%							\\ \hline
+%\end{tabular}
+%\caption{This table shows the percentage of games which were classified in a particular way in the human experiments and in the batch norm learning experiments. $A\rightarrow B$ denotes a classification of $A$ in the human case and $B$ for the learner.}
+%\label{tab:transfer}
+%\end{table}
+
+\comment{
+%%% REQUIRES FURTHER DISCUSSION
+We see that $64\%$ of the policies learned exactly matched the
+classification of the human data that was used in training.  However,
+since Surrender and Stalemate policies, and Trust and CD policies,
+both lead to the same reward for the agents, the learning algorithm
+had a hard time distinguishing between these two pairs of strategies.
+}
+
+%In sum, the batch norm learner was not always able to learn a policy that successfully led the agents to their goals.
