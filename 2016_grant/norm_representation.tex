@@ -2,10 +2,20 @@
 \section{Norm Representation}
 \label{sec:representation}
 
-Our norm representation and learning algorithms are best explained
-using the formalisms of Markov decision processes and stochastic
-games.  We start by providing the necessary background.
-%We provide background first, and then describe our representation.
+We use the framework of stochastic games to model agent interactions.
+Because we are operating under the assumption that human behavior is
+social, we assume a (potentially) social reward function.  We then
+develop an interactive learning algorithm by which two machines can
+converge (very quickly) to one among a plethora of equilibria.  We
+also develop a batch learning algorithm by which a machine can learn
+from demonstrations a social reward function that supports one of many
+equilibria.  Both of these algorithms rely on IRL, and in our
+experiments thus far they invoke only standard IRL (e.g.,~\cite{MLIRL, BIRL}).
+
+As standard IRL cannot accommodate negative feedback,
+
+
+\paragraph{Markov decision processes}
 
 A \mydef{Markov Decision Process} (MDP) is a model of a single-agent
 decision making problem, defined by the tuple $(S, A, T, R)$, where
@@ -45,51 +55,7 @@ Given these functions, the optimal policy is derived by taking an
 action in each state with the maximum Q-value: 
 $\pi(s) \in \arg\max_{a \in A} Q(s, a)$~\cite{bertsekas87}.
 
-\mydef{Inverse reinforcement learning} (IRL) is a class of a {\em
-  learning from demonstration} (LfD) problem. An LfD problem is a
-problem in which an agent is presented demonstrations of behaviors and
-must learn a policy of behavior that closely reproduces the observed
-behavior. In IRL, an agent learns this policy indirectly by learning a
-reward function for the MDP that describes an environment that would
-motivate an agent to behave in a way that is consistent with the
-observed behavior. A strength of the IRL formulation is that simple
-reward functions can often capture complex behavior. As a result, a
-learned reward function can often produce behavior that accurately
-generalizes the observed behavior to many states, including states not
-observed in the input demonstrations.
-
-Although there are multiple IRL formalizations and approaches, they
-all take as input an MDP together with a \mydef{family} of a reward
-functions $R_\Theta$ that is defined by some parameter space $\Theta$,
-and a dataset $D$ of trajectories (where a trajectory is a finite
-sequence of state-action pairs: $\langle (s_1, a_1), ..., (s_n, a_n)
-\rangle$). The algorithms then output a specific parameterized reward
-function $R_\theta \in R_\Theta$, which induces a policy that is
-consistent with the input trajectories.
-%
-Different IRL algorithms frame the objective function for policy
-consistency differently. One common approach is to treat the
-search problem as a probabilistic inference
-problem~\cite{babes11,lopes2009active,ramachandran2007bayesian,ziebart2008maximum}. 
-
-\comment{
-For example, in the maximum-likelihood setting~\cite{babes11}, the
-goal is to find a reward function parameterization that maximizes a
-likelihood function:
-%
-\begin{equation}
-\label{eq:mlirl}
-\theta \in \arg\max_{\theta} L(D \mid R_{\theta}) = \prod_{t \in D} \prod_i^{|t|} \pi_{\theta}(s_i, a_i),
-\end{equation}
-
-where $\pi_{\theta}(s, a)$ is a stochastic policy defining the
-probability of taking action $a$ in state $s$ when the parameterized
-reward function to be maximized is $R_{\theta}$. Typically, the
-Boltzmann (softmax) stochastic policy over the $Q$-values is used:
-$\pi_{\theta}(s, a) = \frac{e^{\beta Q_{\theta}(s,a)}}{\sum_{a' \in A}
-  e^{\beta Q_{\theta}(s,a')}}$, where $Q_\theta(s, a)$ is the $Q$-function
-when the reward function is parameterized by $\theta$.
-}
+\paragraph{Stochastic games}
 
 The stochastic games formalism can be viewed as an extension of MDPs
 to the multi-agent case~\cite{littman1994markov}. 
@@ -130,14 +96,15 @@ exceedingly difficult, because the planning that is necessary in the
 inner loop of an IRL algorithm is subject to the challenges identified
 by the equilibrium planners mentioned above.
 
-In this project, we plan to develop IRL algorithms that can explain
-norm-adhering behavior in a stochastic game.  In our preliminary
+\commenta{JuNK!!!}
+%This social reward function is our norm representation.
+
+In this project, we plan to develop IRL algorithms that support
+equilibrium selection in a stochastic game.  In our preliminary
 studies, we assume players' rewards are known, and our goal is to
 recover a \mydef{social reward function} that combines these known
 rewards in such a way as to capture a social norm expressed in the
 joint play of the agents (when one exists).
-
-%This social reward function is our norm representation.
 
 Like the players' reward functions, a social reward function operates
 on states, joint actions, and next states: $R^S : S \times_i A^i

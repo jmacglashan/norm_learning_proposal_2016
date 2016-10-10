@@ -1,0 +1,81 @@
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[x=1.7cm,y=1.8cm]
+   \node[latent]                   (R)      {$\bm{\theta}$} ; %
+   \node[obs, right=of R]                   (X)      {$A$} ; %
+   \node[obs, above=of X]          (S)      {$S$} ; %
+   
+
+  \edge {S}{X} ;
+  \edge {R}{X} ;
+
+   \plate {traj}{
+      (S) (A) (X)
+   } {$N$} ;%
+
+   \plate {data}{
+      (traj)
+   } {$M$} ;
+
+\end{tikzpicture}
+\paragraph{IRL plate diagram}
+\label{fig:irl-plate}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[x=1.7cm,y=1.8cm]
+   \node[latent]                   (R)      {$\bm{\theta}$} ; %
+   \node[latent, right=of R]                   (X)      {$X$} ; %
+   \node[obs, above=of X]          (S)      {$S$} ; %
+   \node[obs, right=of S]          (A)      {$A$} ; %
+   
+
+  \edge {S}{X} ;
+  \edge {A}{X} ;
+  \edge {R}{X} ;
+
+   \plate {traj}{
+      (S) (A) (X)
+   } {$N$} ;%
+
+   \plate {data}{
+      (traj)
+   } {$M$} ;
+
+\end{tikzpicture}
+\paragraph{SABL Label plate diagram}
+\label{fig:sabl}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[x=1.7cm,y=1.8cm]
+   \node[latent]                   (R)      {$\bm{\theta}$} ; %
+   \node[latent, right=of R]                   (X)      {$X$} ; %
+   \node[obs, below=of X]                      (L)      {$L$} ; %
+   \node[obs, above=of X]          (S)      {$S$} ; %
+   \node[obs, right=of S]          (A)      {$A$} ; %
+   
+   \factor[above=of L]{L-f}{right:Sigmoid}{}{} ;
+
+  \edge {S}{X} ;
+  \edge {A}{X} ;
+  \edge {R}{X} ;
+  \factoredge {X}{L-f}{L} ;
+
+   \plate {traj}{
+   		(S) (A) (X)
+   } {$N$} ;%
+
+   \plate {data}{
+   		(traj)(L-f)(L)
+   } {$M$} ;
+
+\end{tikzpicture}
+\caption{Plate Diagram of our Probability Model}
+\label{fig:feedback}
+\end{figure}

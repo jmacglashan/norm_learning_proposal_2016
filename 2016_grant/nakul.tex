@@ -1,0 +1,57 @@
+
+\subsection{Nakul: Experiments}
+
+In this experiment we want to test our labelled inverse reinforcement
+learning algorithm with simple experiments to see if the agent learns
+good behavior based on human feedback.  The agent is in a world with
+puddles of multiple colors - red, blue, green, yellow and pink. The
+agent is allowed north, south, east and west actions.  If there is a
+wall in the way of the agent it does not move at all. For example if
+the agent tries to move east and it is next to the eastern wall of the
+grid, it doesn't move at all.  For the experiments we will demonstrate
+two trajectories to the agent, and a pair of labels corresponding to
+each trajectory.  We will show that changes in the labels for the same
+trajectory lead to changes in the behaviour of the agent.
+
+The first trajectory has the agent move two steps, over the blue
+puddle to reach the red puddle.  The second trajectory has the agent
+move a single step to the blue puddle.  These trajectories are shown
+in the first set of Figures~\ref{fig:trajectories}.
+
+For the first experiment we teach the agent that both behaviours shown
+with the demonstrated trajectories are good, that is, walking over
+both puddles is good.  Hence, we give a label of $+1$ and $+1$ to both
+trajectories. The policy after learning is shown in
+Figure~\ref{fig:test1}.  It is clear that the agent prefers to reach
+the red puddle with the shortest path and stay over it infinitely. The
+agent doesn't learn to stay over the blue puddle as one of the
+trajectories was to walk over the blue to reach the red puddle as the
+goal state. The agent also values the red puddle higher than any cell
+in the grid.
+
+In the second experiment we teach the agent that walking over blue
+paddles is bad and getting to the red puddle is good. Hence, we label
+the first trajecotry $+1$, and label the second trajectory $-1$.  The
+output policy in Figure~\ref{fig:test2} shows that the agent avoids
+all blue puddle and gets to the red puddle as quickly as
+possible. Further, the red puddle has the highest value in the grid.
+
+In the third experiment we want to teach the agent that the red puddle
+should be avoided and the getting to the blue puddle is good. Hence,
+we label the first trajectory $-1$ and the second trajectory $+1$.
+The output policy in Figure~\ref{fig:test3} shows that the agent
+prefers reaching any of the blue puddles in the grid, especially the
+ones where it can stay in the blue cells indefinitely.
+
+In the fourth experiment we teach the agent that both red and blue
+puddles are bad. Hence, we label both trajectories $-1$.  The output
+policy in Figure~\ref{fig:test4} shows that the agent avoids all the
+puddles and tries to stay in the white spaces on the grid.
+
+Thus, we can change the agent's behaviour with example trajectories
+and more importantly the labels. This learning behaviour is important
+for teaching an agent to play with a human, we the human can critique
+the agent as they play and lable a round of play good or bad depending
+on whether the agents reached their co-operative goal. Further, our
+algorithm allows the teacher to critique individual actions that the
+agent takes allowing a more minute control of the agent's behaviour.

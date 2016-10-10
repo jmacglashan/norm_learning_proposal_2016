@@ -1,0 +1,157 @@
+
+\paragraph{support for the idea of social preferences}
+Perhaps surprisingly, recent work suggests that infants are capable of
+inferring the goals of others~\cite{gergely95}, and seem to prefer
+agents who help others achieve their goals~\cite{hamlin13,hamlin07}.
+Somewhat analogously, reinforcement-learning algorithms can be
+used to infer human social goals from their actions~\cite{baker09},
+and whether another person plans to help or hinder your own
+plans~\cite{ullman09}.
+
+\section{Related Work}
+\label{sec:related}
+
+We are proposing to formalize social norms in artificial agents.  Our
+plan, ultimately, is to test our representation and learning
+algorithms by embodying them in structured virtual environments where
+they interact with humans.  To begin, we provide a short review of the
+(vast) body of literature on understanding of human behavior in
+similar experimental environments.  Specifically, we discuss related
+work in behavioral economics and cognitive psychology on how people
+make decisions when their rewards depend not only on the state of the
+environment, but also on the decisions of other agents in that
+environment.
+
+Behavioral economists have studied how different structural and
+contextual factors, such as reward structure, communication, and group
+membership~\cite{Camerer:2003}, affect the emergence of coordination
+on different equilibria in the actions chosen by each agent after
+repeated play. For example, in the Ultimatum Game~\cite{guth82}, there
+are two participants, a ``proposer'' and a ``responder''. The proposer
+makes an offer to the responder as to how to split some pile of
+money. If the responder accepts the offer, the participants are
+rewarded based on this split. If the responder rejects the offer,
+neither receives a reward. According to the normative prediction of
+expected utility theory (EUT)~\cite{vonneumann44}, the proposer should
+offer the smallest increment possible to the responder, and the
+responder should accept any positive offer. However, many studies have
+found that both of these normative predictions are violated: Proposers
+offer more money to responders than predicted (more even splits of the
+money) and responders reject non-zero offers that they perceive to be
+unfair.
+
+To examine why the proposers offer splits closer to even---perhaps
+because of altruism, or fear of rejection---Forsythe et
+al.~\cite{forsythe94} tested participants in the Dictator
+Game~\cite{kahneman86}, where the proposer decides on how to split
+some amount of money and the responder is forced to accept
+it. Although splits are significantly more in favor of the proposer in
+this game, the responder is still given more money than the normative
+theory would predict (i.e., the responder is given more than
+nothing). They found that the dictator gives, on average, 25\% of the
+total sum to the responder, a finding that has been replicated
+multiple times. Although scientists continue to disagree about why
+people still share their money in this situation,
+%and the amount shared varies depending on culture and other variables, 
+one viable explanation is that fairness is a nearly universal norm,
+especially in industrialized cultures~\cite{henrich05}.
+
+In addition to exploring the nature of established norms, such as
+fairness, behavioral economists have also investigated if, when, and
+how norms emerge over repeated interactions between two agents whose
+joint best-interest requires trust. Specifically, the Prisoners'
+Dilemma~\cite{luce57} is a symmetric game where each agent chooses to
+either ``cooperate'' or ``defect''. If both agents cooperate, they
+both receive higher payoffs than if both agents defect. However, if
+one agent cooperates and the other agent defects, the defecting agent
+receives more payoff than when both agents cooperate (and the
+cooperating agent receives even less payoff than when both agents
+defect). Thus, each agent has an incentive to defect, even when they
+believe the other agent will cooperate. Indeed, both agents defecting
+is the unique Nash equilibrium. Nonetheless, people cooperate more
+than predicted by the Nash equilibrium across a wide range of
+conditions, including but not limited to the ``one-shot''
+case~\cite{rapoport88}, where each pair only plays PD only once, real
+contestants on game shows~\cite{list06}, and especially when the same
+pair of subjects plays the game repeatedly~\cite{rand13,sally95}.
+
+Another game used to explore the nature of coordination in the face of
+conflicting goals is Battle of the Sexes (BOS)~\cite{luce57}. In
+traditional versions of BOS, two agents choose one of two options
+simultaneously. Although each agent prefers a different option, the
+two agents prefer to choose the same option rather than different options.
+%Perceived timing (simultaneous vs.\ sequential moves) has been shown
+%to have strong effects on the decisions people make in this game. 
+%For example,
+However, Cooper et al.\cite{cooper94} found that letting
+one person choose first (with both participants knowing who
+chose first, but not what they chose) increased the odds
+that players would match. In particular, when participants
+chose simultaneously, they {\em mismatched} 60\% of the time,
+but when one chose before the other, they settled on the 
+preferred equilibrium for the first acting agent 62\% of the time.
+Similar results of decision sequentiality affecting decisions
+was also found in other work~\cite{rapoport97,ho96}.
+
+
+%In one version of BOS~\cite{cooper94}, one participant told their
+%decision to the experimenter (but not to the other participant) before
+%the other participant, and both participants were aware of this
+%fact. From a normative (EUT) perspective, this should not affect which
+%equilibrium the participants agree on, but it does in practice. The
+%later-moving player seems to take into account the fact that the
+%earlier-moving player moves first. Normally, in BOS, when participants
+%move simultaneously and both know they are moving simultaneously,
+%participants mismatch 60\% of the time. But if player $A$ knows that
+%player $B$ is going to move before them, the dyad mismatches only 34\%
+%of the time and settles on the preferred equilibrium for $B$ 62\% of
+%the time. Once again, this is without $A$ having any knowledge of
+%$B$'s move~\cite{cooper94}.
+%%
+%Further, in a $k$-person simultaneous analog,
+%Rapoport~\cite{rapoport97} found that participants settle on the first
+%person's preferred equilibrium much more often than on any others. In
+%both of these experiments, the environment being perceived as
+%sequential results in different behavior from when the environment is
+%perceived to be simultaneous. Divergent behavior in
+%formally-equivalent games is not isolated to timing effects in
+%BOS. Another case of such differences is that participants act differently
+%in games depending in on whether they are presented in extensive- or
+%normal-form (e.g., Ho \& Weigelt~\cite{ho96}).
+
+Although exploring how people can settle into different equilibria in
+formally-equivalent games is a relatively underdeveloped topic in
+behavioral economics (some exceptions
+include~\cite{cooper03,devetag08,diguida13}), there is a long history
+of examining how people react differently to the same stimulus
+depending on its framing and other contextual and ecological factors
+in cognitive psychology. To explain how people arrive at different
+decisions given formally-equivalent input, psychologists posit and
+investigate how framing results in participants encoding the current
+situation using different representations, which then result in
+different decisions~\cite{austerweil13,chomsky59}. In fact, some
+psychologists believe that it is impossible to study how people act
+unless they are in realistic environments, because cognition is
+fundamentally tied to its embodiment in an environment and the
+interactive nature of real-life
+activities~\cite{hutchins10,wilson02}. Thus, to try to unravel how and
+why norms emerge in various decision-making situations, it is
+necessary to embody agents in as realistic an environment as possible,
+while maintaining the capability to control experimental factors.
+
+As a step towards studying how structural and contextual factors can
+affect the emergence of norms in games, we propose to conduct our
+study in a sequential \mydef{grid game} framework, where each agent
+takes actions to move itself through a grid to get to its goal.  The
+strategy (also called policy) space in these games is much richer than
+that of the aforementioned games (BOS, PD, and the Ultimatum and
+Dictator games), while at the same time mimicking some of their
+features: e.g., a decision to cooperate or defect; a notion of
+fairness, etc..  Specifically, in all the games we describe in this
+proposal, the environment is constructed such that the agents cannot
+reach their goals without coordinating their behavior.  In this way,
+our games are designed to capture the rich back and forth negotiations
+that must take place when agents successfully coordinate in the real
+world, while at the same maintaining computational tractability
+(hence, the restriction to grid games).
+

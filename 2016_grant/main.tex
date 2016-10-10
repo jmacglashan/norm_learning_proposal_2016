@@ -9,8 +9,8 @@
 %\long\def\commenta#1{}
 %\long\def\commentm#1{}
 
+\usepackage{bm}
 \usepackage{url}
-\usepackage[usenames,dvipsnames]{color}		
 \usepackage{epsfig}
 \usepackage{wrapfig}
 \usepackage{fullpage}
@@ -23,6 +23,9 @@
 
 \usepackage{algorithm}
 \usepackage{algpseudocode}
+
+\usepackage{tikz}
+\usetikzlibrary{bayesnet}
 
 \usepackage{defs}
 \usepackage{macros}
@@ -52,8 +55,13 @@
 \input{intro}
 %%%\input{goals}
 
+\newpage
+%%% WON'T COMPILE YET ???
+%\input{plates}
+\newpage
+
 % 2 pages
-%%%\input{literature}
+\input{literature}
 
 % 2 pages
 \input{grid_games}
@@ -74,6 +82,10 @@
 \input{interactive_learning}
 \input{norm_learning_results}
 \input{norm_learning_human}
+
+% IRL
+\input{irl}
+\input{nakul}
 
 % 1 page
 \input{plan}
