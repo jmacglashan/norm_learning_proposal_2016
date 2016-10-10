@@ -32,50 +32,57 @@ choices and objectives, made without regard for the collective.
 Alternatively, one might assume an individual to be \emph{Homo
   sociologicus}, in which case actions are motivated by social goals.
 
-By now, behavioralists have more or less rejected the homo-economicus
-model as an accurate model of human behavior~\cite{Kahnemann, etc.}, and have
-proposed countless homo-sociologicus models in its stead~\cite{ADD CITATIONS}.
+By now, psychologists and behavioral economists have more or less
+rejected the homo-economicus model as an accurate model of human
+behavior~\cite{Kahnemann, etc.}, and have proposed countless
+homo-sociologicus models in its stead~\cite{ADD CITATIONS}.
 %
-Consistent with their findings, this proposal is founded on the
+Consistent with these findings, this proposal is founded on the
 assumption that \mydef{social preferences} hold the key to successful
 collaboration.
 %
 Social preferences are in part \mydef{distributive}, meaning they
 pertain to the qualities of an outcome, be it efficient or equitable;
 and they are in part \mydef{reciprocal}, meaning they pertain to the
-perceived intentions of other actors.
+perceived intentions of the actors.
 
-Under the assumption that interacting agents hold social preferences,
-we use game theory to model interactions among agents (human or
-artificial).  Moreover, following Bacharach~\cite{2006}, not only do
-we assume that preferences are social rather than individual, we go
-one step further and assume that decision-making takes the form of
-``What should \emph{we\/} do?'' rather than ``What should \emph{I\/}
-do?''  In other words, we move from the usual assumption of best-reply
-reasoning to one of \mydef{team reasoning}~\cite{TEAM REASONING: Bacharach 1999}.
-We call optimal decision making under these assumptions \mydef{socially rational}.
+Moreover, following Bacharach~\cite{2006}, not only do we assume that
+preferences are social rather than individual, we go one step further
+and assume that decision-making takes the form of ``What should
+\emph{we\/} do?'' rather than ``What should \emph{I\/} do?''  In other
+words, we move from the usual assumption of best-reply reasoning to
+one of \mydef{team reasoning}~\cite{TEAM REASONING: Bacharach 1999}.
+We call optimal decision making, when agents hold social preferences
+and employ team reasoning, \mydef{socially rational} behavior.
+\commenta{Michael, what do you think of this terminology? is it too bold!? (see next sentence.)}
+
+Under the assumption that human agents are, perhaps boundedly but
+nonetheless ideally, socially rational creatures, we propose to design
+socially-rational artificial agents as well.  Further, we plan to use
+game theory to model interactions among socially-rational agents, both
+human and artificial.
 
 Like traditional game theory, our proposed ``social'' model of game
 theory is rarely predictive, because non-zero-sum games (i.e., games
 that are not strictly competitive) often yield a multiplicity of
-equilibria.  We solve this problem using learning in repeated play to
-disambiguate the uncertainty that each agent might otherwise have as
-to what role it will play in determining the outcome of the
+equilibria.  We solve this problem by using learning in repeated play
+to disambiguate the uncertainty that each agent might otherwise have
+as to what role it will play in determining the outcome of the
 game~\cite{add citations of learning as eqm selection}.  As
 Shakespeare said, ``one man in his time plays many parts;'' likewise,
-our aim is to design versatile agents capable of learning their part
-in whatever equilibrium emerges in repeated play.
+our aim is to design versatile artificial agents, capable of learning
+their part in whatever equilibrium emerges in repeated play.
 
 We contend that the computational process by which collaborative
-behavior emerges depends quite heavily on social preferences coupled
-with team reasoning, and on learning via repeated interaction.
+behavior emerges strongly depends on social rationality, coupled with
+learning via repeated interaction.
 %
 Specifically, the computational process is thus:
 1.~agents represent social preferences using a \mydef{social utility function}
 tailored to the environment and the actors;%
 \footnote{This utility function is described in terms of features of the environment and the actors;
 as such, it is applicable to other environments and actors with similar features.}
-2.~based on their estimate of this social utility function, agents make plans to act;
+2.~based on their estimate of this social utility function, agents use team reasoning to make plans to act;
 3.~agents act, simultaneously or sequentially;
 4.~agents update their estimate of their social utility function.
 Steps 2 through 4 repeats so long as the interaction continues.
@@ -91,9 +98,9 @@ is milk in the refrigerator.  If you were near the refrigerator, he
 might have asked you to bring him the milk, and you would presumably
 have done so willingly, as you likely get pleasure from your son---an
 other---achieving his goals.  Furthermore, after several occurrences
-like this one, you may learn to bring your son the milk, instinctively.
+like this one, you may instinctively bring the milk over to your son.
 
-\commenta{INCLUDE ONLY IF WE TALK ABOUT LEARNING SOCIAL NORMS, which involve sanctions!}
+\commenta{INCLUDE/EXPAND IF WE TALK ABOUT LEARNING SOCIAL NORMS, which involve sanctions!}
 A social utility function is an immediate generalization of the usual
 notion of an individual's utility function, but it ascribes value to
 the outcome as it relates to all agents in the environment.  That is,
@@ -115,13 +122,67 @@ If this process stabilizes, the social utility function represents the
 preferences of the community as a whole, and the equilibrium
 implements a joint plan of action that optimizes that social utility
 function.  Indeed, in our computational model, emergent collaborative
-behavior and the social preferences are expected to reinforce one
-another.
-%%%perhaps assuming stationary agent behavior, but what does that mean here? that the individual agents are really optimizing individual utility functions that are unchanging over time?
+behavior and social preferences are expected to reinforce one another.
 
-In this proposal, we set out to demonstrate that this computational
-model has legs.  We present a preliminary set of simulation results
-showing how reinforcement-learning agents 
+In the proposed work, we aim to demonstrate that this computational
+model has legs.  Doing so requires that we further specify how step 2
+and step 4 are to be carried out.  Step 2 is a \mydef{planning} step;
+as such, it can be accomplished using any off-the-shelf planner for
+sequential decision making environments~\cite{Bellman!!??}
+\commenta{Michael, please include citations}.
+
+Step 4 can be thought of as a \mydef{learning from demonstration}
+problem~\cite{?}~\commenta{Michael, please add citations}.
+In \mydef{learning from demonstration}, an agent learns how to behave
+in an environment by observing an expert.  That is, an agent is
+presented with a data set consisting of multiple examples of behaviors
+(e.g., state-action trajectories through a Markov decision process),
+and is tasked with the objective of learning a policy capable of
+(closely) reproducing the data.
+
+Two widely studied approaches to this problem include
+\mydef{imitation} and \mydef{intention} learning~\cite{???}.
+~\commenta{Michael, please add citations}.
+Imitation learning is a supervised learning approach, in which
+an agent learns a mapping from states to actions,
+with the expert's behavior serving as training data.
+After training, a learner need only follow its learned policy directly.
+
+Learning intentions, in contrast, is often framed as an 
+\mydef{inverse reinforcement learning} (IRL) problem~\cite{IRL???}.
+\commenta{Michael, please include citations}.
+Here, the agent's goal is to learn rewards that motivate the expert's
+behavior, after which it applies a planning algorithm to derive a
+policy that is consistent with those learned rewards.
+A strength of the IRL framework is that even simple reward functions
+can capture complex behavior, leading to greater generalization
+capabilities (i.e., appropriate behavior in unobserved states) than
+the more direct approach taken by imitation learning.
+
+The approach we take herein is to use IRL in step 4.  Indeed, in this
+proposal, we we describe preliminary experiments with one standard IRL
+algorithm, thereby demonstrating the potential of our computational model.
+%
+But to better support our goal of human-machine collaboration, we also
+propose a new model of IRL in which demonstrations are not, by
+default, assumed to have been generated by an expert.  Indeed, in the
+computational process we put forth, learning is online, not off, so
+not all demonstrations should be interpreted as optimal behavior.
+
+The new technology that we plan to develop as part of this proposal is
+a new model of IRL, and accompanying algorithms, which allows for both
+positive and negative (not necessarily binary) labels, and moreover,
+which also allows for partial feedback, meaning subtrajectories can be
+ascribed such labels.
+\commenta{Michael, can you please insert some stuff here about why our
+  new IRL technology is so awesome. I think we want to say 1. how
+  human-machine collaboration cannot be accomplished without it, and
+  2. it is also good for a litany of other straight IRL tasks, such as \ldots}
+
+\commenta{might be a way to better organize this, so that we don't have to repeat ourselves.}
+Once again, using an off-the-shelf IRL algorithm, we present a
+preliminary set of simulation results showing how
+reinforcement-learning agents
 %interacting in a grid game environment 
 can represent social preferences using a social utility function, and
 can then learn collaborative behavior via an interactive learning
@@ -175,9 +236,6 @@ lead to a situation in which emergent collaborative behavior and the
 learned social preferences reinforce one another.
 \commenta{up through here! It's a small technical detail, not relevant for the introduction.}
 
-\commenta{Insert stuff here about why our new IRL technology is so awesome, and
-how human-machine collaboration cannot be accomplished without it.}
-
 The ultimate goal in developing artificial agents that act
 intelligently in multi-agent scenarios is to apply them to real-world
 problems.  To a limited extent, this goal has already been achieved:
@@ -192,7 +250,6 @@ humans in its environment will act selfishly is unlikely to be
 successful in its collaborations~\cite{Camerer:2003,kahnemanst82}.
 Instead of individual rationality as the underlying principle guiding
 human behavior, this proposal is grounded in the assumption that
-humans are socially rational.  \emph{We propose an interactive
-  approach to simultaneously learning collaborative behavior and
-  social preferences that reinforce one another.}
+humans are socially rational beings, and artificial agents should be
+too!  
 

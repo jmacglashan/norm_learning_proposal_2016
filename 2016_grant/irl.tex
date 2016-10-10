@@ -1,31 +1,4 @@
 
-\section{Learning from Demonstration} 
-
-In \mydef{learning from demonstration}, an agent learns how to behave
-in an environment by observing an expert.  That is, an agent is
-presented with a data set consisting of multiple examples of behaviors
-(e.g., state-action trajectories through a Markov decision process),
-and is tasked with the objective of learning a policy capable of
-(closely) reproducing the data.
-
-Two widely studied approaches to this problem include
-\mydef{imitation} and \mydef{intention} learning.
-Imitation learning is a supervised learning approach, in which
-an agent learns a mapping from states to actions,
-with the expert's behavior serving as training data.
-After training, a learner need only follow its learned policy directly.
-
-Learning intentions, in contrast, is often framed as an 
-\mydef{inverse reinforcement learning} (IRL) problem.
-Here, the agent's goal is to learn rewards that motivate the expert's
-behavior, after which it applies a planning algorithm to derive a
-policy that is consistent with those learned rewards.
-A strength of the IRL framework is that even simple reward functions
-can capture complex behavior, leading to greater generalization
-capabilities (i.e., appropriate behavior in unobserved states) than
-the more direct approach taken by imitation learning.
-
-
 \paragraph{Inverse reinforcement learning}
 
 Although there are multiple IRL formalizations and approaches, they
