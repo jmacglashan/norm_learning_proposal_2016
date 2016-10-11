@@ -19,7 +19,7 @@ family in this MDP.
 \caption{Batch\_Learning($(I,S,A^I,T,R^I), \gamma, D, {\mathcal T}, B_\Theta$)}
 \label{alg:srl}
 \begin{algorithmic}
-\Require stochastic game $(I,S,A^I,T,R^I)$; discount factor $\gamma$; multi-agent norm-following demonstrations $D$; team function ${\mathcal T}$; and parameterized bias function family $B_\Theta$.
+\Require stochastic game $(I,S,A^I,T,R^I)$; discount factor $\gamma$; multi-agent demonstrations $D$; team function ${\mathcal T}$; and parameterized bias function family $B_\Theta$.
 \State $A^M := \times_i A^I$ \Comment{Joint action set}
 \State $R^M(s, a, s') := {\mathcal T}(R^I, s, a, s')$ \Comment{Team reward function}
 \State $R^S_\Theta(s, a, s') := R^M(s, a, s') + B_\Theta(s, a, s')$ \Comment{Social reward function family}
@@ -32,9 +32,9 @@ family in this MDP.
 Pseudocode for the batch learning algorithm is shown in Algorithm~\ref{alg:srl}.
 %
 The algorithm takes as input a stochastic game; a discount factor; a
-set of multi-agent demonstrations (which perhaps shows adherence to
-some norm); a team function; and a family of bias functions defined by
-some parameter space $\Theta$. 
+set of multi-agent demonstrations (which perhaps adheres to some
+equilibrium: i.e., collaborative behavior); a team function; and a
+family of bias functions defined by some parameter space $\Theta$.
 %
 Since the demonstrations are a set of trajectories of state-joint
 action pairs, specifying the behavior of all the agents in the
@@ -55,22 +55,5 @@ it, and then selecting their individual action from the joint. That
 is, agent $i$ takes action $j^i \in A^i$, where 
 $j \in \arg \max_j Q_{R^S_\theta}(s, j)$.
 
-%Additionally, we set the zero-horizon value of states in  RHIRL to the team value function. Setting the zero-horizon state values to the team value function allows RHIRL to use a short horizon a with bias function family that uses all of it representation power to express behavior biases rather than the ultimate task goals. To demonstrate that property, consider the fact that the RHC with a horizon of one and a bias function that always returns zero, always returns the original team value function when its horizon-zero state values are set to the team value function. The same is true for any horizon $h \ge 0$. As a result, the bias function only needs to focus its representation power on values that motivate norm-adhering behavior and the horizon used only needs to be large enough to motivate behavior that can exploit the bias values. Since computing the team value function only has to performed once and since we expect preferences for behavior to only require small horizons to exploit in practice, we expect the social reward function learning algorithm to be very computationally efficient.
+%Additionally, we set the zero-horizon value of states in RHIRL to the team value function. Setting the zero-horizon state values to the team value function allows RHIRL to use a short horizon a with bias function family that uses all of it representation power to express behavior biases rather than the ultimate task goals. To demonstrate that property, consider the fact that the RHC with a horizon of one and a bias function that always returns zero, always returns the original team value function when its horizon-zero state values are set to the team value function. The same is true for any horizon $h \ge 0$. As a result, the bias function only needs to focus its representation power on values that motivate collaborative behavior and the horizon used only needs to be large enough to motivate behavior that can exploit the bias values. Since computing the team value function only has to performed once and since we expect preferences for behavior to only require small horizons to exploit in practice, we expect the social reward function learning algorithm to be very computationally efficient.
 
-Although any off-the-shelf IRL algorithm would be applicable here, in
-practice we use \mydef{receding horizon IRL}
-(RHIRL)~\cite{macglashan15b}. IRL algorithms are typically
-computationally demanding because they require planning in their inner
-loops.
-%If the social reward function learning is going to be used in any
-%moderately interactive setting, this limitation may be prohibitive. 
-RHIRL addresses this limitation by replacing the usual
-infinite-horizon policy with a receding horizon controller (RHC) that
-only plans out to some finite horizon from any given state, thereby
-bounding computation time. An RHC tends to steer an IRL algorithm
-towards a reward function with shaping values: short-term rewards that
-guide the agent in the right direction without having to plan too far
-ahead. Since these are precisely the kinds of values we want our bias
-functions to capture, RHIRL allows us to plan with a short horizon,
-thereby saving on computation time, which enables interactive
-learning, described next.

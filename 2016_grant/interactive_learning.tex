@@ -3,14 +3,14 @@
 \paragraph{Interactive Learning}
 \label{sec:interactive}
 
-In the interactive norm-learning setting, an agent plays with a set of
+In the interactive learning setting, an agent plays with a set of
 unknown agents, with whom it can potentially establish new
-norms. Pseudocode for our interactive norm-learning algorithm is shown
-in Algorithm~\ref{alg:inl}. The algorithm takes as input the same
-arguments as the batch learning algorithm, except it includes an index
-specifying which agent in the stochastic game the learner is, and it
-does not include the batch of demonstrations. The agent begins by
-initializing its policy arbitrarily.%
+collaborations.  Pseudocode for our interactive learning algorithm is
+shown in Algorithm~\ref{alg:inl}. The algorithm takes as input the
+same arguments as the batch learning algorithm, except it includes an
+index specifying which agent in the stochastic game the learner is,
+and it does not include the batch of demonstrations. The agent begins
+by initializing its policy arbitrarily.%
 \footnote{In practice, the policy can be initialized to the agent's role
 in the joint policy that follows from the team function alone.}
 %
