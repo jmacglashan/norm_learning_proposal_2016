@@ -1,6 +1,5 @@
-
 \begin{figure}
-\centering
+\begin{minipage}{0.2\textwidth}
 \begin{tikzpicture}[x=1.7cm,y=1.8cm]
    \node[latent]                   (R)      {$\bm{\theta}$} ; %
    \node[obs, right=of R]                   (X)      {$A$} ; %
@@ -19,13 +18,12 @@
    } {$M$} ;
 
 \end{tikzpicture}
-\paragraph{IRL plate diagram}
+\captionof{figure}{Classic IRL}
 \label{fig:irl-plate}
-\end{figure}
-
-
-\begin{figure}
-\centering
+\end{minipage}%
+%
+\hspace{0.04\textwidth}
+\begin{minipage}{0.205\textwidth}
 \begin{tikzpicture}[x=1.7cm,y=1.8cm]
    \node[latent]                   (R)      {$\bm{\theta}$} ; %
    \node[latent, right=of R]                   (X)      {$X$} ; %
@@ -46,13 +44,12 @@
    } {$M$} ;
 
 \end{tikzpicture}
-\paragraph{SABL Label plate diagram}
+\captionof{figure}{SABL Label}
 \label{fig:sabl}
-\end{figure}
-
-
-\begin{figure}
-\centering
+\end{minipage}%
+%
+\hspace{0.175\textwidth}
+\begin{minipage}{0.22\textwidth}
 \begin{tikzpicture}[x=1.7cm,y=1.8cm]
    \node[latent]                   (R)      {$\bm{\theta}$} ; %
    \node[latent, right=of R]                   (X)      {$X$} ; %
@@ -76,6 +73,7 @@
    } {$M$} ;
 
 \end{tikzpicture}
-\caption{Plate Diagram of our Probability Model}
+\captionof{figure}{Feedback IRL}
 \label{fig:feedback}
+\end{minipage}
 \end{figure}

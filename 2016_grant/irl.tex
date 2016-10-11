@@ -36,3 +36,23 @@ when the reward function is parameterized by $\theta$.
 
 \commenta{Nonparametric Bayesian IRL?}
 
+\commenta{Receeding-horizon IRL}
+
+IRL algorithms are typically computationally demanding because they
+require planning in their inner loops.
+%If the social reward function learning is going to be used in any
+%moderately interactive setting, this limitation may be prohibitive. 
+%
+\mydef{Receding horizon IRL}
+(RHIRL)~\cite{macglashan15b} addresses this limitation by replacing
+the usual infinite-horizon policy with a receding horizon controller
+(RHC) that only plans out to some finite horizon from any given state,
+thereby bounding computation time. An RHC tends to steer an IRL
+algorithm towards a reward function with shaping values: short-term
+rewards that guide the agent in the right direction without having to
+plan too far ahead. Since these are precisely the kinds of values we
+want our bias functions to capture, RHIRL allows us to plan with a
+short horizon, thereby saving on computation time, which enables
+interactive learning, described next.
+
+\commenta{orthogonal to the above, and hence can be used with ANY of the above!}

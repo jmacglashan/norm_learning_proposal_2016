@@ -8,8 +8,8 @@ well.
 To make this idea more precise, we separate \mydef{objective} and
 \mydef{subjective} reward. Objective reward is the usual reward
 signal provided to the agent from the environment, and by which
-behavior is judged. Standard reinforcement-learning agents, such as a
-\Q-learning agent, seek to optimize their own objective reward
+behavior is judged. Standard reinforcement-learning agents, such
+as \Q-learners, seek to optimize their own objective reward
 signal---we call this preference the ``selfish'' preference because
 these agents are only concerned with their own outcomes.
 
@@ -46,9 +46,11 @@ wants its opponent to win with it or lose with it.
 
 %%JLA: I was tempted to write here that Tit-for-Tat has a flavor of ``fairness'' preference, but I'm too tired to think through this properly.
 
-%\begin{wrapfigure}{l}{0.4\textwidth}
-
-%\end{wrapfigure}
+\begin{wrapfigure}{l}{0.4\textwidth}
+\includegraphics[width=0.3\textwidth]{../2015_grant/figures/SelfPlay.png}
+\caption{Average score of \Q-learners in self play (30,000 rounds)}
+\label{f:selfplay}
+\end{wrapfigure}
 
 Figure~\ref{f:selfplay} shows the result of the selfish and fair
 agents playing against others of the same type in each of our test
@@ -98,10 +100,6 @@ studied, discovering equilibria comprised of CD strategies when they
 exist.  Cooperation can be induced in other games by manipulating
 the \Q-learners' subjective rewards to incorporate the success of others.
 
-In the next section, we describe analogous experiments conducted with
-humans playing grid games.  In those experiments as well, we were able
-to manipulate the rewards to favor fairness, and doing so induced more
-cooperation than otherwise.
 
 \comment{
 Given the option of who to play with, agents do best when playing
