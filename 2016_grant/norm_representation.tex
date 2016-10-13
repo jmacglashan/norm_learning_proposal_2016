@@ -1,23 +1,26 @@
 
-\section{Computational Process}
+\section{Computational Framework}
 \label{sec:process}
 
-Grid games are examples of stochastic
-games~\cite{Shapley53,non-zero-sum}.  We use the framework of
-stochastic games~\cite{Shapley53,non-zero-sum} to model agent
-interactions.  (Indeed, grid games are examples of stochastic games.)
+As grid games are examples of stochastic
+games~\cite{Shapley53,non-zero-sum}, we use this game-theoretic
+framework to model agent interactions.
 %
-Because we are interested in building socially rational artificial agents,
-we endow our agents with a (potentially) social reward function.%
-\footnote{We use the terms ``utility'' and ``reward'' interchangeably.}  
+Like econometricians~\cite{}, we assume a functional form for utility
+functions; and because we are interested in building socially rational
+artificial agents, we endow our agents with a (potentially) social
+reward function.
 %
-We then develop a batch learning algorithm by which a machine can, by
-learning from demonstrations, recover a social reward function that
-supports exactly one of many equilibria.
+We then develop a batch learning algorithm by which an artificial
+agent can, by learning from demonstrations, recover a social reward
+function that supports exactly one of many equilibria (assuming the
+demonstrations exhibit exactly one of many equilibria).
 %
-We also develop an interactive learning algorithm by which two
-machines can converge (very quickly) to one among a plethora of
-equilibria.
+We also develop an interactive learning algorithm by which two agents
+can simultaneously learn a social reward function, and converge
+%(very quickly)
+to one among a plethora of equilibria, thereby endogenously solving
+the equilibrium selection process.
 
 \comment{
 Both of these algorithms rely on IRL, and in our experiments thus far
@@ -107,7 +110,7 @@ exceedingly difficult, because the planning that is necessary in the
 inner loop of an IRL algorithm is subject to the challenges identified
 by the equilibrium planners mentioned above.
 
-\commenta{JuNK!!!}
+\commenta{JuNK!!! NORMS -- ugh!}
 %This social reward function is our norm representation.
 
 In this project, we plan to develop IRL algorithms that support

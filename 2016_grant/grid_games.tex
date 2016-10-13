@@ -1,16 +1,6 @@
 
-\section{Experimental Testbed}
-%\paragraph{Grid Games}
+\section{Grid Games}
 \label{sec:grid_games}
-
-\commenta{there is actually nothing at all here about the platform! should include a paragraph about BURLAP somewhere, and should probably delete Platform from this section heading. and/or we need a section where we talk about our Platforms --- one of which is MTurk.}
-
-Within the BURLAP infrastructure, we have built a flexible
-experimental platform, in which it is straightforward to encode
-experimental testbeds.  As an example, we describe one such testbed,
-consisting of five such two-agent grid games, which were designed to
-vary the level of coordination required, while at the same time
-allowing agents to defend against uncooperative partners.
 
 A grid game is a game played by two agents on a grid, in which each
 agent has a goal.  See, for example, Figure~\ref{fig:hallway}, which
@@ -20,14 +10,15 @@ Blue begins in position (5,2), Orange's goal.  We refer to grid
 positions using $x$-$y$ coordinates, with $(1,1)$ as the bottom left
 position.
 
-One grid game match proceeds in rounds,
+One grid game proceeds in rounds,
 %(20, in our human experiments), 
-and each round consists of multiple turns.
+each round consisting of multiple turns.
 %(100, in our human experiments).
-On each turn, the agents choose one of five actions (north, south,
-east, west, or wait), which are then executed simultaneously.  In the
-most basic setup, agents transition deterministically, and
-there is no tie-breaking when two agents collide.%
+On each turn, the agents choose one of five actions (N, S, E, W, or wait),
+%north, south, east, west, or wait
+which are then executed simultaneously.  In the most basic setup,
+agents transition deterministically, and there is no tie-breaking when
+two agents collide.%
 \footnote{It is a simple matter to vary these rules within our
   infrastructure, as future experimental design might dictate.}
 %
@@ -36,9 +27,10 @@ another, neither agent moves.  A round ends when either (or both)
 players move into their goal, or when a maximum number of turns has
 been taken.
 
-As mentioned above, our grid games are specifically designed to
-prevent the agents from reaching their goals without coordinating
-their behavior.
+We present five two-agent grid games, specifically designed to
+%prevent the agents from reaching their goals without coordinating their behavior.
+vary the level of coordination required, while at the same time allowing agents to defend against uncooperative partners.
+%
 % Consequently, if we assume
 % %(as is standard)
 % positive step costs, all the equilibria in our games involve mixed
@@ -51,7 +43,7 @@ their behavior.
 % equilibria, including purely cooperative strategies.
 % 
 % In reality, 
-Consequently, one approach is for an agent to cooperate blindly with
+In these games, one approach is for an agent to cooperate blindly with
 its opponent by simply moving out of the opponent's way, and hoping
 the opponent then waits for the agent to catch up.  However, such
 strategies can be exploited by uncooperative ones that proceed
@@ -59,15 +51,15 @@ directly to the goal as soon as their path is unobstructed.
 %(because step costs are never truly zero). 
  
 To distinguish ``unsafe'' from ``safe'' cooperation, we devised a new
-categorization for strategies in our grid games.  Specifically, we
-call strategies that allow for cooperation, while at the same time
-maintain a defensive position in the event that the other agent is
-uncooperative, \mydef{cooperative defensive} strategies.  More
-formally, an agent's strategy is \mydef{cooperative} (C) if it is one
-that allows both it and its opponent to reach their goals, while an
-agent's strategy is \mydef{defensive} (D) if its opponent does not
-have a strategy that allows it to reach its goal strictly first.  A
-cooperative defensive (CD) strategy is both cooperative and defensive.
+categorization for strategies in our grid games.  We call strategies
+that allow for cooperation, while at the same time maintain a
+defensive position in the event that the other agent is uncooperative,
+\mydef{cooperative defensive} strategies.  More formally, an agent's
+strategy is \mydef{cooperative} (C) if it is one that allows both it
+and its opponent to reach their goals, while an agent's strategy is
+\mydef{defensive} (D) if its opponent does not have a strategy that
+allows it to reach its goal strictly first.  A cooperative defensive
+(CD) strategy is both cooperative and defensive.
 
 We now proceed to describe a sample set of grid games, and equilibria
 comprised of CD strategies (when they exist), to illustrate the kinds
@@ -222,6 +214,7 @@ strategy is C.
 Taking these five grid games as an initial testbed, we performed two
 pilot studies: the first involved simulations of artificial agents
 playing against one another; the second pitted humans against other
-humans on Mechanical Turk.  We report on the results of these
-preliminary studies in the next two sections.  
+humans on Mechanical Turk~\cite{}.
+\commenta{add citation to workshop paper}
+We report on the results of these preliminary studies next.
 

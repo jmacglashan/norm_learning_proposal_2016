@@ -1,12 +1,14 @@
 
 In a second set of \Q-learning experiments, we examined the impact of
 endowing agents with \mydef{social preferences}. That is, their
-rewards no longer depend solely on their own successes and
+utilities no longer depend solely on their own successes and
 failures---they depend on those of other agents in the environment as
 well.
 
-To make this idea more precise, we separate \mydef{objective} and
-\mydef{subjective} reward. Objective reward is the usual reward
+To make this idea more precise, we draw a distinction
+between \mydef{objective} and \mydef{subjective} reward.%
+\footnote{We use the terms ``utility'' and ``reward'' interchangeably.}  
+Objective reward is the usual reward
 signal provided to the agent from the environment, and by which
 behavior is judged. Standard reinforcement-learning agents, such
 as \Q-learners, seek to optimize their own objective reward
@@ -14,11 +16,11 @@ signal---we call this preference the \mydef{selfish} preference
 because these agents are only concerned with their own outcomes.
 
 In some environments, however, it useful to distinguish this objective
-reward from subjective reward---the quantity the agent \emph{believes}
-it should be optimizing. Previous work has shown that optimizing
-subjective reward can sometimes lead agents to be more effective in
-their acquisition of objective reward~\cite{singh2009rewards}.  (Indeed, we
-reach this same conclusion in our experiments.)
+reward from subjective reward---the perceived quantity the agent is
+optimizing. Previous work has shown that optimizing subjective reward
+can sometimes lead agents to be more effective in their acquisition of
+objective reward~\cite{singh2009rewards}.  (Indeed, we reach this same
+conclusion in our experiments.)
 
 Considering the four different outcomes in these games---{\bf GG},
 {\bf GN}, {\bf NG}, {\bf NN}---there are 75 different possible
@@ -97,7 +99,7 @@ set of grids is an important question for future work.
 
 In summary, \Q-learners naturally learn to cooperate in the grid games
 studied, discovering equilibria comprised of CD strategies when they
-exist.  Morever, cooperation can be induced in these games by manipulating
+exist.  Moreover, cooperation can be induced in these games by manipulating
 the \Q-learners' subjective rewards to incorporate the success of others.
 
 
