@@ -1,0 +1,39 @@
+
+Economists use utility functions as a potential model of why people
+behave the way that they do.  It is not that they believe people
+necessarily possess such a thing as a utility function; it is simply
+that human behavior can perhaps be described ``as if'' people
+did~\cite{Savage1954}.  One strong assumption that we have employed in
+our work so far is that the social preferences of the players in a
+game can be represented by a \emph{single\/} social utility
+function---in other words, the collective behavior of agents can be
+understood ``as if'' there were one social utility function.  Under
+this assumption, planning can be carried out by decentralized agents,
+and coordination on a joint plan of action can still be achieved, as
+the agents all observe, and learn from, the same joint history.
+% -- so there exists a unique optimal joint plan !!
+%In particular, they learn the social utility function from that
+%history, based on which they (independently) compute a joint plan and
+%(independently) carry out their corresponding role.
+
+One important direction for future research is to understand the
+extent to which we can relax this assumption and instead assume that
+individual agents behave ``as if'' they had their own individual
+(social) utility functions.  The PIs on this project have extensive
+experience with multi-agent reinforcement-learning algorithms in games
+where each agent has its own individual (non-social) utility function.
+Many of these learning algorithms are fraught with difficulty,
+however, because planning tends to yield multiple equilibria, making
+coordination on a joint plan of action difficult, if not impossible,
+to achieve in a decentralized manner.
+
+We are proposing to get around this problem by updating the usual
+model of an agent's utility function, which ordinarily depends only on
+their own material benefits, with a social utility function that
+incorporates their material benefits as well as a social component.
+Moreover, that social component is to be learned through interaction.
+Because the agents will learn the social component from a shared joint
+history, it seems plausible that such interaction could once again
+lead to a situation in which emergent collaborative behavior and the
+learned social preferences reinforce one another.
+

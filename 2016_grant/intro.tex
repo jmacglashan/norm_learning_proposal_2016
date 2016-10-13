@@ -58,30 +58,34 @@ countless homo-sociologicus-leaning models in its stead~\cite{ADD
   CITATIONS}.
 %
 Consistent with these findings, this proposal is founded on the
-assumption that \mydef{social preferences} hold the key to successful
-%self interest incorporates
-collaborations.
+assumption that 
+%self interest incorporating 
+\mydef{social preferences} hold the key to successful collaborations.
 %
 Social preferences are in part \mydef{distributive}, meaning they
 evaluate how resources are allocated, e.g., efficiently or equitably;
 and they are in part \mydef{reciprocal}, meaning they evaluate the
 perceived intentions of the actors in the environment.
 
+We plan to model interactions among ``social'' agents, both human and
+artificial, in the framework of game theory.  
+%
 Following Bacharach~\cite{2006}, not only do we assume that
 preferences are social rather than individual, we go one step further
 and assume that decision-making takes the form of ``What should
 \emph{we\/} do?'' rather than ``What should \emph{I\/} do?''  In other
-words, we move from the usual assumption of best-reply reasoning to
-one of \mydef{team reasoning}~\cite{TEAM REASONING: Bacharach 1999}.
-We call optimal decision making, when agents hold social preferences
-and employ team reasoning, \mydef{socially rational} behavior.  Social
-rationality is a blend of the \emph{Homo economicus\/} and \emph{Homo
-  sociologicus\/} concepts: agents are optimizers, but their
-preferences incorporate perceived or imagined societal benefits.
-%
-Under the assumption that human agents are, perhaps boundedly but
-nonetheless ideally, socially rational creatures, we propose to design
-socially-rational artificial agents as well.
+words, we move from the usual assumption of best-reply
+reasoning~\cite{Cournot} in games to one of \mydef{team
+  reasoning}~\cite{TEAM REASONING: Bacharach 1999}.
+
+We call optimal decision making, when agents hold
+%learn
+social preferences and employ team reasoning, \mydef{socially
+  rational} behavior.  Social rationality is a blend of the \emph{Homo
+  economicus\/} and \emph{Homo sociologicus\/} concepts: agents
+optimize a \mydef{social utility function}, which incorporates
+%learned 
+perceived or imagined societal benefits.
 
 % Like traditional game theory, our proposed ``social'' model of game
 % theory is rarely predictive, because non-zero-sum games (i.e., games
@@ -93,32 +97,18 @@ socially-rational artificial agents as well.
 
 % Social rationality is incomplete without a learning component in which players resolve uncertainty about what role..." etc.
 
-Further, we plan to adopt game theory as the framework in which we
-model interactions among socially-rational agents, both human and
-artificial.  To this end, our artificial agents must be endowed with a
-\mydef{social utility function}.
-%
 Classical game theory assumes that utility functions are exogeneously
 determined: i.e., agents come to the table with fixed
-extrinsically-set utilities.  ``Social'' game theory (in which agents
-are socially rational), with its emphasis on \mydef{other-regarding
-  preferences},\commenta{Michael, please insert references} must
-answer the question of where social utility functions come from: i.e.,
-how does one agent know the preferences of another?  We propose to
-solve this problem by using learning in repeated play to disambiguate
-the uncertainty that each agent might otherwise have as to what
-utilities should guide its behavior.
+extrinsically-set utilities.  ``Social'' game theory, with its
+emphasis on \mydef{other-regarding preferences},\commenta{Michael,
+  please insert references} must answer the question of where social
+utility functions come from: i.e., how does one agent know the
+preferences of another?  We propose to solve this problem by using
+learning in repeated play to disambiguate the uncertainty that each
+agent might otherwise have as to what utilities should guide its
+behavior.
 % it will play in determining the outcome of the
 % game~\cite{add citations of learning as eqm selection}.  
-
-
-\commenta{this doesn't fit any more.}
-As Shakespeare said, ``one man in his time plays many parts;''
-likewise,
-our aim is to design versatile artificial agents, capable of learning
-their part in whatever equilibrium emerges in repeated play.
-\commenta{delete?}
-
 
 We contend that the computational process by which collaborative
 behavior emerges strongly depends on social rationality, coupled with
@@ -134,8 +124,25 @@ as such, it is applicable to other environments and actors with similar features
 4.~agents update their estimates of their social utility functions.
 Steps 2 through 4 repeats so long as the interaction continues.
 
+When agents
+%use team reasoning to 
+make a plan that optimizes a social
+utility function, they are choosing actions that jointly optimize the
+behavior of the collective.
+%, as specified by the social preferences encoded in that function.  
+When agents update their estimate of the social utility function, they
+do so using the observed history of joint actions in the environment.
+%%%can we guarantee convergence!!??
+If this process stabilizes, the social utility function represents the
+preferences of the community as a whole, 
+%including guidance of the roles of the individual members, 
+and the equilibrium implements a joint plan of action that optimizes
+that social utility function.  Indeed, in our computational model,
+emergent collaborative behavior and social preferences are expected to
+reinforce one another.
+
 %this process didn't come out of thin air
-Support for this process can be found in the work of
+Support for this model can be found in the work of
 philosophers~\cite{dennett87} and psychologists~\cite{heider44} who
 have long argued that people understand and predict the actions of
 others in terms of their \commentm{What does ``their'' refer to here?}\commenta{i think this is made clear in the next sentence. if you agree, please delete these comments.} mental states (beliefs, desires, intentions,
@@ -147,41 +154,15 @@ have done so willingly, as you likely get pleasure from your son---an
 other---achieving his goals.  Furthermore, after several occurrences
 like this one, you may instinctively bring the milk over to your son.
 
-A social utility function is an immediate generalization of the usual
-notion of an individual's utility function, but it ascribes value to
-the outcome as it relates to all actors in the environment.
-%
-%That is, a social utility function combines the individual utilities
-%of all the agents in some way.  For example, one social utility
-%function might be utilitarian (seeking to maximize the total agent
-%welfare), and another egalitarian (seeking to maximize the minimum
-%welfare across agents).
-%
-As such, it can be used to capture important elements of an artificial
-agent's decision making, including (1) how it values the utility of
-others, (2) how it values the utility of intermediate goals, and (3)
-how it values sanctions against others who exhibit anti-social behavior.
-
-When agents make a plan that optimizes a social utility function, they
-are choosing actions that jointly optimize the behavior of the
-collective.
-%, as specified by the social preferences encoded in that function.  
-Likewise, when
-agents update their estimate of the social utility function, they do
-so using the observed history of joint actions in the environment.
-%%%can we guarantee convergence!!??
-If this process stabilizes, the social utility function represents the
-preferences of the community as a whole, including guidance of
-the roles of the individual members, and the equilibrium
-implements a joint plan of action that optimizes that social utility
-function.  Indeed, in our computational model, emergent collaborative
-behavior and social preferences are expected to reinforce one another.
-
-In the proposed work, we aim to demonstrate that this computational
-model is viable.  Doing so requires that we further specify how step 2
-and step 4 are to be carried out.  Step 2 is a \mydef{planning} step;
-as such, it can be accomplished using any off-the-shelf planner for
-stochastic sequential decision making environments~\cite{Barto95,bellman57,boutilier99,collins95,kearns99b,kocsis06}.
+Under the assumption that human agents are, perhaps boundedly but
+nonetheless ideally, socially rational creatures, we propose to design
+and build socially-rational artificial agents, with the aim being that
+such agents will collaborate effectively with humans.  Doing so
+requires that we further specify how steps 2 and 4 of the
+aforementioned computational process are to be implemented.  Step 2 is
+a \mydef{planning} step; as such, it can be accomplished using any
+off-the-shelf planner for stochastic sequential decision making
+environments~\cite{Barto95,bellman57,boutilier99,collins95,kearns99b,kocsis06}.
 
 Step 4 can be thought of as a \mydef{learning from demonstration}
 problem~\cite{argall09}, which is defined by an agent learning how to
@@ -235,55 +216,15 @@ reinforcement-learning agents
 %interacting in a grid game environment 
 can represent social preferences using a social utility function, and
 can then learn collaborative behavior via an interactive learning
-algorithm that mimics the aforementioned computational process, so
-that eventually the emergent collaborative behavior and the learned
-social preferences reinforce one another.  We then go one step further
-and show that our approach can also learn (in an off-line, batch
-fashion) from human-human trace data so that the collaborative
-behavior that is learned mimics that which is expressed in the trace
-data.  While these two experiments (on machine-machine, interactive
-and human-human batch data) are indeed promising, it remains to extend
-these techniques to human-machine interactive data.
-
-\commenta{I don't like any of this...}
-Economists use utility functions as a potential model of why people
-behave the way that they do.  It is not that they believe people
-necessarily possess such a thing as a utility function; it is simply
-that human behavior can perhaps be described ``as if'' people
-did~\cite{Savage1954}.  One strong assumption that we have employed in
-our work so far is that the social preferences of the players in a
-game can be represented by a \emph{single\/} social utility
-function---in other words, the collective behavior of agents can be
-understood ``as if'' there were one social utility function.  Under
-this assumption, planning can be carried out by decentralized agents,
-and coordination on a joint plan of action can still be achieved, as
-the agents all observe, and learn from, the same joint history.
-% -- so there exists a unique optimal joint plan !!
-%In particular, they learn the social utility function from that
-%history, based on which they (independently) compute a joint plan and
-%(independently) carry out their corresponding role.
-
-One important direction for future research is to understand the
-extent to which we can relax this assumption and instead assume that
-individual agents behave ``as if'' they had their own individual
-(social) utility functions.  The PIs on this project have extensive
-experience with multi-agent reinforcement-learning algorithms in games
-where each agent has its own individual (non-social) utility function.
-Many of these learning algorithms are fraught with difficulty,
-however, because planning tends to yield multiple equilibria, making
-coordination on a joint plan of action difficult, if not impossible,
-to achieve in a decentralized manner.
-
-We are proposing to get around this problem by updating the usual
-model of an agent's utility function, which ordinarily depends only on
-their own material benefits, with a social utility function that
-incorporates their material benefits as well as a social component.
-Moreover, that social component is to be learned through interaction.
-Because the agents will learn the social component from a shared joint
-history, it seems plausible that such interaction could once again
-lead to a situation in which emergent collaborative behavior and the
-learned social preferences reinforce one another.
-\commenta{up through here! It's a small technical detail, not relevant for the introduction.}
+algorithm within the aforementioned computational framework, so that
+eventually the emergent collaborative behavior and the learned social
+preferences reinforce one another.  We then go one step further and
+show that our approach can also learn (in an off-line, batch fashion)
+from human-human trace data so that the collaborative behavior that is
+learned mimics that which is expressed in the trace data.  While these
+two experiments (on machine-machine, interactive and human-human batch
+data) are indeed promising, it remains to extend these techniques to
+human-machine interactions.
 
 The ultimate goal in developing artificial agents that act
 intelligently in multi-agent scenarios is to apply them to real-world
@@ -299,8 +240,32 @@ humans in its environment will act selfishly is unlikely to be
 successful in its collaborations~\cite{Camerer:2003,kahnemanst82}.
 \commentm{I also think that the social utility function is providing
 guidance on equilibrium selection, at least in our experiments.}
+\commenta{???}
 Instead of individual rationality as the underlying principle guiding
 human behavior, this proposal is grounded in the assumption that
 humans are socially rational beings, and artificial agents should be
 too!  
 
+
+\commenta{this doesn't fit any more.}
+As Shakespeare said, ``one man in his time plays many parts;''
+likewise, our aim is to design versatile artificial agents, capable of learning
+their part in whatever equilibrium emerges in repeated play.
+\commenta{delete?}
+
+\commenta{where does this go?}
+A social utility function is an immediate generalization of the usual
+notion of an individual's utility function, but it ascribes value to
+the outcome as it relates to all actors in the environment.
+%
+%That is, a social utility function combines the individual utilities
+%of all the agents in some way.  For example, one social utility
+%function might be utilitarian (seeking to maximize the total agent
+%welfare), and another egalitarian (seeking to maximize the minimum
+%welfare across agents).
+%
+As such, it can be used to capture important elements of an artificial
+agent's decision making, including (1) how it values the utility of
+others, (2) how it values the utility of intermediate goals, and (3)
+how it values sanctions against others who exhibit anti-social behavior.
+\commenta{Michael, if you have references to include with each of these bullets, i think it would strengthen the claims}
