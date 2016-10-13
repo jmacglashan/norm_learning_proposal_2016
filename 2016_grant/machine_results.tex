@@ -46,8 +46,8 @@ wants its opponent to win with it or lose with it.
 
 %%JLA: I was tempted to write here that Tit-for-Tat has a flavor of ``fairness'' preference, but I'm too tired to think through this properly.
 
-\begin{wrapfigure}{l}{0.4\textwidth}
-\includegraphics[width=0.3\textwidth]{../2015_grant/figures/SelfPlay.png}
+\begin{wrapfigure}{l}{0.33\textwidth}
+\includegraphics[width=0.33\textwidth]{../2015_grant/figures/SelfPlay.png}
 \caption{Average score of \Q-learners in self play (30,000 rounds)}
 \label{f:selfplay}
 \end{wrapfigure}
@@ -63,6 +63,12 @@ We also ran all nine preference orderings against one another.  The
 average scores (across both players) in games involving a fair agent
 tend to be higher than the average scores in games not involving a
 fair agent.
+%
+We also analyzed the types of strategies learned by fair and
+selfish \Q-learners after multiple simulations of various
+configurations. Interestingly, we found that \Q-learners with fair
+preferences tend to find CD strategies more often, especially when
+paired with selfish agents.
 
 \comment{
 \begin{figure*}
@@ -88,12 +94,6 @@ preferences may find CD policies more often, especially when they
 learn against a selfish player. Whether this is general for a broader
 set of grids is an important question for future work.
 }
-
-We also analyzed the types of strategies learned by fair and
-selfish \Q-learners after multiple simulations of various
-configurations. Interestingly, we found that \Q-learners with fair
-preferences tend to find CD strategies more often, especially when
-paired with selfish agents.
 
 In summary, \Q-learners naturally learn to cooperate in the grid games
 studied, discovering equilibria comprised of CD strategies when they

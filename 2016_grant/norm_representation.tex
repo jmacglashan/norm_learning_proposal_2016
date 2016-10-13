@@ -1,19 +1,30 @@
 
-\section{Norm Representation}
-\label{sec:representation}
+\section{Computational Process}
+\label{sec:process}
 
-We use the framework of stochastic games to model agent interactions.
-Because we are operating under the assumption that human behavior is
-social, we assume a (potentially) social reward function.  We then
-develop an interactive learning algorithm by which two machines can
-converge (very quickly) to one among a plethora of equilibria.  We
-also develop a batch learning algorithm by which a machine can learn
-from demonstrations a social reward function that supports one of many
-equilibria.  Both of these algorithms rely on IRL, and in our
-experiments thus far they invoke only standard IRL (e.g.,~\cite{MLIRL, BIRL}).
+Grid games are examples of stochastic
+games~\cite{Shapley53,non-zero-sum}.  We use the framework of
+stochastic games~\cite{Shapley53,non-zero-sum} to model agent
+interactions.  (Indeed, grid games are examples of stochastic games.)
+%
+Because we are interested in building socially rational artificial agents,
+we endow our agents with a (potentially) social reward function.%
+\footnote{We use the terms ``utility'' and ``reward'' interchangeably.}  
+%
+We then develop a batch learning algorithm by which a machine can, by
+learning from demonstrations, recover a social reward function that
+supports exactly one of many equilibria.
+%
+We also develop an interactive learning algorithm by which two
+machines can converge (very quickly) to one among a plethora of
+equilibria.
 
+\comment{
+Both of these algorithms rely on IRL, and in our experiments thus far
+they invoke only standard IRL (e.g.,~\cite{MLIRL, BIRL}).
 As standard IRL cannot accommodate negative feedback,
 \commenta{BLAH BLAH BLAH}
+}
 
 \paragraph{Markov decision processes}
 
@@ -101,10 +112,11 @@ by the equilibrium planners mentioned above.
 
 In this project, we plan to develop IRL algorithms that support
 equilibrium selection in a stochastic game.  In our preliminary
-studies, we assume players' rewards are known, and our goal is to
-recover a \mydef{social reward function} that combines these known
-rewards in such a way as to capture a social norm expressed in the
-joint play of the agents (when one exists).
+studies, we assume players' individual rewards are known (i.e., the
+game's scoring function), and our goal is to recover a \mydef{social
+  reward function} that combines these known rewards in such a way as
+to capture a social norm expressed in the joint play of the agents
+(when one exists).
 
 Like the players' reward functions, a social reward function operates
 on states, joint actions, and next states: $R^S : S \times_i A^i
