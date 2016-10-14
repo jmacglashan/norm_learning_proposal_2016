@@ -1,0 +1,44 @@
+\paragraph{Broader Impact}
+
+The many devices in our world that collect and share data among
+the ever-growing ``Internet of Things"
+cannot yet intelligently coordinate their actions to carry out complex
+tasks without extensive human programming and configuration.  As this
+collection of devices grows, and begins to include more traditional
+robotic actors and more sophisticated software agents, the need for
+these entities to not just communicate but work collaboratively is
+only going to increase.  We will want and need them to work together
+with and without us to accomplish everyday tasks and help us make
+better decisions.
+
+The range of domains that would be positively impacted by machines
+that can collaborate effectively with humans and support human
+decision-making is endless, ranging from robotic sous chefs to
+gerontechnological support for aging in place, to name two.
+
+In an effort to increase diversity in computer science, we have
+pre-selected two graduate students to participate in this
+project---one woman, and the other Hispanic.  All students (both
+graduate and undergraduate) who join our team will learn the benefits
+of collaboration with cognitive psychologists on our team.  Specifically, they will
+strengthen their understanding of a number of fields, all of which are
+critical to the development of artificial agents that collaborate
+effectively with humans: e.g., behavioral economics, cognitive
+psychology, reinforcement learning, software engineering, etc..
+We also plan to integrate our work on this project into Artemis, a
+free summer program that introduces rising 9th grade girls to
+computational thinking.
+For example, we might have the Artemis girls teach a robot to
+collaborate with them on various tasks, such as navigation or object search.
+
+Our deliverables include an open-source publicly accessible toolkit for machine norm learning via reinforcement learning. Further, we will build a database of machine-machine, human-machine, and human-human experimental results on norm-learning problems, which can serve as a benchmark for future researchers to build artifical agents that increasingly achieve human-like behavior. 
+%
+Finally, we expect to publish the results of the proposed research in
+top-tier archival, conference proceedings and journals with high
+impact factors, and present our work at both computer science and
+psychology conferences.
+
+%\paragraph{Collaboration Plan}
+%\paragraph{Students' Experiences}
+%\paragraph{Unique Opportunity}
+
