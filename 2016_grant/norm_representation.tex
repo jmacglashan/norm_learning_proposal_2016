@@ -1,6 +1,6 @@
 
-\section{Computational Framework}
-\label{sec:process}
+\subsection{Mathematical Models}
+\label{sec:models}
 
 As grid games are examples of stochastic
 games~\cite{Shapley53,non-zero-sum}, we use this game-theoretic
@@ -9,15 +9,15 @@ framework to model agent interactions.
 Like econometricians~\cite{}, we assume a structural form for utility
 functions; and because we are interested in building socially rational
 artificial agents, we endow our agents with a (potentially) social
-reward function.
+utility function.
 %
 We then develop a batch learning algorithm by which an artificial
-agent can, by learning from demonstrations, recover a social reward
+agent can, by learning from demonstrations, recover a social utility
 function that supports exactly one of many equilibria (assuming the
 demonstrations exhibit exactly one of many equilibria).
 %
 We also develop an interactive learning algorithm by which two agents
-can simultaneously learn a social reward function, and converge
+can simultaneously learn a social utility function, and converge
 %(very quickly)
 to one among a plethora of equilibria, thereby endogenously solving
 the equilibrium selection process.
