@@ -6,7 +6,7 @@ coordinate their actions with those of others.  From party planning to
 flying a rocket ship to the moon, groups of people have accomplished
 great things by reasoning as a team and engaging in jointly
 intentional behavior~\cite{searle1995construction}.  Indeed, some have
-argued that because most other animals lack the capacity to work
+argued that, because most other animals lack the capacity to work
 adaptively as cohesive unit across many domains, team reasoning may be
 the hallmark of human sociality~\cite{tomasello2005understanding}.
 
@@ -65,14 +65,17 @@ assumption that
 Social preferences are in part \mydef{distributive}, meaning they
 evaluate how resources are allocated, e.g., efficiently or equitably;
 and they are in part \mydef{reciprocal}, meaning they evaluate the
-perceived intentions of the actors in the environment.
+perceived intentions of the actors in the environment. They are also
+\mydef{emergent}, in the sense that there is no \emph{a priori} statement
+of utilities that a social agent needs to follow, necessitating a learning
+process to define them.
 
-We plan to model interactions among ``social'' agents, both human and
+We plan to model interactions among such social agents, both human and
 artificial, in the framework of game theory.  
 %
 Following Bacharach~\cite{2006}, not only do we assume that
 preferences are social rather than individual, we go one step further
-and assume that decision-making takes the form of ``What should
+and assume that decision making takes the form of ``What should
 \emph{we\/} do?'' rather than ``What should \emph{I\/} do?''  In other
 words, we move from the usual assumption of best-reply
 reasoning~\cite{Cournot} in games to one of \mydef{team
@@ -86,7 +89,7 @@ social preferences and employ team reasoning, \mydef{socially
 optimize a \mydef{social utility function} (i.e., a representation of
 social preferences), which is sufficiently rich to incorporate
 %learned
-perceived (possibly inferred; possibly imagined) societal benefits.
+perceived (possibly inferred, possibly imagined) societal benefits.
 
 We contend that the computational process by which collaborative
 behavior emerges strongly depends on social rationality, coupled with
@@ -100,7 +103,7 @@ as such, it is applicable to other environments and actors with similar features
 2.~based on their estimate of this social utility function, agents use team reasoning to make plans to act;
 3.~agents act, simultaneously or sequentially;
 4.~agents update their estimates of their social utility functions.
-Steps 2 through 4 repeats so long as the interaction continues.
+Steps~2 through~4 repeat so long as the interaction continues.
 
 When agents
 %use team reasoning to 
@@ -122,8 +125,8 @@ reinforce one another.
 %this process didn't come out of thin air
 Support for this model can be found in the work of
 philosophers~\cite{dennett87} and psychologists~\cite{heider44} who
-have long argued that people understand and predict the actions of
-others in terms of their \commentm{What does ``their'' refer to here?}\commenta{i think this is made clear in the next sentence. if you agree, please delete these comments.} mental states (beliefs, desires, intentions,
+have long argued that a person understands and predicts the actions of
+others in terms of their mental states (beliefs, desires, intentions,
 etc.).  For example, if you see your son pour cereal into a bowl and
 then walk over to the refrigerator, you might assume he believes he
 can find milk there, that he wants some, and that he intends to
@@ -131,7 +134,7 @@ retrieve some.  If you were near the refrigerator, he might have asked
 you to bring him the milk, and you would presumably have done so
 willingly, as you likely get pleasure from your son---an
 other---achieving his goals.  Furthermore, after several occurrences
-like this one, you may instinctively bring the milk over to your son.
+like this one, you may proactively bring the milk over to your son.
 \commenta{i think this provides only weak evidence for our model; can we strengthen this somehow? or should we delete it?}
 
 Classical game theory assumes that utility functions are exogeneously
@@ -162,18 +165,18 @@ the outcome as it relates to all actors in the environment.
 %
 As such, it can be used to capture important elements of an artificial
 agent's decision making, including (1) how it values the utility of
-others, (2) how it values the utility of intermediate goals, and (3)
-how it values sanctions against others who exhibit anti-social behavior.
-\commenta{Michael, if you have references to include with each of these bullets, i think it would strengthen the claims}
+others~\cite{littman01d}, (2) how it values the utility of intermediate goals~\cite{macglashan15b}, and (3)
+how it values sanctions against others who exhibit anti-social behavior~\cite{macglashan14c}.
+% \commenta{Michael, if you have references to include with each of these bullets, i think it would strengthen the claims}
 
 We further assume that social utilities can be broken down into two
 components---an objective component, which is usually a direct
 function of the rules of the game, and a subjective component, which
 captures notions of distributivity and reciprocity.
 %
-Often, the rules of a game alone often give rise to multiple
-(objective) equilibria, so that agents face a difficult equilibrium
-selection problem~\cite{} in the underlying game.  We contend that
+Often, the rules of a game alone give rise to multiple
+(objective) equilibria, so that agents face a difficult 
+equilibrium-selection problem~\cite{} in the underlying game.  We contend that
 socially rational behavior, in which agents optimize a
 \emph{learned\/} social utility function that reflects their
 \emph{emergent\/} social preferences, can provide a solution to this
@@ -193,22 +196,22 @@ collaborate effectively with humans.
 In this proposal, we set out to demonstrate our potential for success,
 by showing that our computational model is viable.  Specifically, we
 will establish---on abstract, but nonetheless rich and complex,
-examples (i.e., grid games)---that artificial agents who exhibit
+examples (i.e., grid games and robotics interactions)---that artificial agents who exhibit
 social rationality can learn emergent social preferences through
 repeated play, and thereby coordinating their behavior and solving
 the equilibrium selection problem.
 
-Doing so requires that we further specify how steps 2 and 4 of the
-aforementioned computational process are to be implemented.  Step 2 is
+Doing so requires that we further specify how Steps~2 and~4 of the
+aforementioned computational process are to be implemented.  Step~2 is
 a \mydef{planning} step; as such, it can be accomplished using any
 off-the-shelf planner for stochastic sequential decision making
 environments~\cite{Barto95,bellman57,boutilier99,collins95,kearns99b,kocsis06}.
 
-Step 4 can be thought of as a \mydef{learning from demonstration}
+Step~4 can be thought of as a \mydef{learning from demonstration}
 problem~\cite{argall09}, in which an agent learns how to behave in an
 environment by observing an expert.  That is, an agent is presented
 with a data set consisting of multiple examples of behaviors (e.g.,
-state-action trajectories through a Markov decision process), and is
+state--action trajectories through a Markov decision process), and is
 tasked with the objective of learning a policy capable of (closely)
 reproducing the data.
 
@@ -221,7 +224,7 @@ learned policy directly.
 
 Learning intentions~\cite{macglashan15b}, in contrast, is often framed
 as an \mydef{inverse reinforcement learning} (IRL)
-problem~\cite{babes11,ng00}.  Here, the agent's goal is to learn
+problem~\cite{ng00,babes11}.  Here, the agent's goal is to learn
 rewards that motivate the expert's behavior, after which it applies a
 planning algorithm to derive a policy that is consistent with those
 learned rewards.  A strength of intention learning is that even simple
@@ -229,43 +232,49 @@ reward functions can capture complex behavior, leading to greater
 generalization capabilities (i.e., appropriate behavior in unobserved
 states) than the more direct approach taken by imitation learning.
 
-The approach we take herein is to use IRL in step 4.  Preliminary
+The approach we take herein is to use IRL in Step~4.  Preliminary
 experiments with one standard IRL algorithm, described herein,
 demonstrate the potential of our computational model.
 %
-But to better support our goal of human-machine collaboration, we also
+But to better support our goal of human--machine collaboration, we also
 propose a new approach to IRL in which demonstrations are not, by
 default, assumed to have been generated by an expert.  Indeed, in the
 computational process we put forth, learning is online, not off, so
 not all demonstrations should be interpreted as optimal behavior.
+With this additional power, our IRL approach can be applied to all past
+interactions between the algorithm and its opponent to separate successful
+and unsuccessful interactions. As past interactions are shared context for
+all agents, they provide crucial guidance for identifying cooperative
+behavior.
 
 To complement the new computational model we put forth, the new
 technology that we plan to develop as part of this proposal is a new
 model of IRL, and accompanying algorithms, which allows for both
-positive and negative (not necessarily binary) labels, and moreover,
+positive and negative (not necessarily binary) labels, and, moreover,
 which also allows for partial feedback, meaning subtrajectories (i.e.,
-options~\cite{George?}\commenta{Michael, can you please insert a
-  reference to basic work on options here}) can be ascribed such
-labels.  \commenta{Michael, can you please insert some stuff here
-  about why our new IRL technology is so awesome. I think we want to
-  say 1. how human-machine collaboration cannot be accomplished
-  without it, and 2. it is also good for a litany of other straight
-  IRL tasks, such as \ldots}
+options~\cite{sutton99}) can be ascribed such
+labels.
+
+% \commenta{Michael, can you please insert some stuff here
+%   about why our new IRL technology is so awesome. I think we want to
+%   say 1. how human-machine collaboration cannot be accomplished
+%   without it, and 2. it is also good for a litany of other straight
+%   IRL tasks, such as \ldots}
 
 Once again,
 %using an off-the-shelf IRL algorithm,
 we present a preliminary set of simulation results showing how
 reinforcement-learning agents interacting in a grid-game environment
-can represent social preferences using a social utility function, and
+can discover and represent social preferences using a social utility function, and
 can then interact repeatedly within the aforementioned computational
 framework, so that eventually their emergent collaborative behavior
 and their learned social preferences reinforce one another.  We then
 go one step further and show that our approach can also learn (in an
-off-line, batch fashion) from human-human trace data so that the
+off-line, batch fashion) from human--human trace data so that the
 collaborative behavior that is learned mimics that which is expressed
-in the trace data.  While these two experiments (on machine-machine,
-interactive and human-human batch data) are indeed promising, it
-remains to extend these techniques to human-machine interactions.
+in the trace data.  While these two experiments (on machine--machine,
+interactive and human--human batch data) are indeed promising, it
+remains to extend these techniques to human--machine interactions.
 
 The ultimate goal in developing artificial agents that act
 intelligently in multi-agent scenarios is to apply them to real-world
@@ -278,7 +287,7 @@ model of behavior for the participating agents.  However,
 %rationality~\cite{Camerer:2003,kahnemanst82}, 
 an artificial agent that plans its collaboration by assuming the
 humans in its environment will act selfishly and/or are driven by
-fixed utility functions, is unlikely to be successful in its
+fixed utility functions is unlikely to be successful in its
 collaborations~\cite{Camerer:2003,kahnemanst82}.  Instead of
 individual rationality as the underlying principle guiding human
 behavior, this proposal is grounded in the assumption that humans are
