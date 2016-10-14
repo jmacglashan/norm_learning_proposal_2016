@@ -1,4 +1,5 @@
 
+\vspace{\up}
 \paragraph{Inverse reinforcement learning}
 
 Although there are multiple IRL formalizations and approaches, they
@@ -15,15 +16,18 @@ consistency differently. One common approach is to treat the
 search problem as a probabilistic inference
 problem~\cite{babes11,lopes2009active,ramachandran2007bayesian,ziebart2008maximum}. 
 
+%\commenta{Maximum Likelihood IRL}
+
 For example, in the maximum-likelihood setting~\cite{babes11}, the
 goal is to find a reward function parameterization that maximizes a
-likelihood function:
+the likelihood of the data:
 %
 \begin{equation}
 \label{eq:mlirl}
 \theta \in \arg\max_{\theta} L(D \mid R_{\theta}) = \prod_{t \in D} \prod_i^{|t|} \pi_{\theta}(s_i, a_i),
 \end{equation}
 
+\noindent
 where $\pi_{\theta}(s, a)$ is a stochastic policy defining the
 probability of taking action $a$ in state $s$ when the parameterized
 reward function to be maximized is $R_{\theta}$. Typically, the
@@ -31,28 +35,43 @@ Boltzmann (softmax) stochastic policy over the $Q$-values is used:
 $\pi_{\theta}(s, a) = \frac{e^{\beta Q_{\theta}(s,a)}}{\sum_{a' \in A}
   e^{\beta Q_{\theta}(s,a')}}$, where $Q_\theta(s, a)$ is the $Q$-function
 when the reward function is parameterized by $\theta$.
+%
+Popular methods for solving Equation~\ref{eq:mlirl} (i.e., for
+carrying out maximum-likelihood IRL (MLIRL) include gradient ascent
+and expectation-maximization.\commenta{do these algorithms need references?}
 
-\commenta{Bayesian IRL!}
+%\commenta{Bayesian IRL}
 
-\commenta{Nonparametric Bayesian IRL?}
+In Bayesian IRL, the goal is to compute a posterior distribution over
+reward function parameterizations:
+%
+\begin{equation}
+\label{eq:birl}
+\Pr(R_{\theta} \mid D) \propto \Pr(D \mid R_{\theta}) \Pr(R_\theta)
+\end{equation}
 
-\commenta{Receeding-horizon IRL}
+\noindent
+Bayesian IRL algoriths typically rely on Markov chain Monte Carlo methods.
+\commenta{add reference}
+%
+More recently, work has also commenced on
+nonparametric Bayesian IRL methods~\cite{}.
+
+%\commenta{Receeding-horizon IRL}
 
 IRL algorithms are typically computationally demanding because they
 require planning in their inner loops.
 %If the social reward function learning is going to be used in any
 %moderately interactive setting, this limitation may be prohibitive. 
 %
-\mydef{Receding horizon IRL}
-(RHIRL)~\cite{macglashan15b} addresses this limitation by replacing
-the usual infinite-horizon policy with a receding horizon controller
-(RHC) that only plans out to some finite horizon from any given state,
-thereby bounding computation time. An RHC tends to steer an IRL
-algorithm towards a reward function with shaping values: short-term
-rewards that guide the agent in the right direction without having to
-plan too far ahead. Since these are precisely the kinds of values we
-want our bias functions to capture, RHIRL allows us to plan with a
-short horizon, thereby saving on computation time, which enables
-interactive learning, described next.
+Compatible with all of the above algorithms, \mydef{receding horizon
+IRL} (RHIRL)~\cite{macglashan15b} addresses this limitation by
+replacing the usual infinite-horizon policy with a receding horizon
+controller (RHC) that only plans out to some finite horizon from any
+given state, thereby bounding computation time. An RHC tends to steer
+an IRL algorithm towards a \mydef{shaping reward function}~\cite{},
+%https://people.eecs.berkeley.edu/~pabbeel/cs287-fa09/readings/NgHaradaRussell-shaping-ICML1999.pdf
+short-term rewards that guide the agent without it having to plan too
+far ahead.  Consequently, RHIRL allows us to plan with a short
+horizon, thereby saving on computation time.
 
-\commenta{orthogonal to the above, and hence can be used with ANY of the above!}

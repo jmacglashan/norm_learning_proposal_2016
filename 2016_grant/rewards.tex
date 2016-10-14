@@ -1,0 +1,34 @@
+
+\vspace{\up}
+\paragraph{Social Reward Functions}
+
+In our preliminary studies, we assume players' individual (game)
+rewards are known, and our goal is to recover a \mydef{social reward
+  function} that combines these known rewards in such a way as to
+capture social preferences expressed in the joint play of the agents
+(when one exists).
+
+Like the players' reward functions, a social reward function operates
+on states, joint actions, and next states: $R^S : S \times_i A^i
+\times S$.  In our initial model, we assume the social reward function
+can be written as linear combination of a \mydef{team function}, which
+represents team goals,
+%an \mydef{individual function}, which represents an individual's goals,
+and a family of what we call \mydef{bias functions} ($B_\Theta$)
+defined by some parameter space $\Theta$.  The team function takes as
+input a multi-agent reward function ($R^I)$, and returns a single
+numeric ``team'' value for any state-joint action-next state
+triple. One example of such a function is total welfare (i.e., the sum
+of all agent rewards): ${\mathcal T}(R^I, s, j, s') = \sum_i R^i(s, j, s')$.
+%
+The bias function family is similar in nature to a reward function
+family that would be input to a classic IRL algorithm, but operates on
+state-joint action-next state triples, thereby encoding a bias that
+motivates collaborative behavior in games.  In addition to the
+parameters of the bias function, the social reward function may also
+include a parameter
+%$\alpha$ 
+to trade-off the team rewards against the biases.
+%$R^S(s, j, s') = \alpha {\mathcal T}(R^I, s, j, s') + (1-\alpha) B_\Theta(s, j, s')$.
+%but in the simplest case, $\alpha = 0.5$.
+

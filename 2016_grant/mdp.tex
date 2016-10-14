@@ -1,0 +1,42 @@
+
+\vspace{\up}
+\paragraph{Markov decision processes}
+
+A \mydef{Markov Decision Process} (MDP) is a model of a single-agent
+decision making problem, defined by the tuple $(S, A, T, R)$, where
+$S$ is the set of states in the world; $A$ is the set of actions that
+the agent can take; $T(s' \mid s, a)$ defines the transition dynamics:
+the probability the environment transitions to state $s' \in S$
+after the agent takes action $a \in A$ in state $s \in S$; and 
+$R(s, a, s')$ is the reward function, which returns the reward the
+agent receives when environment transitions to state $s'$ after the
+agent takes action $a$ in state $s$.
+
+The goal of planning or learning in an MDP is to find a policy $\pi :
+S \rightarrow A$ (a mapping from states to actions) that maximizes the
+expected future discounted reward under that policy: $E^{\pi} \left[
+  \sum_{t=0}^\infty \gamma^t R(s_t, a_t, s_{t+1}) \right]$, where
+$\gamma \in [0, 1]$ is a discount factor specifying how much immediate
+rewards are favored over distant rewards. 
+%Since this sum goes to the infinite future, this objective is called an {\em infinite horizon} objective.
+
+To find an optimal policy, many algorithms compute the optimal state
+($V^*(s)$) and state-action ($Q^*(s,a)$) value functions that specify
+the expected future discount reward under the optimal policy from each
+state, and from taking an action in a state and then following the
+optimal policy respectively. 
+%These functions are defined recursively
+%by the Bellman equations:
+%%
+%\begin{equation}
+%V^*(s) = \max_{a \in A} \sum_{s' \in S} T(s' \mid s, a) \left[ R(s, a, s') + \gamma V^*(s') \right].
+%\end{equation}
+%and
+%\begin{equation}
+%Q^*(s,a) = \sum_{s' \in S} T(s' \mid s, a) \left[ R(s, a, s') + \gamma V^*(s') \right].
+%\end{equation}
+%\noindent
+Given these functions, the optimal policy is derived by taking an
+action in each state with the maximum Q-value: 
+$\pi(s) \in \arg\max_{a \in A} Q(s, a)$~\cite{bertsekas87}.
+

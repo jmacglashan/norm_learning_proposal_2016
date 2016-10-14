@@ -1,0 +1,46 @@
+
+\vspace{\up}
+\paragraph{Stochastic games}
+
+The stochastic games formalism can be viewed as an extension of MDPs
+to the multi-agent case~\cite{littman1994markov}. 
+%In a stochastic game, each of the agents in the environment make decisions simultaneously at each discrete time step and can only observe the other agents' decisions after all decisions have been made and executed in the environment. 
+A \mydef{stochastic game} is defined by the tuple $(I, S, A^I, T,
+R^I)$, where $I$ is an index set of agents in the environment; $S$ is
+the set of states of the environment; $A^I$ is set of actions for each
+of the agents with $A^i$ denoting the action set for agent $i \in I$;
+$T(s' \mid s, j)$ is the transition dynamics specifying the
+probability of the environment transitioning to state $s' \in S$ when
+the {\em joint action} $j \in \times_i A^i$ of all agents is taken in
+state $s \in S$; and $R^I$ is a set of reward functions for each agent
+with $R^i(s, j, s')$ denoting the the reward received by agent
+$i \in I$ when the environment transitions to state $s' \in S$ after
+the agents take joint action $j \in \times_i A^i$ in state $s \in S$.
+
+The goal in a stochastic game is to find a joint strategy that
+satisfies some solution concept. Different solution concepts for
+stochastic games have been explored in the past including minimax,
+Nash, correlated, and CoCo equilibria
+\cite{GreenwaldHall:03,HuWellman03,Littman01,ZGL:06}. There are
+problems with these approaches, however. First, the resulting planners
+must solve for game-theoretic equilibria in an inner loop, a problem
+which in the case of Nash equilibrium, for example, is notorious for
+its computational
+intractability~\cite{daskalakis2009complexity}. Second, in the general
+case of non-constant sum games, none of the planners that make
+reasonable assumptions about agent behavior yield unique joint plans,
+and none has solved the ensuing equilibrium selection problem
+suitably.
+
+Immediately generalizing from the case of MDPs, the goal of inverse
+reinforcement learning in stochastic games is to learn a set of reward
+functions for the stochastic game that describe an environment that
+would motivate the agents to behave in a way that is consistent with
+the observed behavior under some solution concept such as a Nash
+equilibrium~\cite{reddy2012inverse}.  This problem, however, is
+exceedingly difficult, because the planning that is necessary in the
+inner loop of an IRL algorithm is subject to the challenges identified
+by the equilibrium planners mentioned above.
+%
+In this project, we plan to develop IRL algorithms that facilitate
+equilibrium selection in a stochastic game.  

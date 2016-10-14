@@ -1,15 +1,9 @@
-%Larger RHIRL horizon can allow for more temporally abstract norms to be encoded 
+%Larger RHIRL horizon can allow for more temporally abstract equilibria to be encoded 
 %ex: "pass on the left" may take multiple steps to coordinate and give a reward when agents pass each other on the left
 
-%\vspace{\up}
+\vspace{\up}
 \paragraph{Preliminary Results}
 \label{sec:results}
-
-
-\commenta{Although any off-the-shelf IRL algorithm would be applicable here, in
-these experiments, we use receding-horizon, maximum-likelihood IRL.
-In future work, we of course plan to use (receding-horizon) feedback IRL instead.}
-
 
 Preliminary experiments suggest that both our batch and interactive
 collaborative learning algorithms can produce reasonable results in
@@ -38,13 +32,13 @@ closer to their opponent's goal than they are to their
 own. Additionally, when one of the agents is one step away from their
 goal, none of the features activate, thereby preventing premature
 termination on the joint task. Since these features directly encode
-social preferences for joint actions, rather than higher-level goals,
-when training we use RHIRL with a horizon of 1. We do not expect this
+social rewards for joint actions, rather than higher-level goals, when
+training we use RH-MLIRL with a horizon of 1. We do not expect this
 set of features to be complete or capable of capturing all the
-possible equilibrium behaviors that might emerge in a grid game. So an
-important area for future work is to identify features that are both
-expressive and generalize well. Nevertheless, the features used here
-provide a proof of concept for our approach.
+possible behaviors that might emerge in a grid game. So an important
+area for future work is to identify features that are both expressive
+and generalize well. Nevertheless, the features used here provide a
+proof of concept for our approach.
 %which can later be extended to more expressive features.
 
 %\subsection{Batch Training Results}
@@ -72,21 +66,22 @@ provide a proof of concept for our approach.
         \caption{}
         \label{fig:batch3}
     \end{subfigure}
-    \caption{The three different norms the batch learning algorithm trained on in Hallway. Colored arrows indicate the path of the player of the same color. A small circle indicates a wait action.}\label{fig:batchRes}
+    \caption{The three different equilibria the batch learning algorithm trained on in Hallway. Colored arrows indicate the path of the player of the same color. A small circle indicates a wait action.}\label{fig:batchRes}
 \end{figure}
 
 We tested our batch learning algorithm on datasets in which
 agents followed three different equilibrium strategies. 
 %All three equilibrium behaviors are shown in \ref{fig:batchRes}. 
 The first (Figure~\ref{fig:batch1}) shows the orange player going
-north and then along the top row of the grid while the blue player
-goes south and then along the bottom row. The second
-(Figure~\ref{fig:batch2}) shows the blue player going north and along
-the top row while the orange player waits, then goes east, and then
-waits again for blue to catch up so they can enter their goals
-together.  The third (Figure~\ref{fig:batch3}) has the orange player
-go south and along the bottow row while the blue player immediately
-goes west toward its goal and then waits two steps.
+north and then traveling along the top row of the grid, while the blue
+player goes south and then travels along the bottom row. The second
+(Figure~\ref{fig:batch2}) shows the blue player going north and then
+traveling along the top row while the orange player waits, then goes
+east, and then waits again for blue to catch up so they can enter
+their goals together.  The third (Figure~\ref{fig:batch3}) has the
+orange player go south and then traveling along the bottow row, while
+the blue player immediately goes west toward its goal and then waits
+two steps.
 %for orange to catch up so they can enter their goals together.
 
 For each of these three equilibria we generated five demonstrations,
@@ -164,4 +159,11 @@ particular interest are the results in the fifth match
 players wait (a suboptimal joint action), and Blue then moves in an
 odd looping motion. Nevertheless, the agents learn from the experience,
 ultimately finding collaborative behavior that works well for them both.
+
+\comment{
+Although any off-the-shelf IRL algorithm would be applicable here, in
+these experiments, we use receding-horizon, maximum-likelihood IRL.
+In future work, we plan to use (receding-horizon) \mydef{feedback IRL}
+(see Section~\ref{}) instead.
+}
 
