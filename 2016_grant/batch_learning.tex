@@ -36,19 +36,22 @@ set of multi-agent demonstrations (which perhaps adheres to some
 equilibrium: i.e., collaborative behavior); a team function; and a
 family of bias functions defined by some parameter space $\Theta$.
 %
-Since the demonstrations are a set of trajectories of state-joint
-action pairs, specifying the behavior of all the agents in the
-environment, the first step of the batch learning algorithm is to
-transform the stochastic game into an MDP. For the most part, this
-transformation is straightforward: the states are the same, the MDP
-action set is the space of joint actions, and the MDP transition
-dynamics still operate on joint actions (which is the action set in
-the MDP). A family of social reward functions is then defined as a
-linear combination of the input team function (which depends on the
-stochastic game's reward functions), and the family of bias
-functions.\footnote{A parameter controlling the linear
-combination of the team and bias function may be optimized as well.}
-%
+The first step of the batch learning algorithm is to transform the
+stochastic game into an MDP, and the second to apply IRL to that MDP.
+%% %
+%% Since the demonstrations are a set of trajectories of state-joint
+%% action pairs, specifying the behavior of all the agents in the
+%% environment, the first step of the batch learning algorithm is to
+%% transform the stochastic game into an MDP. For the most part, this
+%% transformation is straightforward: the states are the same, the MDP
+%% action set is the space of joint actions, and the MDP transition
+%% dynamics still operate on joint actions (which is the action set in
+%% the MDP). A family of social reward functions is then defined as a
+%% linear combination of the input team function (which depends on the
+%% stochastic game's reward functions), and the family of bias
+%% functions.\footnote{A parameter controlling the linear
+%% combination of the team and bias function may be optimized as well.}
+%% %
 After learning a social reward function, any single agent can then
 behave by selecting a joint action from the policy that results from
 it, and then selecting their individual action from the joint. That
