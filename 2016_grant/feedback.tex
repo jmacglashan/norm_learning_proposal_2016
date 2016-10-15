@@ -1,5 +1,5 @@
 
-\subsection{Feedback IRL}
+\subsection{Labelled IRL}
 \label{sec:feedback}
 
 To complement the new computational model we put forth, the new
@@ -8,4 +8,110 @@ model of IRL, and accompanying algorithms, which allows for both
 positive and negative (not necessarily binary) labels, and, moreover,
 which also allows for partial feedback, meaning subtrajectories (i.e.,
 options~\cite{sutton99}) can be ascribed such labels.
+
+To this end, in this section, we propose a novel variant of the
+inverse reinforcement learning problem, which we call \mydef{Labelled
+  IRL}.  Wherease the input to standard IRL is a data set of
+trajectories
+%(a sequence of state-action pairs)
+and the output, a reward function, the input to a labelled IRL
+problem, is a data set of \emph{labelled\/} trajectories. (The output
+is still a reward function.)  In its most basic formulation,%
+\footnote{Labels need not be binary; they can be continuous-valued.}
+each label is either positive ($+1$) or negative ($-1$), indicating
+whether the associated trajectory is a good example of some desired
+behavior, or a bad example of some desired behavior.  The goal is to
+recover a reward function that motivates the desired behavior.
+
+The plate diagram that describes our labelled IRL problem formulation
+is shown in Figure~\ref{fig:feedback}.  In this model, we interpret
+the label ($L$) associated with a trajectory of size $N$ to be some
+random function of what the evaluator thought about each of the action
+selections ($A$) exhibited at each of the states ($S$) in the
+trajectory.  However, these step-wise evaluations ($X$) are unobserved
+in the data.
+
+\begin{wrapfigure}{l}{0.4\textwidth}
+\begin{tikzpicture}[x=1.7cm,y=1.8cm]
+   \node[latent]                   (R)      {$\bm{\theta}$} ; %
+   \node[latent, right=of R]                   (X)      {$X$} ; %
+   \node[obs, below=of X]                      (L)      {$L$} ; %
+   \node[obs, above=of X]          (S)      {$S$} ; %
+   \node[obs, right=of S]          (A)      {$A$} ; %
+   
+   \factor[above=of L]{L-f}{right:Sigmoid}{}{} ;
+
+  \edge {S}{X} ;
+  \edge {A}{X} ;
+  \edge {R}{X} ;
+  \factoredge {X}{L-f}{L} ;
+
+   \plate {traj}{
+   		(S) (A) (X)
+   } {$N$} ;%
+
+   \plate {data}{
+   		(traj)(L-f)(L)
+   } {$M$} ;
+
+\end{tikzpicture}
+\caption{Feedback IRL}
+\label{fig:feedback}
+\end{wrapfigure}
+
+For illustrative purposes, we adopt the probabilistic maximum
+likelihood problem formulation, in which we seek a reward function
+that maximizes the likelihood of the data, but Bayesian reasoning
+could likewise be applied here.
+%
+To find the reward function that maximizes the likelihood of the data,
+we first define a probability model for the system that is represented
+in Figure~\ref{fig:feedback}.
+%
+We model the probability that an action is evaluated as good or not as
+proportional to its selection probability according a softmax policy
+computed for the reward function with parameters
+$\bm{\theta}$. Specifically:
+%
+\begin{align}
+\Pr(x_i = +1 \mid s, a, \theta) &= \pi(s, a \mid \bm{\theta}) \\
+\Pr(x_i = -1 \mid s, a, \theta) &= 1 - \pi(s, a \mid \bm{\theta}),
+\end{align}
+
+\noindent
+Here $\pi(s, a \mid \bm{\theta})$ is the softmax policy over $Q$-values,
+assuming a reward function parameterized by $\bm{\theta}$.
+
+\comment{
+%%% DELETED B/C OF SPACE CONSTRAINTS !!!
+\begin{equation}
+\pi(s, a \mid \bm{\theta}) = \frac{e^{\beta Q(s,a \mid \bm{\theta})}}{\sum_{a'}e^{\beta Q(s,a' \mid \bm{\theta})}},
+\end{equation}
+
+\noindent
+$\beta$ is a selectable parameter, and $Q(s,a \mid \bm{\theta})$ is the
+$Q$-value computed for the reward function parameterized by
+$\bm{\theta}$.
+}
+
+For the probability distribution of $L$, given the sequence of $N$
+step-wise labels, we would like a distribution that has the property
+that as more step-wise labels are positive, the probability of a
+positive trajectory label increases (and vice versa). Although there
+are many possible distributions that satisfy this property, for
+concreteness, we choose the sigmoid function. That is,
+%
+\begin{align}
+\Pr(L = +1 \mid X_1, ..., X_n) &= \frac{1}{1 + e^{-\phi \sum_i^N X_i}} \\
+\Pr(L = -1 \mid X_1, ... ,X_n) &= 1 - \Pr(L = +1 \mid X_1, ..., X_n),
+\end{align}
+
+\noindent
+Here $\phi$ is a parameter that controls how readily step-wise labels
+influence the trajectory labels.  For example, when $\phi = 0$,
+trajectory labels are assigned uniformly at random, without any regard
+for of step-wise labels.  As $\phi \rightarrow \infty$, the sigmoid
+converges to a step function in which a trajectory containing even one
+more positive step-wise label than negative will deterministically
+lead to a positive trajectory label (and vice versa).
 
