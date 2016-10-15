@@ -76,6 +76,7 @@ over all trajectories.)
 \caption{Labeled-IRL EM Algorithm}
 \end{algorithm}
 
+\comment{
 To compute this expectation, we need to enumerate each of the
 possible assignments to $\bm{x}_u$, and compute their probabilities,
 given the observed data and model parameters $\bm{\theta}$.  This
@@ -95,7 +96,6 @@ can be computed efficiently using dynamic programming because the
 probability of a label is a sigmoid function that operates on the sum
 of the entries in the $\bm{x}$ vector.\commenta{i edited this. check for correctness.}
 
-\comment{
 Unfortunately, even with an efficient means to compute $\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})$, when the number of unknown $X$ variables is large, the number of $\bm{x}_u$ assignments enumerated in the expectation's outer sum grows exponentially, and the product series over each of unknown element probabilities in the above equation ($\prod_i \Pr(\bm{x}_{u,i} \mid s_i, a_i, \bm{\theta})$) can have underflow issues. A resolution to this problem is to estimate the expectation with sampling. Monte Carlo sampling is unfortunately intractable because it is not easy to sample from $\Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})$; moreover, it would not address the underflow issue in the product series. However, it is easy to sample from $\Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta})$ (removing the conditioning on the label), which we can use in importance sampling. With importance sampling, we can replace the expectation computation with the sample-estimate
 \begin{equation}
 \frac{1}{C} \sum_j^C \frac{\Pr(\bm{x}_u^j \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}{\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})} \log\mathcal{L}(l, \bm{x}_k, \bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta}).
