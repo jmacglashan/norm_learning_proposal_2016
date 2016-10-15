@@ -1,5 +1,6 @@
 
 \section{Plan}
+
 The three-year timeline for our proposed project is as follows:
 
 \begin{itemize}
@@ -16,7 +17,6 @@ The three-year timeline for our proposed project is as follows:
   is proceeding cooperatively, or if cooperation has broken down and
   players should revert to more traditional self-interested behavior. 
 
-
 \item {\bf Year 3}: Extend and evaluate our approach in real-world
   applications, specifically to the ``go fetch'' scenario described in
   the Broader Impacts section. Algorithmically, we will focus on ways
@@ -25,11 +25,14 @@ The three-year timeline for our proposed project is as follows:
 
 \end{itemize}
 
-From our preliminary investigations, it has become clear that metrics
-play an essential role in these learning scenarios.  Evaluation
-metrics that capture trajectory similarity across diverse games are
-key for assessing performance and also for driving learning algorithms
-to more beneficial behavior. 
+%%% THIS IS VACUOUSLY TRUE, ISN'T IT?: i.e., true in all applications
+%From our preliminary investigations, it has become clear that metrics
+%will play an essential role in evaluating collaborative learning.
+
+Evaluation metrics that capture trajectory similarity across diverse
+games are key for assessing performance, and will drive the
+development of our learning algorithms towards more beneficial
+behavior.
 
 We will also develop ways for people to also assess how natural it is
 to interact with our artificial agents. For example, we will
@@ -37,45 +40,37 @@ investigate whether having two humans interact for awhile, and then,
 without notifying them, swapping their partner with an artificial
 agent trained from the interaction history results in a noticeable
 change in behavior. Participants would be asked if they noticed a
-change, and behavior would be compared between three cases: no swap,
-swapping in a trained agent, and swapping in an untrained agent.
+change, and behavior would be compared between a variety of cases, 
+such as: no swap; or swapping in a trained agent, an untrained agent, 
+a human who witnessed the history of interactions, a human who did not.
 
-Throughout the project, we will investigate how to generalize social
-utility functions across environments. To facilitate generalization
-between state spaces, we will start by examining standard features and
-representations used in existing reinforcement-learning and IRL
-research (e.g., linear models, neural networks, etc.) and build on
-them, as necessary. 
+Throughout the project, we will investigate how to design social
+utility functions that generalize across environments. We we will
+start by examining standard feature selection methods used in existing
+reinforcement-learning and IRL research (e.g., linear models, neural
+networks,
+etc.)~\cite{diuk2009adaptive,kolter2009regularization,li2009reinforcement,parr2008analysis},
+and build on them, as necessary.
 % ML: Note that we could propose ``deep IRL''... since MLIRL is a
 % gradient method, it should be easy to incorporate it into standard
 % deep learning packages to learn very complex social utilities.
 We will evaluate generalization by first having users learn in one
-grid. Afterwards, they will be exposed to a new grid where a the
+grid. Afterwards, they will be exposed to a new grid where the
 previous behavior is no longer directly applicable (e.g., because a
-wall was added in the path that one agent would normally take), but a
-more ``general'' behavior can be transfered (e.g., I move above the
-other agent). 
+wall was inserted along the path that an agent would normally take),
+but a more ``general'' behavior can be transfered (e.g., I take the
+high road; he takes the low, regardless of the presence or absence of
+obstacles).
 
+\commenta{SOCIAL NORMS!}
 % The algorithms described in this proposal are designed for learning
 % among a set of agents interacting pairwise. We will extend our work to
 % scenarios where agents play different games, with different subsets of
 % agents drawn from the same population. We expect that a group of
-% people can converge on a norm in a setting like this, and so will
-% extend our algorithms as necessary to support this robust form of
+% people would converge on a social norm in a setting like this~\cite{???}, 
+% and witll extend our learning algorithms as necessary to support this robust form of
 % norm-learning. To evaluate our extensions, we will compare norm
 % formation in purely human groups to hybrid human-machine groups.
-% %One possible direction is to have the agent learn multiple norms using reward function clustering similar to that in multiple intention IRL\cite{babes11}, and then homogenize the clusters as the populations converges. 
+% %One possible direction is to have the agent learn multiple norms using reward function clustering similar to that in multiple intention IRL~\cite{babes11}, and then homogenize the clusters as the various subpopulation's behaviors converge. 
 % %To evaluate adaptivity in populations, we will compare the results of purely human populations with human-agent populations.
-
-% In year three we will test our approach in a real-world domain:
-% robot-human collaboration. Our simulated worlds suggest that our
-% learning agents could collaborate better with people than traditional
-% approaches, but the capabilities of robots may inhibit the
-% effectiveness of our approach (e.g., robots might move slower than
-% people expect). We will evaluate our algorithm in real-world scenarios
-% by comparing its performance at controlling a robot to when another
-% human controls the robot via teleoperation. We expect this to inspire
-% novel problems tuned to real-world problems. For example, computation
-% time may be a limiting factor to the success of our machine agents,
-% and if so, we will develop more efficient implementations.
 

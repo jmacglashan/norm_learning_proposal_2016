@@ -2,18 +2,19 @@
 \section{Evaluation}
 
 Before scaling to embodied robots,\commenta{Michael, are we going to do this? if not, tone down to whatever our real-world application plans are}
-we will evaluate our approach to collaborative learning using an
-experimental platform that simulates interactions between humans and
-artificial agents.  For example, we will compare how often and how
-quickly humans are able to arrive at coordinated plans among
-themselves, versus with an artificial agent.  To test the
-expressiveness of the space of learnable solutions afforded by our
-approach, we will also measure tendencies among humans to converge to
-plans with certain characteristics, and whether those characteristics
-vary when there are artificial agents in the mix.  We will also assess
-the quality of the plans under these varying conditions.  Finally,
-subjective evaluations from the human participants will be used to
-assess whether interacting with agents feels natural.
+we will evaluate how our socially-rational agents fare in
+collaborative learning tasks using an experimental platform that
+simulates interactions between humans and artificial agents.  For
+example, we will compare how often and how quickly humans are able to
+arrive at coordinated plans among themselves, versus with a
+socially-rational agent.  To test the expressiveness of the space of
+learnable solutions afforded by our approach, we will also measure
+tendencies among humans to converge to plans with certain
+characteristics, and whether those characteristics vary when there are
+socially-rational agents in the mix.  We will also assess the quality of the
+plans under these varying conditions.  Finally, subjective evaluations
+from the human participants will be used to assess whether interacting
+with agents feels natural.
 
 For the batch learning algorithm, we will develop new quantitative
 metrics to assess behavioral similarity so that trajectories produced
@@ -22,16 +23,17 @@ produced by human participants.  Additionally, we plan to design a
 sort of ``Turing test'' for our problem domain, whereby we will have
 two humans interact with each other for a number of rounds and then,
 without notification, we will fork those interactions into two, where
-each human is now playing with an artificial agent that trained on the
-history of interactions between the two humans.  At the end of all
-interactions, we will ask the user whether they noticed anything
+each human is now playing with a socially-rational agent that trained
+on the history of interactions between the two humans.  At the end of
+all interactions, we will ask the user whether they noticed anything
 strange partway through the interactions, such as a change of partner.
 Their subjective response to whether they thought their partner
 switched at any point will be compared to their subjective responses
 in other treatments, such as: (1)~no switching; (2)~swapping their
 partner for another human; (3)~swapping their partner for another
 human who watched the previous interactions; (4)~swapping their
-partner for an artificial agent that did not perform any learning.
+partner for a socially-rational agent that did not perform any
+learning.
 
 Finally, we are particularly interested in designing flexible learning
 algorithms that generalize at least as well as humans do to new state
@@ -41,3 +43,17 @@ above, we will test whether our learning agents can generalize to new
 games as well as other humans can.  Likewise,\commenta{Michael, do we want to say something about generalizing to other players? maybe humans are better at this than our agents will be?}
 
 \commenta{Michael, how are we going to evaluate our approach in our proposed ``real-world'' (i.e., non-grid game) applications?}
+
+In year three we will test our approach in a real-world domain:
+robot-human collaboration.  Even if (as we expect), our simulated worlds
+will suggest that our
+learning agents could collaborate better with people than traditional
+approaches, but the capabilities of robots may inhibit the
+effectiveness of our approach (e.g., robots might move slower than
+people expect). We will evaluate our algorithm in real-world scenarios
+by comparing its performance at controlling a robot to when another
+human controls the robot via teleoperation. We expect this to inspire
+novel problems tuned to real-world problems. For example, computation
+time may be a limiting factor to the success of our machine agents,
+and if so, we will develop more efficient implementations.
+

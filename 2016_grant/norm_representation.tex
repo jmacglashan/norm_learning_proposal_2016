@@ -63,33 +63,5 @@ move past each other on the right and the planning algorithm does the
 rest.
 }
 
-To facilitate social reward functions that generalize, the bias
-function family must operate on a set of useful features.  As part of
-this project, we plan to investigate whether existing state-of-the-art
-feature selection methods for
-RL~\cite{diuk2009adaptive,kolter2009regularization,li2009reinforcement,parr2008analysis}
-work well in our setting, and then work towards developing new methods
-to the extent necessary.
 
-%A viable alternative might be to design the bias functions such that
-%agents can receive a bonus as they move past each other on the right.
-%The intent is that motivating the desired behavior in this way would
-%result in greater generalization power.  To facilitate this kind of
-%generalization, the bias function family must operate on a set of
-%useful features.  As part of this project, we plan to investigate
-%whether existing state-of-the-art feature selection methods for
-%RL~\cite{diuk2009adaptive,kolter2009regularization,li2009reinforcement,parr2008analysis}
-%work well in our setting, and then to work towards developing new
-%methods to the extent necessary.
-
-%\jmnote{I made a bit of a bold claim here saying that we would investigate feature selection. I say that because this might indeed be an interesting space that benefits from new kinds of features, but if we don't want to commit to this, we can just say its outside the scope of our work.}
-
-\comment{
-We believe that the choice to represent norms by a single social
-reward function is grounded in sound psychology because\commenta{JOE!!??}.
-%
-Furthermore, this assumption is essential for our approach to be
-tractable, because IRL in MDPs is becoming increasingly easier, while
-IRL in stochastic games remains enormously challenging.
-}
 
