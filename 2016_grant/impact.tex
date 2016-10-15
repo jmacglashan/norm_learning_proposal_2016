@@ -8,15 +8,15 @@ that impact one another. Some fields, such as human--computer
 interaction (HCI), focus on systems in which a human being is
 primarily in control and the computer's decisions are assessed in
 terms of the positive impact they have on the user. An interesting
-recent example is Centaur chess
-\url{http://www.huffingtonpost.com/mike-cassidy/centaur-chess-shows-power_b_6383606.html}
+recent example is Centaur
+chess\footnote{http://www.huffingtonpost.com/mike-cassidy/centaur-chess-shows-power_b_6383606.html}
 in which a human and machine team up to play on the same side in
 chess, both making decisions, but with the machine acting as an
 advisor and the human deciding which moves to actually make. Other
-fields, like human computation and crowd sourcing, combine human and
-machine expertise with the machine being the ultimate arbiter of
-behavior and a group of human beings acting as lower level
-computational components.
+fields, like crowd sourcing human computation~\cite{von2009human},
+combine human and machine expertise such that the machine is the
+ultimate arbiter of behavior and a group of human beings act as lower
+level computational components.
 
 True collaboration, however, does not start with one participant being
 assigned to a leadership role. Instead, the various agents need to
@@ -33,38 +33,82 @@ interact with people in the physical world need to navigate the
 complex give-and-take of establishing mutually beneficial behaviors
 where possible.
 
-``Social autonomous driving'' class for undergraduates building on the
-Duckietown platform\footnote{http://duckietown.mit.edu/}.
+Thus, a wide variety of human--machine interaction problems would be
+positively impacted by the technology we are proposing, such as
+robotic sous chefs and gerontechnological support for aging in place.
+As such, the project is synergistic with the main efforts of Brown
+University's Humanity Centered Robotics Initiative (HCRI), of which
+co-PI Littman is co-director. Specifically, within HCRI, there are
+ongoing efforts to design robotic systems that interact with people
+and support independent living tasks. For an elderly person to trust
+and collaborate on tasks with a machine effectively, the machine must
+act in a manner that the elderly person expects. This project creates
+the foundation for these important applications.
+
+The most direct application of our ideas are in scenarios in which a
+robotic agent is sharing a space with bystanders who do not
+necessarily share its goals---a personal grocery-store assistant, a
+socially aware vacuum, an automated hospital linen cart, a package delivery
+drone. To further develop this setting,
+% in year 3 
+we will
+% team up with George and/or Stefanie to do a
+build a ``go fetch'' application on a mobile-manipulation platform in
+the department.
+%  By then, there will be robots in the
+% department that can both move and move things around. A 
+% robot will need to deal several issues that are directly relevant to
+% our project:
+It will use its abilities for representing, learning, and applying
+cooperative behavior in three separate spheres:
+\begin{itemize}
+\item navigating smoothly through the atrium and hallways, finding
+  appropriate ways to avoid collisions and adopting regularities that
+  make it easy for people to coordinate with it quickly;
+\item riding in the elevator, which brings with it some related but
+  distinct expectations for coordinating (moving in and out of the
+  doors, standing inside, asking for help with the buttons, deciding
+  what to do when obstructed;
+\item understanding how to best signal a handoff of the object it is
+  fetching by interrupting people without being too timid or too
+  boorish.
+\end{itemize}
+% This task, while not necessarily the most  is within our technological limitations (unlike wheelchairs
+% or actual cars) and would definitely result in some impact if our
+% algorithms were able to help.
+
+Interest in robotics and machine learning are growing in the Brown CS
+department and we are designing a new robotics introductory sequence
+that includes classes on basic robotics algorithms, hardware design,
+and human-centered evaluation of robotics systems. As part of this
+project, we will offer a new intermediate robotics course called
+``Social autonomous driving'' for undergraduates. It will build on the
+structure of the Duckietown
+platform\footnote{http://duckietown.mit.edu/} from MIT. The emphasis
+of the class will be on developing robots that drive around a test
+environment, interacting smoothly with other robots and remote
+controlled cars, and using socially rational algorithms to adapt to
+local ``customs'' and driving styles (such as the ``Pittsburgh left''
+or the ``Boston rotary'').
 
 %%%
 
-\commenta{2015:}
-The domains that would be positively impacted by machines
-that can collaborate effectively with humans is endless, such as robotic sous chefs and
-gerontechnological support for aging in place.
-%
-In particular, the results of this project synergize with the main efforts of 
-Brown University's Humanity Centered Robotics Initiative (HCRI), of
-which co-PI Littman is co-director. Specifically, within HCRI there
-are ongoing efforts to design robotic systems that support independent
-living tasks. For an elderly person to trust and collaborate on tasks with a machine effectively, the machine must act in a manner that the elderly person expects. This project lies the foundation for these important applications.
+% In an effort to increase diversity in computer science, we have
+% pre-selected two graduate students to participate in this
+% project---one woman, and the other Hispanic.  All students (both
+% graduate and undergraduate) who join our team will benefit from
+% collaborating with the cognitive psychologists on our team.
+% Specifically, they will strengthen their understanding of a number of
+% fields, all of which are critical to the development of artificial
+% agents that collaborate effectively with humans: e.g., behavioral
+% economics, cognitive psychology, reinforcement learning, and software
+% engineering.
 
-In an effort to increase diversity in computer science, we have
-pre-selected two graduate students to participate in this
-project---one woman, and the other Hispanic.  All students (both
-graduate and undergraduate) who join our team will benefit from collaborating with the cognitive psychologists on our team.
-Specifically, they will strengthen their understanding of a number of
-fields, all of which are critical to the development of artificial
-agents that collaborate effectively with humans: e.g., behavioral
-economics, cognitive psychology, reinforcement learning, and software
-engineering.
-
-``One of the things that [President Obama] really strongly believe[s]
-in is that we need to have more girls interested in math, science, and
-engineering.''  To that end, we also plan to integrate our work on
-this project into Artemis, a free summer program run at Brown and
-directed by PI Greenwald that introduces rising 9th grade girls to
-computational thinking.
+The co-PIs have a strong record of mentoring students from
+underrepresented groups. In the context of the current work, we plan
+to integrate our work on this project into Artemis, a free summer
+program run at Brown and directed by PI Greenwald that introduces
+rising 9th grade girls to computational thinking.
 %\commentj{Explicit mention that this is a STEM priority?}  
 For example, we might have the Artemis girls teach a robot to
 collaborate with them on various tasks, such as finding and navigating
@@ -74,13 +118,16 @@ to common household objects.
 %\commenta{You know, girls should be doing housework.} 
 % JLA: yeah, i was concerned about the folding laundry example for that reason... 
 
-Our deliverables include an open-source publicly accessible toolkit for agents to learn collaborative behavior via reinforcement learning. Further, we will build a database of machine-machine, human-machine, and human-human experimental results on collaborative-learning problems, which can serve as a benchmark for future researchers to build artifical agents that increasingly achieve human-like behavior. 
+% Our deliverables include an open-source publicly accessible toolkit
+% for agents to learn collaborative behavior via reinforcement
+% learning. Further, we will build a database of machine-machine,
+% human-machine, and human-human experimental results on
+% collaborative-learning problems, which can serve as a benchmark for
+% future researchers to build artifical agents that increasingly achieve
+% human-like behavior.
 %
+
 Finally, we expect to publish the results of the proposed research in
 top-tier archival, conference proceedings and journals with high
-impact factors, and present our work at both computer science and
-psychology conferences.
-
-
-
+impact factors, and present our work at academic conferences.
 
