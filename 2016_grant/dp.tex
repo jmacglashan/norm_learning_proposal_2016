@@ -1,0 +1,30 @@
+
+\section{DP Algorithm For Label Probability}
+
+One of the terms that must be computed for the EM algorithm weight is $\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})$. A straightforward computation of this value would involve marginalizing over $\bm{x}_u$, which grows exponentially large as the number of unknown feedbacks increases. However, by exploiting the fact that $\Pr(l | \bm{x}_k, \bm{x}_u, \bm{s}, \bm{a}, \bm{\theta})$ is a function of the sum of the feedback values, the marginalization can be reduced to a summation that iterates over a number of values that is a linear function of the number of unobserved feedbacks. To demonstrate, first note that $\Pr(l \mid \bm{x}, \bm{s}, \bm{a}, \bm{\theta})$, where all feedback values are known, is defined as
+\begin{equation}
+\Pr(l \mid \bm{x}, \bm{s}, \bm{a}, \bm{\theta}) = S\left(\sum_{x \in \bm{x}} x \right),
+\end{equation} 
+where $S$ is the sigmoid function. Therefore, $\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})$, where some of the feedbacks are unobserved, can expressed by marginalizing over the possible {\em sums} of the unknown feedbacks, rather than marginalizing over all possible feedback assignments:
+\begin{equation}
+\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}) = \sum_{\tau = -|\bm{x}_u|}^{|\bm{x}_u|} S\left(\tau + \sum_{x \in \bm{x}_k} x\right) \Pr(\tau \mid \bm{s}_u, \bm{a}_u, \bm{\theta}),
+\end{equation}
+where $\Pr(\tau \mid \bm{s}_u, \bm{a}_u, \bm{\theta})$ is the probability that the unknown feedbacks will sum to $\tau$, given the states and actions for the unknown feedbacks, and the model parameters $\bm{\theta}$.
+
+Computing this simpler marginal distribution requires computing $\Pr(\tau \mid \bm{s}_u, \bm{a}_u, \bm{\theta})$: the probability distribution of the sum of possible feedback values. Fortunately, this probability can expressed recursively and computed efficiently with a dynamic programming algorithm. 
+
+To describe this recursive relationship, note that if we knew the probability distribution of the sum of feedback values for all unknown feedbacks except the last of them, then we could compute the probability that {\em all} of the feedbacks would some to some value $\tau$ as the probability that the remaining feedbacks sum to $\tau - 1$ and the last feedback is a $+1$ {\em or} the remaining feedbacks sum to $\tau + 1$ and the last feedback is a $-1$. That is,
+\begin{align}
+\Pr(\tau_n = \tau \mid \bm{s}_n, \bm{a}_n, \bm{\theta}) =& \Pr(x_n = +1 \mid s_n, a_n) \Pr(\tau_{n-1} = \tau_n - 1 \mid \bm{s}_{n-1}, \bm{a}_{n-1}, \bm{\theta}) \nonumber \\
+& + \Pr(x_n = -1 \mid s_n, a_n) \Pr(\tau_{n-1} = \tau_n + 1 \mid \bm{s}_{n-1}, \bm{a}_{n-1}, \bm{\theta}), 
+\end{align}
+where $n$ is the number unobserved feedbacks, $\tau_i$ is the random variable specifying the sum of the first $i$ unobserved feedbacks; $s_i$ and $a_i$ represents the $i$th state and action that are associated with unobserved feedback $x_i$; $\bm{s}_i$, $\bm{a}_i$ represents the set of the first $i$ state and actions associated with the unobserved feedbacks; and finally, where the probability of the first unobserved feedback summing to $\tau$ is defined as the probability that the first feedback takes that value:
+\begin{equation}
+\Pr(\tau_1 = \tau \mid \bm{s}_n, \bm{a}_n, \bm{\theta}) = \begin{cases}
+\Pr(x_n = +1 \mid s_n, a_n) & \mbox{if } \tau_1 = 1 \\
+\Pr(x_n = -1 \mid s_n, a_n) & \mbox{if } \tau_1 = -1 \\
+0 & \mbox{otherwise}
+\end{cases}.
+\end{equation}
+We can compute this recursive probability distribution using dynamic programming in which we build a $2n+1 \times n$ matrix, where cell $i,j$ specifies the value for $\Pr(\tau_j = i \mid \bm{s}_j, \bm{a}_j, \bm{\theta})$. The values for the matrix are then filled out column by column, from $j=1$ to $n$. Consequently, using this DP algorithm, we can compute the $\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})$ term required for our EM weight in only $O(|\bm{x_u}|^2)$ time, rather than $O(2^{|\bm{x_u}|})$.
+

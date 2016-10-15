@@ -1,0 +1,131 @@
+
+\paragraph{EM Algorithm}
+
+The problem with estimating the parameters ($\bm{\theta}$) of our
+reward function is that we have a latent variable vector $X$ (or
+rather, some of the elements of the $X$ vector are latent, and some
+may be observed), which prevents us from easily computing the
+likelihood of the model and maximizing its parameters.  The EM
+approach to solving this problem is to first choose values for
+$\bm{\theta}$; then choose a new $\bm{\theta}$ that maximizes the
+expected value of the log likelihood function, where the distribution
+in the expectation is the probability of the latent variables (the
+$X$s in our case), given the observed data and previous choice of
+$\bm{\theta}$. The maximization can be performed using gradient
+ascent, and this process repeats until convergence.
+
+To formalize this process for our problem, first note that the
+likelihood of our parameters (and state-action sequence), given label
+$l$ and a vector $\bm{x}$ is given by:
+%
+\comment{
+\begin{align}
+\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta} \mid l, \bm{x}) 
+&= \Pr(l, \bm{x} \mid \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{s}, \bm{a}, \bm{\theta}) \\
+&= \Pr(l \mid \bm{x}, \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{x} \mid \bm{s}, \bm{a}, \bm{\theta}) 
+\Pr(\bm{s}, \bm{a}, \bm{\theta}) \\
+&= \Pr(l \mid \bm{x}) \prod_i \Pr(x_i \mid s_i, a_i, \bm{\theta}) \Pr(\bm{s}, \bm{a}, \bm{\theta})
+\end{align}
+}
+%
+\begin{align}
+\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta} \mid l, \bm{x}) 
+= \Pr(l \mid \bm{x}) \prod_i \Pr(x_i \mid s_i, a_i, \bm{\theta})
+\end{align}
+
+\noindent
+Likewise, the log likelihood is given by:
+%
+\begin{align}
+\log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta} \mid l, \bm{x}) = 
+\log \Pr(l \mid \bm{x}) + \sum_i \log \Pr(x_i \mid s_i, a_i, \bm{\theta}).
+\end{align}
+
+\noindent
+Additionally, the gradient of the log likelihood is,
+%
+\begin{align}
+\nabla_{\bm{\theta}} \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta} \mid l, \bm{x}) = \sum_i  \frac{\nabla_{\bm{\theta}} \Pr(x_i \mid s_i, a_i, \bm{\theta})}{\Pr(x_i \mid s_i, a_i, \bm{\theta})}.
+\end{align}
+
+To simplify the exposition of the EM algorithm description, we
+introduce the notation $\bm{x}_k$ to indicate the values of the subset
+of observed (i.e., known) elements in an $\bm{x}$ vector, and
+$\bm{x}_u$ to represent a possible assignment to the subset of the
+unobserved values.  Using this notation, the expected value of the log
+likelihood under some candidate parameter $\bm{\theta}'$, assuming
+unknown values are distributed according to $\bm{\theta}$, is:
+%
+\begin{align*}
+E_{\bm{x}_u \sim \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})} & \left[ \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}) \right]
+= \sum_{\bm{x}_u} \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}) \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}_k, \bm{x}_u)
+\end{align*}
+
+\noindent
+The corresponding EM algorithm, operating on a single trajectory, is
+as follows. (It is generalized to many trajectories by simply summing
+over all trajectories.)
+
+\begin{algorithm}
+\begin{algorithmic}
+\Require{initial $\bm{\theta}_0$, and data $\bm{s}$, $\bm{a}$, $\bm{x}_k$, $l$}
+\For{$t=0$ to $K$}
+\State $\bm{\theta}_{t+1} \gets \arg \max_{\bm{\theta'}} \sum_{\bm{x}_u} \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}_t) \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta'} \mid l, \bm{x}_k, \bm{x}_u)$
+\EndFor
+\end{algorithmic}
+\caption{Labeled-IRL EM Algorithm}
+\end{algorithm}
+
+To compute this expectation, we need to enumerate each of the
+possible assignments to $\bm{x}_u$, and compute their probabilities,
+given the observed data and model parameters $\bm{\theta}$.  This
+probability is computed as follows:
+%
+\begin{align*}
+\Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}) &= \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u) \Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{x}_k \mid \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{s}, \bm{a}, \bm{\theta})}{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{x}_k \mid \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{s}, \bm{a}, \bm{\theta})} \\
+ &= \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u) \Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta}) }{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})} \\
+ &= \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u) \prod_i \Pr(\bm{x}_{u,i} \mid s_i, a_i, \bm{\theta}) }{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}. 
+\end{align*}
+
+\noindent
+A straight forward computation of
+$\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})$ requires
+marginalizing over all possible assignments to $\bm{x}_u$; however, it
+can be computed efficiently using dynamic programming because the
+probability of a label is a sigmoid function that operates on the sum
+of the entries in the $\bm{x}$ vector.\commenta{i edited this. check for correctness.}
+
+\comment{
+Unfortunately, even with an efficient means to compute $\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})$, when the number of unknown $X$ variables is large, the number of $\bm{x}_u$ assignments enumerated in the expectation's outer sum grows exponentially, and the product series over each of unknown element probabilities in the above equation ($\prod_i \Pr(\bm{x}_{u,i} \mid s_i, a_i, \bm{\theta})$) can have underflow issues. A resolution to this problem is to estimate the expectation with sampling. Monte Carlo sampling is unfortunately intractable because it is not easy to sample from $\Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})$; moreover, it would not address the underflow issue in the product series. However, it is easy to sample from $\Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta})$ (removing the conditioning on the label), which we can use in importance sampling. With importance sampling, we can replace the expectation computation with the sample-estimate
+\begin{equation}
+\frac{1}{C} \sum_j^C \frac{\Pr(\bm{x}_u^j \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}{\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})} \log\mathcal{L}(l, \bm{x}_k, \bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta}).
+\end{equation}
+where $\bm{x}_u^j$ is sample from the distribution $\Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta})$.
+
+Note that this simplifies a bit further too:
+\begin{align*}
+\frac{\Pr(\bm{x}_u^j \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}{\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})} &= \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u) \Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta}) }{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})} \frac{1}{\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})} \\
+&= \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u)}{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}
+\end{align*}
+Consequently, we have removed the product series from the expectation weight, thereby avoiding underflow issues. Also, as noted previously, the $\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})$ term can be computed efficiently with dynamic programming.
+
+Now we can write a tractable EM algorithm where we can compute the maximization using gradient ascent.
+
+\begin{algorithm}
+\caption{Labeled-IRL Approximate EM Gradient Ascent Algorithm}
+\begin{algorithmic}
+\Require{initial $\bm{\theta}_0$; data $\bm{s}$, $\bm{a}$, $\bm{x}_k$, $l$; and learning rate $\alpha$}
+\For{$t=0$ to $K$}
+\State draw $j =1$ to $C$ samples of $\bm{x}_u^j \sim \Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta}_t)$ 
+\For{$j=1$ to $C$}
+\State $w_j \gets \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u)}{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}_t)}$ \Comment{Expectation step}
+\EndFor
+\State $\bm{\theta}' \gets \bm{\theta}_t$
+\For{1 to $M$} \Comment{Gradient ascent maximization loop}
+\State $\bm{\theta}' \gets \bm{\theta}' + \alpha \frac{1}{C} \sum_j^C w_j \sum_{x_i \in \bm{x}_k \cup \bm{x}_u^j} \frac{\nabla_{\bm{\theta}'} \Pr(x_i \mid s_i, a_i, \bm{\theta}')}{\Pr(x_i \mid s_i, a_i, \bm{\theta}')} $
+\EndFor
+\State $\bm{\theta}_{t+1} \gets \bm{\theta}'$
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+}
