@@ -27,8 +27,41 @@ be compared to their subjective response when their partner is swapped
 out with an artificial agent that did not perform any learning and
 when their partner is swapped with a different human player.
 
-Finally, we are also interested in norms generalizing to new state
-spaces. Using our environmental testbed, we will have participants
-play in a sequence of different grids and using the same kinds of
-evaluations listed above, test whether our algorithm can safely
-generalize to new grids as well as other humans can.
+Finally, we are also interested in cooperative behavior generalizing
+to new state spaces. Using our environmental testbed, we will have
+participants play in a sequence of different grids and using the same
+kinds of evaluations listed above, test whether our algorithm can
+safely generalize to new grids as well as other humans can.
+
+% Evaluation metrics that capture trajectory similarity across diverse
+% games are key for assessing performance, and will drive the
+% development of our learning algorithms towards more beneficial
+% behavior.
+% 
+% We will also develop ways for people to also assess how natural it is
+% to interact with our artificial agents. For example, we will
+% investigate whether having two humans interact for awhile, and then,
+% without notifying them, swapping their partner with an artificial
+% agent trained from the interaction history results in a noticeable
+% change in behavior. Participants would be asked if they noticed a
+% change, and behavior would be compared between a variety of cases, 
+% such as: no swap; or swapping in a trained agent, an untrained agent, 
+% a human who witnessed the history of interactions, a human who did not.
+% 
+% Throughout the project, we will investigate how to design social
+% utility functions that generalize across environments. We we will
+% start by examining standard feature selection methods used in existing
+% reinforcement-learning and IRL research (e.g., linear models, neural
+% networks,
+% etc.)~\cite{diuk2009adaptive,kolter2009regularization,li2009reinforcement,parr2008analysis},
+% and build on them, as necessary.
+% % ML: Note that we could propose ``deep IRL''... since MLIRL is a
+% % gradient method, it should be easy to incorporate it into standard
+% % deep learning packages to learn very complex social utilities.
+% We will evaluate generalization by first having users learn in one
+% grid. Afterwards, they will be exposed to a new grid where the
+% previous behavior is no longer directly applicable (e.g., because a
+% wall was inserted along the path that an agent would normally take),
+% but a more ``general'' behavior can be transfered (e.g., I take the
+% high road; he takes the low, regardless of the presence or absence of
+% obstacles).
