@@ -31,6 +31,8 @@ reinforcement-learning algorithm that can construct social utility
 functions from analysis of the successes and failures of past
 interactions.
 
+NOT DONE!!!
+
 
 Broader Impact: Our approach, if successful, will help people and
 machines work together more smoothly in real-world domains ranging
@@ -41,4 +43,23 @@ robotics course sequence being developed at Brown.  The emphasis of
 our course will be on developing robots that drive around a test
 environment, interacting smoothly with other robots and
 remote-controlled cars.
+
+We also plan to integrate our work on this project into Artemis, a
+free summer program that introduces rising 9th grade girls to
+computational thinking.  For example, we might have the Artemis girls
+teach a robot to collaborate with them on routine tasks, such as
+navigation or object search.
+
+Our deliverables include an open-source publicly accessible toolkit
+for implementing human-machine collaborative-learning tasks via
+reinforcement learning. Further, we will maintain a database of
+machine-machine, human-machine, and human-human experimental results
+built using this toolkit, which can serve as a benchmark for future
+researchers who also seek to build artifical agents that increasingly
+achieve human-like behavior.
+%
+Finally, we expect to publish the results of the proposed research in
+top-tier archival, conference proceedings and journals with high
+impact factors, and to present our work at innovative, non-archival
+workshops (e.g., the AAAI symposia).
 

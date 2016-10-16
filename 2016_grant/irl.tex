@@ -16,10 +16,8 @@ consistency differently. One common approach is to treat the
 search problem as a probabilistic inference
 problem~\cite{babes11,lopes2009active,ramachandran2007bayesian,ziebart2008maximum}. 
 
-%\commenta{Maximum Likelihood IRL}
-
 For example, in the maximum-likelihood setting~\cite{babes11}, the
-goal is to find a reward function parameterization that maximizes a
+goal is to find a reward function parameterization that maximizes
 the likelihood of the data:
 %
 \begin{equation}
@@ -38,26 +36,24 @@ when the reward function is parameterized by $\theta$.
 %
 Popular methods for solving Equation~\ref{eq:mlirl} (i.e., for
 carrying out maximum-likelihood IRL (MLIRL) include gradient ascent
-and expectation-maximization.\commenta{do these algorithms need references?}
-
-%\commenta{Bayesian IRL}
+and expectation-maximization.
+%\commenta{do these algorithms need references?}
 
 In Bayesian IRL, the goal is to compute a posterior distribution over
 reward function parameterizations:
 %
-\begin{equation}
-\label{eq:birl}
-\Pr(R_{\theta} \mid D) \propto \Pr(D \mid R_{\theta}) \Pr(R_\theta)
-\end{equation}
-
-\noindent
-Bayesian IRL algoriths typically rely on Markov chain Monte Carlo methods.
-\commenta{add reference}
+%\begin{equation}
+%\label{eq:birl}
+$\Pr(R_{\theta} \mid D) \propto \Pr(D \mid R_{\theta}) \Pr(R_\theta)$.
+%\end{equation}
+%
+Bayesian IRL algoriths typically rely on Markov chain Monte Carlo
+methods~\cite{journals/corr/abs-1208-2112,ramachandran2007bayesian}.
+%
+A related approach is maximum-entropy IRL\cite{conf/aaai/ZiebartMBD08}.
 %
 More recently, work has also commenced on
-nonparametric Bayesian IRL methods~\cite{}.
-
-%\commenta{Receeding-horizon IRL}
+nonparametric Bayesian IRL methods~\cite{Choi:2012:NBI:2999134.2999169,Michini2012}.
 
 IRL algorithms are typically computationally demanding because they
 require planning in their inner loops.
@@ -69,9 +65,15 @@ IRL} (RHIRL)~\cite{macglashan15b} addresses this limitation by
 replacing the usual infinite-horizon policy with a receding horizon
 controller (RHC) that only plans out to some finite horizon from any
 given state, thereby bounding computation time. An RHC tends to steer
-an IRL algorithm towards a \mydef{shaping reward function}~\cite{},
+an IRL algorithm towards a \mydef{shaping reward function}~\cite{Ng:1999:PIU:645528.657613}
 %https://people.eecs.berkeley.edu/~pabbeel/cs287-fa09/readings/NgHaradaRussell-shaping-ICML1999.pdf
 short-term rewards that guide the agent without it having to plan too
 far ahead.  Consequently, RHIRL allows us to plan with a short
 horizon, thereby saving on computation time.
+
+Our computational framework, and the generalized model of IRL we
+introduce in Section~\ref{sec:girl}, are all agnostic about the
+particular approach to IRL taken.  We plan to experiment with multiple
+variations.
+
 
