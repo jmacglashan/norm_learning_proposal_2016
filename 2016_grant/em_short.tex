@@ -74,57 +74,34 @@ unknown values are distributed according to $\bm{\theta}$, is:
 E_{\bm{x}_u \sim \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})} \left[ \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}) \right]
 = \sum_{\bm{x}_u} \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}) \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}_k, \bm{x}_u).
 \end{align*}
-%
-To compute this expectation, we need to enumerate each of the
-possible assignments to $\bm{x}_u$, and compute their probabilities,
-given the observed data and model parameters $\bm{\theta}$.  This
-probability is defined as follows:
-%
-\begin{align*}
-\Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}) &= \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u) \Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{x}_k \mid \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{s}, \bm{a}, \bm{\theta})}{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{x}_k \mid \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{s}, \bm{a}, \bm{\theta})} \\
- &= \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u) \Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta}) }{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})} \\
- &= \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u) \prod_i \Pr(\bm{x}_{u,i} \mid s_i, a_i, \bm{\theta}) }{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}. 
-\end{align*}
 
+\noindent
 Unfortunately, 
 %even with an efficient means to compute
 %$\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})$, 
 the number of assignments enumerated in the expectation's outer sum
-grows exponentially, and the product series in the above equation
-($\prod_i \Pr(\bm{x}_{u,i} \mid s_i, a_i, \bm{\theta})$) can have
-underflow issues.  A resolution to this first problem is to estimate
-the expectation with sampling.  However
+grows exponentially.  A resolution to this problem is to estimate the
+expectation with sampling.  However
 %Monte Carlo sampling is unfortunately intractable because 
 it is not easy to sample from $\Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, 
-\bm{a}, \bm{\theta})$; moreover, doing so would not address the
-underflow issue in the product series.  On the other hand, it is easy
-to sample from $\Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta})$
-(removing the conditioning on the label).
-%
-%\begin{align*}
-%E_{\bm{x}_u \sim \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})} \left[ \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}) \right]
-%&= \sum_{\bm{x}_u} \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}) \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}_k, \bm{x}_u) \\
-%&= \sum_{\bm{x}_u} \left( \frac{\Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}{\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})}\right) {\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})} \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}_k, \bm{x}_u)
-%\end{align*}
-%
+\bm{a}, \bm{\theta})$.
+On the other hand, it is easy to sample
+from $\Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta})$ (removing the
+conditioning on the label). 
 So, using importance sampling, we replace the expectation computation
-with the sample-estimate
+with the following sample-estimate,
+where $\bm{x}_u^j$ is the $j$th sample from the distribution $\Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta})$:
 \begin{equation}
-\frac{1}{C} \sum_{j=1}^C \frac{\Pr(\bm{x}_u^j \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}{\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})} \log\mathcal{L}(l, \bm{x}_k, \bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta}).
-\end{equation}
-where $\bm{x}_u^j$ is the $j$th sample from the distribution $\Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta})$.
-
-Note that this simplifies a bit further too:
-\begin{equation*}
+\frac{1}{C} \sum_{j=1}^C 
 \frac{\Pr(\bm{x}_u^j \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}{\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})} 
-= \left( \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u) \Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta}) }{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})} \right) \left( \frac{1}{\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})} \right)
-= \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u)}{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}
-\end{equation*}
+\log\mathcal{L}(l, \bm{x}_k, \bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})
+= 
+\frac{1}{C} \sum_{j=1}^C 
+\frac{\Pr(l \mid \bm{x}_k, \bm{x}_u)}{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}
+\log\mathcal{L}(l, \bm{x}_k, \bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta}).
+\end{equation}
 
-\noindent
-Consequently, we have removed the product series from the expectation
-weight, thereby avoiding underflow issues. Also, while a
-straightforward computation of
+Lastly, while a straightforward computation of
 $\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})$ requires
 marginalizing over all possible assignments to $\bm{x}_u$, this term
 can be actually computed efficiently using dynamic programming,
@@ -134,27 +111,3 @@ on the \emph{sum\/} of the entries in the $\bm{x}$ vector.
 Putting all of these pieces together yields a tractable version of the
 EM algorithm for generalized IRL.
 
-\comment{
-Now we can write a tractable version of the EM algorithm for
-generalized IRL (Algorithm~\ref{alg:tractable}).
-
-%%% DELETED B/C OF SPACE CONSTRAINTS !!!
-\begin{algorithm}
-\caption{Approximate EM Gradient Ascent Algorithm}
-\begin{algorithmic}
-\Require{initial $\bm{\theta}_0$; data $\bm{s}$, $\bm{a}$, $\bm{x}_k$, $l$; and learning rate $\alpha$}
-\For{$t=0$ to $T$}
-\State draw $j=1$ to $C$ samples of $\bm{x}_u^j \sim \Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta}_t)$ 
-\For{$j=1$ to $C$}
-\State $w_j \gets \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u)}{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}_t)}$ \Comment{Expectation step}
-\EndFor
-\State $\bm{\theta}' \gets \bm{\theta}_t$
-\For{1 to $M$} \Comment{Gradient ascent maximization loop}
-\State $\bm{\theta}' \gets \bm{\theta}' + \alpha \frac{1}{C} \sum_{j=1}^C w_j \left( \sum_{x_i \in \bm{x}_k \cup \bm{x}_u^j} \frac{\nabla_{\bm{\theta}'} \Pr(x_i \mid s_i, a_i, \bm{\theta}')}{\Pr(x_i \mid s_i, a_i, \bm{\theta}')} \right)$
-\EndFor
-\State $\bm{\theta}_{t+1} \gets \bm{\theta}'$
-\EndFor
-\end{algorithmic}
-\label{alg:tractable}
-\end{algorithm}
-}
