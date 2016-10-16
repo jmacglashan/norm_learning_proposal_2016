@@ -5,34 +5,40 @@ of people have accomplished great things by reasoning as a team and
 engaging in jointly intentional behavior.  Indeed, some have argued
 that, because most other animals lack the capacity to work adaptively
 as cohesive unit across many domains, team reasoning may be the
-hallmark of human sociality. We call optimal decision making, when
-agents hold social preferences and employ team reasoning, socially
-rational behavior.  Socially rational agents optimize a social utility
-function (i.e., a representation of social preferences), which is
-sufficiently rich to incorporate perceived (possibly inferred,
-possibly imagined) societal benefits. We assume that social utilities
-can be broken down into two components---an objective component, which
-is usually a direct function of the rules of the game, and a
-subjective component, which captures notions of distributivity and
-reciprocity. Often, the rules of a game alone give rise to multiple
-(objective) equilibria, so that agents face a difficult
-equilibrium-selection problem in the underlying game. We contend that
-socially rational behavior, in which agents optimize a learned social
-utility function that reflects (constructed) social preferences, can
-provide a solution to this challenging, and often elusive, problem.
+hallmark of human sociality.  
+
+We call optimal decision making, when agents hold social preferences
+and employ team reasoning, socially rational behavior.  Socially
+rational agents optimize a social utility function (i.e., a
+representation of social preferences), which is sufficiently rich to
+incorporate perceived (possibly inferred, possibly imagined) societal
+benefits.  We assume that social utilities can be broken down into two
+components---an objective component, which is usually a direct
+function of the rules of interaction, and a subjective component,
+which captures notions of distributivity and reciprocity.
+
+Given these assumptions, we propose an iterative computational model,
+in which socially-rational artificial agents construct social
+preferences via repeated interactions with other, potentially human,
+agents.  We contend that socially rational behavior, in which agents
+optimize a learned social utility function that reflects constructed
+social preferences, is a promising new avenue for orchestrating
+effective collaborations between humans and machines.
+
 
 Intellectual Merit: We will develop and evaluate a new inverse
-reinforcement-learning algorithm that can create social utility
+reinforcement-learning algorithm that can construct social utility
 functions from analysis of the successes and failures of past
 interactions.
 
-Broader Impact: Our algorithm, if successful, will help people and
-machines work together more smoothly in the real world in domains
-ranging from robotic sous chefs to gerontechnological support for
-aging in place. We will also create and offer a new class called
-``Social autonomous driving'' for undergraduates. It will build on the
-a new robotics intro sequence being developed at Brown along with the
-structure of the Duckietown
-platform\footnote{http://duckietown.mit.edu/} from MIT. The emphasis
-will be on developing robots that drive around a test environment,
-interacting smoothly with other robots and remote controlled cars.
+
+Broader Impact: Our approach, if successful, will help people and
+machines work together more smoothly in real-world domains ranging
+from robotic sous chefs to gerontechnological support for aging in
+place.  We will also create and offer a new undergraduate course
+called ``Social autonomous driving.''  It will contribute to the new
+robotics course sequence being developed at Brown.  The emphasis of
+our course will be on developing robots that drive around a test
+environment, interacting smoothly with other robots and
+remote-controlled cars.
+
