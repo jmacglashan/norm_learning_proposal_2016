@@ -2,64 +2,72 @@
 \vspace{\up}
 \paragraph{Evaluation}
 
-Before scaling to embodied robots,
-% \commenta{Michael, are we going to do this? if not, tone down to whatever our real-world application plans are}
-we will evaluate how our socially-rational agents fare in
+%Before scaling to embodied robots
+To begin, we will evaluate how our socially-rational agents fare in
 collaborative learning tasks using an experimental platform that
-simulates interactions between humans and artificial agents.  For
-example, we will compare how often and how quickly humans are able to
-arrive at coordinated plans among themselves versus with a
-socially-rational agent. To test the expressiveness of the space of
-learnable solutions afforded by our approach, we will also measure
-tendencies among humans to converge to plans with certain
-characteristics, and whether those characteristics vary when there are
-socially-rational agents in the mix.  We will also assess the quality of the
-plans under these varying conditions.  Finally, subjective evaluations
-from the human participants will be used to assess whether interacting
-with the agents feels natural.
+simulates interactions between humans and artificial agents.
+Specifically, we will compare how often and how quickly humans are
+able to arrive at coordinated plans among themselves, versus with
+socially-rational agents.  We will also assess the quality of the
+plans that emerge under these varying conditions.  To test the
+expressiveness of the space of learnable solutions afforded by our
+approach, we will also measure tendencies among humans to converge to
+certain types of plans (e.g., trading off simplicity for optimality),
+and whether those types persist when there are agents in the mix.
+Finally, subjective evaluations will be used to assess whether humans
+find interacting with agents ``natural.''
 
 For the batch learning algorithm, we will develop new quantitative
 metrics to assess behavioral similarity so that trajectories produced
-by our batch learners can be quantitatively compared to the trace data
+by our batch learners can be quantitatively compared to trace data
 produced by human participants.  Additionally, we plan to design a
 sort of ``Turing test'' for our problem domain, whereby we will have
 two humans interact with each other for a number of rounds and then,
 without notification, we will fork those interactions into two, where
 each human is now playing with a socially-rational agent that trained
 on the history of interactions between the two humans.  At the end of
-all interactions, we will ask the user whether they noticed anything
+all interactions, we will ask the humans whether they noticed anything
 strange partway through the interactions, such as a change of partner.
-Their subjective response to whether they thought their partner
-switched at any point will be compared to their subjective responses
-in other treatments, such as: (1)~no switching; (2)~swapping their
-partner for another human; (3)~swapping their partner for another
-human who watched the previous interactions; (4)~swapping their
-partner for a socially-rational agent that did not perform any
-learning or learned from unrelated human--human interactions.
+Their subjective responses about whether they thought their partner
+switched at any point will be compared across a variety of treatments,
+such as: (1)~no change; (2)~swapping their partner for a
+socially-rational agent as already mentioned, and one that learned by
+observing other human--human interactions; (3)~swapping their partner
+for another human who observed the previous interactions, and one who
+is experienced at the task, but not with the given partner.
 
-Finally, we are particularly interested in designing flexible learning
-algorithms that generalize at least as well as humans do to new state
-spaces.  To this end, we will have participants play a series of
-related grid games, and then, using evaluations similar to those listed
-above, we will test whether our learning agents can generalize to new
-games as well as other humans can.  
-% Likewise,\commenta{Michael, do we want to say something about generalizing to other players? maybe humans are better at this than our agents will be?} No, I think the notion of generalizing rapidly to new users is a distinct learning problem.
+We are particularly interested in designing flexible agents that
+generalize their behavior at least as well as humans do to new
+environments.  We will evaluate generalization by first having users
+learn in one environment.  Afterwards, they will be exposed to a new
+environment where their previous behavior is no longer directly
+applicable (e.g., because a wall was inserted along the path that an
+agent would normally take), but a more ``general'' behavior can be
+transferred (e.g., I take the high road; he takes the low, regardless
+of the presence or absence of obstacles).  Then, using evaluations
+similar to those listed above, we will test whether our
+socially-rational agents can generalize to new games as well as other
+humans can.
 
-In year three, we will test our approach in a real-world 
-robot--human collaboration domain.  Even if (as we expect), our simulated worlds
-show that our
-learning agents collaborate well with people, the capabilities (or lack thereof) of robots may inhibit the
-effectiveness of our approach (e.g., robots might move slower than
-people expect and misperceive important details). We will evaluate our algorithm in real-world scenarios
-by comparing its performance at controlling a robot to when another
-human controls the robot via teleoperation. We expect this approach to raise
-novel research questions appropriate to real-world problems. For example, computation
-time may be a limiting factor to the success of our machine agents,
-and if so, we will focus our efforts on  developing more efficient implementations.
+% \commenta{do we want to say something about generalizing to other players? maybe humans are better at this than our agents will be?} ML: No, I think the notion of generalizing rapidly to new users is a distinct learning problem.
 
-% \commenta{Michael, how are we going to evaluate our approach in our
-% proposed ``real-world'' (i.e., non-grid game) applications?} 
+In year three, we will test our approach in a real-world robot--human
+collaboration domain.  Even if (as we expect), our simulated worlds
+show that our agents collaborate well with people, the capabilities
+(or lack thereof) of robots may inhibit the effectiveness of our
+approach (e.g., robots might move slower than people expect and/or may
+misperceive important details).  We will evaluate our algorithmic
+framework in real-world scenarios by comparing its performance at
+controlling a robot to another human controlling the robot via
+teleoperation.  We expect this approach to raise novel research
+questions appropriate to real-world problems.
+%Amy: sounds too generic, i think. we always want to develop more efficient implementations, don't we?
+%%For example, computation time may be a limiting factor to the success
+%%of our machine agents, and if so, we will focus our efforts on
+%%developing more efficient implementations.
 
+% OLD STUFF
+%
 % Evaluation metrics that capture trajectory similarity across diverse
 % games are key for assessing performance, and will drive the
 % development of our learning algorithms towards more beneficial
@@ -82,11 +90,9 @@ and if so, we will focus our efforts on  developing more efficient implementatio
 % networks,
 % etc.)~\cite{diuk2009adaptive,kolter2009regularization,li2009reinforcement,parr2008analysis},
 % and build on them, as necessary.
-% % ML: Note that we could propose ``deep IRL''... since MLIRL is a
-% % gradient method, it should be easy to incorporate it into standard
-% % deep learning packages to learn very complex social utilities.
+%
 % We will evaluate generalization by first having users learn in one
-% grid. Afterwards, they will be exposed to a new grid where the
+% grid. Afterwards, they will be exposed to a new grid where their
 % previous behavior is no longer directly applicable (e.g., because a
 % wall was inserted along the path that an agent would normally take),
 % but a more ``general'' behavior can be transfered (e.g., I take the
