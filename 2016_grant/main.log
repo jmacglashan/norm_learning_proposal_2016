@@ -1,4 +1,4 @@
-This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2006.10.24)  15 OCT 2016 08:10
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2006.10.24)  16 OCT 2016 08:45
 entering extended mode
 **main
 (./main.tex
@@ -44,6 +44,59 @@ LaTeX Info: Redefining \bm on input line 203.
 \Urlmuskip=\muskip10
 Package: url 2004/03/15  ver 3.1  Verb mode for urls, etc.
 )
+(/sw/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2003/11/30 v6.74m Hypertext links for LaTeX
+\@linkdim=\dimen103
+\Hy@linkcounter=\count87
+\Hy@pagecounter=\count88
+
+(/sw/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2003/11/30 v6.74m Hyperref: PDFDocEncoding definition (HO)
+)
+(/sw/share/texmf-dist/tex/latex/hyperref/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive and teTeX
+)
+Package hyperref Info: Hyper figures OFF on input line 1880.
+Package hyperref Info: Link nesting OFF on input line 1885.
+Package hyperref Info: Hyper index ON on input line 1888.
+Package hyperref Info: Plain pages ON on input line 1893.
+Package hyperref Info: Backreferencing OFF on input line 1900.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 2004.
+LaTeX Info: Redefining \url on input line 2143.
+\Fld@menulength=\count89
+\Field@Width=\dimen104
+\Fld@charsize=\dimen105
+\Choice@toks=\toks15
+\Field@toks=\toks16
+Package hyperref Info: Hyper figures OFF on input line 2618.
+Package hyperref Info: Link nesting OFF on input line 2623.
+Package hyperref Info: Hyper index ON on input line 2626.
+Package hyperref Info: backreferencing OFF on input line 2633.
+Package hyperref Info: Link coloring OFF on input line 2638.
+\c@Item=\count90
+\c@Hfootnote=\count91
+)
+*hyperref using default driver hpdftex*
+(/sw/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2003/11/30 v6.74m Hyperref driver for pdfTeX
+
+(/sw/share/texmf-dist/tex/latex/psnfss/pifont.sty
+Package: pifont 2004/09/15 PSNFSS-v9.2 Pi font support (SPQR) 
+LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
+
+(/sw/share/texmf-dist/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Try loading font information for U+psy on input line 64.
+
+(/sw/share/texmf-dist/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+\Fld@listcount=\count92
+\@outlinefile=\write3
+)
 (/sw/share/texmf-dist/tex/latex/graphics/epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
@@ -63,20 +116,20 @@ Package graphics Info: Driver file: pdftex.def on input line 80.
 
 (/sw/share/texmf-dist/tex/latex/graphics/pdftex.def
 File: pdftex.def 2002/06/19 v0.03k graphics/color for pdftex
-\Gread@gobject=\count87
+\Gread@gobject=\count93
 ))
-\Gin@req@height=\dimen103
-\Gin@req@width=\dimen104
+\Gin@req@height=\dimen106
+\Gin@req@width=\dimen107
 )
-\epsfxsize=\dimen105
-\epsfysize=\dimen106
+\epsfxsize=\dimen108
+\epsfysize=\dimen109
 )
 (/sw/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen107
-\WF@size=\dimen108
-\c@WF@wrappedlines=\count88
+\wrapoverhang=\dimen110
+\WF@size=\dimen111
+\c@WF@wrappedlines=\count94
 \WF@box=\box26
-\WF@everypar=\toks15
+\WF@everypar=\toks17
 Package: wrapfig 2003/01/31  v 3.6
 )
 (/sw/share/texmf-dist/tex/latex/preprint/fullpage.sty
@@ -93,52 +146,52 @@ Package: amstext 2000/06/29 v2.01
 
 (/sw/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks16
-\ex@=\dimen109
+\@emptytoks=\toks18
+\ex@=\dimen112
 ))
 (/sw/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 LaTeX Info: Redefining \boldsymbol on input line 54.
-\pmbraise@=\dimen110
+\pmbraise@=\dimen113
 )
 (/sw/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count89
+\inf@bad=\count95
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count90
-\leftroot@=\count91
+\uproot@=\count96
+\leftroot@=\count97
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count92
-\DOTSCASE@=\count93
+\classnum@=\count98
+\DOTSCASE@=\count99
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
 \Mathstrutbox@=\box27
 \strutbox@=\box28
-\big@size=\dimen111
+\big@size=\dimen114
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count94
-\c@MaxMatrixCols=\count95
+\macc@depth=\count100
+\c@MaxMatrixCols=\count101
 \dotsspace@=\muskip11
-\c@parentequation=\count96
-\dspbrk@lvl=\count97
-\tag@help=\toks17
-\row@=\count98
-\column@=\count99
-\maxfields@=\count100
-\andhelp@=\toks18
-\eqnshift@=\dimen112
-\alignsep@=\dimen113
-\tagshift@=\dimen114
-\tagwidth@=\dimen115
-\totwidth@=\dimen116
-\lineht@=\dimen117
-\@envbody=\toks19
+\c@parentequation=\count102
+\dspbrk@lvl=\count103
+\tag@help=\toks19
+\row@=\count104
+\column@=\count105
+\maxfields@=\count106
+\andhelp@=\toks20
+\eqnshift@=\dimen115
+\alignsep@=\dimen116
+\tagshift@=\dimen117
+\tagwidth@=\dimen118
+\totwidth@=\dimen119
+\lineht@=\dimen120
+\@envbody=\toks21
 \multlinegap=\skip45
 \multlinetaggap=\skip46
-\mathdisplay@stack=\toks20
+\mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
@@ -151,11 +204,11 @@ or enter new name. (Default extension: sty)
 Enter file name: 
 (/sw/share/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2004/07/16 v3.0c Customising captions (AS)
-\captionmargin=\dimen118
-\captionwidth=\dimen119
-\captionindent=\dimen120
-\captionparindent=\dimen121
-\captionhangindent=\dimen122
+\captionmargin=\dimen121
+\captionwidth=\dimen122
+\captionindent=\dimen123
+\captionparindent=\dimen124
+\captionhangindent=\dimen125
 )
 
 ! LaTeX Error: File `subcaption.sty' not found.
@@ -170,17 +223,17 @@ Package: algorithm
 Document Style `algorithm' - floating environment
 (/sw/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count101
-\float@exts=\toks21
+\c@float@type=\count107
+\float@exts=\toks23
 \float@box=\box29
-\@float@everytoks=\toks22
+\@float@everytoks=\toks24
 \@floatcapt=\box30
 )
 (/sw/share/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\@float@every@algorithm=\toks23
-\c@algorithm=\count102
+\@float@every@algorithm=\toks25
+\c@algorithm=\count108
 )
 
 ! LaTeX Error: File `algpseudocode.sty' not found.
@@ -199,9 +252,10 @@ Enter file name:
 ! Undefined control sequence.
 <recently read> \usetikzlibrary 
                                 
-l.29 \usetikzlibrary
+l.30 \usetikzlibrary
                     {bayesnet}
-? 
+? q
+OK, entering \batchmode...
 
 ! LaTeX Error: Missing \begin{document}.
 
@@ -209,11 +263,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.29 \usetikzlibrary{b
+l.30 \usetikzlibrary{b
                       ayesnet}
-? 
-(./defs.sty
-\c@theorem=\count103
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+ (./defs.sty
+\c@theorem=\count109
 ) (./macros.sty
 
 ! LaTeX Error: \Q undefined.
@@ -224,59 +280,72 @@ Type  H <return>  for immediate help.
                                                   
 l.34 \renewcommand{\Q}
                       {$Q$}
-? 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
- (/sw/share/texmf-dist/tex/context/base/supp-pdf.tex
-(/sw/share/texmf-dist/tex/context/base/supp-mis.tex
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+Package hyperref Info: Link coloring OFF on input line 47.
+ (/sw/share/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2003/12/03 v2.21 Cross-referencing by name of section
+\c@section@level=\count110
+)
+LaTeX Info: Redefining \ref on input line 47.
+LaTeX Info: Redefining \pageref on input line 47.
+ (./main.out) (./main.out)
+\openout3 = `main.out'.
+
+ (/sw/share/texmf-dist/tex/context/base/supp-pdf.tex (/sw/share/texmf-dist/tex/
+context/base/supp-mis.tex
 loading : Context Support Macros / Miscellaneous (2004.10.26)
-\protectiondepth=\count104
-\scratchcounter=\count105
-\scratchtoks=\toks24
-\scratchdimen=\dimen123
+\protectiondepth=\count111
+\scratchcounter=\count112
+\scratchtoks=\toks26
+\scratchdimen=\dimen126
 \scratchskip=\skip47
 \scratchmuskip=\muskip12
 \scratchbox=\box31
 \scratchread=\read1
-\scratchwrite=\write3
-\zeropoint=\dimen124
-\onepoint=\dimen125
-\onebasepoint=\dimen126
-\minusone=\count106
-\thousandpoint=\dimen127
-\onerealpoint=\dimen128
-\emptytoks=\toks25
+\scratchwrite=\write4
+\zeropoint=\dimen127
+\onepoint=\dimen128
+\onebasepoint=\dimen129
+\minusone=\count113
+\thousandpoint=\dimen130
+\onerealpoint=\dimen131
+\emptytoks=\toks27
 \nextbox=\box32
-\nextdepth=\dimen129
-\everyline=\toks26
-\!!counta=\count107
-\!!countb=\count108
-\recursecounter=\count109
+\nextdepth=\dimen132
+\everyline=\toks28
+\!!counta=\count114
+\!!countb=\count115
+\recursecounter=\count116
 )
 loading : Context Support Macros / PDF (2004.03.26)
-\nofMPsegments=\count110
-\nofMParguments=\count111
-\MPscratchCnt=\count112
-\MPscratchDim=\dimen130
-\MPnumerator=\count113
-\everyMPtoPDFconversion=\toks27
+\nofMPsegments=\count117
+\nofMParguments=\count118
+\MPscratchCnt=\count119
+\MPscratchDim=\dimen133
+\MPnumerator=\count120
+\everyMPtoPDFconversion=\toks29
 ) (/sw/share/texmf-dist/tex/latex/ms/ragged2e.sty
 Package: ragged2e 2003/03/25 v2.04 ragged2e Package (MS)
-
-(/sw/share/texmf-dist/tex/latex/ms/everysel.sty
+ (/sw/share/texmf-dist/tex/latex/ms/everysel.sty
 Package: everysel 1999/06/08 v1.03 EverySelectfont Package (MS)
 LaTeX Info: Redefining \selectfont on input line 125.
 )
@@ -295,16 +364,8 @@ LaTeX Info: Redefining \selectfont on input line 125.
 \RaggedRightParindent=\skip60
 \JustifyingParindent=\skip61
 )
-Package caption Info: float package v1.2 (or newer) detected on input line 46.
-
-
-! LaTeX Error: File `summary.tex' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: tex)
-
-Enter file name: 
-[1
+Package caption Info: float package v1.2 (or newer) detected on input line 47.
+ (./summary.tex) [1
 
 {/sw/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./intro.tex
 
@@ -338,7 +399,12 @@ LaTeX Warning: Citation `TEAM REASONING: Bacharach 1999' on page 1 undefined on
 LaTeX Warning: Citation `Payne_Bettman_Johnson_1993' on page 1 undefined on inp
 ut line 153.
 
-[1]
+! pdfTeX warning (ext4): destination with the same identifier (name{page.1}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \penalty 
+l.160 A
+        social utility function is an immediate generalization of the usual [1]
 
 LaTeX Warning: Citation `littman01d' on page 2 undefined on input line 172.
 
@@ -368,23 +434,35 @@ Type  H <return>  for immediate help.
                                                   
 l.98 \begin{subfigure}
                       {.3\textwidth}
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 ! Missing number, treated as zero.
 <to be read again> 
                    }
 l.98 \begin{subfigure}{.3\textwidth}
                                     
-? 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    }
 l.98 \begin{subfigure}{.3\textwidth}
                                     
-? 
-<../2015_grant/figures/threebyfive.png, id=35, 801.99625pt x 435.6275pt>
-File: ../2015_grant/figures/threebyfive.png Graphic file (type png)
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
-<use ../2015_grant/figures/threebyfive.png>
+
+<../2015_grant/figures/threebyfive.png, id=94, 801.99625pt x 435.6275pt>
+File: ../2015_grant/figures/threebyfive.png Graphic file (type png)
+ <use ../2015_grant/figures/threebyfive.png>
 
 ! LaTeX Error: \begin{figure} on input line 96 ended by \end{subfigure}.
 
@@ -394,7 +472,10 @@ Type  H <return>  for immediate help.
                                                   
 l.104 \end{subfigure}
                      
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 ! LaTeX Error: Environment subfigure undefined.
 
@@ -404,21 +485,33 @@ Type  H <return>  for immediate help.
                                                   
 l.105 \begin{subfigure}
                        {.3\textwidth}
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 ! Missing number, treated as zero.
 <to be read again> 
                    }
 l.105 \begin{subfigure}{.3\textwidth}
                                      
-? 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    }
 l.105 \begin{subfigure}{.3\textwidth}
                                      
-? 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
-<../2015_grant/figures/threebyfivehallways.png, id=36, 801.49437pt x 436.12938p
+
+<../2015_grant/figures/threebyfivehallways.png, id=95, 801.49437pt x 436.12938p
 t>
 File: ../2015_grant/figures/threebyfivehallways.png Graphic file (type png)
  <use ../2015_grant/figures/threebyfivehallways.png>
@@ -431,7 +524,10 @@ Type  H <return>  for immediate help.
                                                   
 l.111 \end{subfigure}
                      
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 ! LaTeX Error: Environment subfigure undefined.
 
@@ -441,23 +537,35 @@ Type  H <return>  for immediate help.
                                                   
 l.112 \begin{subfigure}
                        {.3\textwidth}
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 ! Missing number, treated as zero.
 <to be read again> 
                    }
 l.112 \begin{subfigure}{.3\textwidth}
                                      
-? 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    }
 l.112 \begin{subfigure}{.3\textwidth}
                                      
-? 
-<../2015_grant/figures/threebyfivewindow.png, id=37, 802.49812pt x 437.635pt>
-File: ../2015_grant/figures/threebyfivewindow.png Graphic file (type png)
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
-<use ../2015_grant/figures/threebyfivewindow.png>
+
+<../2015_grant/figures/threebyfivewindow.png, id=96, 802.49812pt x 437.635pt>
+File: ../2015_grant/figures/threebyfivewindow.png Graphic file (type png)
+ <use ../2015_grant/figures/threebyfivewindow.png>
 
 ! LaTeX Error: \begin{figure} on input line 96 ended by \end{subfigure}.
 
@@ -467,7 +575,10 @@ Type  H <return>  for immediate help.
                                                   
 l.118 \end{subfigure}
                       \\ [2.5ex]
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 ! LaTeX Error: There's no line here to end.
 
@@ -477,7 +588,10 @@ Type  H <return>  for immediate help.
                                                   
 l.118 \end{subfigure} \\
                          [2.5ex]
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 ! LaTeX Error: Environment subfigure undefined.
 
@@ -487,23 +601,35 @@ Type  H <return>  for immediate help.
                                                   
 l.119 \begin{subfigure}
                        {.367\textwidth}
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 ! Missing number, treated as zero.
 <to be read again> 
                    }
 l.119 \begin{subfigure}{.367\textwidth}
                                        
-? 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    }
 l.119 \begin{subfigure}{.367\textwidth}
                                        
-? 
-<../2015_grant/figures/longhallway.png, id=38, 1079.03125pt x 147.04938pt>
-File: ../2015_grant/figures/longhallway.png Graphic file (type png)
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
-<use ../2015_grant/figures/longhallway.png>
+
+<../2015_grant/figures/longhallway.png, id=97, 1079.03125pt x 147.04938pt>
+File: ../2015_grant/figures/longhallway.png Graphic file (type png)
+ <use ../2015_grant/figures/longhallway.png>
 
 ! LaTeX Error: \begin{figure} on input line 96 ended by \end{subfigure}.
 
@@ -513,7 +639,10 @@ Type  H <return>  for immediate help.
                                                   
 l.125 \end{subfigure}
                      
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 
 ! LaTeX Error: Environment subfigure undefined.
 
@@ -523,14 +652,19 @@ Type  H <return>  for immediate help.
                                                   
 l.126 \begin{subfigure}
                        {.367\textwidth}
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 ! Missing number, treated as zero.
 <to be read again> 
                    }
 l.126 \begin{subfigure}{.367\textwidth}
                                        
-? q
-OK, entering \batchmode...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    }
@@ -544,7 +678,7 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-<../2015_grant/figures/nocompromise.png, id=39, 757.32938pt x 291.0875pt>
+<../2015_grant/figures/nocompromise.png, id=98, 757.32938pt x 291.0875pt>
 File: ../2015_grant/figures/nocompromise.png Graphic file (type png)
  <use ../2015_grant/figures/nocompromise.png>
 
@@ -563,24 +697,66 @@ or  <return>  to continue without it.
 
 LaTeX Warning: Float too large for page by 165.13725pt on input line 134.
 
- [3] [4 <../2015_grant/figures/threebyfive.png> <../2015_grant/figures/threebyf
-ivehallways.png> <../2015_grant/figures/threebyfivewindow.png> <../2015_grant/f
-igures/longhallway.png> <../2015_grant/figures/nocompromise.png>]) (./machine_s
-etup_short.tex) (./machine_results_short.tex
+ [3] [4
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.212 
+      
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.212 
+      
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.212 
+      
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.212 
+      
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.212 
+      
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.212 
+       <../2015_grant/figures/threebyfive.png> <../2015_grant/figures/threebyfi
+vehallways.png> <../2015_grant/figures/threebyfivewindow.png> <../2015_grant/fi
+gures/longhallway.png> <../2015_grant/figures/nocompromise.png>]) (./machine_se
+tup_short.tex) (./machine_results_short.tex
 
 LaTeX Warning: Citation `singh2009rewards' on page 5 undefined on input line 22
 .
 
 
-<../2015_grant/figures/SelfPlay.png, id=46, 371.9496pt x 232.2276pt>
+<../2015_grant/figures/SelfPlay.png, id=117, 371.9496pt x 232.2276pt>
 File: ../2015_grant/figures/SelfPlay.png Graphic file (type png)
  <use ../2015_grant/figures/SelfPlay.png>
 Underfull \hbox (badness 1540) in paragraph at lines 53--53
-[]|\OT1/cmr/m/n/10 Figure 7: Av-er-age score of $\OML/cmm/m/it/10 Q$\OT1/cmr/m/
+[]|\OT1/cmr/m/n/10 Figure 7: []Average score of $\OML/cmm/m/it/10 Q$\OT1/cmr/m/
 n/10 -
  []
 
- [5 <../2015_grant/figures/SelfPlay.png>]) (./human_summary.tex
+ [5
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.74 
+      <../2015_grant/figures/SelfPlay.png>]) (./human_summary.tex
 
 LaTeX Warning: Citation `blanco11' on page 6 undefined on input line 23.
 
@@ -651,9 +827,6 @@ LaTeX Warning: Citation `ziebart2008maximum' on page 7 undefined on input line
 
 LaTeX Warning: Citation `babes11' on page 7 undefined on input line 21.
 
-
-LaTeX Warning: Reference `eq:mlirl' on page 7 undefined on input line 39.
-
  [7]
 
 LaTeX Warning: Citation `macglashan15b' on page 8 undefined on input line 68.
@@ -684,24 +857,10 @@ LaTeX Warning: Citation `daskalakis2009complexity' on page 8 undefined on input
 LaTeX Warning: Citation `reddy2012inverse' on page 8 undefined on input line 40
 .
 
-) (./rewards.tex)
-
-LaTeX Warning: Citation `diuk2009adaptive' on page 8 undefined on input line 70
-.
-
-
-LaTeX Warning: Citation `kolter2009regularization' on page 8 undefined on input
- line 70.
-
-
-LaTeX Warning: Citation `li2009reinforcement' on page 8 undefined on input line
- 70.
-
-
-LaTeX Warning: Citation `parr2008analysis' on page 8 undefined on input line 70
-.
-
- [8]) (./norm_learning.tex) (./batch_learning.tex
+) (./rewards.tex)) (./norm_learning.tex [8]) (./team_reasoning.tex) (./batch_le
+arning.tex
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 19.
 
 ! LaTeX Error: Environment algorithmic undefined.
 
@@ -827,7 +986,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-) (./interactive_learning.tex
+) (./interactive_learning.tex [9]
 
 ! LaTeX Error: Environment algorithmic undefined.
 
@@ -953,7 +1112,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
- [9]) (./norm_learning_results.tex
+) (./norm_learning_results.tex
 
 ! LaTeX Error: Environment subfigure undefined.
 
@@ -989,7 +1148,7 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-<../2015_grant/figures/batch1.pdf, id=87, 419.5675pt x 226.8475pt>
+<../2015_grant/figures/batch1.pdf, id=189, 419.5675pt x 226.8475pt>
 File: ../2015_grant/figures/batch1.pdf Graphic file (type pdf)
  <use ../2015_grant/figures/batch1.pdf>
 
@@ -1040,7 +1199,7 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-<../2015_grant/figures/batch2.pdf, id=88, 419.5675pt x 226.8475pt>
+<../2015_grant/figures/batch2.pdf, id=190, 419.5675pt x 226.8475pt>
 File: ../2015_grant/figures/batch2.pdf Graphic file (type pdf)
  <use ../2015_grant/figures/batch2.pdf>
 
@@ -1091,7 +1250,7 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-<../2015_grant/figures/batch3.pdf, id=89, 418.56375pt x 226.8475pt>
+<../2015_grant/figures/batch3.pdf, id=191, 418.56375pt x 226.8475pt>
 File: ../2015_grant/figures/batch3.pdf Graphic file (type pdf)
  <use ../2015_grant/figures/batch3.pdf>
 
@@ -1108,7 +1267,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Float too large for page by 287.07335pt on input line 69.
+LaTeX Warning: Float too large for page by 323.07335pt on input line 69.
 
 
 ! LaTeX Error: Environment subfigure undefined.
@@ -1145,7 +1304,7 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-<../2015_grant/figures/interactive1.pdf, id=90, 419.5675pt x 464.73625pt>
+<../2015_grant/figures/interactive1.pdf, id=192, 419.5675pt x 464.73625pt>
 File: ../2015_grant/figures/interactive1.pdf Graphic file (type pdf)
  <use ../2015_grant/figures/interactive1.pdf>
 
@@ -1196,7 +1355,7 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-<../2015_grant/figures/interactive2.pdf, id=91, 419.5675pt x 464.73625pt>
+<../2015_grant/figures/interactive2.pdf, id=193, 419.5675pt x 464.73625pt>
 File: ../2015_grant/figures/interactive2.pdf Graphic file (type pdf)
  <use ../2015_grant/figures/interactive2.pdf>
 
@@ -1247,7 +1406,7 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-<../2015_grant/figures/interactive3.pdf, id=92, 418.56375pt x 464.73625pt>
+<../2015_grant/figures/interactive3.pdf, id=194, 418.56375pt x 464.73625pt>
 File: ../2015_grant/figures/interactive3.pdf Graphic file (type pdf)
  <use ../2015_grant/figures/interactive3.pdf>
 
@@ -1298,7 +1457,7 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-<../2015_grant/figures/interactive4.pdf, id=93, 418.56375pt x 464.73625pt>
+<../2015_grant/figures/interactive4.pdf, id=195, 418.56375pt x 464.73625pt>
 File: ../2015_grant/figures/interactive4.pdf Graphic file (type pdf)
  <use ../2015_grant/figures/interactive4.pdf>
 
@@ -1349,7 +1508,7 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 
-<../2015_grant/figures/interactive5.pdf, id=94, 418.56375pt x 464.73625pt>
+<../2015_grant/figures/interactive5.pdf, id=196, 418.56375pt x 464.73625pt>
 File: ../2015_grant/figures/interactive5.pdf Graphic file (type pdf)
  <use ../2015_grant/figures/interactive5.pdf>
 
@@ -1366,17 +1525,75 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Float too large for page by 2229.44717pt on input line 135.
+LaTeX Warning: Float too large for page by 2289.44717pt on input line 135.
 
- [10] [11 <../2015_grant/figures/batch1.pdf> <../2015_grant/figures/batch2.pdf>
- <../2015_grant/figures/batch3.pdf>] [12 <../2015_grant/figures/interactive1.pd
-f> <../2015_grant/figures/interactive2.pdf> <../2015_grant/figures/interactive3
-.pdf> <../2015_grant/figures/interactive4.pdf> <../2015_grant/figures/interacti
-ve5.pdf>]) (./feedback.tex
+ [10] [11
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.161 
+      
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.161 
+      
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.10})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.161 
+      
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.11})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.161 
+       <../2015_grant/figures/batch1.pdf> <../2015_grant/figures/batch2.pdf> <.
+./2015_grant/figures/batch3.pdf>] [12
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.12})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.161 
+      
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.13})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.161 
+      
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.14})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.161 
+      
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.15})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.161 
+      
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.16})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.161 
+      
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.17})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.161 
+       <../2015_grant/figures/interactive1.pdf> <../2015_grant/figures/interact
+ive2.pdf> <../2015_grant/figures/interactive3.pdf> <../2015_grant/figures/inter
+active4.pdf> <../2015_grant/figures/interactive5.pdf>]) (./girl.tex
 
 LaTeX Warning: Citation `sutton99' on page 13 undefined on input line 10.
 
-) (./plates.tex
 
 ! LaTeX Error: Environment tikzpicture undefined.
 
@@ -1384,113 +1601,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3 \begin{tikzpicture}
-                       [x=1.7cm,y=1.8cm]
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-l.4    \node
-            [latent]                   (R)      {$\bm{\theta}$} ; %
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.5    \node
-            [obs, right=of R]                   (X)      {$A$} ; %
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.6    \node
-            [obs, above=of X]          (S)      {$S$} ; %
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--7
-[]\OT1/cmr/m/n/10 [x=1.7cm,y=1.8cm]
- []
-
-! Undefined control sequence.
-l.9   \edge
-            {S}{X} ;
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.10   \edge
-             {R}{X} ;
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.12    \plate
-               {traj}{
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.16    \plate
-               {data}{
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: \begin{minipage} on input line 2 ended by \end{tikzpicture}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20 \end{tikzpicture}
-                      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Underfull \hbox (badness 2726) in paragraph at lines 21--21
-[]|\OT1/cmr/m/n/10 Figure 18: Clas-sic
- []
-
-
-! LaTeX Error: Environment tikzpicture undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.27 \begin{tikzpicture}
+l.35 \begin{tikzpicture}
                         [x=1.7cm,y=1.8cm]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.28    \node
+l.36    \node
              [latent]                   (R)      {$\bm{\theta}$} ; %
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1499,7 +1617,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.29    \node
+l.37    \node
              [latent, right=of R]                   (X)      {$X$} ; %
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1508,119 +1626,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.30    \node
-             [obs, above=of X]          (S)      {$S$} ; %
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.31    \node
-             [obs, right=of S]          (A)      {$A$} ; %
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--32
-[]\OT1/cmr/m/n/10 [x=1.7cm,y=1.8cm]
- []
-
-! Undefined control sequence.
-l.34   \edge
-             {S}{X} ;
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.35   \edge
-             {A}{X} ;
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.36   \edge
-             {R}{X} ;
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.38    \plate
-               {traj}{
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.42    \plate
-               {data}{
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-! LaTeX Error: \begin{minipage} on input line 26 ended by \end{tikzpicture}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46 \end{tikzpicture}
-                      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: Environment tikzpicture undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.53 \begin{tikzpicture}
-                        [x=1.7cm,y=1.8cm]
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-l.54    \node
-             [latent]                   (R)      {$\bm{\theta}$} ; %
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.55    \node
-             [latent, right=of R]                   (X)      {$X$} ; %
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.56    \node
+l.38    \node
              [obs, below=of X]                      (L)      {$L$} ; %
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1629,7 +1635,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.57    \node
+l.39    \node
              [obs, above=of X]          (S)      {$S$} ; %
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1638,7 +1644,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.58    \node
+l.40    \node
              [obs, right=of S]          (A)      {$A$} ; %
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1646,13 +1652,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Underfull \hbox (badness 1394) in paragraph at lines 53--59
-\OT1/cmr/m/n/10 right=of R] (X) $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 ;
- []
-
 ! Undefined control sequence.
-l.60    \factor
+l.42    \factor
                [above=of L]{L-f}{right:Sigmoid}{}{} ;
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1660,13 +1661,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
-[]\OT1/cmr/m/n/10 [above=of L]L-
- []
-
 ! Undefined control sequence.
-l.62   \edge
+l.44   \edge
              {S}{X} ;
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1675,7 +1671,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.63   \edge
+l.45   \edge
              {A}{X} ;
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1684,7 +1680,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.64   \edge
+l.46   \edge
              {R}{X} ;
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1693,7 +1689,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.65   \factoredge
+l.47   \factoredge
                    {X}{L-f}{L} ;
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1702,7 +1698,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.67    \plate
+l.49    \plate
                {traj}{
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1711,7 +1707,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.71    \plate
+l.53    \plate
                {data}{
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1720,150 +1716,235 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-! LaTeX Error: \begin{minipage} on input line 52 ended by \end{tikzpicture}.
+! LaTeX Error: \begin{wrapfigure} on input line 34 ended by \end{tikzpicture}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.75 \end{tikzpicture}
+l.57 \end{tikzpicture}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
+) (./em.tex [13
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.18})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.17 
+     ]
 
-Underfull \hbox (badness 2401) in paragraph at lines 76--76
-[]|\OT1/cmr/m/n/10 Figure 20: Feed-back
- []
+! LaTeX Error: Environment algorithmic undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 \begin{algorithmic}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.28 \Require
+             {initial $\bm{\theta}^0$, and data $\bm{s}, \bm{a}, \bm{x}_k, l$}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.29 \For
+         {$t=0$ to $T$}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.30 \State
+            $\bm{\theta}_{t+1} \gets \arg \max_{\bm{\theta'}} E_{\bm{x}_u \s...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.31 \EndFor
+            
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: \begin{algorithm} on input line 25 ended by \end{algorithmic}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.32 \end{algorithmic}
+                      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 ) (./screenshots.tex
-<../2015_grant/figures/plus1plus1.pdf, id=241, 803.0pt x 804.00375pt>
+<../2015_grant/figures/plus1plus1.pdf, id=378, 803.0pt x 804.00375pt>
 File: ../2015_grant/figures/plus1plus1.pdf Graphic file (type pdf)
  <use ../2015_grant/figures/plus1plus1.pdf>
-<../2015_grant/figures/plus1minus1.pdf, id=242, 803.0pt x 801.99625pt>
+<../2015_grant/figures/plus1minus1.pdf, id=379, 803.0pt x 801.99625pt>
 File: ../2015_grant/figures/plus1minus1.pdf Graphic file (type pdf)
  <use ../2015_grant/figures/plus1minus1.pdf>
-<../2015_grant/figures/minus1plus1.pdf, id=243, 803.0pt x 800.9925pt>
+<../2015_grant/figures/minus1plus1.pdf, id=380, 803.0pt x 800.9925pt>
 File: ../2015_grant/figures/minus1plus1.pdf Graphic file (type pdf)
- <use ../2015_grant/figures/minus1plus1.pdf>) (./nakul.tex
-
-LaTeX Warning: Reference `fig:trajectories' on page 13 undefined on input line 
-19.
-
- [13 <../2015_grant/figures/plus1plus1.pdf> <../2015_grant/figures/plus1minus1.
-pdf> <../2015_grant/figures/minus1plus1.pdf>]
-
-LaTeX Warning: Reference `fig:test1' on page 14 undefined on input line 25.
-
-
-LaTeX Warning: Reference `fig:test2' on page 14 undefined on input line 35.
-
-
-LaTeX Warning: Reference `fig:test3' on page 14 undefined on input line 42.
-
-
-LaTeX Warning: Reference `fig:test4' on page 14 undefined on input line 48.
-
-) (./plan.tex
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
+ <use ../2015_grant/figures/minus1plus1.pdf> [14]) (./nakul.tex) (./plan.tex [1
+5
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.19})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.8 \item {
+           \bf Year 1}: Demonstrate that a socially-rational agent can
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.20})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.8 \item {
+           \bf Year 1}: Demonstrate that a socially-rational agent can
+! pdfTeX warning (ext4): destination with the same identifier (name{figure.21})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.8 \item {
+           \bf Year 1}: Demonstrate that a socially-rational agent can <../2015
+_grant/figures/plus1plus1.pdf> <../2015_grant/figures/plus1minus1.pdf> <../2015
+_grant/figures/minus1plus1.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 8.
  (/sw/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
- [14]) (./platform.tex) (./deliverables.tex [15]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8.
+) (./deliverables.tex
 
-LaTeX Warning: Citation `gopalan15' on page 16 undefined on input line 39.
-
-
-LaTeX Warning: Citation `ur14' on page 16 undefined on input line 40.
+LaTeX Warning: Citation `gopalan15' on page 16 undefined on input line 50.
 
 
-LaTeX Warning: Citation `tac:book' on page 16 undefined on input line 41.
+LaTeX Warning: Citation `ur14' on page 16 undefined on input line 51.
 
 
-LaTeX Warning: Citation `sodomka13' on page 16 undefined on input line 42.
+LaTeX Warning: Citation `tac:book' on page 16 undefined on input line 52.
 
 
-LaTeX Warning: Citation `baker14' on page 16 undefined on input line 43.
+LaTeX Warning: Citation `sodomka13' on page 16 undefined on input line 53.
 
-) (./evaluation.tex) (./impact.tex
 
-LaTeX Warning: Citation `cunningham2015mpdm' on page 16 undefined on input line
+LaTeX Warning: Citation `baker14' on page 16 undefined on input line 54.
+
+) (./evaluation.tex [16]) (./impact.tex
+
+LaTeX Warning: Citation `von2009human' on page 17 undefined on input line 16.
+
+
+LaTeX Warning: Citation `cunningham2015mpdm' on page 17 undefined on input line
  29.
 
 
-LaTeX Warning: Citation `kim2016socially' on page 16 undefined on input line 31
+LaTeX Warning: Citation `kim2016socially' on page 17 undefined on input line 31
 .
 
- [16]) (./prior.tex
+ [17]) (./prior.tex
 
-LaTeX Warning: Citation `tada:jack' on page 17 undefined on input line 10.
-
-
-LaTeX Warning: Citation `seqauc:nips' on page 17 undefined on input line 10.
+LaTeX Warning: Citation `tada:jack' on page 18 undefined on input line 10.
 
 
-LaTeX Warning: Citation `efgs:rldm' on page 17 undefined on input line 10.
+LaTeX Warning: Citation `seqauc:nips' on page 18 undefined on input line 10.
 
 
-LaTeX Warning: Citation `tada:quibids' on page 17 undefined on input line 10.
+LaTeX Warning: Citation `efgs:rldm' on page 18 undefined on input line 10.
 
 
-LaTeX Warning: Citation `poi:aamas' on page 17 undefined on input line 16.
+LaTeX Warning: Citation `tada:quibids' on page 18 undefined on input line 10.
 
 
-LaTeX Warning: Citation `poi:ec' on page 17 undefined on input line 16.
+LaTeX Warning: Citation `poi:aamas' on page 18 undefined on input line 16.
 
 
-LaTeX Warning: Citation `simspsb:uai' on page 17 undefined on input line 16.
+LaTeX Warning: Citation `poi:ec' on page 18 undefined on input line 16.
 
 
-LaTeX Warning: Citation `loftin14b' on page 17 undefined on input line 52.
+LaTeX Warning: Citation `simspsb:uai' on page 18 undefined on input line 16.
+
+ [18]
+
+LaTeX Warning: Citation `loftin14b' on page 19 undefined on input line 52.
 
 
-LaTeX Warning: Citation `macglashan15' on page 17 undefined on input line 52.
+LaTeX Warning: Citation `macglashan15' on page 19 undefined on input line 52.
 
 
-LaTeX Warning: Citation `macglashan15b' on page 17 undefined on input line 52.
+LaTeX Warning: Citation `macglashan15b' on page 19 undefined on input line 52.
 
 
-LaTeX Warning: Citation `desjardins13' on page 17 undefined on input line 59.
+LaTeX Warning: Citation `desjardins13' on page 19 undefined on input line 59.
 
- [17]) [18]
+) [19] (./data.tex
+Overfull \hbox (9.05035pt too wide) in paragraph at lines 36--39
+\OT1/cmr/m/n/10 Human tra-jec-tory data will be stored in ASCII files along wit
+h a javasc-cript pro-gram for in-ter-pret-ing/visualizing
+ []
+
+)
+! pdfTeX warning (ext4): destination with the same identifier (name{page.1}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \penalty 
+l.114 \newpage
+               [1]
 No file main.bbl.
  (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 2737 strings out of 94500
- 37498 string characters out of 1176113
- 88946 words of memory out of 1000000
- 5769 multiletter control sequences out of 10000+50000
- 13033 words of font info for 47 fonts, out of 500000 for 2000
+ 4390 strings out of 94500
+ 60536 string characters out of 1176113
+ 115223 words of memory out of 1000000
+ 7286 multiletter control sequences out of 10000+50000
+ 13723 words of font info for 49 fonts, out of 500000 for 2000
  580 hyphenation exceptions out of 1000
- 32i,8n,32p,1137b,277s stack positions out of 1500i,500n,5000p,200000b,5000s
+ 32i,9n,36p,1137b,360s stack positions out of 1500i,500n,5000p,200000b,5000s
 PDF statistics:
- 289 PDF objects out of 300000
- 0 named destinations out of 131072
- 86 words of extra memory for PDF output out of 65536
-</sw/share/texmf-dist/fonts/type1/bluesky/cm/cmtt10.pfb></sw/share/texmf-dist
-/fonts/type1/bluesky/cm/cmmib10.pfb></sw/share/texmf-dist/fonts/type1/bluesky/c
-m/cmsy5.pfb></sw/share/texmf-dist/fonts/type1/public/tt2001/fmex7.pfb></sw/shar
-e/texmf-dist/fonts/type1/bluesky/cm/cmr5.pfb></sw/share/texmf-dist/fonts/type1/
-bluesky/cm/cmmi5.pfb></sw/share/texmf-dist/fonts/type1/bluesky/cm/cmex10.pfb></
-sw/share/texmf-dist/fonts/type1/bluesky/cm/cmsy7.pfb></sw/share/texmf-dist/font
-s/type1/bluesky/cm/cmmi7.pfb></sw/share/texmf-dist/fonts/type1/bluesky/cm/cmsy1
-0.pfb></sw/share/texmf-dist/fonts/type1/bluesky/cm/cmmi10.pfb></sw/share/texmf-
-dist/fonts/type1/bluesky/cm/cmr8.pfb></sw/share/texmf-dist/fonts/type1/bluesky/
-cm/cmr6.pfb></sw/share/texmf-dist/fonts/type1/bluesky/cm/cmti10.pfb></sw/share/
-texmf-dist/fonts/type1/bluesky/cm/cmr7.pfb></sw/share/texmf-dist/fonts/type1/bl
-uesky/cm/cmbx10.pfb></sw/share/texmf-dist/fonts/type1/bluesky/cm/cmbx12.pfb></s
-w/share/texmf-dist/fonts/type1/bluesky/cm/cmr10.pfb>
-Output written on main.pdf (19 pages, 762597 bytes).
+ 477 PDF objects out of 300000
+ 102 named destinations out of 131072
+ 182 words of extra memory for PDF output out of 65536
+
+! pdfTeX warning (dest): name{section.7} has been referenced but does not exist
+, replaced by a fixed one
+
+</sw/share/texmf-dist/fonts/type1/bluesky/cm/cmtt8.pfb></sw/share/texmf-dist/fo
+nts/type1/bluesky/cmextra/cmmib5.pfb></sw/share/texmf-dist/fonts/type1/bluesky/
+cmextra/cmbsy5.pfb></sw/share/texmf-dist/fonts/type1/bluesky/cmextra/cmmib7.pfb
+></sw/share/texmf-dist/fonts/type1/bluesky/cm/cmmib10.pfb></sw/share/texmf-dist
+/fonts/type1/bluesky/cm/cmsy5.pfb></sw/share/texmf-dist/fonts/type1/public/tt20
+01/fmex7.pfb></sw/share/texmf-dist/fonts/type1/bluesky/cm/cmr5.pfb></sw/share/t
+exmf-dist/fonts/type1/bluesky/cm/cmmi5.pfb></sw/share/texmf-dist/fonts/type1/bl
+uesky/cm/cmex10.pfb></sw/share/texmf-dist/fonts/type1/bluesky/cm/cmsy7.pfb></sw
+/share/texmf-dist/fonts/type1/bluesky/cm/cmmi7.pfb></sw/share/texmf-dist/fonts/
+type1/bluesky/cm/cmsy10.pfb></sw/share/texmf-dist/fonts/type1/bluesky/cm/cmmi10
+.pfb></sw/share/texmf-dist/fonts/type1/bluesky/cm/cmr8.pfb></sw/share/texmf-dis
+t/fonts/type1/bluesky/cm/cmr6.pfb></sw/share/texmf-dist/fonts/type1/bluesky/cm/
+cmr7.pfb></sw/share/texmf-dist/fonts/type1/bluesky/cm/cmti10.pfb></sw/share/tex
+mf-dist/fonts/type1/bluesky/cm/cmbx10.pfb></sw/share/texmf-dist/fonts/type1/blu
+esky/cm/cmbx12.pfb></sw/share/texmf-dist/fonts/type1/bluesky/cm/cmr10.pfb>
+Output written on main.pdf (21 pages, 819675 bytes).
