@@ -2,20 +2,21 @@
 \vspace{\up}
 \paragraph{Evaluation}
 
-Before scaling to embodied robots,\commenta{Michael, are we going to do this? if not, tone down to whatever our real-world application plans are}
+Before scaling to embodied robots,
+% \commenta{Michael, are we going to do this? if not, tone down to whatever our real-world application plans are}
 we will evaluate how our socially-rational agents fare in
 collaborative learning tasks using an experimental platform that
 simulates interactions between humans and artificial agents.  For
 example, we will compare how often and how quickly humans are able to
-arrive at coordinated plans among themselves, versus with a
-socially-rational agent.  To test the expressiveness of the space of
+arrive at coordinated plans among themselves versus with a
+socially-rational agent. To test the expressiveness of the space of
 learnable solutions afforded by our approach, we will also measure
 tendencies among humans to converge to plans with certain
 characteristics, and whether those characteristics vary when there are
 socially-rational agents in the mix.  We will also assess the quality of the
 plans under these varying conditions.  Finally, subjective evaluations
 from the human participants will be used to assess whether interacting
-with agents feels natural.
+with the agents feels natural.
 
 For the batch learning algorithm, we will develop new quantitative
 metrics to assess behavioral similarity so that trajectories produced
@@ -34,27 +35,60 @@ in other treatments, such as: (1)~no switching; (2)~swapping their
 partner for another human; (3)~swapping their partner for another
 human who watched the previous interactions; (4)~swapping their
 partner for a socially-rational agent that did not perform any
-learning.
+learning or learned from unrelated human--human interactions.
 
 Finally, we are particularly interested in designing flexible learning
 algorithms that generalize at least as well as humans do to new state
 spaces.  To this end, we will have participants play a series of
-related grid games, and then using evaluations similar to those listed
+related grid games, and then, using evaluations similar to those listed
 above, we will test whether our learning agents can generalize to new
-games as well as other humans can.  Likewise,\commenta{Michael, do we want to say something about generalizing to other players? maybe humans are better at this than our agents will be?}
+games as well as other humans can.  
+% Likewise,\commenta{Michael, do we want to say something about generalizing to other players? maybe humans are better at this than our agents will be?} No, I think the notion of generalizing rapidly to new users is a distinct learning problem.
 
-\commenta{Michael, how are we going to evaluate our approach in our proposed ``real-world'' (i.e., non-grid game) applications?}
-
-In year three we will test our approach in a real-world domain:
-robot-human collaboration.  Even if (as we expect), our simulated worlds
-will suggest that our
-learning agents could collaborate better with people than traditional
-approaches, but the capabilities of robots may inhibit the
+In year three, we will test our approach in a real-world 
+robot--human collaboration domain.  Even if (as we expect), our simulated worlds
+show that our
+learning agents collaborate well with people, the capabilities (or lack thereof) of robots may inhibit the
 effectiveness of our approach (e.g., robots might move slower than
-people expect). We will evaluate our algorithm in real-world scenarios
+people expect and misperceive important details). We will evaluate our algorithm in real-world scenarios
 by comparing its performance at controlling a robot to when another
-human controls the robot via teleoperation. We expect this to inspire
-novel problems tuned to real-world problems. For example, computation
+human controls the robot via teleoperation. We expect this approach to raise
+novel research questions appropriate to real-world problems. For example, computation
 time may be a limiting factor to the success of our machine agents,
-and if so, we will develop more efficient implementations.
+and if so, we will focus our efforts on  developing more efficient implementations.
 
+% \commenta{Michael, how are we going to evaluate our approach in our
+% proposed ``real-world'' (i.e., non-grid game) applications?} 
+
+% Evaluation metrics that capture trajectory similarity across diverse
+% games are key for assessing performance, and will drive the
+% development of our learning algorithms towards more beneficial
+% behavior.
+% 
+% We will also develop ways for people to also assess how natural it is
+% to interact with our artificial agents. For example, we will
+% investigate whether having two humans interact for awhile, and then,
+% without notifying them, swapping their partner with an artificial
+% agent trained from the interaction history results in a noticeable
+% change in behavior. Participants would be asked if they noticed a
+% change, and behavior would be compared between a variety of cases, 
+% such as: no swap; or swapping in a trained agent, an untrained agent, 
+% a human who witnessed the history of interactions, a human who did not.
+% 
+% Throughout the project, we will investigate how to design social
+% utility functions that generalize across environments. We we will
+% start by examining standard feature selection methods used in existing
+% reinforcement-learning and IRL research (e.g., linear models, neural
+% networks,
+% etc.)~\cite{diuk2009adaptive,kolter2009regularization,li2009reinforcement,parr2008analysis},
+% and build on them, as necessary.
+% % ML: Note that we could propose ``deep IRL''... since MLIRL is a
+% % gradient method, it should be easy to incorporate it into standard
+% % deep learning packages to learn very complex social utilities.
+% We will evaluate generalization by first having users learn in one
+% grid. Afterwards, they will be exposed to a new grid where the
+% previous behavior is no longer directly applicable (e.g., because a
+% wall was inserted along the path that an agent would normally take),
+% but a more ``general'' behavior can be transfered (e.g., I take the
+% high road; he takes the low, regardless of the presence or absence of
+% obstacles).
