@@ -1,0 +1,295 @@
+\begin{thebibliography}{10}
+
+\bibitem{argall09}
+Brenna~D. Argall, Sonia Chernova, Manuela Veloso, and Brett Browning.
+\newblock A survey of robot learning from demonstration.
+\newblock {\em Robotics and Autonomous Systems}, 57(5):469--483, 2009.
+
+\bibitem{babes11}
+Monica Babes, Vukosi~N. Marivate, Michael~L. Littman, and Kaushik Subramanian.
+\newblock Apprenticeship learning about multiple intentions.
+\newblock In {\em International Conference on Machine Learning}, pages
+  897--904, 2011.
+
+\bibitem{baker14}
+C.~L. Baker and J.~B. Tenenbaum.
+\newblock Modeling human plan recognition using {B}ayesian theory of mind.
+\newblock In G.~Sukthankar, R.~P. Goldman, C.~Geib, D.~Pynadath, and H.~Bui,
+  editors, {\em Plan, Activity and Intent Recognition: Theory and Practice},
+  pages 177--204. Morgan Kaufmann, 2014.
+
+\bibitem{Barto95}
+Andrew~G. Barto, S.~J. Bradtke, and Satinder~P. Singh.
+\newblock Learning to act using real-time dynamic programming.
+\newblock {\em Artificial Intelligence}, 72(1):81--138, 1995.
+
+\bibitem{bellman57}
+Richard Bellman.
+\newblock {\em Dynamic Programming}.
+\newblock Princeton University Press, Princeton, NJ, 1957.
+
+\bibitem{bertsekas87}
+Dimitri~P. Bertsekas.
+\newblock {\em Dynamic Programming: {D}eterministic and Stochastic Models}.
+\newblock Prentice-Hall, Englewood Cliffs, NJ, 1987.
+
+\bibitem{blanco11}
+M.~Blanco, D.~Englemann, and H.~T. Normann.
+\newblock A within-subject analysis of other-regarding preferences.
+\newblock {\em Games and Economic Behavior}, 72:321--338, 2011.
+
+\bibitem{boutilier99}
+Craig Boutilier, Thomas Dean, and Steve Hanks.
+\newblock Decision-theoretic planning: {S}tructural assumptions and
+  computational leverage.
+\newblock {\em Journal of Artificial Intelligence Research}, 11:1--94, 1999.
+
+\bibitem{Camerer:2003}
+C.~F. Camerer.
+\newblock {\em Behavioral Game Theory: Experiments in Strategic Interaction}.
+\newblock Princeton University Press, Princeton, NJ, 2003.
+
+\bibitem{collins95}
+Gregg Collins and Louise Pryor.
+\newblock Planning under uncertainty: {S}ome key issues.
+\newblock In {\em Proceedings of the 14th International Joint Conference on
+  Artificial Intelligence (IJCAI)}, pages 1567--1573, 1995.
+
+\bibitem{daskalakis2009complexity}
+Constantinos Daskalakis, Paul~W Goldberg, and Christos~H Papadimitriou.
+\newblock The complexity of computing a nash equilibrium.
+\newblock {\em SIAM Journal on Computing}, 39(1):195--259, 2009.
+
+\bibitem{desjardins13}
+Marie desJardins and Michael~L. Littman.
+\newblock {AAAI}-13 preface.
+\newblock In {\em AAAI 2013}, 2013.
+
+\bibitem{fisman07}
+R.~Fisman, S.~Kariv, and D.~Markovits.
+\newblock Individual preferences for giving.
+\newblock {\em The American Economic Review}, 97(5):1858--1876, 2007.
+
+\bibitem{tada:jack}
+T.~Goff, A.~Greenwald, E.~Hilliard, W.~Ketter, A.~Loomis, and E.~Sodomka.
+\newblock {JACK}: A {J}ava auction configuration kit.
+\newblock In {\em Agent-Mediated Electronic Commerce. Designing Trading
+  Strategies and Mechanisms for Electronic Markets.}, volume 136 of {\em
+  Lecture Notes in Business Information Processing}, pages 45--60. Springer,
+  2013.
+
+\bibitem{gopalan15}
+Nakul Gopalan and Stefanie Tellex.
+\newblock Modeling and solving human-robot collaborative tasks using {POMDP}s.
+\newblock In {\em Robotics: science and systems 2015: workshop on model
+  learning for human-robot communication}, 2015.
+
+\bibitem{GreenwaldHall:03}
+A.~Greenwald and K.~Hall.
+\newblock Correlated \uppercase{$Q$}-learning.
+\newblock In {\em Proceedings of the Twentieth International Conference on
+  Machine Learning}, pages 242--249, 2003.
+
+\bibitem{seqauc:nips}
+A.~Greenwald, J.~Li, and E.~Sodomka.
+\newblock Approximating equilibria in sequential auctions with incomplete
+  information and multi-unit demand.
+\newblock In {\em NIPS '12: Advances in {N}eural {I}nformation {P}rocessing
+  {S}ystems}, volume~25, pages 2330--2338, December 2012.
+
+\bibitem{efgs:rldm}
+A.~Greenwald, J.~Li, E.~Sodomka, and M.~L. Littman.
+\newblock Solving for best-responses in extensive-form games using
+  reinforcement learning methods.
+\newblock In {\em RLDM '13: Proceedings of 1st Multidisciplinary Conference
+  Reinforcement Learning and Decision Making}, pages 116--120, October 2013.
+
+\bibitem{tada:quibids}
+A.~Greenwald, E.~Sodomka, E.~Stix, J.~Stix, and D.~Storch.
+\newblock An empirical analysis of auctioneer profitability in {Q}uibids penny
+  auctions.
+\newblock In {\em Agent-Mediated Electronic Commerce. Designing Trading
+  Strategies and Mechanisms for Electronic Markets.}, volume 197 of {\em
+  Lecture Notes in Business Information Processing}, pages 56--68. Springer,
+  2014.
+
+\bibitem{HuWellman03}
+J.~Hu and M.~Wellman.
+\newblock Nash {$Q$}-learning for general-sum stochastic games.
+\newblock {\em Machine Learning Research}, 4:1039--1069, 2003.
+
+\bibitem{kahnemanst82}
+D.~Kahneman, P.~Slovic, and A.~Tversky, editors.
+\newblock {\em Judgment under uncertainty: {H}euristics and biases}.
+\newblock Cambridge University Press, 1982.
+
+\bibitem{kearns99b}
+Michael Kearns, Yishay Mansour, and Andrew~Y. Ng.
+\newblock A sparse sampling algorithm for near-optimal planning in large
+  {M}arkov decision processes.
+\newblock In {\em Proceedings of the Sixteenth International Joint Conference
+  on Artificial Intelligence (IJCAI-99)}, pages 1324--1331, 1999.
+
+\bibitem{kocsis06}
+Levente Kocsis and Csaba Szepesv{\'a}ri.
+\newblock Bandit based {M}onte-carlo planning.
+\newblock In {\em Machine Learning: ECML 2006}, pages 282--293, 2006.
+
+\bibitem{Littman01}
+M.~Littman.
+\newblock Friend or foe \uppercase{$Q$}-learning in general-sum
+  \uppercase{M}arkov games.
+\newblock In {\em Proceedings of Eighteenth International Conference on Machine
+  Learning}, pages 322--328, June 2001.
+
+\bibitem{littman1994markov}
+Michael~L Littman.
+\newblock Markov games as a framework for multi-agent reinforcement learning.
+\newblock In {\em Proceedings of the eleventh international conference on
+  machine learning}, volume 157, pages 157--163, 1994.
+
+\bibitem{littman01d}
+Michael~L. Littman.
+\newblock Friend-or-foe {Q}-learning in general-sum games.
+\newblock In {\em Proceedings of the Eighteenth International Conference on
+  Machine Learning}, pages 322--328. Morgan Kaufmann, 2001.
+
+\bibitem{loftin14b}
+Robert Loftin, James MacGlashan, Michael~L. Littman, Matthew~E. Taylor,
+  David~L. Roberts, and Jeff Huang.
+\newblock A strategy-aware technique for learning behaviors from discrete human
+  feedback.
+\newblock In {\em Proceedings of the Twenty-Eighth Association for the
+  Advancement of Artificial Intelligence Conference (AAAI-14)}, 2014.
+
+\bibitem{lopes2009active}
+Manuel Lopes, Francisco Melo, and Luis Montesano.
+\newblock Active learning for reward estimation in inverse reinforcement
+  learning.
+\newblock In {\em Machine Learning and Knowledge Discovery in Databases}, pages
+  31--46. Springer, 2009.
+
+\bibitem{macglashan15}
+J.~MacGlashan, M.~Babes-Vroman, M.~desJardins, M.~Littman, S.~Muresan,
+  S.~Squire, S.~Tellex, D.~Arumugam, and L.~Yang.
+\newblock Grounding english commands to reward functions.
+\newblock In {\em Proceedings of Robotics: Science and Systems}, 2015.
+
+\bibitem{macglashan15b}
+James MacGlashan and Michael~L. Littman.
+\newblock Between imitation and intention learning.
+\newblock In {\em Proceedings of IJCAI}, 2015.
+
+\bibitem{poi:aamas}
+B.~Mayer, E.~Sodomka, and A.~Greenwald.
+\newblock The price of independence in simultaneous auctions.
+\newblock In {\em AAMAS '13: Proceedings of the 12th {I}nternational
+  {C}onference on {A}utonomous {A}gents and {M}ultiagent {S}ystems}, pages
+  1227--1228, May 2013.
+
+\bibitem{poi:ec}
+B.~Mayer, E.~Sodomka, A.~Greenwald, and M.P. Wellman.
+\newblock Accounting for price dependencies in simultaneous sealed-bid
+  auctions.
+\newblock In {\em EC '13: Proceedings of the 14th {ACM} {C}onference on
+  {E}lectronic {C}ommerce}, pages 679--696, June 2013.
+
+\bibitem{ng00}
+Andrew~Y. Ng and Stuart Russell.
+\newblock Algorithms for inverse reinforcement learning.
+\newblock In {\em International Conference on Machine Learning}, pages
+  663--670, 2000.
+
+\bibitem{pomerleau93}
+Dean~A. Pomerleau.
+\newblock {\em Neural network perception for mobile robot guidance}.
+\newblock Kluwer Academic Publishing, 1993.
+
+\bibitem{ramachandran2007bayesian}
+Deepak Ramachandran and Eyal Amir.
+\newblock Bayesian inverse reinforcement learning.
+\newblock {\em International Joint Conference on Artificial Intelligence,},
+  pages 2586--2591, 2007.
+
+\bibitem{reddy2012inverse}
+Tummalapalli~Sudhamsh Reddy, Vamsikrishna Gopikrishna, Gergely Zaruba, and
+  Manfred Huber.
+\newblock Inverse reinforcement learning for decentralized non-cooperative
+  multiagent systems.
+\newblock In {\em Systems, Man, and Cybernetics (SMC), 2012 IEEE International
+  Conference on}, pages 1930--1935. IEEE, 2012.
+
+\bibitem{searle1995construction}
+John~R. Searle.
+\newblock {\em The construction of social reality}.
+\newblock Simon and Schuster, 1995.
+
+\bibitem{Shapley53}
+L.S. Shapley.
+\newblock Stochastic games.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 39:1095--1100, 1953.
+
+\bibitem{singh2009rewards}
+Satinder Singh, Richard~L Lewis, and Andrew~G Barto.
+\newblock Where do rewards come from.
+\newblock In {\em Proceedings of the annual conference of the cognitive science
+  society}, pages 2601--2606, 2009.
+
+\bibitem{sodomka13}
+Eric Sodomka, Elizabeth Hilliard, Michael Littman, and Amy Greenwald.
+\newblock {C}oco-{Q}: {L}earning in stochastic games with side payments.
+\newblock {\em JMLR Workshop and Conference Proceedings: Proceedings of The
+  30th International Conference on Machine Learning}, 28(3):1471--1479, 2013.
+
+\bibitem{sutton99}
+Richard~S. Sutton, Doina Precup, and Satinder Singh.
+\newblock Between {MDP}s and semi-{MDP}s: {A} framework for temporal
+  abstraction in reinforcement learning.
+\newblock {\em Artificial Intelligence}, 112(1--2):181--211, 1999.
+
+\bibitem{tomasello2005understanding}
+Michael Tomasello, Malinda Carpenter, Josep Call, Tanya Behne, and Henrike
+  Moll.
+\newblock Understanding and sharing intentions: {The} origins of cultural
+  cognition.
+\newblock {\em Behavioral and brain sciences}, 28(05):675--691, 2005.
+
+\bibitem{ur14}
+Blase Ur, Elyse McManus, Melwyn Pak~Yong Ho, and Michael~L. Littman.
+\newblock Practical trigger-action programming in the smart home.
+\newblock In {\em Proceedings of the ACM SIGCHI Conference on Human Factors in
+  Computing Systems (CHI)}, 2014.
+
+\bibitem{von2009human}
+Luis Von~Ahn.
+\newblock Human computation.
+\newblock In {\em Design Automation Conference, 2009. DAC'09. 46th ACM/IEEE},
+  pages 418--419. IEEE, 2009.
+
+\bibitem{tac:book}
+M.~Wellman, A.~Greenwald, and P.~Stone.
+\newblock {\em Autonomous Bidding Agents: Strategies and Lessons from the
+  Trading Agent Competition}.
+\newblock Intelligent Robotics and Autonomous Agents. MIT Press, Cambridge,
+  2007.
+
+\bibitem{simspsb:uai}
+M.~P. Wellman, E.~Sodomka, and A.~Greenwald.
+\newblock Self-confirming price prediction strategies for simultaneous one-shot
+  auctions.
+\newblock In {\em UAI '12: Proceedings of the 20th {C}onference on
+  {U}ncertainty in {A}rtificial {I}ntelligence}, pages 893--902, August 2012.
+
+\bibitem{ziebart2008maximum}
+Brian~D Ziebart, Andrew~L Maas, J~Andrew Bagnell, and Anind~K Dey.
+\newblock Maximum entropy inverse reinforcement learning.
+\newblock In {\em AAAI}, pages 1433--1438, 2008.
+
+\bibitem{ZGL:06}
+M.~Zinkevich, A.~Greenwald, and M.~Littman.
+\newblock Cyclic equilibria in {M}arkov games.
+\newblock In {\em Advances in Neural Information Processing Systems 18}, page
+  To Appear. {MIT} Press, 2006.
+
+\end{thebibliography}
