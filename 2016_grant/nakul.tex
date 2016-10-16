@@ -7,16 +7,17 @@ potential of an EM algorithm we developed for the GIRL framework.%
 %\footnote{A description of the algorithm was omitted because of space constraints.}
 \footnote{Because the problem domain in these preliminary experiments
 was small (a 5 $\times$ 5 grid), we did not use importance sampling.}
-
-The GIRL agent is operating in a grid world, with puddles of multiple
-colors: red, blue, green, yellow and pink. The agent can take north,
-south, east and west actions.  If there is a wall in the way, the
-agent does not move at all.
+%
+The GIRL agent is operating in a grid world (see
+Figure~\ref{fig:puddle-grid}), with puddles of multiple colors: red,
+blue, green, yellow and pink.  The agent can take north, south, east
+and west actions.
+%If there is a wall in the way, the agent does not move at all.
 %For example if the agent tries to move east and it is next to the eastern wall of the grid, it doesn't move at all.  
 In these experiments, we gave the GIRL agent two very short
 trajectories, and a corresponding pair of positive and negative
 labels.  We will show that varying those labels leads the agent to
-infer different reward functions, and consequently, different
+infer different reward functions, and correspondingly, different
 behaviors.
 
 In both trajectories, the agent begins in the middle cell of the
