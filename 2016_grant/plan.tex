@@ -5,44 +5,31 @@
 The three-year timeline for our proposed project is as follows:
 
 \begin{itemize}
-\item {\bf Year 1}: Complete the development of an experimental
-  testbed that pairs humans with an artificial agent.  Demonstrate
-  that the agent can successfully learn collaborative behavior from
-  batches of demonstrations (offline) including generalizations
-  between related game environments. Carry out computational
-  experiments on machine--machine pairings with variations of the
-  algorithm and variations of environments.
+\item {\bf Year 1}: Demonstrate that a socially-rational agent can
+  successfully learn collaborative behavior from batches of
+  demonstrations (offline), and can generalizate across related games.
+  Carry out simulation experiments on machine--machine pairings,
+  varying both the algorithms and the environments.  Complete the
+  development of an experimental test bed that pairs humans with
+  artificial agents.
 
-\item {\bf Year 2}: Extend the learning algorithms to support
-  real-time adaptation, so that cooperative behavior can emerge during
-  a human--machine interaction even if the test environments vary. A
-  key algorithmic element will be to make sure the algorithms are
-  efficient enough to adjust behavior at every step.
-%  determine whether an interaction
-%   is proceeding cooperatively, or if cooperation has broken down and
-%   players should revert to more traditional self-interested behavior. 
+\item {\bf Year 2}: Establish that IRL algorithms within the GIRL
+  framework can learn more accurately and more efficiently (i.e., from
+  fewer data) than classic IRL algorithms, because of the ability of
+  the teacher to offer both positive and negative feedback.
+  Incorporate GIRL learning algorithms into the Year 1 experimental
+  test bed, and show how collaborative behavior can emerge in
+  real-time during human--machine interactions.  Develop the proposed
+  ``Social autonomous driving'' course (see Broader Impacts).
+%   determine whether an interaction is proceeding collaboratively, 
+%   or if cooperation has broken down and players should revert to 
+%   more traditional self-interested behavior. 
 
-\item {\bf Year 3}: Extend and evaluate our approach in real-world
-  applications, specifically to the ``go fetch'' scenario described in
-  the Broader Impacts section. % Algorithmically, we will focus on ways
-%   an agent can actively teach its partner to adopt mutually beneficial
-%   behavior. 
+\item {\bf Year 3}: Extend as necessary, and then evaluate our
+  approach in real-world applications, specifically to the ``go
+  fetch'' scenario (see Broader Impacts).
+%   Algorithmically, we will focus on ways an agent can actively teach 
+%   its partner to adopt mutually beneficial behavior. 
 
 \end{itemize}
-
-%%% THIS IS VACUOUSLY TRUE, ISN'T IT?: i.e., true in all applications
-%From our preliminary investigations, it has become clear that metrics
-%will play an essential role in evaluating collaborative learning.
-
-\commenta{SOCIAL NORMS!} \commentm{verb?}
-% The algorithms described in this proposal are designed for learning
-% among a set of agents interacting pairwise. We will extend our work to
-% scenarios where agents play different games, with different subsets of
-% agents drawn from the same population. We expect that a group of
-% people would converge on a social norm in a setting like this~\cite{???}, 
-% and witll extend our learning algorithms as necessary to support this robust form of
-% norm-learning. To evaluate our extensions, we will compare norm
-% formation in purely human groups to hybrid human-machine groups.
-% %One possible direction is to have the agent learn multiple norms using reward function clustering similar to that in multiple intention IRL~\cite{babes11}, and then homogenize the clusters as the various subpopulation's behaviors converge. 
-% %To evaluate adaptivity in populations, we will compare the results of purely human populations with human-agent populations.
 

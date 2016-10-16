@@ -1,57 +1,72 @@
 
-\paragraph{Nakul: Experiments}
+\vspace{\up}
+\paragraph{Preliminary Experiments}
 
-In this experiment we want to test our labelled inverse reinforcement
-learning algorithm with simple experiments to see if the agent learns
-good behavior based on human feedback.  The agent is in a world with
-puddles of multiple colors - red, blue, green, yellow and pink. The
-agent is allowed north, south, east and west actions.  If there is a
-wall in the way of the agent it does not move at all. For example if
-the agent tries to move east and it is next to the eastern wall of the
-grid, it doesn't move at all.  For the experiments we will demonstrate
-two trajectories to the agent, and a pair of labels corresponding to
-each trajectory.  We will show that changes in the labels for the same
-trajectory lead to changes in the behaviour of the agent.
+We ran some (very) preliminary experiments to demonstrate the
+potential of an EM algorithm we developed for the GIRL framework.%
+\footnote{A description of the algorithm was omitted because of space constraints.}
+%\footnote{Note that the problem domain was so small---a 5 $\times$ 5 grid---we did not use importance sampling.}
 
-The first trajectory has the agent move two steps, over the blue
-puddle to reach the red puddle.  The second trajectory has the agent
-move a single step to the blue puddle.  These trajectories are shown
-in the first set of Figures~\ref{fig:trajectories}.
+The GIRL agent is operating in a grid world, with puddles of multiple
+colors: red, blue, green, yellow and pink. The agent can take north,
+south, east and west actions.  If there is a wall in the way, the
+agent does not move at all.
+%For example if the agent tries to move east and it is next to the eastern wall of the grid, it doesn't move at all.  
+In these experiments, we gave the GIRL agent two very short
+trajectories, and a corresponding pair of positive and negative
+labels.  We will show that varying those labels leads the agent to
+infer different reward functions, and consequently, different
+behaviors.
 
-For the first experiment we teach the agent that both behaviours shown
-with the demonstrated trajectories are good, that is, walking over
-both puddles is good.  Hence, we give a label of $+1$ and $+1$ to both
-trajectories. The policy after learning is shown in
-Figure~\ref{fig:test1}.  It is clear that the agent prefers to reach
-the red puddle with the shortest path and stay over it infinitely. The
-agent doesn't learn to stay over the blue puddle as one of the
-trajectories was to walk over the blue to reach the red puddle as the
-goal state. The agent also values the red puddle higher than any cell
-in the grid.
+In both trajectories, the agent begins in the middle cell of the
+bottom row of the grid.  The first trajectory has the agent move two
+steps to the west, through the blue puddle, to reach the red puddle.
+The second trajectory has the agent move a single step west, into the
+blue puddle.
 
-In the second experiment we teach the agent that walking over blue
-paddles is bad and getting to the red puddle is good. Hence, we label
-the first trajecotry $+1$, and label the second trajectory $-1$.  The
-output policy in Figure~\ref{fig:test2} shows that the agent avoids
-all blue puddle and gets to the red puddle as quickly as
-possible. Further, the red puddle has the highest value in the grid.
+%These trajectories are shown in the first set of Figures~\ref{fig:trajectories}.
 
-In the third experiment we want to teach the agent that the red puddle
-should be avoided and the getting to the blue puddle is good. Hence,
-we label the first trajectory $-1$ and the second trajectory $+1$.
-The output policy in Figure~\ref{fig:test3} shows that the agent
-prefers reaching any of the blue puddles in the grid, especially the
-ones where it can stay in the blue cells indefinitely.
+In the first experiment, we label both trajectories $+1$; in the
+second experiment, we label the first trajectory $+1$, and the second
+$-1$; and in the third experiment, we reverse these labels.  The
+learned policies (along with corresponding, but illegible, rewards)
+are shown in Figures~\ref{fig:test1},~\ref{fig:test2},
+and~\ref{fig:test3}, respectively.
 
+In experiment 1, we signal to the agent that both observed behaviors
+are good.  Consequently, the agent learns to value the red puddle more
+than any other cell in the grid, and is intent on reaching it via a
+shortest path from everywhere else.  In particular, the agent doesn't
+learn to linger on the blue puddle, because in one of the trajectories
+walking over the blue to reach the red was labelled good.
+
+In experiment 2, we again teach the agent that reaching the red puddle
+is good, but this time we also signal that walking into the blue
+puddle is bad.  The agents again learns to get to the red puddle as
+quickly as possible, but this time it avoids all blue puddles.
+possible.
+%As in experiment 1, the red puddle has the highest value in the grid.
+
+In experiment 3, we teach the agent that the red puddle is to be
+avoided, and getting to the blue puddle is good.  This time, the agent
+prefers the blue puddles to the red, and it especially values the ones
+where it can remain in the blue cells indefinitely.
+
+\comment{
 In the fourth experiment we teach the agent that both red and blue
 puddles are bad. Hence, we label both trajectories $-1$.  The output
 policy in Figure~\ref{fig:test4} shows that the agent avoids all the
 puddles and tries to stay in the white spaces on the grid.
+}
 
-Thus, we can change the agent's behaviour with example trajectories
-and more importantly the labels. This learning behaviour is important
-for teaching an agent to play with a human, we the human can critique
-the agent as they play and lable a round of play good or bad depending
-on whether the agents reached their co-operative goal. Further, our
-algorithm allows the teacher to critique individual actions that the
-agent takes allowing a more minute control of the agent's behaviour.
+Thus, we have demonstrated that agents can learn utility functions
+within the GIRL framework using both positive and negative labels.  We
+expect this capability to prove essential for humans hoping to teach
+agents to collaborate.  Beyond what is possible now, with GIRL
+algorithms, we, the humans, will be able to critique agents during our
+interactions with them, by ascribing to their behaviors (entire
+trajectories and subtrajectories) both positive and negative feedback,
+based on which the agents will infer social reward functions, which we
+expect to generalize well within the learning domain and across
+learning environments.
+

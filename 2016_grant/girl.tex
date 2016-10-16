@@ -1,6 +1,6 @@
 
-\subsection{Labelled IRL}
-\label{sec:feedback}
+\subsection{Generalized IRL}
+\label{sec:girl}
 
 To complement the new computational model we put forth, the new
 technology that we plan to develop as part of this proposal is a new
@@ -10,28 +10,28 @@ which also allows for partial feedback, meaning subtrajectories (i.e.,
 options~\cite{sutton99}) can be ascribed such labels.
 
 To this end, in this section, we propose a novel variant of the
-inverse reinforcement learning problem, which we call \mydef{Labelled
-  IRL}.  Wherease the input to standard IRL is a data set of
-trajectories
+inverse reinforcement learning problem, which we call
+\mydef{Generalized IRL} (GIRL).  Wherease the input to standard IRL is
+a data set of trajectories
 %(a sequence of state-action pairs)
-and the output, a reward function, the input to a labelled IRL
-problem, is a data set of \emph{labelled\/} trajectories. (The output
-is still a reward function.)  In its most basic formulation,%
+and the output, a reward function, the input to a GIRL problem, is a
+data set of \emph{labelled\/} trajectories. 
+%(The output is still a reward function.)  
+In its most basic formulation,%
 \footnote{Labels need not be binary; they can be continuous-valued.}
 each label is either positive ($+1$) or negative ($-1$), indicating
 whether the associated trajectory is a good example of some desired
 behavior, or a bad example of some desired behavior.  The goal is to
 recover a reward function that motivates the desired behavior.
 
-The plate diagram that describes our labelled IRL problem formulation
-is shown in Figure~\ref{fig:feedback}.  In this model, we interpret
-the label ($L$) associated with a trajectory of size $N$ to be some
-random function of what the evaluator thought about each of the action
-selections ($A$) exhibited at each of the states ($S$) in the
-trajectory.  However, these step-wise evaluations ($X$) are unobserved
-in the data.
+The plate diagram that describes our GIRL problem formulation is shown
+in Figure~\ref{fig:girl}.  In this model, we interpret the label ($L$)
+associated with a trajectory of size $N$ to be some random function of
+what the evaluator thought about each of the action selections ($A$)
+exhibited at each of the states ($S$) in the trajectory.  However,
+these step-wise evaluations ($X$) are unobserved in the data.
 
-\begin{wrapfigure}{l}{0.4\textwidth}
+\begin{wrapfigure}{l}{0.366\textwidth}
 \begin{tikzpicture}[x=1.7cm,y=1.8cm]
    \node[latent]                   (R)      {$\bm{\theta}$} ; %
    \node[latent, right=of R]                   (X)      {$X$} ; %
@@ -55,8 +55,8 @@ in the data.
    } {$M$} ;
 
 \end{tikzpicture}
-\caption{Feedback IRL}
-\label{fig:feedback}
+\caption{Generalized IRL}
+\label{fig:girl}
 \end{wrapfigure}
 
 For illustrative purposes, we adopt the probabilistic maximum
@@ -66,7 +66,7 @@ could likewise be applied here.
 %
 To find the reward function that maximizes the likelihood of the data,
 we first define a probability model for the system that is represented
-in Figure~\ref{fig:feedback}.
+in Figure~\ref{fig:girl}.
 %
 We model the probability that an action is evaluated as good or not as
 proportional to its selection probability according a softmax policy
