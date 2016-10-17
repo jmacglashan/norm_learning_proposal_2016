@@ -1,7 +1,6 @@
 
 \subsubsection*{\large Selecting a Selfish or Social Stance}
 \label{sec:stance}
-% zzz first draft, needs work
 
 We expect our algorithm as described thus far to be able to interact
 with other agents or people and infer social utilities that will guide
@@ -22,12 +21,15 @@ adopted a social stance, creating opportunities for both players to
 succeed. There are several interesting and important computational
 problems that arise when the two agents adopt conflicting stances. We
 briefly list these problems and our proposed approach to each:
+
 \begin{enumerate}
+
 \item How can an agent detect that its stance differs from the other?
   We will build on our preliminary work~\cite{kleiman16} that uses
   Bayesian reasoning about observed trajectories to infer whether the
   other agent is selfish or social (competitive or cooperative, in the
   terminology of the paper).
+  
 \item If the agent adopts a social stance and the other adopts a
   selfish stance, how should it respond? Our analysis of CD
   strategies, described earlier, provides a partial answer---an agent
@@ -38,4 +40,5 @@ briefly list these problems and our proposed approach to each:
   strategy is not possible, an agent could use a strategy that, across
   repeated games, provides the same benefits as CD strategies within
   games~\cite{munoz08}.
+  
 \end{enumerate}

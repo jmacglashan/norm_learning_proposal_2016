@@ -5,12 +5,12 @@
 \paragraph{Preliminary Results}
 \label{sec:results}
 
-Preliminary experiments suggest that both our batch-learning and interactive
-collaborative learning algorithms can produce reasonable results in
-grid games. For batch learning, we hard code examples of agents
-following different equilibrium strategies, and show that our
+Preliminary experiments suggest that both our batch-learning and
+interactive collaborative learning algorithms can produce reasonable
+results in grid games.  For batch learning, we hard code examples of
+agents following different equilibrium strategies, and show that our
 algorithm is able to recover the appropriate equilibrium when it is
-trained on demonstrations of behavior following that equilibrium. We
+trained on demonstrations of behavior following that equilibrium.  We
 also tested the agents on similar grid games after learning to show
 that the learned behavior can generalize to other similar situations.
 For interactive learning, we show that agents can very quickly
@@ -138,15 +138,16 @@ In our interactive learning experiment,
 we played two interactive learning agents against one another.  The
 agents played five matches, each one consisting of five rounds.  Each
 match began fresh, without any knowledge of previous matches, to see
-whether different equilibria could emerge.  The social utility function was
-initialized to the total welfare joint policy.  In each match, the
-agents very quickly (typically after the first round) converged to an
-equilibrium that persisted for the rest of the match.  However, in each
-match, a different equilibrium was learned, showing that agents employing our
-algorithm quickly adapt to the particular shared experience they have
-with other agents.
+whether different equilibria could emerge.  The social utility
+function was initialized to the total welfare joint policy.  In each
+match, the agents very quickly (typically after the first round)
+converged to an equilibrium that persisted for the rest of the match.
+However, in each match, a different equilibrium was learned, showing
+that agents employing our algorithm quickly adapt to the particular
+shared experience they have with other agents.
 %, and then maintain the learned equilibrium behavior.
-% zzz can we quantify how much faster it is than straight Q-learning?
+\commentm{can we quantify how much faster it is than straight Q-learning?}
+\commenta{it is pretty much instantaneous. none of these tests were even run for more than 5 rounds of learning. but remember, they are using team reasoning, and not solving a coordination problem---it's like they have one brain. so it is MUCH easier.}
 
 Figure~\ref{fig:interRes} shows the results of learning in each of the
 five matches (with the top image showing the behavior in the first

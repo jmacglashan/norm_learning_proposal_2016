@@ -59,19 +59,21 @@ is not the correct step for an optimal agent to take. As such, the
 correct path for reaching the red puddle must be to go around the blue
 puddle, which can be explained by increased utility in the white
 squares.
+\commenta{
 % zzz these colors are almost maximally confusing. red turns blue and
 % zzz blue turns red. yellow and green would have been preferable.
 % zzz also, it would have been more interesting to have a negative
 % label on a two-step path as the learner has to figure out which step
 % was bad.
+}
 %As in experiment 1, the red puddle has the highest value in the grid.
 
 The agent sees negative \& positive labels as a signal that the red
 puddle is to be avoided and getting to the blue puddle is good.  This
 time, the agent prefers the blue puddles to the red, and it finds a
 policy that lets it reach---and remain in---blue puddles.
-% zzz these grids seem like overkill for the point we're able to
-% zzz make. Ah, well.
+%\commentm{these grids seem like overkill for the point we're able to make. Ah, well.}
+%\commenta{agreed, totally!}
 
 \comment{
 In the fourth experiment we teach the agent that both red and blue
@@ -82,18 +84,17 @@ puddles and tries to stay in the white spaces on the grid.
 
 These experiments demonstrate an approach to GIRL, in which agents
 learn utility functions from both positive and negative examples.
-%   We
-% expect this capability to prove essential for humans hoping to teach
-% agents to collaborate.  
-We will further hone this algorithms and bring it to bear in the
-context of interactive learning of social utility functions and to
-allow algorithms to adapt from rich human evaluative feedback.
+% We expect this capability to prove essential for humans hoping to teach agents to collaborate.  
+We plan to further hone this and related approaches, so that we can
+eventually bring them to bear in the context of interactive learning
+of social utility functions, thereby enabling artificial agents to
+learn from rich human evaluative feedback.
 
-% Beyond what is possible now, with GIRL
-% algorithms, we, the humans, will be able to critique agents during our
-% interactions with them, by ascribing to their behaviors (entire
-% trajectories and subtrajectories) both positive and negative feedback,
-% based on which the agents will infer social reward functions, which we
-% expect to generalize well within the learning domain and across
-% learning environments.
-
+\commenta{Michael: why did you comment all of this out?}
+Beyond what is possible now, with GIRL algorithms, we, the humans,
+will be able to critique agents during our interactions with them, by
+ascribing to their behaviors (entire trajectories and subtrajectories)
+both positive and negative feedback, based on which the agents will
+infer social reward functions, which we expect to generalize well
+within the learning domain and across learning environments.
+\commenta{End commented out.}
