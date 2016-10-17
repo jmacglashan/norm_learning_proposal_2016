@@ -2,12 +2,13 @@
 \label{sec:intro}
 
 Much of human social life occurs in contexts where people must
-coordinate their actions with those of others.  From party planning to
-flying a rocket ship to the moon, groups of people have accomplished
+coordinate their actions with those of others.  From party planning to space exploration,
+% flying a rocket ship to the moon,
+groups of people have accomplished
 great things by reasoning as a team and engaging in jointly
 intentional behavior~\cite{searle1995construction}.  Indeed, some have
 argued that, because most other animals lack the capacity to work
-adaptively as cohesive unit across many domains, team reasoning may be
+adaptively as a cohesive unit across many domains, team reasoning may be
 the hallmark of human sociality~\cite{tomasello2005understanding}.
 
 %Can artificial agents be successfully designed to join in human collective behavior?
@@ -15,7 +16,7 @@ the hallmark of human sociality~\cite{tomasello2005understanding}.
 
 Artificial agents are becoming ubiquitious in everyday life.  For
 these agents to collaborate effectively with humans, however, they will
-need behave in human-like ways.  Unfortunately for agent designers,
+need to behave in human-like ways.  Unfortunately for agent designers,
 %there are many ways that people decide how to behave so that their actions result in coordinated behavior. 
 there is no simple behavioral rule (or set of rules) that could be
 prescribed to cover all contexts, communities, and cultures.  People
@@ -45,7 +46,7 @@ model (however flawed) of human behavior.
 One possibility is to assume we are \emph{Homo economicus}---a term
 from the 1800s that portrays individuals as being guided by self interest,
 and taking actions without regard to their impact on the collective.
-Alternatively, one might assume an individual to be \emph{Homo
+Alternatively, one might call us \emph{Homo
   sociologicus}---a more recent term depicting individuals as pursuing
 goals imprinted on them by society.
 % in which case actions are motivated by social goals.
@@ -143,7 +144,7 @@ like this one, you may proactively bring the milk over to your son.
 }
 
 Classical game theory assumes that utility functions are exogeneously
-determined: i.e., agents come to the table with fixed
+determined: agents come to the table with fixed
 extrinsically-set utilities.
 %``Social'' game theory, with its emphasis on social preferences, must
 %answer the question of where social utility functions come from: i.e.,
@@ -155,7 +156,7 @@ choices.  Likewise, our computational framework does not assume that
 social preferences exist extrinsically; rather, they are constructed
 in response to observed behaviors.  In our conception of social
 rationality, agents \emph{learn\/} social preferences through repeated
-play of the game.
+play of the game.\footnote{As Shakespeare said, ``the play's the thing.''}
 
 A social utility function is an immediate generalization of the usual
 notion of an individual's utility function, but it ascribes value to
@@ -198,21 +199,21 @@ elusive, problem.
   through repeated play, with the aim being for such agents to
   collaborate effectively with humans.}
 
-In this proposal, we set out to demonstrate our potential for success,
+In this proposal, we set out to demonstrate our potential for success
 by showing that our computational model is viable.  To this end,
 %using an off-the-shelf IRL algorithm,
 we present a preliminary set of simulation results showing how
 reinforcement-learning agents, interacting repeatedly in a grid-game
 environment, can represent social preferences using a social utility
-function, so that eventually their emergent collaborative behavior and
+function so that eventually their emergent collaborative behavior and
 their discovered social preferences reinforce one another.  We then go
 one step further and show that our approach can also learn (in an
 off-line, batch fashion) from human--human trace data so that the
-collaborative behavior that is learned mimics that which is expressed
+collaborative behavior that is learned mimics that which is
 in the trace data.  While these two experiments (on machine--machine,
 interactive and human--human batch data) are indeed promising, it
 remains to extend these techniques to human--machine interactions,
-preferably in experimental worlds with embodied robots.
+ultimately in experimental worlds with embodied robots.
 \commenta{HUMAN TRACE DATA!}
 
 The ultimate goal in developing artificial agents that act
@@ -227,7 +228,7 @@ model of behavior for the participating agents.  However,
 an artificial agent that plans its collaboration by assuming the
 humans in its environment will act selfishly and/or are driven by
 extrinsic utility functions is unlikely to be successful in its
-collaborations~\cite{Camerer:2003,kahnemanst82}.  Instead of
+collaborations~\cite{Camerer:2003,kahnemanst82,gal04}.  Instead of
 individual rationality as the underlying principle guiding human
 behavior, this proposal is grounded in the assumption that humans are
 socially rational beings whose preferences and behaviors emerge and
