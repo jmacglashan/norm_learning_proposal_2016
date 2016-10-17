@@ -66,7 +66,7 @@ assumption that
 Social preferences are in part \mydef{distributive}, meaning they
 evaluate how resources are allocated, e.g., efficiently or equitably;
 and they are in part \mydef{reciprocal}, meaning they capture the
-cooperative or competitive intent of other players.
+social or selfish intent of other players.
 % perceived intentions of the actors in the environment.
 \comment{
   %%% I AM NOT READY TO SAY THIS AT THIS STAGE...WE ARE BUILDING UP TO IT...IT IS PART OF THE COMPUTATIONAL MODEL -- somewhat orthogonal to what preferences are about, which is all we are talking about at this stage.
@@ -80,19 +80,19 @@ artificial, in the framework of game theory.
 %
 Following Bacharach~\cite{bacharach2006beyond}, not only do we assume
 that preferences are social rather than individual, we go one step
-further and assume that decision making takes the form of ``What
+further and assume that decision making can take the form of ``What
 should \emph{we\/} do?'' rather than ``What should \emph{I\/} do?''
 In other words, we move from the usual assumption of best-reply
 reasoning~\cite{cournot} in games to one of \mydef{team
   reasoning}~\cite{RePEc:eee:reecon:v:53:y:1999:i:2:p:117-147}.
 
-We call optimal decision making, when agents hold
+We call optimal decision making, when agents can hold
 %learn
 social preferences and employ team reasoning, \mydef{socially
   rational} behavior.  Social rationality is a blend of the \emph{Homo
-  economicus\/} and \emph{Homo sociologicus\/} concepts: agents
-optimize a \mydef{social utility function} (i.e., a representation of
-social preferences), which is sufficiently rich to incorporate
+  economicus\/} and \emph{Homo sociologicus\/} concepts---agents
+\mydef{individually optimize} a \mydef{social utility function} representing
+social preferences incorporating
 %learned
 perceived (possibly inferred, possibly imagined) societal benefits.
 
@@ -100,7 +100,7 @@ We contend that the computational process by which collaborative
 behavior emerges strongly depends on social rationality, coupled with
 learning via repeated interaction.
 %
-Specifically, the computational process is thus:
+Specifically, the computational process is:
 1.~agents represent social preferences using a social utility function
 tailored to the environment and the actors;%
 \footnote{This utility function is described in terms of features of the environment and the actors;
@@ -112,7 +112,7 @@ seems important, though, given the goal including ``stance''
 (are the agents acting jointly or not?).}
 4.~agents act, simultaneously or sequentially, as is appropriate in their environment;
 5.~agents update their estimates of their social utility functions.
-Steps~2 through~5 repeat so long as the interaction continues.
+Steps~2 through~5 then repeat.
 
 When agents
 %use team reasoning to 
@@ -121,14 +121,15 @@ utility function, they are choosing actions that jointly optimize the
 behavior of the collective.
 %, as specified by the social preferences encoded in that function.  
 When agents update their estimate of the social utility function, they
-do so using the observed history of joint actions in the environment.
+do so using the \emph{observed history} of joint actions in the environment.
 %%%can we guarantee convergence!!??
 If this process stabilizes, the social utility function represents the
 preferences of the community as a whole, 
 %including guidance of the roles of the individual members, 
 and the equilibrium implements a joint plan of action that optimizes
-that social utility function.  Indeed, in our computational model,
-emergent collaborative behavior and social preferences are expected to
+that social utility function.  Here, % in our computational model,
+emergent collaborative behavior and social preferences 
+% are expected to
 reinforce one another.
 
 \comment{
@@ -148,7 +149,7 @@ like this one, you may proactively bring the milk over to your son.
 }
 
 Classical game theory assumes that utility functions are exogeneously
-determined: agents come to the table with fixed
+determined---agents come to the table with fixed
 extrinsically-set utilities.
 %``Social'' game theory, with its emphasis on social preferences, must
 %answer the question of where social utility functions come from: i.e.,
@@ -156,8 +157,10 @@ extrinsically-set utilities.
 However, there is broad agreement in the judgment and decision-making
 community that preferences are \emph{constructed}, not
 elicited~\cite{Payne_Bettman_Johnson_1993}, in response to available
-choices.  Likewise, our computational framework does not assume that
-social preferences exist extrinsically; rather, they are constructed
+choices.  Likewise, our computational framework 
+% does not assume that
+% social preferences exist extrinsically; rather, they are 
+constructs social preferences
 in response to observed behaviors.  In our conception of social
 rationality, agents \emph{learn\/} social preferences through repeated
 play of the game.\footnote{As Shakespeare said, ``the play's the
@@ -189,12 +192,13 @@ captures notions of distributivity and reciprocity.
 %
 Often, the rules of a game alone give rise to multiple (objective)
 equilibria, and agents face a difficult equilibrium-selection
-problem (e.g.,~\cite{schelling1980strategy}) in the underlying game.
+problem (e.g.,~\cite{schelling1980strategy}) in the underlying game;
+learned social utility functions provide a solution.
 %
-We contend that socially rational behavior, in which agents optimize a
-learned social utility function that reflects (constructed) social
-preferences, can provide a solution to this challenging, seemingly
-insoluable, problem.
+% We contend that socially rational behavior, in which agents optimize a
+% learned social utility function that reflects (constructed) social
+% preferences, can provide a solution to this challenging, seemingly
+% insoluable, problem.
 %see Section~\ref{sec:interactive} 
 
 %\commenta{this doesn't fit any more.}
@@ -211,7 +215,7 @@ insoluable, problem.
 In this proposal, we set out to demonstrate our potential for success
 by showing that our computational model is viable.  To this end,
 %using an off-the-shelf IRL algorithm,
-we present a preliminary set of simulation results showing how
+we present a preliminary set of results showing how
 reinforcement-learning agents, interacting repeatedly in a grid-game
 environment, can represent social preferences using a social utility
 function so that eventually their emergent collaborative behavior and
@@ -219,8 +223,10 @@ their discovered social preferences reinforce one another.  We then go
 one step further and show that our approach can also learn (in an
 off-line, batch fashion) from human--human trace data so that the
 collaborative behavior that is learned mimics that which is
-in the trace data.  While these two experiments (on machine--machine,
-interactive and human--human batch data) are indeed promising, it
+in the trace data.  While these two experiments
+%  (on machine--machine,
+% interactive and human--human batch data) 
+are indeed promising, it
 remains to extend these techniques to human--machine interactions,
 ultimately in experimental worlds with embodied robots.
 %%% \commenta{HUMAN TRACE DATA!}
@@ -229,17 +235,19 @@ The ultimate goal in developing artificial agents that act
 intelligently in multi-agent scenarios is to apply them to real-world
 problems.  To a limited extent, this goal has already been achieved:
 artificial agents trade stocks and bid in online ad auctions.  In
-these two market environments, rationality may well be an appropriate
+that setting,
+% these two market environments, 
+rationality may well be an appropriate
 model of behavior for the participating agents.  However,
 %given the plethora of experimental results demonstrating that human
 %behavior does not abide by standard definitions of
 %rationality~\cite{Camerer:2003,kahnemanst82}, 
 an artificial agent that plans its collaboration by assuming the
-humans in its environment will act selfishly and/or are driven by
-extrinsic utility functions is unlikely to be a successful
-collaborator~\cite{Camerer:2003,gal04,kahnemanst82}.  Instead of
+humans in its environment selfishly follow
+extrinsic utility functions is unlikely to be
+successful~\cite{Camerer:2003,gal04,kahnemanst82}.  Instead of
 individual rationality as the underlying principle guiding human
-behavior, this proposal is grounded in the assumption that humans are
+behavior, this proposal assumes that humans are
 socially rational beings whose preferences and behaviors emerge and
 reinforce one another through repeated interactions.  For artificial
 agents to successfully collaborate with humans, they should be thus,
