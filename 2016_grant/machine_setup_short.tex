@@ -3,20 +3,20 @@
 \paragraph{Simulation Experiments}
 \label{sec:qlearning}
 
-We carried out a set of simulation experiments with \Q-learning in
+We carried out a set of simulation experiments with \Q-learning~\cite{Watkins92} in
 the grid games presented.
 %
-We denote the outcome of a round using a pair of letters, where {\bf G} 
-means the agent reached the goal and {\bf N} means the agent did not
-reach the goal. The first letter in the pair represents the agent's
-own outcome and the second represents its opponent's outcome. For
-example, {\bf GN} is used to denote that the agent reaches its goal
-while its opponent does not.
-
+% We denote the outcome of a round using a pair of letters, where {\bf G} 
+% means the agent reached the goal and {\bf N} means the agent did not
+% reach the goal. The first letter in the pair represents the agent's
+% own outcome and the second represents its opponent's outcome. For
+% example, {\bf GN} is used to denote that the agent reaches its goal
+% while its opponent does not.
 As two \Q-learning algorithms are not guaranteed to converge in
 self play, we arbitrarily stopped the learning after 30,000 rounds,
 and checked the strategies learned.  In spite of \Q-learning not
 explicitly seeking outcomes with high social welfare, it very reliably
-identified collaborative strategies leading to {\bf GG} outcomes.
+identified collaborative strategies in which both agents reached their goals.
+% leading to {\bf GG} outcomes.
 % do we provide results to reference?
 

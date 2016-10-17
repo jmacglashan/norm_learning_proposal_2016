@@ -67,6 +67,9 @@ Social preferences are in part \mydef{distributive}, meaning they
 evaluate how resources are allocated, e.g., efficiently or equitably;
 and they are in part \mydef{reciprocal}, meaning they evaluate the
 perceived intentions of the actors in the environment.
+% zzz I don't understand what reciprocal means and why it relates to
+% zzz perceived intentions. Does it mean perceived utilities? Or
+% zzz other-regarding preferences or something like that?
 
 \comment{
   %%% I AM NOT READY TO SAY THIS AT THIS STAGE...WE ARE BUILDING UP TO IT...IT IS PART OF THE COMPUTATIONAL MODEL -- somewhat orthogonal to what preferences are about, which is all we are talking about at this stage.
@@ -106,9 +109,10 @@ tailored to the environment and the actors;%
 \footnote{This utility function is described in terms of features of the environment and the actors;
 as such, it is applicable to other environments and actors with similar features.}
 2.~based on their estimate of this function, agents use team reasoning to make plans to act;
-3.~agents act, simultaneously or sequentially, as is appropriate in their environment;
-4.~agents update their estimates of their social utility functions.
-Steps~2 through~4 repeat so long as the interaction continues.
+3.~agents decide whether selfish or social behavior is apt;
+4.~agents act, simultaneously or sequentially, as is appropriate in their environment;
+5.~agents update their estimates of their social utility functions.
+Steps~2 through~5 repeat so long as the interaction continues.
 
 When agents
 %use team reasoning to 
@@ -156,7 +160,10 @@ choices.  Likewise, our computational framework does not assume that
 social preferences exist extrinsically; rather, they are constructed
 in response to observed behaviors.  In our conception of social
 rationality, agents \emph{learn\/} social preferences through repeated
-play of the game.\footnote{As Shakespeare said, ``the play's the thing.''}
+play of the game.\footnote{As Shakespeare said, ``the play's the
+  thing.''} They also learn whether social behavior makes sense given
+the observed behavior of the other agents---there's no point in
+unilaterally adopting a joint plan.
 
 A social utility function is an immediate generalization of the usual
 notion of an individual's utility function, but it ascribes value to
@@ -179,13 +186,12 @@ function of the rules of the game, and a subjective component, which
 captures notions of distributivity and reciprocity.
 %
 Often, the rules of a game alone give rise to multiple (objective)
-equilibria, so that agents face a difficult equilibrium-selection
+equilibria, and agents face a difficult equilibrium-selection
 problem (e.g.,~\cite{schelling1980strategy}) in the underlying game.
 %
 We contend that socially rational behavior, in which agents optimize a
 learned social utility function that reflects (constructed) social
-preferences, can provide a solution to this challenging, and often
-elusive, problem.
+preferences, can provide a solution to this challenging, seemingly insoluable, problem.
 %see Section~\ref{sec:interactive} 
 
 %\commenta{this doesn't fit any more.}
@@ -196,7 +202,7 @@ elusive, problem.
 \emph{Under the assumption that human agents are, perhaps boundedly
   but nonetheless ideally, socially rational creatures, we propose to
   design and build socially rational artificial agents that learn
-  through repeated play, with the aim being for such agents to
+  via repeated interactions, with the aim being for such agents to
   collaborate effectively with humans.}
 
 In this proposal, we set out to demonstrate our potential for success
