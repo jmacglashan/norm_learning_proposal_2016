@@ -5,11 +5,30 @@ Brenna~D. Argall, Sonia Chernova, Manuela Veloso, and Brett Browning.
 \newblock A survey of robot learning from demonstration.
 \newblock {\em Robotics and Autonomous Systems}, 57(5):469--483, 2009.
 
+\bibitem{austerweil16}
+J.~L. Austerweil, S.~Brawner, A.~Greenwald, E.~Hilliard, M.~Ho, M.~L. Littman,
+  J.~MacGlashan, and C.~Trimbach.
+\newblock The impact of outcome preferences in a collection of non-zero-sum
+  grid games.
+\newblock AAAI Spring Symposium 2016 on Challenges and Opportunities in
+  Multiagent Learning for the Real World, 2016.
+
 \bibitem{babes11}
 Monica Babes, Vukosi~N. Marivate, Michael~L. Littman, and Kaushik Subramanian.
 \newblock Apprenticeship learning about multiple intentions.
 \newblock In {\em International Conference on Machine Learning}, pages
   897--904, 2011.
+
+\bibitem{RePEc:eee:reecon:v:53:y:1999:i:2:p:117-147}
+Michael Bacharach.
+\newblock Interactive team reasoning: A contribution to the theory of
+  co-operation.
+\newblock {\em Research in Economics}, 53(2):117--147, 1999.
+
+\bibitem{bacharach2006beyond}
+Michael Bacharach, Natalie Gold, and Robert Sugden.
+\newblock {\em Beyond individual choice: teams and frames in game theory}.
+\newblock Princeton University Press, 2006.
 
 \bibitem{baker14}
 C.~L. Baker and J.~B. Tenenbaum.
@@ -38,22 +57,54 @@ M.~Blanco, D.~Englemann, and H.~T. Normann.
 \newblock A within-subject analysis of other-regarding preferences.
 \newblock {\em Games and Economic Behavior}, 72:321--338, 2011.
 
+\bibitem{BoulariasKP2011}
+A.~Boularias, J.~Kober, and J.~Peters.
+\newblock Relative entropy inverse reinforcement learning.
+\newblock In {\em JMLR Workshop and Conference Proceedings Volume 15: AISTATS
+  2011}, pages 182--189, Cambridge, MA, USA, April 2011. MIT Press.
+
 \bibitem{boutilier99}
 Craig Boutilier, Thomas Dean, and Steve Hanks.
 \newblock Decision-theoretic planning: {S}tructural assumptions and
   computational leverage.
 \newblock {\em Journal of Artificial Intelligence Research}, 11:1--94, 1999.
 
+\bibitem{burchfiel2016distance}
+Benjamin Burchfiel, Carlo Tomasi, and Ronald Parr.
+\newblock Distance minimization for reward learning from scored trajectories.
+\newblock In {\em Thirtieth AAAI Conference on Artificial Intelligence}, 2016.
+
 \bibitem{Camerer:2003}
 C.~F. Camerer.
 \newblock {\em Behavioral Game Theory: Experiments in Strategic Interaction}.
 \newblock Princeton University Press, Princeton, NJ, 2003.
+
+\bibitem{Choi:2012:NBI:2999134.2999169}
+Jaedeug Choi and Kee-Eung Kim.
+\newblock Nonparametric bayesian inverse reinforcement learning for multiple
+  reward functions.
+\newblock In {\em Proceedings of the 25th International Conference on Neural
+  Information Processing Systems}, NIPS'12, pages 305--313, USA, 2012. Curran
+  Associates Inc.
 
 \bibitem{collins95}
 Gregg Collins and Louise Pryor.
 \newblock Planning under uncertainty: {S}ome key issues.
 \newblock In {\em Proceedings of the 14th International Joint Conference on
   Artificial Intelligence (IJCAI)}, pages 1567--1573, 1995.
+
+\bibitem{cournot}
+A.~Cournot.
+\newblock {\em Recherches sur les Principes Mathematics de la Theorie la
+  Richesse}.
+\newblock Hachette, 1838.
+
+\bibitem{cunningham2015mpdm}
+Alexander~G Cunningham, Enric Galceran, Ryan~M Eustice, and Edwin Olson.
+\newblock Mpdm: Multipolicy decision-making in dynamic, uncertain environments
+  for autonomous driving.
+\newblock In {\em 2015 IEEE International Conference on Robotics and Automation
+  (ICRA)}, pages 1670--1677. IEEE, 2015.
 
 \bibitem{daskalakis2009complexity}
 Constantinos Daskalakis, Paul~W Goldberg, and Christos~H Papadimitriou.
@@ -65,10 +116,56 @@ Marie desJardins and Michael~L. Littman.
 \newblock {AAAI}-13 preface.
 \newblock In {\em AAAI 2013}, 2013.
 
+\bibitem{diuk2009adaptive}
+Carlos Diuk, Lihong Li, and Bethany~R Leffler.
+\newblock The adaptive k-meteorologists problem and its application to
+  structure learning and feature selection in reinforcement learning.
+\newblock In {\em Proceedings of the 26th Annual International Conference on
+  Machine Learning}, pages 249--256. ACM, 2009.
+
+\bibitem{dolgov2010path}
+Dmitri Dolgov, Sebastian Thrun, Michael Montemerlo, and James Diebel.
+\newblock Path planning for autonomous vehicles in unknown semi-structured
+  environments.
+\newblock {\em The International Journal of Robotics Research}, 29(5):485--501,
+  2010.
+
+\bibitem{falk2003nature}
+Armin Falk, Ernst Fehr, and Urs Fischbacher.
+\newblock On the nature of fair behavior.
+\newblock {\em Economic Inquiry}, 41(1):20--26, 2003.
+
+\bibitem{fehr1999theory}
+Ernst Fehr and Klaus~M Schmidt.
+\newblock A theory of fairness, competition, and cooperation.
+\newblock {\em Quarterly journal of Economics}, pages 817--868, 1999.
+
+\bibitem{fehr2006economics}
+Ernst Fehr and Klaus~M Schmidt.
+\newblock The economics of fairness, reciprocity and altruism--experimental
+  evidence and new theories.
+\newblock {\em Handbook of the economics of giving, altruism and reciprocity},
+  1:615--691, 2006.
+
+\bibitem{Fink64}
+A.M. Fink.
+\newblock Equilibrium in a stochastic $n$-person game.
+\newblock {\em Journal of Science in Hiroshima University}, 28:89--93, 1964.
+
 \bibitem{fisman07}
 R.~Fisman, S.~Kariv, and D.~Markovits.
 \newblock Individual preferences for giving.
 \newblock {\em The American Economic Review}, 97(5):1858--1876, 2007.
+
+\bibitem{forsythe94}
+R.~Forsythe, J.~L. Horowitz, N.~E. Savin, and M.~Sefton.
+\newblock Fairness in simple bargaining experiments.
+\newblock {\em Games and Economic Behavior}, 6:347--369, 1994.
+
+\bibitem{gal04}
+Kobi Gal, Avi Pfeffer, Francesca Marzo, and Barbara~J. Grosz.
+\newblock Learning social preferences in games.
+\newblock In {\em AAAI-04}, pages 226--231, 2004.
 
 \bibitem{tada:jack}
 T.~Goff, A.~Greenwald, E.~Hilliard, W.~Ketter, A.~Loomis, and E.~Sodomka.
@@ -118,6 +215,12 @@ J.~Hu and M.~Wellman.
 \newblock Nash {$Q$}-learning for general-sum stochastic games.
 \newblock {\em Machine Learning Research}, 4:1039--1069, 2003.
 
+\bibitem{kahneman86}
+D.~Kahneman, J.~L. Knetsch, and R.~Thaler.
+\newblock Fairness as a constraint on profit seeking: Entitlements in the
+  market.
+\newblock {\em American Economic Review}, 76:728--741, 1986.
+
 \bibitem{kahnemanst82}
 D.~Kahneman, P.~Slovic, and A.~Tversky, editors.
 \newblock {\em Judgment under uncertainty: {H}euristics and biases}.
@@ -130,10 +233,29 @@ Michael Kearns, Yishay Mansour, and Andrew~Y. Ng.
 \newblock In {\em Proceedings of the Sixteenth International Joint Conference
   on Artificial Intelligence (IJCAI-99)}, pages 1324--1331, 1999.
 
+\bibitem{kim2016socially}
+Beomjoon Kim and Joelle Pineau.
+\newblock Socially adaptive path planning in human environments using inverse
+  reinforcement learning.
+\newblock {\em International Journal of Social Robotics}, 8(1):51--66, 2016.
+
 \bibitem{kocsis06}
 Levente Kocsis and Csaba Szepesv{\'a}ri.
 \newblock Bandit based {M}onte-carlo planning.
 \newblock In {\em Machine Learning: ECML 2006}, pages 282--293, 2006.
+
+\bibitem{kolter2009regularization}
+J~Zico Kolter and Andrew~Y Ng.
+\newblock Regularization and feature selection in least-squares temporal
+  difference learning.
+\newblock In {\em Proceedings of the 26th annual international conference on
+  machine learning}, pages 521--528. ACM, 2009.
+
+\bibitem{li2009reinforcement}
+Lihong Li, Jason~D Williams, and Suhrid Balakrishnan.
+\newblock Reinforcement learning for dialog management using least-squares
+  policy iteration and fast feature selection.
+\newblock In {\em INTERSPEECH}, pages 2475--2478, 2009.
 
 \bibitem{Littman01}
 M.~Littman.
@@ -175,6 +297,13 @@ J.~MacGlashan, M.~Babes-Vroman, M.~desJardins, M.~Littman, S.~Muresan,
 \newblock Grounding english commands to reward functions.
 \newblock In {\em Proceedings of Robotics: Science and Systems}, 2015.
 
+\bibitem{macglashan14c}
+James MacGlashan, Michael Littman, and Fiery Cushman.
+\newblock Flexible theft and resolute punishment: {E}volutionary dynamics of
+  social behavior among reinforcement-learning agents.
+\newblock In {\em Proceedings of the Annual Conference of the Cognitive Science
+  Society}, 2014.
+
 \bibitem{macglashan15b}
 James MacGlashan and Michael~L. Littman.
 \newblock Between imitation and intention learning.
@@ -194,22 +323,51 @@ B.~Mayer, E.~Sodomka, A.~Greenwald, and M.P. Wellman.
 \newblock In {\em EC '13: Proceedings of the 14th {ACM} {C}onference on
   {E}lectronic {C}ommerce}, pages 679--696, June 2013.
 
+\bibitem{Michini2012}
+Bernard Michini and Jonathan~P. How.
+\newblock Bayesian nonparametric inverse reinforcement learning.
+\newblock In Peter~A. Flach, Tijl De~Bie, and Nello Cristianini, editors, {\em
+  Machine Learning and Knowledge Discovery in Databases: European Conference,
+  ECML PKDD 2012, Bristol, UK, September 24-28, 2012. Proceedings, Part II},
+  pages 148--163. Springer Berlin Heidelberg, Berlin, Heidelberg, 2012.
+
+\bibitem{Ng:1999:PIU:645528.657613}
+Andrew~Y. Ng, Daishi Harada, and Stuart~J. Russell.
+\newblock Policy invariance under reward transformations: Theory and
+  application to reward shaping.
+\newblock In {\em Proceedings of the Sixteenth International Conference on
+  Machine Learning}, ICML '99, pages 278--287, San Francisco, CA, USA, 1999.
+  Morgan Kaufmann Publishers Inc.
+
 \bibitem{ng00}
 Andrew~Y. Ng and Stuart Russell.
 \newblock Algorithms for inverse reinforcement learning.
 \newblock In {\em International Conference on Machine Learning}, pages
   663--670, 2000.
 
+\bibitem{parr2008analysis}
+Ronald Parr, Lihong Li, Gavin Taylor, Christopher Painter-Wakefield, and
+  Michael~L Littman.
+\newblock An analysis of linear models, linear value-function approximation,
+  and feature selection for reinforcement learning.
+\newblock In {\em Proceedings of the 25th international conference on Machine
+  learning}, pages 752--759. ACM, 2008.
+
 \bibitem{pomerleau93}
 Dean~A. Pomerleau.
 \newblock {\em Neural network perception for mobile robot guidance}.
 \newblock Kluwer Academic Publishing, 1993.
 
+\bibitem{journals/corr/abs-1208-2112}
+Qifeng Qiao and Peter~A. Beling.
+\newblock Inverse reinforcement learning with gaussian process.
+\newblock {\em CoRR}, abs/1208.2112, 2012.
+
 \bibitem{ramachandran2007bayesian}
 Deepak Ramachandran and Eyal Amir.
-\newblock Bayesian inverse reinforcement learning.
-\newblock {\em International Joint Conference on Artificial Intelligence,},
-  pages 2586--2591, 2007.
+\newblock {Bayesian Inverse Reinforcement Learning}.
+\newblock {\em Proceedings of the 20th International Joint Conference on
+  Artiﬁcal Intelligence}, 51:2586--2591, 2007.
 
 \bibitem{reddy2012inverse}
 Tummalapalli~Sudhamsh Reddy, Vamsikrishna Gopikrishna, Gergely Zaruba, and
@@ -218,6 +376,18 @@ Tummalapalli~Sudhamsh Reddy, Vamsikrishna Gopikrishna, Gergely Zaruba, and
   multiagent systems.
 \newblock In {\em Systems, Man, and Cybernetics (SMC), 2012 IEEE International
   Conference on}, pages 1930--1935. IEEE, 2012.
+
+\bibitem{RePEc:eee:ecochp:6a-64}
+Peter~C. Reiss and Frank~A. Wolak.
+\newblock Structural econometric modeling: Rationales and examples from
+  industrial organization.
+\newblock In J.J. Heckman and E.E. Leamer, editors, {\em Handbook of
+  Econometrics}, volume~6A, chapter~64. Elsevier, 1 edition, 2007.
+
+\bibitem{schelling1980strategy}
+T.C. Schelling.
+\newblock {\em The Strategy of Conflict}.
+\newblock Harvard University Press, 1980.
 
 \bibitem{searle1995construction}
 John~R. Searle.
@@ -229,6 +399,20 @@ L.S. Shapley.
 \newblock Stochastic games.
 \newblock {\em Proceedings of the National Academy of Sciences of the United
   States of America}, 39:1095--1100, 1953.
+
+\bibitem{shiarlis2016inverse}
+Kyriacos Shiarlis, Joao Messias, and Shimon Whiteson.
+\newblock Inverse reinforcement learning from failure.
+\newblock In {\em Proceedings of the 2016 International Conference on
+  Autonomous Agents \& Multiagent Systems}, pages 1060--1068. International
+  Foundation for Autonomous Agents and Multiagent Systems, 2016.
+
+\bibitem{silver16}
+David Silver, Aja Huang, Chris~J Maddison, Arthur Guez, Laurent Sifre, George
+  Van Den~Driessche, Julian Schrittwieser, Ioannis Antonoglou, Veda
+  Panneershelvam, Marc Lanctot, et~al.
+\newblock Mastering the game of {G}o with deep neural networks and tree search.
+\newblock {\em Nature}, 529(7587):484--489, 2016.
 
 \bibitem{singh2009rewards}
 Satinder Singh, Richard~L Lewis, and Andrew~G Barto.
@@ -267,6 +451,11 @@ Luis Von~Ahn.
 \newblock In {\em Design Automation Conference, 2009. DAC'09. 46th ACM/IEEE},
   pages 418--419. IEEE, 2009.
 
+\bibitem{Payne_Bettman_Johnson_1993}
+Payne~John W., Bettman~James R., and Johnson~Eric J.
+\newblock {\em The adaptive decision maker}.
+\newblock Cambridge Unive rsity Press, 1993.
+
 \bibitem{tac:book}
 M.~Wellman, A.~Greenwald, and P.~Stone.
 \newblock {\em Autonomous Bidding Agents: Strategies and Lessons from the
@@ -284,7 +473,8 @@ M.~P. Wellman, E.~Sodomka, and A.~Greenwald.
 \bibitem{ziebart2008maximum}
 Brian~D Ziebart, Andrew~L Maas, J~Andrew Bagnell, and Anind~K Dey.
 \newblock Maximum entropy inverse reinforcement learning.
-\newblock In {\em AAAI}, pages 1433--1438, 2008.
+\newblock In {\em AAAI Conference on Artificial Intelligence}, pages
+  1433--1438, 2008.
 
 \bibitem{ZGL:06}
 M.~Zinkevich, A.~Greenwald, and M.~Littman.
