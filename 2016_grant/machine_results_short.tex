@@ -54,21 +54,23 @@ wants its opponent to win with it or lose with it.
 
 Figure~\ref{f:selfplay} shows the result of the selfish and fair
 agents playing against others of the same type in each of our test
-grid games.  Of the nine orderings, only three (all variations of the
-fair preference ordering) achieve consistent cooperation in self play
-across all five grid games.  Consequently, fair agents obtain higher
-total (objective) rewards than others.  
+grid games.  
+% Of the nine orderings, only three (all variations of the
+% fair preference ordering) achieve consistent cooperation in self play
+% across all five grid games.  
+We find that fair agents obtain higher
+total (objective) utility than others.  
 %
-We also ran all nine preference orderings against one another.  The
-average scores (across both players) in games involving a fair agent
-tend to be higher than the average scores in games not involving a
-fair agent.
+% We also ran all nine preference orderings against one another.  The
+% average scores (across both players) in games involving a fair agent
+% tend to be higher than the average scores in games not involving a
+% fair agent.
 %
 We also analyzed the types of strategies learned by fair and
 selfish \Q-learners after multiple simulations of various
 configurations. Interestingly, we found that \Q-learners with fair
 preferences tend to find CD strategies more often, especially when
-paired with selfish agents.
+paired with selfish agents as these agents must be treated with caution.
 
 \comment{
 \begin{figure*}
@@ -98,7 +100,7 @@ set of grids is an important question for future work.
 In summary, \Q-learners naturally learn to cooperate in the grid games
 studied, discovering equilibria comprised of CD strategies when they
 exist.  Moreover, cooperation can be induced in these games by manipulating
-the \Q-learners' subjective rewards to incorporate the success of others.
+the \Q-learners' social utilities to incorporate the success of others.
 
 
 \comment{
