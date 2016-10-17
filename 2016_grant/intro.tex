@@ -1,15 +1,15 @@
+
 \section{Introduction}
 \label{sec:intro}
 
 Much of human social life occurs in contexts where people must
-coordinate their actions with those of others.  From party planning to space exploration,
-% flying a rocket ship to the moon,
-groups of people have accomplished
-great things by reasoning as a team and engaging in jointly
-intentional behavior~\cite{searle1995construction}.  Indeed, some have
-argued that, because most other animals lack the capacity to work
-adaptively as a cohesive unit across many domains, team reasoning may be
-the hallmark of human sociality~\cite{tomasello2005understanding}.
+coordinate their actions with those of others.  From party planning to
+space exploration, groups of people have accomplished great things by
+reasoning as a team and engaging in jointly intentional
+behavior~\cite{searle1995construction}.  Indeed, some have argued
+that, because most other animals lack the capacity to work adaptively
+as a cohesive unit across many domains, team reasoning may be the
+hallmark of human sociality~\cite{tomasello2005understanding}.
 
 %Can artificial agents be successfully designed to join in human collective behavior?
 %What are the psychological processes and computational mechanisms underlying this phenomenon?
@@ -67,9 +67,12 @@ Social preferences are in part \mydef{distributive}, meaning they
 evaluate how resources are allocated, e.g., efficiently or equitably;
 and they are in part \mydef{reciprocal}, meaning they evaluate the
 perceived intentions of the actors in the environment.
-% zzz I don't understand what reciprocal means and why it relates to
-% zzz perceived intentions. Does it mean perceived utilities? Or
-% zzz other-regarding preferences or something like that?
+\commentm{I don't understand what reciprocal means and why it relates to
+perceived intentions. Does it mean perceived utilities? Or
+other-regarding preferences or something like that?}
+\commenta{reciprocal means being fair, spiteful, etc. i agree it's somewhat orthogonal to perception.
+  but you have to perceive how ``reciprocal'' other players are, because you don't know until you meet them/play with them.
+  maybe with this in mind, you can clarify the text some?}
 
 \comment{
   %%% I AM NOT READY TO SAY THIS AT THIS STAGE...WE ARE BUILDING UP TO IT...IT IS PART OF THE COMPUTATIONAL MODEL -- somewhat orthogonal to what preferences are about, which is all we are talking about at this stage.
@@ -109,7 +112,7 @@ tailored to the environment and the actors;%
 \footnote{This utility function is described in terms of features of the environment and the actors;
 as such, it is applicable to other environments and actors with similar features.}
 2.~based on their estimate of this function, agents use team reasoning to make plans to act;
-3.~agents decide whether selfish or social behavior is apt;
+\commentm{3.~agents decide whether selfish or social behavior is apt;}
 4.~agents act, simultaneously or sequentially, as is appropriate in their environment;
 5.~agents update their estimates of their social utility functions.
 Steps~2 through~5 repeat so long as the interaction continues.
@@ -177,8 +180,10 @@ the outcome as it relates to all actors in the environment.
 %
 As such, it can be used to capture important elements of an artificial
 agent's decision making, including (1) how it values the utility of
-others~\cite{littman01d}, (2) how it values the utility of intermediate goals~\cite{macglashan15b}, and (3)
-how it values sanctions against others who exhibit anti-social behavior~\cite{macglashan14c}.
+others~\cite{littman01d}, (2) how it values the utility of
+intermediate goals~\cite{macglashan15b}, and (3) how it values
+sanctions against others who exhibit anti-social
+behavior~\cite{macglashan14c}.
 
 We further assume that social utilities can be broken down into two
 components---an objective component, which is usually a direct
@@ -191,7 +196,8 @@ problem (e.g.,~\cite{schelling1980strategy}) in the underlying game.
 %
 We contend that socially rational behavior, in which agents optimize a
 learned social utility function that reflects (constructed) social
-preferences, can provide a solution to this challenging, seemingly insoluable, problem.
+preferences, can provide a solution to this challenging, seemingly
+insoluable, problem.
 %see Section~\ref{sec:interactive} 
 
 %\commenta{this doesn't fit any more.}
