@@ -29,14 +29,16 @@ $\theta \in \arg\max_{\theta} L(D \mid R_{\theta}) = \prod_{t \in D} \prod_i^{|t
 where $\pi_{\theta}(s, a)$ is a stochastic policy defining the
 probability of taking action $a$ in state $s$ when the parameterized
 reward function to be maximized is $R_{\theta}$. Typically, the
-Boltzmann (softmax) stochastic policy over the $Q$-values is used:
-$\pi_{\theta}(s, a) = \frac{e^{\beta Q_{\theta}(s,a)}}{\sum_{a' \in A}
-  e^{\beta Q_{\theta}(s,a')}}$, where $Q_\theta(s, a)$ is the $Q$-function
-when the reward function is parameterized by $\theta$.
+Boltzmann (softmax) stochastic policy over the $Q$-values is used.
+% :
+% $\pi_{\theta}(s, a) = \frac{e^{\beta Q_{\theta}(s,a)}}{\sum_{a' \in A}
+%   e^{\beta Q_{\theta}(s,a')}}$, where $Q_\theta(s, a)$ is the $Q$-function
+% when the reward function is parameterized by $\theta$.
 %
-Popular methods for solving Equation~\ref{eq:mlirl} (i.e., for
-carrying out maximum-likelihood IRL (MLIRL)) include gradient ascent
-and expectation-maximization.
+Popular methods for
+%  solving Equation~\ref{eq:mlirl} (i.e., for
+carrying out maximum-likelihood IRL (MLIRL) include gradient methods~\cite{rumelhart86b}
+and expectation maximization~\cite{rabiner89}.
 %\commenta{do these algorithms need references?}
 
 In Bayesian IRL, the goal is to compute a posterior distribution over
@@ -66,10 +68,10 @@ IRL} (RHIRL)~\cite{macglashan15b} addresses this limitation by
 replacing the usual infinite-horizon policy with a receding horizon
 controller (RHC) that only plans out to some finite horizon from any
 given state, thereby bounding computation time. An RHC tends to steer
-an IRL algorithm towards a \mydef{shaping reward function}~\cite{Ng:1999:PIU:645528.657613}
+an IRL algorithm towards a \mydef{shaping reward function}~\cite{Ng:1999:PIU:645528.657613},
 %https://people.eecs.berkeley.edu/~pabbeel/cs287-fa09/readings/NgHaradaRussell-shaping-ICML1999.pdf
 short-term rewards that guide the agent without it having to plan too
-far ahead.  Consequently, RHIRL allows us to plan with a short
+far ahead.  Consequently, RHIRL makes it possible to plan with a short
 horizon, thereby saving on computation time.
 
 Our computational framework, and the generalized model of IRL we

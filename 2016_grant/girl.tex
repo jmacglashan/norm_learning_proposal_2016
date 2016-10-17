@@ -2,12 +2,28 @@
 \subsubsection*{\large Generalized Inverse Reinforcement Learning}
 \label{sec:girl}
 
-To complement the new computational model we put forth, the new
-technology that we plan to develop as part of this proposal is a new
-model of IRL, and accompanying algorithms, which allows for both
+To complement the new computational model we put forth, the
+technology that we plan to develop as part of this proposal is a
+framework for IRL and accompanying algorithms that allows for both
 positive and negative (not necessarily binary) labels, and, moreover,
-which also allows for partial feedback, meaning subtrajectories (i.e.,
+that also allows for partial feedback, meaning subtrajectories (i.e.,
 options~\cite{sutton99}) can be ascribed such labels.
+
+% To this end, in this section, we propose a novel variant of the
+% inverse reinforcement learning problem, which 
+We call our framework
+\mydef{Generalized IRL} (GIRL).  Whereas the input to standard IRL is
+a data set of trajectories
+%(a sequence of state-action pairs)
+and the output a utility function, the input to a GIRL problem is a
+data set of \emph{labelled\/} trajectories. 
+%(The output is still a reward function.)  
+In its most basic formulation,%
+\footnote{Labels need not be binary; they can be continuous valued.}
+each label is either positive ($+1$) or negative ($-1$), indicating
+whether the associated trajectory is a good example of some desired
+behavior or a bad example of some desired behavior.  The goal is to
+recover a utility function that motivates the desired behavior.
 
 \begin{wrapfigure}{l}{0.366\textwidth}
 \begin{tikzpicture}[x=1.7cm,y=1.8cm]
@@ -37,21 +53,6 @@ options~\cite{sutton99}) can be ascribed such labels.
 \label{fig:girl}
 \end{wrapfigure}
 
-To this end, in this section, we propose a novel variant of the
-inverse reinforcement learning problem, which we call
-\mydef{Generalized IRL} (GIRL).  Wherease the input to standard IRL is
-a data set of trajectories
-%(a sequence of state-action pairs)
-and the output, a reward function, the input to a GIRL problem, is a
-data set of \emph{labelled\/} trajectories. 
-%(The output is still a reward function.)  
-In its most basic formulation,%
-\footnote{Labels need not be binary; they can be continuous-valued.}
-each label is either positive ($+1$) or negative ($-1$), indicating
-whether the associated trajectory is a good example of some desired
-behavior, or a bad example of some desired behavior.  The goal is to
-recover a reward function that motivates the desired behavior.
-
 Others are also attempting to solve similar problems~\cite{burchfiel2016distance,shiarlis2016inverse}, 
 but our problem formulation, which is quite general, is also novel.
 %
@@ -63,19 +64,19 @@ exhibited at each of the states ($S$) in the trajectory.  However,
 these step-wise evaluations ($X$) are unobserved in the data.
 
 For illustrative purposes, we adopt the probabilistic maximum
-likelihood problem formulation, in which we seek a reward function
-that maximizes the likelihood of the data, but Bayesian reasoning
-could likewise be applied here.
+likelihood problem formulation, in which we seek a utility function
+that maximizes the likelihood of the data, but Bayesian reasoning also
+applies.
+% could likewise be applied here.
 %
-To find the reward function that maximizes the likelihood of the data,
-we first define a probability model for the system that is represented
+To find the utility function that maximizes the likelihood of the data,
+we first define a generative probability model for the system that is represented
 in Figure~\ref{fig:girl}.
 %
 We model the probability that an action is evaluated as good or not as
 proportional to its selection probability according a softmax policy
-computed for the reward function with parameters
-$\bm{\theta}$. Specifically:
-%
+computed for the utility function with parameters
+$\bm{\theta}$, specifically,
 \comment{
 \begin{align}
 \Pr(x_i = +1 \mid s, a, \theta) &= \pi(s, a \mid \bm{\theta}) \\
@@ -86,8 +87,8 @@ $\Pr(x_i = +1 \mid s, a, \theta) = \pi(s, a \mid \bm{\theta})$ and
 $\Pr(x_i = -1 \mid s, a, \theta) = 1 - \pi(s, a \mid \bm{\theta})$.
 %
 %\noindent
-Here $\pi(s, a \mid \bm{\theta})$ is the softmax policy over $Q$-values,
-assuming a reward function parameterized by $\bm{\theta}$.
+Here, $\pi(s, a \mid \bm{\theta})$ is the softmax policy over $Q$-values,
+assuming a utility function parameterized by $\bm{\theta}$.
 
 \comment{
 %%% DELETED B/C OF SPACE CONSTRAINTS !!!
@@ -97,7 +98,7 @@ assuming a reward function parameterized by $\bm{\theta}$.
 
 \noindent
 $\beta$ is a selectable parameter, and $Q(s,a \mid \bm{\theta})$ is the
-$Q$-value computed for the reward function parameterized by
+$Q$-value computed for the utility function parameterized by
 $\bm{\theta}$.
 }
 
@@ -118,7 +119,7 @@ $\Pr(L = +1 \mid X_1, ..., X_n) = (1 + e^{-\phi \sum_i^N X_i})^{-1}$ and
 $\Pr(L = -1 \mid X_1, ... ,X_n) = 1 - \Pr(L = +1 \mid X_1, ..., X_n)$.
 %
 %\noindent
-Here $\phi$ is a parameter that controls how readily step-wise labels
+Here, $\phi$ is a parameter that controls how readily step-wise labels
 influence the trajectory labels.  For example, when $\phi = 0$,
 trajectory labels are assigned uniformly at random, without any regard
 for of step-wise labels.  As $\phi \rightarrow \infty$, the sigmoid

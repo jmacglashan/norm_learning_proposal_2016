@@ -7,26 +7,30 @@ collaborative systems in which people and software make decisions that
 impact one another.  Some fields, such as human--computer interaction
 (HCI), focus on systems in which a human being is primarily in
 control, and the computer's decisions are assessed in terms of the
-positive impact they have on the user.  An interesting recent example
-is Centaur
-chess\footnote{\url{http://www.huffingtonpost.com/mike-cassidy/centaur-chess-shows-power_b_6383606.html}}
-in which a human and machine team up to play on the same side in
-chess, both making decisions, but with the machine acting as an
-advisor and the human deciding which moves to actually make.  Other
-fields, like crowd sourcing human computation~\cite{von2009human},
-combine human and machine expertise such that the machine is the
-ultimate arbiter of behavior and a group of human beings act as lower
-level computational components.
-
+positive impact they have on the user~\cite{maes1993learning}.
+% An interesting recent example
+% is Centaur
+% chess\footnote{\url{http://www.huffingtonpost.com/mike-cassidy/centaur-chess-shows-power_b_6383606.html}}
+% in which a human and machine team up to play on the same side in
+% chess, both making decisions, but with the machine acting as an
+% advisor and the human deciding which moves to actually make.  
+Other
+fields, like crowd sourcing and human computation~\cite{von2009human},
+combine human and machine expertise with the machine as the
+ultimate arbiter of behavior.
+%  and a group of human beings act as lower
+% level computational components.
 True collaboration, however, does not start with one participant being
-assigned to a leadership role.  Instead, the various agents need to
-dynamically negotiate their roles and jockey for position, discovering
-when and how to trust each other to move forward.  A concrete example
+assigned to a leadership role.  
+% Instead, the various agents need to
+% dynamically negotiate their roles and jockey for position, discovering
+% when and how to trust each other to move forward.  
+A concrete example
 is in the context of self-driving cars.  Cars share the road with each
 other and must carefully choose when to be responsive to other
 vehicles and when to assert themselves to create a situation that
-benefits them.  Doing so makes a significant difference in the
-driving's effectiveness~\cite{cunningham2015mpdm}.  A related problem
+benefits them.  Doing so makes a significant difference in
+effectiveness~\cite{cunningham2015mpdm}.  A related problem
 arises when a self-driving wheelchair attempts to move through a group
 of pedestrians~\cite{kim2016socially}.  More generally, robots that
 interact with people in the physical world need to navigate the
@@ -36,21 +40,23 @@ where possible.
 Indeed, a wide variety of human--machine interaction problems would be
 positively impacted by the technology we are proposing.
 %
-As such, the project synergizes with Brown University's Humanity
+As such, the project fits well with Brown University's Humanity
 Centered Robotics Initiative (HCRI), of which co-PI Littman is
 co-director.  Specifically, within HCRI, there are ongoing efforts to
 design robotic systems that interact with people and support
 independent living tasks (e.g., gerontechnological support for aging
-in place and robotic sous chefs).  For an elderly person (or chef) to
-trust and collaborate on tasks with a machine effectively, the machine
-must act in a manner that the elderly person (or chef) expects.  This
-research we are proposing to carry out is foundational for these
-important applications.
+in place and robotic sous chefs) and our project will form an
+important foundation for this broader work.
+% For an elderly person (or chef) to
+% trust and collaborate on tasks with a machine effectively, the machine
+% must act in a manner that the elderly person (or chef) expects.  This
+% research we are proposing to carry out is foundational for these
+% important applications.
 
 The most direct application of our ideas would be in scenarios in
 which a robot is sharing a space with bystanders (human or robotic)
 who do not necessarily share its goals---a personal grocery-store
-assistant, a socially aware vacuum, an automated hospital linen cart,
+assistant, a socially aware vacuum, an automated hospital linen cart, or
 a package delivery drone.  To further develop our ideas in a physical
 environment like these, and moreover in embodied robots,
 % in year 3, team up with George and/or Stefanie. by then, there will
@@ -58,7 +64,7 @@ environment like these, and moreover in embodied robots,
 we plan to build a ``go fetch'' application on a mobile-manipulation
 platform that is scheduled for deployment in the Brown Computer
 Science department in Spring 2017.  To be successful in this capacity,
-a robot will need to be able to represent, learn, and apply
+the robot will need to be able to represent, learn, and apply
 collaborative behavior in (at least) three separate spheres:
 %
 %\begin{itemize}
@@ -72,32 +78,31 @@ collaborative behavior in (at least) three separate spheres:
   what to do when obstructed, etc.);
 %
 (3)~understanding how to best signal a handoff of the object it is
-  fetching, by interrupting people without being too timid or too
+  fetching, interrupting people without being too timid or too
   boorish.
 %\end{itemize}
 
 %This task, is within our technological limitations (unlike wheelchairs or actual cars) 
 %and would definitely result in some impact if our algorithms were able to help.
 
-Unlike our grid-based demonstrations, the ``go fetch'' 
+% Unlike our grid-based demonstrations, the ``go fetch'' 
+% 
+% Fortunately, the MLIRL learning algorithm we propose to use is
+% gradient based, making it 
 
-Fortunately, the MLIRL learning algorithm we propose to use is
-gradient based, making it 
+% 
+% ~\cite{silver16}
 
-
-~\cite{silver16}
-
-\commentm{We could propose ``deep IRL'' ... since MLIRL is a
-gradient method, it should be easy to incorporate it into standard
-deep learning packages to learn complex social utility functions.}
-
+% \commentm{We could propose ``deep IRL'' ... since MLIRL is a
+% gradient method, it should be easy to incorporate it into standard
+% deep learning packages to learn complex social utility functions.}
 
 Interest in robotics and machine learning is growing within the Brown
-CS department.  Presently, our faculty is designing a new robotics
+CS department as elsewhere.  Presently, our faculty is designing a new robotics
 introductory course sequence that includes classes on basic robotics
 algorithms, hardware design, and human-centered evaluation of robotics
 systems.  Inspired by the ideas in this proposal, we plan to
-contribute to this effort a new intermediate robotics course for
+contribute a new intermediate robotics course for
 undergraduates called ``Social autonomous driving.''  As a test
 platform, we will use MIT's Duckietown
 platform,\footnote{\url{http://duckietown.mit.edu/}} which has already
@@ -128,7 +133,7 @@ underrepresented groups, and intend to continue pursuing these efforts
 in the context of this proposal.  In particular, we plan to integrate
 our research on human--machine collaborations into Artemis, a free
 summer program directed by co-PI Greenwald that introduces rising 9th
-grade girls to computational thinking.  For example, we might have the
+grade girls to computational thinking.  For example, we can have the
 Artemis girls teach a robot to collaborate with them on routine tasks,
 such as navigation or object search.
 

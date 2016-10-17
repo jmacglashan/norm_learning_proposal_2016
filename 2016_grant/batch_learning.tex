@@ -3,16 +3,16 @@
 \paragraph{Batch Learning}
 \label{sec:batch}
 
-The batch learning setting is similar to the standard IRL problem in
+The batch-learning setting is similar to the standard IRL problem in
 that the algorithm is given a batch of demonstrations and a family of
-reward functions over which to search. In our case, however, the batch
+utility functions over which to search. In our case, however, the batch
 data consists of trajectories of states and joint actions in a
-stochastic game, and the reward function family is a social reward
-function family.  To learn the parameterization of the social reward
+stochastic game, and the utility function family is a social utility
+function family.  To learn the parameterization of the social utility
 function family that best captures the behavior exhibited in the
 demonstrations, we convert the stochastic game into an MDP,
 %(in which joint actions correspond to actions, etc.),
-and then use IRL to learn a parameterization of the reward function
+and then use IRL to learn a parameterization of the utility function
 family in this MDP.
 
 \begin{algorithm}[t]
@@ -21,22 +21,23 @@ family in this MDP.
 \begin{algorithmic}
 \Require stochastic game $(I,S,A^I,T,R^I)$; discount factor $\gamma$; multi-agent demonstrations $D$; team function ${\mathcal T}$; and parameterized bias function family $B_\Theta$.
 \State $A^M := \times_i A^I$ \Comment{Joint action set}
-\State $R^M(s, a, s') := {\mathcal T}(R^I, s, a, s')$ \Comment{Team reward function}
-\State $R^S_\Theta(s, a, s') := R^M(s, a, s') + B_\Theta(s, a, s')$ \Comment{Social reward function family}
+\State $R^M(s, a, s') := {\mathcal T}(R^I, s, a, s')$ \Comment{Team function}
+% zzz the word reward was in there, but I don't think that's something we defined.
+\State $R^S_\Theta(s, a, s') := R^M(s, a, s') + B_\Theta(s, a, s')$ \Comment{Social utility function family}
 \State $R^S_\theta :=$ IRL($(S,A^M,T,R^S_\Theta), \gamma, D$)
-\State \Return $R^S_\theta$ \Comment{Learned social reward function}
+\State \Return $R^S_\theta$ \Comment{Learned social utility function}
 \end{algorithmic}
 \end{algorithm}
 
 %The batch learning algorithm is shown in Algorithm~\ref{alg:srl}
-Pseudocode for the batch learning algorithm is shown in Algorithm~\ref{alg:srl}.
+Pseudocode for the batch-learning algorithm is shown in Algorithm~\ref{alg:srl}.
 %
-The algorithm takes as input a stochastic game; a discount factor; a
+The algorithm takes as input a stochastic game, a discount factor, a
 set of multi-agent demonstrations (which perhaps adheres to some
-equilibrium: i.e., collaborative behavior); a team function; and a
+equilibrium: i.e., collaborative behavior), a team function, and a
 family of bias functions defined by some parameter space $\Theta$.
 %
-The first step of the batch learning algorithm is to transform the
+The first step of the batch-learning algorithm is to transform the
 stochastic game into an MDP, and the second to apply IRL to that MDP.
 %% %
 %% Since the demonstrations are a set of trajectories of state-joint
@@ -52,7 +53,7 @@ stochastic game into an MDP, and the second to apply IRL to that MDP.
 %% functions.\footnote{A parameter controlling the linear
 %% combination of the team and bias function may be optimized as well.}
 %% %
-After learning a social reward function, any single agent can then
+After learning a social utility function, any single agent can then
 behave by selecting a joint action from the policy that results from
 it, and then selecting their individual action from the joint. That
 is, agent $i$ takes action $j^i \in A^i$, where 

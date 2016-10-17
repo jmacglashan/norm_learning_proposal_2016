@@ -1,8 +1,8 @@
 
 \vspace{\up}
-\paragraph{Markov decision processes}
+\paragraph{Markov decision processes (MDPs)}
 
-A \mydef{Markov Decision Process} (MDP) is a model of a single-agent
+An MDP is a model of a single-agent
 decision-making problem defined by the tuple $(S, A, T, R)$, where
 $S$ is the set of states in the world; $A$ is the set of actions that
 the agent can take; $T(s' \mid s, a)$ defines the transition dynamics:
@@ -24,7 +24,7 @@ To find an optimal policy, many algorithms compute the optimal state
 ($V^*(s)$) and state--action ($Q^*(s,a)$) value functions that specify
 the expected future discount reward under the optimal policy from each
 state, and from taking an action in a state and then following the
-optimal policy respectively. 
+optimal policy, respectively. 
 %These functions are defined recursively
 %by the Bellman equations:
 %%
@@ -37,6 +37,6 @@ optimal policy respectively.
 %\end{equation}
 %\noindent
 Given these functions, the optimal policy is derived by taking an
-action in each state with the maximum Q-value: 
+action in each state with the maximum \Q-value: 
 $\pi(s) \in \arg\max_{a \in A} Q(s, a)$~\cite{bertsekas87}.
 

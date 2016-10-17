@@ -3,38 +3,39 @@
 \paragraph{Evaluation}
 
 %Before scaling to embodied robots
-To begin, we will evaluate how our socially rational agents fare in
+We will evaluate how our socially rational agents fare in
 collaborative learning tasks using an experimental platform that
 simulates interactions between humans and artificial agents.
 Specifically, we will compare how often and how quickly humans are
-able to arrive at coordinated plans among themselves, versus with
+able to arrive at coordinated plans among themselves and compare to what happens with
 socially rational agents.  We will also assess the quality of the
-plans that emerge under these varying conditions.  To test the
-expressiveness of the space of learnable solutions afforded by our
-approach, we will also measure tendencies among humans to converge to
-certain types of plans (e.g., trading off simplicity for optimality),
-and whether those types persist when there are agents in the mix.
-Finally, subjective evaluations will be used to assess whether humans
+plans that emerge under these varying conditions.  
+% To test the
+% expressiveness of the space of learnable solutions afforded by our
+% approach, we will also measure tendencies among humans to converge to
+% certain types of plans (e.g., trading off simplicity for optimality),
+% and whether those types persist when there are agents in the mix.
+Subjective evaluations will be used to assess whether humans
 find interacting with agents ``natural.''
 
-For the batch learning algorithm, we will develop new quantitative
+For the batch-learning algorithm, we will develop new quantitative
 metrics to assess behavioral similarity so that trajectories produced
 by our batch learners can be quantitatively compared to trace data
 produced by human participants.  Additionally, we plan to design a
 sort of ``Turing test'' for our problem domain, whereby we will have
 two humans interact with each other for a number of rounds and then,
 without notification, we will fork those interactions into two, where
-each human is now playing with a socially rational agent that trained
+each human is now playing with a socially rational agent trained
 on the history of interactions between the two humans.  At the end of
-all interactions, we will ask the humans whether they noticed anything
-strange partway through the interactions, such as a change of partner.
-Their subjective responses about whether they thought their partner
-switched at any point will be compared across a variety of treatments,
-such as: (1)~no change; (2)~swapping their partner for a
-socially rational agent as already mentioned, and one that learned by
-observing other human--human interactions; (3)~swapping their partner
-for another human who observed the previous interactions, and one who
-is experienced at the task, but not with the given partner.
+all interactions, we will probe whether the participants noticed anything
+strange partway through the interactions.
+% Their subjective responses about whether they thought their partner
+% switched at any point will be compared across a variety of treatments,
+% such as: (1)~no change; (2)~swapping their partner for a
+% socially rational agent as already mentioned, and one that learned by
+% observing other human--human interactions; (3)~swapping their partner
+% for another human who observed the previous interactions, and one who
+% is experienced at the task, but not with the given partner.
 
 We are particularly interested in designing flexible agents that
 generalize their behavior at least as well as humans do to new
@@ -42,28 +43,29 @@ environments.
 %
 An underlying goal, therefore, will be to engineer the underlying
 structure of social utility functions so that they generalize well
-across environments.  We we will start by examining standard feature
-selection methods used in existing reinforcement-learning and IRL
+across environments.  We we will start by examining standard
+feature-selection methods used in existing reinforcement-learning and
+IRL 
 research (e.g., linear models, neural networks,
 etc.)~\cite{diuk2009adaptive,kolter2009regularization,li2009reinforcement,parr2008analysis},
-and build on them, as necessary.
+and build on them, as necessary. Given that MLIRL is a gradient-based
+approach, we will explore the use of existing deep learning packages
+to scale to richer utility functions and input spaces.
 %
-We will evaluate our efforts at generalization by first having humans
-learn in one environment.  Afterwards, they will be exposed to a new
-environment where their previous behavior is no longer directly
-applicable (e.g., because a wall was inserted along the path that an
-agent would normally take), but a more ``general'' behavior can be
-transferred (e.g., I take the high road; he takes the low, regardless
-of the presence or absence of obstacles).  Then, using evaluations
-similar to those listed above, we will test whether our socially
-rational agents can generalize to new games as well as other humans
-can.
+% We will evaluate our efforts at generalization by first having humans
+% learn in one environment.  Afterwards, they will be exposed to a new
+% environment where their previous behavior is no longer directly
+% applicable (e.g., because a wall was inserted along the path that an
+% agent would normally take), but a more ``general'' behavior can be
+% transferred (e.g., I take the high road; he takes the low, regardless
+% of the presence or absence of obstacles).  Then, using evaluations
+% similar to those listed above, we will test whether our socially
+% rational agents can generalize to new games as well as other humans
+% can.
 
 % \commenta{do we want to say something about generalizing to other players? maybe humans are better at this than our agents will be?} ML: No, I think the notion of generalizing rapidly to new users is a distinct learning problem.
 
-
-
-In year three, we will test our approach in a real-world robot--human
+In Year Three, we will test our approach in a real-world robot--human
 collaboration domain.  Even if (as we expect), our simulated worlds
 show that our agents collaborate well with people, the capabilities
 (or lack thereof) of robots may inhibit the effectiveness of our

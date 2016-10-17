@@ -5,13 +5,13 @@
 \paragraph{Preliminary Results}
 \label{sec:results}
 
-Preliminary experiments suggest that both our batch and interactive
+Preliminary experiments suggest that both our batch-learning and interactive
 collaborative learning algorithms can produce reasonable results in
 grid games. For batch learning, we hard code examples of agents
 following different equilibrium strategies, and show that our
 algorithm is able to recover the appropriate equilibrium when it is
 trained on demonstrations of behavior following that equilibrium. We
-also testing the agents on similar grid games after learning, to show
+also tested the agents on similar grid games after learning to show
 that the learned behavior can generalize to other similar situations.
 For interactive learning, we show that agents can very quickly
 %(typically after one round) 
@@ -19,23 +19,23 @@ find an equilibrium, and that restarting learning from scratch can
 result in them finding a different one.
 
 For both sets of experiments, we examine behavior in Hallway.  The
-social reward function consists of a total welfare team reward
+social utility function consists of a total welfare team 
 function and a linear family of bias functions. The bias functions
-operate on 50 state-joint action binary features. The first 25
+operate on 50 state, joint action binary features. The first 25
 features are an indicator variable for selecting one of the 25 joint
 actions when the agents are in {\em conflict\/} and the latter 25
 features are indicator functions for selecting one of the 25 joint
-actions when the agents are not a conflict. We define the agents to be
+actions when the agents are not in conflict. We define the agents to be
 in conflict when they are in the same row of the grid and each is
 closer to their opponent's goal than they are to their
 own. Additionally, when one of the agents is one step away from their
 goal, none of the features activate, thereby preventing premature
 termination on the joint task. Since these features directly encode
-social rewards for joint actions, rather than higher-level goals, when
-training we use RH-MLIRL with a horizon of 1. We do not expect this
+social utilities for joint actions, rather than higher-level goals, when
+training we use RHIRL with a horizon of 1. We do not expect this
 set of features to be complete or capable of capturing all the
-possible behaviors that might emerge in a grid game. So an important
-area for future work is to identify features that are both expressive
+possible behaviors that might emerge in a grid game. So, an important
+area in this project is to identify features that are both expressive
 and generalize well. Nevertheless, the features used here provide a
 proof of concept for our approach.
 %which can later be extended to more expressive features.
@@ -65,33 +65,32 @@ proof of concept for our approach.
         \caption{}
         \label{fig:batch3}
     \end{subfigure}
-    \caption{The three different equilibria the batch learning algorithm trained on in Hallway. Colored arrows indicate the path of the player of the same color. A small circle indicates a wait action.}\label{fig:batchRes}
+    \caption{The three different equilibria the batch-learning algorithm trained on in Hallway. Colored arrows indicate the path of the player of the same color. A small circle indicates a wait action.}\label{fig:batchRes}
 \end{figure}
 
-We tested our batch learning algorithm on datasets in which
+We tested our batch-learning algorithm on datasets in which
 agents followed three different equilibrium strategies. 
 %All three equilibrium behaviors are shown in \ref{fig:batchRes}. 
-The first (Figure~\ref{fig:batch1}) shows the orange player going
-north and then traveling along the top row of the grid, while the blue
-player goes south and then travels along the bottom row. The second
-(Figure~\ref{fig:batch2}) shows the blue player going north and then
-traveling along the top row while the orange player waits, then goes
-east, and then waits again for blue to catch up so they can enter
-their goals together.  The third (Figure~\ref{fig:batch3}) has the
-orange player go south and then traveling along the bottow row, while
-the blue player immediately goes west toward its goal and then waits
+The first (Figure~\ref{fig:batch1}) shows Orange going
+north and then traveling along the top row of the grid, while Blue goes south and then travels along the bottom row. The second
+(Figure~\ref{fig:batch2}) shows Blue going north and then
+traveling along the top row while Orange waits, then goes
+east, and then waits again for Blue to catch up so they can enter
+their goals together.  The third (Figure~\ref{fig:batch3}) has 
+Orange go south and then traveling along the bottow row, while
+Blue immediately goes west toward its goal and then waits
 two steps.
 %for orange to catch up so they can enter their goals together.
 
-For each of these three equilibria we generated five demonstrations,
+For each of these three equilibria, we generated five demonstrations,
 two of which described the behavior exactly, and the other three of
 which contained slight deviations (for example, moving back to the
 center row before reaching the end). We then separately trained our
-batch algorithm on each set of demonstrations. In all cases, the
-learned social reward function motivated behavior that consistently
+batch-learning algorithm on each set of demonstrations. In all cases, the
+learned social utility function motivated behavior that consistently
 replicated the data on which it was trained. Additionally, we planned
-using the learned social reward function in a larger 7x3 hallway grid
-game, and in all cases, obtained the corresponding equilibrium behavior.
+using the learned social utility function in a larger $7\times 3$ hallway grid
+game, and, in all cases, obtained the corresponding equilibrium behavior.
 
 %\subsection{Interactive Training}
 %\jmnote{I will also try to run an experiment in which one player is initially biased to show that the other agent adapts to them.}
@@ -131,7 +130,7 @@ game, and in all cases, obtained the corresponding equilibrium behavior.
         \caption{}
         \label{fig:inter5}
     \end{subfigure}
-    \caption{The learning results from each of the 5 interactive matches (a-e). The top image for a match is the first round of interaction of the agents. The bottom image for a match is the learned behavior. For matches b-e, the last move of an agent that reaches their goal sooner may be to wait for two steps, or to move north and/or south and back again; only one example is illustrated.}\label{fig:interRes}
+    \caption{The learning results from each of the 5 interactive matches (a-e). The top image for a match is the first round of interaction of the agents. The bottom image for a match is the learned behavior. For matches b--e, the last move of an agent that reaches their goal sooner may be to wait for two steps, or to move north and/or south and back again; only one example is illustrated.}\label{fig:interRes}
 \end{figure}
 
 In our interactive learning experiment,
@@ -139,7 +138,7 @@ In our interactive learning experiment,
 we played two interactive learning agents against one another.  The
 agents played five matches, each one consisting of five rounds.  Each
 match began fresh, without any knowledge of previous matches, to see
-whether different equilibria could emerge.  The social reward function was
+whether different equilibria could emerge.  The social utility function was
 initialized to the total welfare joint policy.  In each match, the
 agents very quickly (typically after the first round) converged to an
 equilibrium that persisted for the rest of the match.  However, in each
@@ -147,6 +146,7 @@ match, a different equilibrium was learned, showing that agents employing our
 algorithm quickly adapt to the particular shared experience they have
 with other agents.
 %, and then maintain the learned equilibrium behavior.
+% zzz can we quantify how much faster it is than straight Q-learning?
 
 Figure~\ref{fig:interRes} shows the results of learning in each of the
 five matches (with the top image showing the behavior in the first
