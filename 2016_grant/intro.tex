@@ -65,15 +65,9 @@ assumption that
 %
 Social preferences are in part \mydef{distributive}, meaning they
 evaluate how resources are allocated, e.g., efficiently or equitably;
-and they are in part \mydef{reciprocal}, meaning they evaluate the
-perceived intentions of the actors in the environment.
-\commentm{I don't understand what reciprocal means and why it relates to
-perceived intentions. Does it mean perceived utilities? Or
-other-regarding preferences or something like that?}
-\commenta{reciprocal means being fair, spiteful, etc. i agree it's somewhat orthogonal to perception.
-  but you have to perceive how ``reciprocal'' other players are, because you don't know until you meet them/play with them.
-  maybe with this in mind, you can clarify the text some?}
-
+and they are in part \mydef{reciprocal}, meaning they capture the
+cooperative or competitive intent of other players.
+% perceived intentions of the actors in the environment.
 \comment{
   %%% I AM NOT READY TO SAY THIS AT THIS STAGE...WE ARE BUILDING UP TO IT...IT IS PART OF THE COMPUTATIONAL MODEL -- somewhat orthogonal to what preferences are about, which is all we are talking about at this stage.
 They are also \mydef{emergent}, in the sense that there is no \emph{a
@@ -112,7 +106,10 @@ tailored to the environment and the actors;%
 \footnote{This utility function is described in terms of features of the environment and the actors;
 as such, it is applicable to other environments and actors with similar features.}
 2.~based on their estimate of this function, agents use team reasoning to make plans to act;
-\commentm{3.~agents decide whether selfish or social behavior is apt;}
+3.~agents decide whether selfish or social behavior is apt;
+% zzz seems like you aren't comfortable with adding this part in. it
+% zzz seems important, though, given the goal including ``stance''
+% zzz (are the agents acting jointly or not?).
 4.~agents act, simultaneously or sequentially, as is appropriate in their environment;
 5.~agents update their estimates of their social utility functions.
 Steps~2 through~5 repeat so long as the interaction continues.
