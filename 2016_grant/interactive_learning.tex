@@ -7,7 +7,7 @@ In the interactive learning setting, an agent plays with a set of
 unknown agents, with whom it can potentially establish new
 collaborations.  Pseudocode for our interactive learning algorithm is
 shown in Algorithm~\ref{alg:inl}. The algorithm takes as input the
-same arguments as the batch learning algorithm, except it includes an
+same arguments as the batch-learning algorithm, except it includes an
 index specifying which agent in the stochastic game the learner is,
 and it does not include the batch of demonstrations. The agent begins
 by initializing its policy arbitrarily.%
@@ -15,16 +15,15 @@ by initializing its policy arbitrarily.%
 in the joint policy that follows from the team function alone.}
 %
 The first round of interaction produces a trajectory of joint behavior
-that the learner can now learn from.  It does so by running our batch
-learning algorithm on the single trajectory of experience acquired
+that the learner can now learn from.  It does so by running our batch-learning algorithm on the single trajectory of experience acquired
 thus far.  It then proceeds to follow the learned policy in the next
 round.  After the second round completes, the agent now has two
 trajectories on which it can run batch learning to update its social
-reward function and its behavior.  This process then repeats for all
+utility function and its behavior.  This process then repeats for all
 rounds of interaction.  
 %
 Note that updating the policy after each round requires computing the
-$Q$-values under the newly learned social reward function.  However,
+\Q-values under the newly learned social utility function.  However,
 in practice, this computation can be performed lazily for each state
 the agent observes in the next interaction.
 
@@ -37,7 +36,7 @@ the agent observes in the next interaction.
 \State $A^M := \times_i A^I$ \Comment{Joint action set}
 \State $D := \{\}$
 \For{each round of play}
-\State play round following $\pi^k$ %while recording the trajectory $t$
+\State play round by following policy $\pi^k$ %while recording the trajectory $t$
 \State append new trajectory of play to $D$
 %$D := D \cup \{t\}$
 \State $R^S_\theta :=$ Batch\_Learning($(I,S,A^I,T,R^I), \gamma, D, {\mathcal T}, B_\Theta$)

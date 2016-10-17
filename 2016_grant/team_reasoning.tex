@@ -3,16 +3,16 @@
 \paragraph{Team Reasoning}
 
 In our model, the demonstrations agents learn from are trajectories of
-state-joint action pairs, specifying the behavior of all the agents in
+state, joint action pairs, specifying the behavior of all the agents in
 the environment.  Likewise, their objective, as team reasoners, is to
 produce a plan for what all the agents in the game should do.  To
 produce such a plan, the stochastic game must be transformed into an
 MDP.  For the most part, this transformation is straightforward: the
 states are the same, the MDP action set is the space of joint actions,
 and the MDP transition dynamics still operate on joint actions (which
-is the action set in the MDP).  A family of social reward functions is
+is the action set in the MDP).  A family of social utility functions is
 then defined as a linear combination of the input team function (which
-depends on the stochastic game's reward functions), and the family of
+depends on the stochastic game's utility functions), and the family of
 bias functions.\footnote{A parameter controlling the linear
   combination of the team and bias function may be optimized as well.}
 

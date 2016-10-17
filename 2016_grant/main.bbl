@@ -363,6 +363,12 @@ Qifeng Qiao and Peter~A. Beling.
 \newblock Inverse reinforcement learning with gaussian process.
 \newblock {\em CoRR}, abs/1208.2112, 2012.
 
+\bibitem{rabiner89}
+Lawrence~R. Rabiner.
+\newblock A tutorial on hidden {M}arkov models and selected applications in
+  speech recognition.
+\newblock {\em Proceedings of the IEEE}, 77(2):257--286, February 1989.
+
 \bibitem{ramachandran2007bayesian}
 Deepak Ramachandran and Eyal Amir.
 \newblock {Bayesian Inverse Reinforcement Learning}.
@@ -383,6 +389,12 @@ Peter~C. Reiss and Frank~A. Wolak.
   industrial organization.
 \newblock In J.J. Heckman and E.E. Leamer, editors, {\em Handbook of
   Econometrics}, volume~6A, chapter~64. Elsevier, 1 edition, 2007.
+
+\bibitem{rumelhart86b}
+D.~E. Rumelhart and J.~L. McClelland, editors.
+\newblock {\em Parallel Distributed Processing: {E}xplorations in the
+  microstructures of cognition. Volume 1: {F}oundations}.
+\newblock The MIT Press, Cambridge, MA, 1986.
 
 \bibitem{schelling1980strategy}
 T.C. Schelling.
@@ -455,6 +467,11 @@ Luis Von~Ahn.
 Payne~John W., Bettman~James R., and Johnson~Eric J.
 \newblock {\em The adaptive decision maker}.
 \newblock Cambridge Unive rsity Press, 1993.
+
+\bibitem{Watkins92}
+Christopher J. C.~H. Watkins and Peter Dayan.
+\newblock Q-learning.
+\newblock {\em Machine Learning}, 8(3):279--292, 1992.
 
 \bibitem{tac:book}
 M.~Wellman, A.~Greenwald, and P.~Stone.

@@ -3,45 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: grant.bib
-Database file #2: mlittman.bib
-You've used 78 entries,
+You've used 81 entries,
             2118 wiz_defined-function locations,
-            957 strings with 18971 characters,
-and the built_in function-call counts, 31452 in all, are:
-= -- 3138
-> -- 1412
+            975 strings with 19394 characters,
+and the built_in function-call counts, 32346 in all, are:
+= -- 3228
+> -- 1446
 < -- 41
-+ -- 565
-- -- 472
-* -- 2071
-:= -- 4859
-add.period$ -- 253
-call.type$ -- 78
-change.case$ -- 454
++ -- 579
+- -- 482
+* -- 2135
+:= -- 5009
+add.period$ -- 262
+call.type$ -- 81
+change.case$ -- 467
 chr.to.int$ -- 0
-cite$ -- 78
-duplicate$ -- 1340
-empty$ -- 2526
-format.name$ -- 472
-if$ -- 6899
+cite$ -- 81
+duplicate$ -- 1375
+empty$ -- 2603
+format.name$ -- 482
+if$ -- 7083
 int.to.chr$ -- 0
-int.to.str$ -- 78
-missing$ -- 87
-newline$ -- 393
-num.names$ -- 163
-pop$ -- 575
+int.to.str$ -- 81
+missing$ -- 90
+newline$ -- 408
+num.names$ -- 170
+pop$ -- 587
 preamble$ -- 1
-purify$ -- 386
+purify$ -- 397
 quote$ -- 0
-skip$ -- 1015
+skip$ -- 1037
 stack$ -- 0
-substring$ -- 2056
-swap$ -- 459
+substring$ -- 2122
+swap$ -- 462
 text.length$ -- 41
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 290
+type$ -- 300
 warning$ -- 0
-while$ -- 295
-width$ -- 80
-write$ -- 875
+while$ -- 305
+width$ -- 83
+write$ -- 908
