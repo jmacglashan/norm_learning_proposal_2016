@@ -38,27 +38,30 @@ is experienced at the task, but not with the given partner.
 
 We are particularly interested in designing flexible agents that
 generalize their behavior at least as well as humans do to new
-environments.  We will evaluate generalization by first having users
+environments.
+%
+An underlying goal, therefore, will be to engineer the underlying
+structure of social utility functions so that they generalize well
+across environments.  We we will start by examining standard feature
+selection methods used in existing reinforcement-learning and IRL
+research (e.g., linear models, neural networks,
+etc.)~\cite{diuk2009adaptive,kolter2009regularization,li2009reinforcement,parr2008analysis},
+and build on them, as necessary.
+%
+We will evaluate our efforts at generalization by first having humans
 learn in one environment.  Afterwards, they will be exposed to a new
 environment where their previous behavior is no longer directly
 applicable (e.g., because a wall was inserted along the path that an
 agent would normally take), but a more ``general'' behavior can be
 transferred (e.g., I take the high road; he takes the low, regardless
 of the presence or absence of obstacles).  Then, using evaluations
-similar to those listed above, we will test whether our
-socially rational agents can generalize to new games as well as other
-humans can.
+similar to those listed above, we will test whether our socially
+rational agents can generalize to new games as well as other humans
+can.
 
 % \commenta{do we want to say something about generalizing to other players? maybe humans are better at this than our agents will be?} ML: No, I think the notion of generalizing rapidly to new users is a distinct learning problem.
 
-\commenta{!!!}
-Throughout the project, we will investigate how to design social
-utility functions that generalize across environments. We we will
-start by examining standard feature selection methods used in existing
-reinforcement-learning and IRL research (e.g., linear models, neural
-networks,
-etc.)~\cite{diuk2009adaptive,kolter2009regularization,li2009reinforcement,parr2008analysis},
-and build on them, as necessary.
+
 
 In year three, we will test our approach in a real-world robot--human
 collaboration domain.  Even if (as we expect), our simulated worlds

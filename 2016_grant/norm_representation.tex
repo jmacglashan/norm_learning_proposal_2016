@@ -34,34 +34,3 @@ As standard IRL cannot accommodate negative feedback,
 \input{stochastic.tex}
 \input{rewards.tex}
 
-\comment{
-WHY INTENTION LEARNING BEATS SUPERVISED METHODS!
-
-Recall our working definition of a social norm as a behavioral
-instruction that members of the community expect one another to
-follow.  This definition suggests that norms could potentially be
-learned in a supervised fashion simply by learning a function that
-maps states to joint actions directly, rather than capturing norms in
-a social reward function that motivates joint actions.
-%\commenta{do you mean just hard code a norm in the bias functions? 
-%does something like this next sentence capture what you mean?}
-%\commenta{This definition suggests that norms could be directly encoded in the bias functions of a social reward function as bonuses associated with specific joint actions.}
-However, as an environment and a target policy become more complex,
-directly learning the policy becomes more challenging, and
-generalizing from it likely less successful.  As with standard IRL,
-the advantage of learning a social reward function instead is that
-simple reward functions can often induce complex
-behaviors \emph{across states}.  For example, consider a seemingly
-straightforward norm that two agents approaching one another each stay
-to their right.  If the action space is over low-level controls (e.g.,
-rotations and small movements) and the policy is context dependent
-(e.g., navigating obstacles to get to the right side), implementing
-all the joint action rules necessary to make the agents pass on the
-right could be difficult to specify (and hence, learn).  However, a
-social reward function can simply define a bonus for when the agents
-move past each other on the right and the planning algorithm does the
-rest.
-}
-
-
-
