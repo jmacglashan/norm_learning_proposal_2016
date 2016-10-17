@@ -1,52 +1,50 @@
 
 In a second set of \Q-learning experiments, we examined the impact of
-endowing agents with \mydef{social preferences}. That is, their
-utilities no longer depend solely on their own successes and
-failures---they depend on those of other agents in the environment as
+endowing agents with social preferences. That is, their
+utilities no longer depended solely on their own successes and
+failures but on those of other agents in the environment as
 well.
 
 To make this idea more precise, we draw a distinction
-between \mydef{objective} and \mydef{subjective} reward.%
-\footnote{We use the terms ``utility'' and ``reward'' interchangeably.}  
-Objective reward is the usual reward
+between \mydef{objective} and \mydef{subjective} utilities.
+Objective utility is the usual utility
 signal provided to the agent from the environment, and by which
 behavior is judged. Standard reinforcement-learning agents, such
-as \Q-learners, seek to optimize their own objective reward
+as \Q-learners, seek to optimize their own objective utility
 signal---we call this preference the \mydef{selfish} preference
 because these agents are only concerned with their own outcomes.
 
 In some environments, however, it useful to distinguish this objective
-reward from subjective reward---the perceived quantity the agent is
-optimizing. Previous work has shown that optimizing subjective reward
+utility from subjective utility---the perceived quantity the agent is
+optimizing. Previous work has shown that optimizing subjective utility
 can sometimes lead agents to be more effective in their acquisition of
-objective reward~\cite{singh2009rewards}.  (Indeed, we reach this same
+objective utility~\cite{singh2009rewards}.  (Indeed, we reach this same
 conclusion in our experiments.)
 
-Considering the four different outcomes in these games---{\bf GG},
-{\bf GN}, {\bf NG}, {\bf NN}---there are 75 different possible
-preference orderings (allowing for ties). The selfish ordering that
-ignores the opponent's outcome is one of these:
-{\bf GG} $\sim$ {\bf GN} $\succ$ {\bf NG} $\sim$ {\bf NN}.
-%Regardless of the opponent's outcome, a selfish agent only prefers that it gets to its goal. 
-Nine of the 75 orderings are consistent with the selfish ordering,
-strictly preferring {\bf Gx} to {\bf Nx} for all {\bf x}.
+% Considering the four different outcomes in these games---{\bf GG},
+% {\bf GN}, {\bf NG}, {\bf NN}---there are 75 different possible
+% preference orderings (allowing for ties). The selfish ordering that
+% ignores the opponent's outcome is one of these:
+% {\bf GG} $\sim$ {\bf GN} $\succ$ {\bf NG} $\sim$ {\bf NN}.
+% %Regardless of the opponent's outcome, a selfish agent only prefers that it gets to its goal. 
+% Nine of the 75 orderings are consistent with the selfish ordering,
+% strictly preferring {\bf Gx} to {\bf Nx} for all {\bf x}.
 
-Of particular interest is the \mydef{fair} preference, which we define
-as the objective reward of the agent minus 25\% of the difference
-between its own and the opponent's objective rewards:
-$r_{s} = r_{a} - 0.25 \left| r_{a} - r_{o} \right|,$ where $r_{s}$
-is the agent's subjective reward, $r_{a}$ is the agent's objective
-reward, and $r_{o}$ is the opponent's objective reward.\footnote{Other
-percentages would achieve the same result.}  By incorporating this
-fairness term into the agent's subjective reward, it strictly prefers
-the following ordering:
-{\bf GG} $\succ$ \mbox{\bf GN} $\succ$ \mbox {\bf NN} $\succ$ {\bf NG}.
-That is, the agent prefers making it to its goal as opposed to not,
+We evaluate the result of having the agents maximize utilities defined
+by a \mydef{fair} preference, specifically the objective utility
+of the agent minus 25\% of the difference between its own and the
+opponent's objective utilities: $r_{s} = r_{a} - 0.25 \left| r_{a} -
+r_{o} \right|,$ where $r_{s}$ is the agent's subjective utility,
+$r_{a}$ is the agent's objective utility, and $r_{o}$ is the opponent's
+objective utility.\footnote{Other percentages would achieve the same
+result.}  
+% By incorporating this fairness term into the agent's
+% subjective reward, it strictly prefers the following ordering: {\bf
+% GG} $\succ$ \mbox{\bf GN} $\succ$ \mbox {\bf NN} $\succ$ {\bf NG}.
+With this social utility function, the agent prefers making it to its goal as opposed to not,
 but it additionally prefers that the opponent only get to its goal if
 the agent itself does as well. To say it another way, a fair agent
 wants its opponent to win with it or lose with it.
-
-%%JLA: I was tempted to write here that Tit-for-Tat has a flavor of ``fairness'' preference, but I'm too tired to think through this properly.
 
 \begin{wrapfigure}{l}{0.33\textwidth}
 \includegraphics[width=0.33\textwidth]{../2015_grant/figures/SelfPlay.png}
