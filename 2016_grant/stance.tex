@@ -1,15 +1,41 @@
 
 \subsubsection*{\large Selecting a Selfish or Social Stance}
 \label{sec:stance}
+% zzz first draft, needs work
 
-We expect our algorithm described thus far to be able to interact with
-other agents or people and infer social utilities that will guide it
-to mutually beneficial behavior. In contrast to existing learning
-approaches that 
-by making strong assumptions about the algorithmic approach adopted by
-the other agents~\cite{conitzer07}
+We expect our algorithm as described thus far to be able to interact
+with other agents or people and infer social utilities that will guide
+it to mutually beneficial behavior. In contrast to existing
+machine-learning approaches that achieve cooperative behavior by
+making strong assumptions about the algorithmic approach adopted by
+the other agents~\cite{conitzer07}, our approach coordinates using the
+shared history between the agents at a purely behavioral level.
 
-The approach does not depend 
-
-cite awesome
-
+Neverless, there is a key assumption the algorithm is making about
+other agents---that they, too, have the goal of adopting joint
+goals. In our initial experiments on human--human play in the Hallway
+game, we observed that some pairs readily cooperated while some
+adopted a competitive or selfish stance toward the interaction. In the
+most interesting cases, one player began with a selfish stance, trying
+to block the other agent and get to the goal first, while the other
+adopted a social stance, creating opportunities for both players to
+succeed. There are several interesting and important computational
+problems that arise when the two agents adopt conflicting stances. We
+briefly list these problems and our proposed approach to each:
+\begin{enumerate}
+\item How can an agent detect that its stance differs from the other?
+  We will build on our preliminary work~\cite{kleiman16} that uses
+  Bayesian reasoning about observed trajectories to infer whether the
+  other agent is selfish or social (competitive or cooperative, in the
+  terminology of the paper).
+\item If the agent adopts a social stance and the other adopts a
+  selfish stance, how should it respond? Our analysis of CD
+  strategies, described earlier, provides a partial answer---an agent
+  using such a strategy encourages the other, even if it is
+  selfish---to behave in a mutually beneficial way. In particular, a
+  CD strategy allows for cooperation but prevents exploitation, making
+  the other player an offer it would be foolish to refuse. If a CD
+  strategy is not possible, an agent could use a strategy that, across
+  repeated games, provides the same benefits as CD strategies within
+  games~\cite{munoz08}.
+\end{enumerate}

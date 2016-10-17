@@ -81,7 +81,7 @@ C.~F. Camerer.
 
 \bibitem{Choi:2012:NBI:2999134.2999169}
 Jaedeug Choi and Kee-Eung Kim.
-\newblock Nonparametric bayesian inverse reinforcement learning for multiple
+\newblock Nonparametric {B}ayesian inverse reinforcement learning for multiple
   reward functions.
 \newblock In {\em Proceedings of the 25th International Conference on Neural
   Information Processing Systems}, NIPS'12, pages 305--313, USA, 2012. Curran
@@ -93,6 +93,12 @@ Gregg Collins and Louise Pryor.
 \newblock In {\em Proceedings of the 14th International Joint Conference on
   Artificial Intelligence (IJCAI)}, pages 1567--1573, 1995.
 
+\bibitem{conitzer07}
+V.~Conitzer and T.~Sandholm.
+\newblock {AWESOME}: {A} general multiagent learning algorithm that converges
+  in self-play and learns a best response against stationary opponents.
+\newblock {\em Machine Learning}, 67:23--43, 2007.
+
 \bibitem{cournot}
 A.~Cournot.
 \newblock {\em Recherches sur les Principes Mathematics de la Theorie la
@@ -101,14 +107,14 @@ A.~Cournot.
 
 \bibitem{cunningham2015mpdm}
 Alexander~G Cunningham, Enric Galceran, Ryan~M Eustice, and Edwin Olson.
-\newblock Mpdm: Multipolicy decision-making in dynamic, uncertain environments
-  for autonomous driving.
+\newblock {MPDM}: Multipolicy decision-making in dynamic, uncertain
+  environments for autonomous driving.
 \newblock In {\em 2015 IEEE International Conference on Robotics and Automation
   (ICRA)}, pages 1670--1677. IEEE, 2015.
 
 \bibitem{daskalakis2009complexity}
 Constantinos Daskalakis, Paul~W Goldberg, and Christos~H Papadimitriou.
-\newblock The complexity of computing a nash equilibrium.
+\newblock The complexity of computing a {N}ash equilibrium.
 \newblock {\em SIAM Journal on Computing}, 39(1):195--259, 2009.
 
 \bibitem{desjardins13}
@@ -178,8 +184,8 @@ T.~Goff, A.~Greenwald, E.~Hilliard, W.~Ketter, A.~Loomis, and E.~Sodomka.
 \bibitem{gopalan15}
 Nakul Gopalan and Stefanie Tellex.
 \newblock Modeling and solving human-robot collaborative tasks using {POMDP}s.
-\newblock In {\em Robotics: science and systems 2015: workshop on model
-  learning for human-robot communication}, 2015.
+\newblock In {\em Robotics: Science and Systems 2015: Workshop on Model
+  Learning for Human--Robot Communication}, 2015.
 
 \bibitem{GreenwaldHall:03}
 A.~Greenwald and K.~Hall.
@@ -239,6 +245,14 @@ Beomjoon Kim and Joelle Pineau.
   reinforcement learning.
 \newblock {\em International Journal of Social Robotics}, 8(1):51--66, 2016.
 
+\bibitem{kleiman16}
+Max Kleiman-Weiner, Mark~K. Ho, Joseph~L. Austerweil, Michael~L. Littman, and
+  Joshua~B. Tenenbaum.
+\newblock Coordinate to cooperate or compete: Abstract goals and joint
+  intentions in social interaction.
+\newblock In {\em Proceedings of the 38th Annual Meeting of the Cognitive
+  Science Society}, 2016.
+
 \bibitem{kocsis06}
 Levente Kocsis and Csaba Szepesv{\'a}ri.
 \newblock Bandit based {M}onte-carlo planning.
@@ -248,8 +262,8 @@ Levente Kocsis and Csaba Szepesv{\'a}ri.
 J~Zico Kolter and Andrew~Y Ng.
 \newblock Regularization and feature selection in least-squares temporal
   difference learning.
-\newblock In {\em Proceedings of the 26th annual international conference on
-  machine learning}, pages 521--528. ACM, 2009.
+\newblock In {\em Proceedings of the 26th Annual International Conference on
+  Machine Learning}, pages 521--528. ACM, 2009.
 
 \bibitem{li2009reinforcement}
 Lihong Li, Jason~D Williams, and Suhrid Balakrishnan.
@@ -309,6 +323,11 @@ James MacGlashan and Michael~L. Littman.
 \newblock Between imitation and intention learning.
 \newblock In {\em Proceedings of IJCAI}, 2015.
 
+\bibitem{maes1993learning}
+Pattie Maes and Robyn Kozierok.
+\newblock Learning interface agents.
+\newblock In {\em AAAI}, volume~93, pages 459--465, 1993.
+
 \bibitem{poi:aamas}
 B.~Mayer, E.~Sodomka, and A.~Greenwald.
 \newblock The price of independence in simultaneous auctions.
@@ -330,6 +349,13 @@ Bernard Michini and Jonathan~P. How.
   Machine Learning and Knowledge Discovery in Databases: European Conference,
   ECML PKDD 2012, Bristol, UK, September 24-28, 2012. Proceedings, Part II},
   pages 148--163. Springer Berlin Heidelberg, Berlin, Heidelberg, 2012.
+
+\bibitem{munoz08}
+Enrique {Munoz de Cote} and Michael~L. Littman.
+\newblock A polynomial-time {N}ash equilibrium algorithm for repeated
+  stochastic games.
+\newblock In {\em 24th Conference on Uncertainty in Artificial Intelligence
+  (UAI'08)}, 2008.
 
 \bibitem{Ng:1999:PIU:645528.657613}
 Andrew~Y. Ng, Daishi Harada, and Stuart~J. Russell.
@@ -360,7 +386,7 @@ Dean~A. Pomerleau.
 
 \bibitem{journals/corr/abs-1208-2112}
 Qifeng Qiao and Peter~A. Beling.
-\newblock Inverse reinforcement learning with gaussian process.
+\newblock Inverse reinforcement learning with {G}aussian process.
 \newblock {\em CoRR}, abs/1208.2112, 2012.
 
 \bibitem{rabiner89}
@@ -393,7 +419,7 @@ Peter~C. Reiss and Frank~A. Wolak.
 \bibitem{rumelhart86b}
 D.~E. Rumelhart and J.~L. McClelland, editors.
 \newblock {\em Parallel Distributed Processing: {E}xplorations in the
-  microstructures of cognition. Volume 1: {F}oundations}.
+  Microstructures of Cognition. Volume 1: {F}oundations}.
 \newblock The MIT Press, Cambridge, MA, 1986.
 
 \bibitem{schelling1980strategy}
@@ -403,7 +429,7 @@ T.C. Schelling.
 
 \bibitem{searle1995construction}
 John~R. Searle.
-\newblock {\em The construction of social reality}.
+\newblock {\em The Construction of Social Reality}.
 \newblock Simon and Schuster, 1995.
 
 \bibitem{Shapley53}
@@ -419,18 +445,11 @@ Kyriacos Shiarlis, Joao Messias, and Shimon Whiteson.
   Autonomous Agents \& Multiagent Systems}, pages 1060--1068. International
   Foundation for Autonomous Agents and Multiagent Systems, 2016.
 
-\bibitem{silver16}
-David Silver, Aja Huang, Chris~J Maddison, Arthur Guez, Laurent Sifre, George
-  Van Den~Driessche, Julian Schrittwieser, Ioannis Antonoglou, Veda
-  Panneershelvam, Marc Lanctot, et~al.
-\newblock Mastering the game of {G}o with deep neural networks and tree search.
-\newblock {\em Nature}, 529(7587):484--489, 2016.
-
 \bibitem{singh2009rewards}
 Satinder Singh, Richard~L Lewis, and Andrew~G Barto.
 \newblock Where do rewards come from.
-\newblock In {\em Proceedings of the annual conference of the cognitive science
-  society}, pages 2601--2606, 2009.
+\newblock In {\em Proceedings of the Annual Conference of the Cognitive Science
+  Society}, pages 2601--2606, 2009.
 
 \bibitem{sodomka13}
 Eric Sodomka, Elizabeth Hilliard, Michael Littman, and Amy Greenwald.
@@ -449,7 +468,7 @@ Michael Tomasello, Malinda Carpenter, Josep Call, Tanya Behne, and Henrike
   Moll.
 \newblock Understanding and sharing intentions: {The} origins of cultural
   cognition.
-\newblock {\em Behavioral and brain sciences}, 28(05):675--691, 2005.
+\newblock {\em Behavioral and Brain Sciences}, 28(05):675--691, 2005.
 
 \bibitem{ur14}
 Blase Ur, Elyse McManus, Melwyn Pak~Yong Ho, and Michael~L. Littman.
@@ -466,7 +485,7 @@ Luis Von~Ahn.
 \bibitem{Payne_Bettman_Johnson_1993}
 Payne~John W., Bettman~James R., and Johnson~Eric J.
 \newblock {\em The adaptive decision maker}.
-\newblock Cambridge Unive rsity Press, 1993.
+\newblock Cambridge University Press, 1993.
 
 \bibitem{Watkins92}
 Christopher J. C.~H. Watkins and Peter Dayan.
@@ -496,7 +515,7 @@ Brian~D Ziebart, Andrew~L Maas, J~Andrew Bagnell, and Anind~K Dey.
 \bibitem{ZGL:06}
 M.~Zinkevich, A.~Greenwald, and M.~Littman.
 \newblock Cyclic equilibria in {M}arkov games.
-\newblock In {\em Advances in Neural Information Processing Systems 18}, page
-  To Appear. {MIT} Press, 2006.
+\newblock In {\em Advances in Neural Information Processing Systems 18}. {MIT}
+  Press, 2006.
 
 \end{thebibliography}
