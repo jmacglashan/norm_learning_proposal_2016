@@ -9,15 +9,19 @@
 
 \emph{Under the assumption that human agents are, perhaps boundedly
   but nonetheless ideally, socially rational creatures, we propose to
-  design and build socially rational artificial agents that learn
-  through repeated play, with the aim being for such agents to
-  collaborate effectively with humans.}
+  design and build socially rational artificial agents that learn via
+  repeated interactions, with the aim being for such agents to learn
+  to collaborate effectively with humans.}
 
-\emph{We propose to study social preferences and the learning of collaborative behavior in artificial agents in an effort to further human-machine collaborations.}
+\comment{
+\emph{We propose to develop collaborative learning algorithms for 
+artificial agents in an effort to foster human-machine
+collaborations.}
 
 \emph{We propose an approach to the design of artificial agents,
 by which they interact with humans, simultaneously learning social
 preferences and collaborative behaviors that reinforce one another.}
+}
 
 %The ultimate goal of this project is to design artificial agents that
 %play well with humans.  We propose to achieve this goal by building
@@ -29,95 +33,14 @@ preferences and collaborative behaviors that reinforce one another.}
 \vspace{\up}
 \paragraph{Intellectual Merit}
 
-A natural computational framework for investigating interactions among
-mulitple agents is game theory. Many game-theoretic learning
-algorithms to date fall into one of two categories---\emph{followers},
-which seek a best response to observed other-agent behavior,
-and \emph{leaders}, which select a behavior independent of that which
-is observed. To successfully participate in human collective behavior,
-artificial agents need to exhibit both of these qualities in an
-integrated way. We plan to create and analyze new learning algorithms
-that facilitate productive joint decision making among humans and
-machines.
-
-%Our project will make progress towards human-machine collaboration by pursuing three aims:
-We propose to study collaborative behavior from a computational perspective so
-that we can better understand how machines and people can work
-together, with the ultimate goal of building machines that we can rely
-on as our partners. Specifically, our project will pursue three aims:
-%
-(1)~developing computational formalisms required for representing
-social preferences in artificial agents; (2)~showing that
-collaborative behavior is learnable by artificial agents in our
-computational representation by implementing and evaluating
-reinforcement learning algorithms in multi-agent settings; and
-(3)~evaluating our computational methods using behavioral experiments
-in controlled environments that are specifically designed to allow for
-the possibility of human-machine collaboration.
-
-%demonstrating a proof of concept by applying our social preference representation and learning algorithms to collaborative tasks that require interactions between humans and machines.
-
-\vspace{\up}
-\paragraph{Broader Impact}
-
-One vision of a society strewn with ``smart'' devices is
-machines that help humans in nearly all our daily activities, 
-ranging from folding laundry to assisting with physical therapy.
-%\commenta{folding laundry is the only example i can ever come up with because it is the main thing i need a machine to do for me!!!}
-A necessary condition for the success of such future human-machine collaborations 
-%in critical applications such as driving 
-is productive social interactions between humans and machines.  
-%
-The range of domains that would be positively impacted by machines
-that can collaborate effectively with humans and support human
-decision-making is endless, ranging from robotic sous chefs to
-gerontechnological support for aging in place, to name two.
-
-\commentj{Perhaps another impact could be aiding good AI, which is a priority for some afraid of AI.}
-
-In an effort to increase diversity in computer science, we have
-pre-selected two graduate students to participate in this
-project---one woman, and the other Hispanic.  All students (both
-graduate and undergraduate) who join our team will learn the benefits
-of collaboration with cognitive psychologists on our team.  Specifically, they will
-strengthen their understanding of a number of fields, all of which are
-critical to the development of artificial agents that collaborate
-effectively with humans: e.g., behavioral economics, cognitive
-psychology, reinforcement learning, software engineering, etc..
-%
-We also plan to integrate our work on this project into Artemis, a
-free summer program that introduces rising 9th grade girls to
-computational thinking.
-%\commentj{Explicit mention that this is a STEM priority?}  
-For example, we might have the Artemis girls teach a robot to
-collaborate with them on various tasks, such as navigation or object search.
-%folding laundry.
-%\commenta{insert a different example!!!}
-%\commenta{You know, girls should be doing housework.}
-
-Our deliverables include an open-source publicly accessible toolkit
-for implementing human-machine collaborative-learning tasks via
-reinforcement learning. Further, we will maintain a database of
-machine-machine, human-machine, and human-human experimental results
-built using this toolkit, which can serve as a benchmark for future
-researchers who also seek to build artifical agents that increasingly
-achieve human-like behavior.
-%
-Finally, we expect to publish the results of the proposed research in
-top-tier archival, conference proceedings and journals with high
-impact factors, and to present our work at innovative, non-archival
-workshops (e.g., the AAAI symposia).
-
-%%% contents from summary.txt, now needs to be part of this file
-
 Much of human social life occurs in contexts where people must
 coordinate their actions with those of others.  From party planning to
-flying a rocket ship to the moon to evaluating grant proposals, groups
-of people have accomplished great things by reasoning as a team and
-engaging in jointly intentional behavior.  Indeed, some have argued
-that, because most other animals lack the capacity to work adaptively
-as cohesive unit across many domains, team reasoning may be the
-hallmark of human sociality.  
+space exploration to evaluating grant proposals, groups of people have
+accomplished great things by reasoning as a team and engaging in
+jointly intentional behavior.  Indeed, some have argued that, because
+most other animals lack the capacity to work adaptively as cohesive
+unit across many domains, team reasoning may be the hallmark of human
+sociality.
 
 We call optimal decision making, when agents hold social preferences
 and employ team reasoning, socially rational behavior.  Socially
@@ -133,28 +56,52 @@ Given these assumptions, we propose an iterative computational model,
 in which socially-rational artificial agents construct social
 preferences via repeated interactions with other, potentially human,
 agents.  We contend that socially rational behavior, in which agents
-optimize a learned social utility function that reflects constructed
-social preferences, is a promising new avenue for orchestrating
-effective collaborations between humans and machines.
+jointly optimize a learned social utility function that reflects
+constructed social preferences, is a promising new avenue for
+orchestrating effective collaborations between humans and machines.
+
+Central to our computational model is the notion of inverse
+reinforcement-learning (IRL), whereby an agent is shown demonstrations
+of behavior, based on which it infers rewards that motivate that
+behavior.  Nearly all existing IRL algorithms to date assume the
+demonstrations are generated by an expert.  But in our setting, the
+demonstrations will be past interactions among agents who are not
+necessarily skilled at the task at hand, but on the contrary,
+(hopefully) learning to collaborate.  Consequently, we are proposing
+to develop new IRL technology 
+%(which is presently in its infancy)
+in which bad and good behaviors can be indicated as such.  This
+technology will enable humans to give agents both positive and
+negative feedback while they are learning to collaborate.
 
 
-Intellectual Merit: We will develop and evaluate a new inverse
-reinforcement-learning algorithm that can construct social utility
-functions from analysis of the successes and failures of past
-interactions.
-
-NOT DONE!!!
+%We will also develop and evaluate a new inverse reinforcement-learning
+%algorithm that can construct social utility functions by analyzing
+%the successes and failures of past interactions.
 
 
-Broader Impact: Our approach, if successful, will help people and
-machines work together more smoothly in real-world domains ranging
-from robotic sous chefs to gerontechnological support for aging in
-place.  We will also create and offer a new undergraduate course
-called ``Social autonomous driving.''  It will contribute to the new
-robotics course sequence being developed at Brown.  The emphasis of
-our course will be on developing robots that drive around a test
-environment, interacting smoothly with other robots and
-remote-controlled cars.
+\vspace{\up}
+\paragraph{Broader Impact}
+%A wide variety of human--machine interaction problems would be
+%positively impacted by the technology we are proposing.
+%
+This project is synergistic with the main efforts of Brown
+University's Humanity Centered Robotics Initiative (HCRI), of which
+co-PI Littman is co-director.  Specifically, within HCRI, there are
+ongoing efforts to design robotic systems that interact with people
+and support independent living tasks (e.g., gerontechnological support
+for aging in place and robotic sous chefs).  For an elderly person (or
+chef) to trust and collaborate on tasks with a machine effectively,
+the machine must act in a manner that the elderly person (or chef)
+expects.  This project will create the foundation for these important
+applications.
+
+We will also create a new undergraduate course called ``Social
+autonomous driving.''  It will be offered as part of a new robotics
+course sequence being developed at Brown.  In our course, students
+will develop robots that drive around a test environment.  The main
+emphasis will be on making sure the robotic drivers interact smoothly
+with other robotic and remote-controlled cars.
 
 We also plan to integrate our work on this project into Artemis, a
 free summer program that introduces rising 9th grade girls to
@@ -167,7 +114,7 @@ for implementing human-machine collaborative-learning tasks via
 reinforcement learning. Further, we will maintain a database of
 machine-machine, human-machine, and human-human experimental results
 built using this toolkit, which can serve as a benchmark for future
-researchers who also seek to build artifical agents that increasingly
+researchers who also seek to build artificial agents that increasingly
 achieve human-like behavior.
 %
 Finally, we expect to publish the results of the proposed research in
