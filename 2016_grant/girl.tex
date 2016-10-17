@@ -1,5 +1,5 @@
 
-\subsection{Generalized Inverse Reinforcement Learning}
+\subsubsection*{\large Generalized Inverse Reinforcement Learning}
 \label{sec:girl}
 
 To complement the new computational model we put forth, the new
@@ -8,31 +8,6 @@ model of IRL, and accompanying algorithms, which allows for both
 positive and negative (not necessarily binary) labels, and, moreover,
 which also allows for partial feedback, meaning subtrajectories (i.e.,
 options~\cite{sutton99}) can be ascribed such labels.
-
-To this end, in this section, we propose a novel variant of the
-inverse reinforcement learning problem, which we call
-\mydef{Generalized IRL} (GIRL).  Wherease the input to standard IRL is
-a data set of trajectories
-%(a sequence of state-action pairs)
-and the output, a reward function, the input to a GIRL problem, is a
-data set of \emph{labelled\/} trajectories. 
-%(The output is still a reward function.)  
-In its most basic formulation,%
-\footnote{Labels need not be binary; they can be continuous-valued.}
-each label is either positive ($+1$) or negative ($-1$), indicating
-whether the associated trajectory is a good example of some desired
-behavior, or a bad example of some desired behavior.  The goal is to
-recover a reward function that motivates the desired behavior.
-
-Others are also attempting to solve similar problems~\cite{burchfiel2016distance,shiarlis2016inverse}, 
-but our problem formulation, which is quite general, is also novel.
-%
-The plate diagram that describes this formulation is shown
-in Figure~\ref{fig:girl}.  In this model, we interpret the label ($L$)
-associated with a trajectory of size $N$ to be some random function of
-what the evaluator thought about each of the action selections ($A$)
-exhibited at each of the states ($S$) in the trajectory.  However,
-these step-wise evaluations ($X$) are unobserved in the data.
 
 \begin{wrapfigure}{l}{0.366\textwidth}
 \begin{tikzpicture}[x=1.7cm,y=1.8cm]
@@ -62,6 +37,31 @@ these step-wise evaluations ($X$) are unobserved in the data.
 \label{fig:girl}
 \end{wrapfigure}
 
+To this end, in this section, we propose a novel variant of the
+inverse reinforcement learning problem, which we call
+\mydef{Generalized IRL} (GIRL).  Wherease the input to standard IRL is
+a data set of trajectories
+%(a sequence of state-action pairs)
+and the output, a reward function, the input to a GIRL problem, is a
+data set of \emph{labelled\/} trajectories. 
+%(The output is still a reward function.)  
+In its most basic formulation,%
+\footnote{Labels need not be binary; they can be continuous-valued.}
+each label is either positive ($+1$) or negative ($-1$), indicating
+whether the associated trajectory is a good example of some desired
+behavior, or a bad example of some desired behavior.  The goal is to
+recover a reward function that motivates the desired behavior.
+
+Others are also attempting to solve similar problems~\cite{burchfiel2016distance,shiarlis2016inverse}, 
+but our problem formulation, which is quite general, is also novel.
+%
+The plate diagram that describes this formulation is shown
+in Figure~\ref{fig:girl}.  In this model, we interpret the label ($L$)
+associated with a trajectory of size $N$ to be some random function of
+what the evaluator thought about each of the action selections ($A$)
+exhibited at each of the states ($S$) in the trajectory.  However,
+these step-wise evaluations ($X$) are unobserved in the data.
+
 For illustrative purposes, we adopt the probabilistic maximum
 likelihood problem formulation, in which we seek a reward function
 that maximizes the likelihood of the data, but Bayesian reasoning
@@ -76,12 +76,16 @@ proportional to its selection probability according a softmax policy
 computed for the reward function with parameters
 $\bm{\theta}$. Specifically:
 %
+\comment{
 \begin{align}
 \Pr(x_i = +1 \mid s, a, \theta) &= \pi(s, a \mid \bm{\theta}) \\
 \Pr(x_i = -1 \mid s, a, \theta) &= 1 - \pi(s, a \mid \bm{\theta}),
 \end{align}
-
-\noindent
+}
+$\Pr(x_i = +1 \mid s, a, \theta) = \pi(s, a \mid \bm{\theta})$ and
+$\Pr(x_i = -1 \mid s, a, \theta) = 1 - \pi(s, a \mid \bm{\theta})$.
+%
+%\noindent
 Here $\pi(s, a \mid \bm{\theta})$ is the softmax policy over $Q$-values,
 assuming a reward function parameterized by $\bm{\theta}$.
 
@@ -104,12 +108,16 @@ positive trajectory label increases (and vice versa). Although there
 are many possible distributions that satisfy this property, for
 concreteness, we choose the sigmoid function. That is,
 %
+\comment{
 \begin{align}
 \Pr(L = +1 \mid X_1, ..., X_n) &= \frac{1}{1 + e^{-\phi \sum_i^N X_i}} \\
 \Pr(L = -1 \mid X_1, ... ,X_n) &= 1 - \Pr(L = +1 \mid X_1, ..., X_n),
 \end{align}
-
-\noindent
+}
+$\Pr(L = +1 \mid X_1, ..., X_n) = (1 + e^{-\phi \sum_i^N X_i})^{-1}$ and
+$\Pr(L = -1 \mid X_1, ... ,X_n) = 1 - \Pr(L = +1 \mid X_1, ..., X_n)$.
+%
+%\noindent
 Here $\phi$ is a parameter that controls how readily step-wise labels
 influence the trajectory labels.  For example, when $\phi = 0$,
 trajectory labels are assigned uniformly at random, without any regard

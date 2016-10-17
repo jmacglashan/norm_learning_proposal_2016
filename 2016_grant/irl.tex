@@ -18,14 +18,14 @@ problem~\cite{babes11,lopes2009active,ramachandran2007bayesian,ziebart2008maximu
 
 For example, in the maximum-likelihood setting~\cite{babes11}, the
 goal is to find a reward function parameterization that maximizes
-the likelihood of the data:
+the likelihood of the data,
 %
-\begin{equation}
-\label{eq:mlirl}
-\theta \in \arg\max_{\theta} L(D \mid R_{\theta}) = \prod_{t \in D} \prod_i^{|t|} \pi_{\theta}(s_i, a_i),
-\end{equation}
-
-\noindent
+%\begin{equation}
+%\label{eq:mlirl}
+$\theta \in \arg\max_{\theta} L(D \mid R_{\theta}) = \prod_{t \in D} \prod_i^{|t|} \pi_{\theta}(s_i, a_i)$,
+%\end{equation}
+%
+%\noindent
 where $\pi_{\theta}(s, a)$ is a stochastic policy defining the
 probability of taking action $a$ in state $s$ when the parameterized
 reward function to be maximized is $R_{\theta}$. Typically, the
