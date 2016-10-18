@@ -19,10 +19,10 @@ cooperated, while others adopted a competitive or selfish stance
 toward the interaction.  In the most interesting cases, one player
 began with a selfish stance, trying to block the other agent by
 getting to the goal first, while the other adopted a social stance,
-creating opportunities for both players to succeed. There are several
-important computational problems that arise when the
-two agents adopt conflicting stances.  We briefly list these problems
-here, and a proposed approach to each:
+creating opportunities for both players to succeed.  There are several
+important computational problems that arise when the two agents adopt
+conflicting stances.  We briefly list these problems here, and a
+proposed approach to each:
 
 \begin{enumerate}
 
@@ -39,13 +39,13 @@ here, and a proposed approach to each:
   
 \item \emph{If an agent adopts a social stance while another agent in 
   its environment adopts a selfish stance, how can the social agent
-  convince the selfish agent to change its behavior?}  Our analysis of CD strategies (see
-  Section~\ref{sec:grid_games}) provides a partial answer---an agent
-  using such a strategy encourages another, even if it is inherently
-  selfish, to behave in a mutually beneficial way.  In particular, a
-  CD strategy allows for cooperation but prevents exploitation, by
-  making the other player an offer it would be foolish to refuse.  If
-  a CD strategy does not exist, an agent could
+  convince the selfish agent to change its behavior?}  Our analysis of
+  CD strategies (see Section~\ref{sec:grid_games}) provides a partial
+  answer---an agent using such a strategy encourages another, even if
+  it is inherently selfish, to behave in a mutually beneficial way.
+  In particular, a CD strategy allows for cooperation but prevents
+  exploitation, by making the other player an offer it would be
+  foolish to refuse.  If a CD strategy does not exist, an agent could
   use a strategy that, across repeated games, provides the same
   benefits as CD strategies within games~\cite{munoz08}. It is
   challenging for an agent to capture the attention of another to
@@ -53,21 +53,23 @@ here, and a proposed approach to each:
   revealed.
 
 \item \emph{When should an agent stop trying to pursuade others to
-  adopt a social stance?} There is a cost to remaining social while
-  other agents are behaving selfishly. The decision of when to
+  adopt a social stance?}  There is a cost to remaining social while
+  other agents are behaving selfishly.  The decision of when to
   conclude that another agent is unlikely to be convinced to change
-  behavior can be formulated as a reinforcement-learning problem in
-  its own right~\cite{boutilier1996planning}. We will bring to bear
-  techniques from the study of partially observable Markov decision
-  process~\cite{kaelbling98} to enable agents to reason effectively
-  about the unknown stance of others as well as how to change it.
+  its behavior can be formulated as a reinforcement-learning problem
+  in its own right~\cite{boutilier1996planning}.  We will investigate
+  this problem, bringing to bear techniques from the study of
+  partially observable Markov decision process~\cite{kaelbling98}, so
+  that agents can reason effectively about the unobservable stances of
+  others, as well as whether it can influence them, and if so, how.
   
 \end{enumerate}
 
-Our preliminary experiments with human--machine interactons have
-convinced us that stance selection is an absolutely essential
-capability for socially rational agents. We will integrate this
-decision with the state-of-the-art coordination algorithms we are
-building in the context of a complete agent. We will evaluate our
-agents with and without this capability activated to assess how
-effective and necessary it is in supporting high utility interactions.
+% Evaluation of these ideas is here !
+Based on preliminary experiments with human--machine interactons, we
+conjecture that stance selection is an essential capability for
+socially rational agents.  Consequently, we are proposing to integrate
+this decision into our computational framework (Step~1).  We will
+evaluate our agents in a controlled environment, with and without this
+capability, to assess how effective it is in fostering collaborative
+interactions.
