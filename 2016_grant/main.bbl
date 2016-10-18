@@ -63,6 +63,13 @@ A.~Boularias, J.~Kober, and J.~Peters.
 \newblock In {\em JMLR Workshop and Conference Proceedings Volume 15: AISTATS
   2011}, pages 182--189, Cambridge, MA, USA, April 2011. MIT Press.
 
+\bibitem{boutilier1996planning}
+Craig Boutilier.
+\newblock Planning, learning and coordination in multiagent decision processes.
+\newblock In {\em Proceedings of the 6th conference on Theoretical aspects of
+  rationality and knowledge}, pages 195--210. Morgan Kaufmann Publishers Inc.,
+  1996.
+
 \bibitem{boutilier99}
 Craig Boutilier, Thomas Dean, and Steve Hanks.
 \newblock Decision-theoretic planning: {S}tructural assumptions and
@@ -168,6 +175,11 @@ R.~Forsythe, J.~L. Horowitz, N.~E. Savin, and M.~Sefton.
 \newblock Fairness in simple bargaining experiments.
 \newblock {\em Games and Economic Behavior}, 6:347--369, 1994.
 
+\bibitem{fud:levine}
+D.~Fudenberg and D.~K. Levine.
+\newblock {\em The Theory of Learning in Games}.
+\newblock MIT Press, Cambridge, 1998.
+
 \bibitem{gal04}
 Kobi Gal, Avi Pfeffer, Francesca Marzo, and Barbara~J. Grosz.
 \newblock Learning social preferences in games.
@@ -221,6 +233,11 @@ J.~Hu and M.~Wellman.
 \newblock Nash {$Q$}-learning for general-sum stochastic games.
 \newblock {\em Machine Learning Research}, 4:1039--1069, 2003.
 
+\bibitem{kaelbling98}
+Leslie~Pack Kaelbling, Michael~L. Littman, and Anthony~R. Cassandra.
+\newblock Planning and acting in partially observable stochastic domains.
+\newblock {\em Artificial Intelligence}, 101(1--2):99--134, 1998.
+
 \bibitem{kahneman86}
 D.~Kahneman, J.~L. Knetsch, and R.~Thaler.
 \newblock Fairness as a constraint on profit seeking: Entitlements in the
@@ -231,6 +248,11 @@ D.~Kahneman, J.~L. Knetsch, and R.~Thaler.
 D.~Kahneman, P.~Slovic, and A.~Tversky, editors.
 \newblock {\em Judgment under uncertainty: {H}euristics and biases}.
 \newblock Cambridge University Press, 1982.
+
+\bibitem{kmr:93}
+Michihiro Kandori, George~J. Mailath, and Rafael Rob.
+\newblock Learning, mutation, and long run equilibria in games.
+\newblock {\em Econometrica}, 61(1):29--56, January 1993.
 
 \bibitem{kearns99b}
 Michael Kearns, Yishay Mansour, and Andrew~Y. Ng.
