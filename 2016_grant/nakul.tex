@@ -43,22 +43,18 @@ The two positive labels signal to the agent that both observed
 behaviors are good.  Consequently, the agent infers that the red
 puddle is worth more than any other cell in the grid and seeks
 shortest paths for reaching it.  Note that the agent does not learn to
-linger on the blue puddle---even though one trajectory ended
-there---because both trajectories are drawn toward the red puddle in
-spite of all options for approaching blue puddles elsewhere in the
-grid.
-% zzz is that why?
+linger on the blue puddle, or direct its attention toward any other
+blue puddles in the grid---even though one trajectory ended
+there---because both trajectories have positive labels, and ultimately
+lead to the red puddle.
 
 Given positive \& negative labels, the agent again infers that
-reaching the red puddle is good and the blue puddle is not
-good. In contrast to the previous case, however, it infers that all
-other cells are also good. This example illustrates the power of
-negative examples. By asserting that the path terminating at the blue
-puddle is bad, the algorithm knows that one of the steps on this path
-is not the correct step for an optimal agent to take. As such, the
-correct path for reaching the red puddle must be to go around the blue
-puddle, which can be explained by increased utility in the white
-squares.
+reaching the red puddle is good and the blue puddle is not good. In
+contrast to the previous case, however, it infers that all other cells
+are also good. This example illustrates the power of our model to
+learn from negative examples. By asserting that the path terminating
+at the blue puddle is bad, the agent infers that the correct path for
+reaching the red puddle must be to go around the blue puddle.
 % zzz these colors are almost maximally confusing. red turns blue and
 % zzz blue turns red. yellow and green would have been preferable.
 % zzz also, it would have been more interesting to have a negative
@@ -69,16 +65,14 @@ squares.
 The agent sees negative \& positive labels as a signal that the red
 puddle is to be avoided and getting to the blue puddle is good.  This
 time, the agent prefers the blue puddles to the red, and it finds a
-policy that lets it reach---and remain in---blue puddles.
+policy by which it can reach, and remain in, blue puddles.
 %\commentm{these grids seem like overkill for the point we're able to make. Ah, well.}
 %\commenta{agreed, totally!}
 
-\comment{
-In the fourth experiment we teach the agent that both red and blue
-puddles are bad. Hence, we label both trajectories $-1$.  The output
-policy in Figure~\ref{fig:test4} shows that the agent avoids all the
-puddles and tries to stay in the white spaces on the grid.
-}
+In a fourth experiment (not shown), we labelled both trajectories
+$-1$.  Given this information, the agent learns to avoid all puddles,
+and directs all its movements towards the white spaces on the grid,
+instead.
 
 These experiments demonstrate an approach to GIRL, in which agents
 learn utility functions from both positive and negative examples.
@@ -88,6 +82,7 @@ eventually bring them to bear in the context of interactive learning
 of social utility functions, thereby enabling artificial agents to
 learn from rich human evaluative feedback.
 
+\comment{
 Beyond what is possible now, generalized IRL algorithms will allow us,
 the humans, to critique agents during our interactions with them,
 ascribing to their behaviors 
@@ -96,3 +91,4 @@ both positive and negative feedback. Based on this feedback, the
 agents will infer social utility functions, which we expect to
 generalize well, certainly within the domain in which they train, and
 with some effort, across learning environments.
+}
