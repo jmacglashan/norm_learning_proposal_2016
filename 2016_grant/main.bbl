@@ -19,7 +19,7 @@ Monica Babes, Vukosi~N. Marivate, Michael~L. Littman, and Kaushik Subramanian.
 \newblock In {\em International Conference on Machine Learning}, pages
   897--904, 2011.
 
-\bibitem{RePEc:eee:reecon:v:53:y:1999:i:2:p:117-147}
+\bibitem{bacharach1999}
 Michael Bacharach.
 \newblock Interactive team reasoning: A contribution to the theory of
   co-operation.
@@ -42,20 +42,25 @@ Andrew~G. Barto, S.~J. Bradtke, and Satinder~P. Singh.
 \newblock Learning to act using real-time dynamic programming.
 \newblock {\em Artificial Intelligence}, 72(1):81--138, 1995.
 
+\bibitem{becker1974nber}
+Gary~S. Becker.
+\newblock A theory of social interactions.
+\newblock Working Paper~42, National Bureau of Economic Research, June 1974.
+
 \bibitem{bellman57}
 Richard Bellman.
 \newblock {\em Dynamic Programming}.
 \newblock Princeton University Press, Princeton, NJ, 1957.
 
+\bibitem{berg1995trust}
+Joyce Berg, John Dickhaut, and Kevin McCabe.
+\newblock Trust, reciprocity, and social history.
+\newblock {\em Games and economic behavior}, 10(1):122--142, 1995.
+
 \bibitem{bertsekas87}
 Dimitri~P. Bertsekas.
 \newblock {\em Dynamic Programming: {D}eterministic and Stochastic Models}.
 \newblock Prentice-Hall, Englewood Cliffs, NJ, 1987.
-
-\bibitem{blanco11}
-M.~Blanco, D.~Englemann, and H.~T. Normann.
-\newblock A within-subject analysis of other-regarding preferences.
-\newblock {\em Games and Economic Behavior}, 72:321--338, 2011.
 
 \bibitem{BoulariasKP2011}
 A.~Boularias, J.~Kober, and J.~Peters.
@@ -85,6 +90,18 @@ Benjamin Burchfiel, Carlo Tomasi, and Ronald Parr.
 C.~F. Camerer.
 \newblock {\em Behavioral Game Theory: Experiments in Strategic Interaction}.
 \newblock Princeton University Press, Princeton, NJ, 2003.
+
+\bibitem{cassidy14}
+Mike Cassidy.
+\newblock Centaur chess shows power of teaming human and machine.
+\newblock
+  http://www.huffingtonpost.com/mike-cassidy/centaur-chess-shows-power\_b\_6383606.html,
+  2014.
+
+\bibitem{charness2002understanding}
+Gary Charness and Matthew Rabin.
+\newblock Understanding social preferences with simple tests.
+\newblock {\em Quarterly journal of Economics}, pages 817--869, 2002.
 
 \bibitem{Choi:2012:NBI:2999134.2999169}
 Jaedeug Choi and Kee-Eung Kim.
@@ -143,37 +160,15 @@ Dmitri Dolgov, Sebastian Thrun, Michael Montemerlo, and James Diebel.
 \newblock {\em The International Journal of Robotics Research}, 29(5):485--501,
   2010.
 
-\bibitem{falk2003nature}
-Armin Falk, Ernst Fehr, and Urs Fischbacher.
-\newblock On the nature of fair behavior.
-\newblock {\em Economic Inquiry}, 41(1):20--26, 2003.
-
 \bibitem{fehr1999theory}
 Ernst Fehr and Klaus~M Schmidt.
 \newblock A theory of fairness, competition, and cooperation.
 \newblock {\em Quarterly journal of Economics}, pages 817--868, 1999.
 
-\bibitem{fehr2006economics}
-Ernst Fehr and Klaus~M Schmidt.
-\newblock The economics of fairness, reciprocity and altruism--experimental
-  evidence and new theories.
-\newblock {\em Handbook of the economics of giving, altruism and reciprocity},
-  1:615--691, 2006.
-
 \bibitem{Fink64}
 A.M. Fink.
 \newblock Equilibrium in a stochastic $n$-person game.
 \newblock {\em Journal of Science in Hiroshima University}, 28:89--93, 1964.
-
-\bibitem{fisman07}
-R.~Fisman, S.~Kariv, and D.~Markovits.
-\newblock Individual preferences for giving.
-\newblock {\em The American Economic Review}, 97(5):1858--1876, 2007.
-
-\bibitem{forsythe94}
-R.~Forsythe, J.~L. Horowitz, N.~E. Savin, and M.~Sefton.
-\newblock Fairness in simple bargaining experiments.
-\newblock {\em Games and Economic Behavior}, 6:347--369, 1994.
 
 \bibitem{fud:levine}
 D.~Fudenberg and D.~K. Levine.
@@ -227,6 +222,12 @@ A.~Greenwald, E.~Sodomka, E.~Stix, J.~Stix, and D.~Storch.
   Strategies and Mechanisms for Electronic Markets.}, volume 197 of {\em
   Lecture Notes in Business Information Processing}, pages 56--68. Springer,
   2014.
+
+\bibitem{guth1982jebo}
+Werner Guth, Rolf Schmittberger, and Bernd Schwarze.
+\newblock An experimental analysis of ultimatum bargaining.
+\newblock {\em Journal of Economic Behavior \& Organization}, 3(4):367--388,
+  1982.
 
 \bibitem{HuWellman03}
 J.~Hu and M.~Wellman.
@@ -333,6 +334,11 @@ J.~MacGlashan, M.~Babes-Vroman, M.~desJardins, M.~Littman, S.~Muresan,
 \newblock Grounding english commands to reward functions.
 \newblock In {\em Proceedings of Robotics: Science and Systems}, 2015.
 
+\bibitem{macglashan16}
+James MacGlashan.
+\newblock {BURLAP}.
+\newblock http://burlap.cs.brown.edu, 2016.
+
 \bibitem{macglashan14c}
 James MacGlashan, Michael Littman, and Fiery Cushman.
 \newblock Flexible theft and resolute punishment: {E}volutionary dynamics of
@@ -401,15 +407,25 @@ Ronald Parr, Lihong Li, Gavin Taylor, Christopher Painter-Wakefield, and
 \newblock In {\em Proceedings of the 25th international conference on Machine
   learning}, pages 752--759. ACM, 2008.
 
+\bibitem{paull16}
+Liam Paull.
+\newblock {What is Duckietown?}
+\newblock http://duckietown.mit.edu/, 2016.
+
 \bibitem{pomerleau93}
 Dean~A. Pomerleau.
-\newblock {\em Neural network perception for mobile robot guidance}.
+\newblock {\em Neural Network Perception for Mobile Robot Guidance}.
 \newblock Kluwer Academic Publishing, 1993.
 
 \bibitem{journals/corr/abs-1208-2112}
 Qifeng Qiao and Peter~A. Beling.
 \newblock Inverse reinforcement learning with {G}aussian process.
 \newblock {\em CoRR}, abs/1208.2112, 2012.
+
+\bibitem{rabin1993aer}
+Matthew Rabin.
+\newblock Incorporating fairness into game theory and economics.
+\newblock {\em American Economic Review}, 83(5):1281--1302, 1993.
 
 \bibitem{rabiner89}
 Lawrence~R. Rabiner.
