@@ -46,9 +46,9 @@ model (however flawed) of human behavior.
 %: i.e., a way of selecting actions that is consistent with what human beings do.
 %
 One possibility is to assume we are \emph{Homo economicus}---a term
-from the 1800s that portrays individuals as being guided by self interest,
-and taking actions without regard to their impact on the collective.
-Alternatively, one might call us \emph{Homo
+dating back to the 1800s that portrays individuals as being guided by
+self interest, and taking actions without regard to their impact on
+the collective.  Alternatively, one might call us \emph{Homo
   sociologicus}---a more recent term depicting individuals as pursuing
 goals imprinted on them by society.
 % in which case actions are motivated by social goals.
@@ -61,15 +61,14 @@ proposing countless homo-sociologicus-leaning models in its
 stead (e.g.,~\cite{blanco11,falk2003nature,fehr1999theory,fehr2006economics,fisman07,forsythe94,kahneman86}).
 %
 Consistent with these findings, this proposal is founded on the
-assumption that 
-%self interest incorporating 
-\mydef{social preferences} hold the key to successful collaborations.
+assumption that \mydef{social preferences} hold the key to successful
+collaborations.
 %
 Social preferences are in part \mydef{distributive}, meaning they
 evaluate how resources are allocated, e.g., efficiently or equitably;
 and they are in part \mydef{reciprocal}, meaning they capture the
-social or selfish intent of other players.
-% perceived intentions of the actors in the environment.
+social or selfish intentions of other players.
+
 \comment{
   %%% I AM NOT READY TO SAY THIS AT THIS STAGE...WE ARE BUILDING UP TO IT...IT IS PART OF THE COMPUTATIONAL MODEL -- somewhat orthogonal to what preferences are about, which is all we are talking about at this stage.
 They are also \mydef{emergent}, in the sense that there is no \emph{a
@@ -87,16 +86,18 @@ should \emph{we\/} do?'' rather than ``What should \emph{I\/} do?''
 In other words, we move from the usual assumption of best-reply
 reasoning~\cite{cournot} in games to one of \mydef{team
   reasoning}~\cite{RePEc:eee:reecon:v:53:y:1999:i:2:p:117-147}.
+%
+Note, however, that our agents continue to reason for themselves;
+they just do so taking account of the collective.
 
 We call optimal decision making, when agents can hold
 %learn
 social preferences and employ team reasoning, \mydef{socially
   rational} behavior.  Social rationality is a blend of the \emph{Homo
   economicus\/} and \emph{Homo sociologicus\/} concepts---agents
-\mydef{individually optimize} a \mydef{social utility function} representing
-social preferences incorporating
-%learned
-perceived (possibly inferred, possibly imagined) societal benefits.
+individually optimize a \mydef{social utility function} that
+represents social preferences, which incorporate perceived (possibly
+inferred, possibly imagined) societal benefits.
 
 We contend that the computational process by which collaborative
 behavior emerges strongly depends on social rationality, coupled with
@@ -114,22 +115,19 @@ as such, it is applicable to other environments and actors with similar features
 5.~agents update their estimates of their social utility functions.
 Steps~2 through~5 then repeat.
 
-When agents
-%use team reasoning to 
-make a plan that optimizes a social
+When agents use team reasoning to make a plan that optimizes a social
 utility function, they are choosing actions that jointly optimize the
 behavior of the collective.
 %, as specified by the social preferences encoded in that function.  
 When agents update their estimate of the social utility function, they
-do so using the \emph{observed history} of joint actions in the environment.
+do so using the \emph{observed history\/} of joint actions in the environment.
 %%%can we guarantee convergence!!??
 If this process stabilizes, the social utility function represents the
 preferences of the community as a whole, 
 %including guidance of the roles of the individual members, 
 and the equilibrium implements a joint plan of action that optimizes
-that social utility function.  Here, % in our computational model,
-emergent collaborative behavior and social preferences 
-% are expected to
+that social utility function.  Indeed, in our computational model,
+emergent collaborative behavior and social preferences are expected to
 reinforce one another.
 
 \comment{
@@ -157,16 +155,14 @@ extrinsically-set utilities.
 However, there is broad agreement in the judgment and decision-making
 community that preferences are \emph{constructed}, not
 elicited~\cite{Payne_Bettman_Johnson_1993}, in response to available
-choices.  Likewise, our computational framework 
-% does not assume that
-% social preferences exist extrinsically; rather, they are 
-constructs social preferences
-in response to observed behaviors.  In our conception of social
-rationality, agents \emph{learn\/} social preferences through repeated
-play of the game.\footnote{As Shakespeare said, ``the play's the
-  thing.''} They also learn whether social behavior makes sense given
-the observed behavior of the other agents---there's no point in
-unilaterally adopting a joint plan.
+choices.  Likewise, our computational framework does not assume that
+social preferences exist extrinsically; rather, they are constructs
+social preferences in response to observed behaviors.  In our
+conception of social rationality, agents \emph{learn\/} social
+preferences through repeated play of the game.\footnote{As Shakespeare
+  said, ``the play's the thing.''} They also learn whether social
+behavior makes sense given the observed behavior of the other
+agents---there's no point in unilaterally adopting a joint plan.
 
 A social utility function is an immediate generalization of the usual
 notion of an individual's utility function, but it ascribes value to
@@ -195,10 +191,10 @@ equilibria, and agents face a difficult equilibrium-selection
 problem (e.g.,~\cite{schelling1980strategy}) in the underlying game;
 learned social utility functions provide a solution.
 \commenta{i don't think this is enough. i prefer what was there before.}
-% We contend that socially rational behavior, in which agents optimize a
-% learned social utility function that reflects (constructed) social
-% preferences, can provide a solution to this challenging, seemingly
-% insoluable, problem.
+We contend that socially rational behavior, in which agents optimize a
+learned social utility function that reflects (constructed) social
+preferences, can provide a solution to this challenging, seemingly
+insoluable, problem.
 %see Section~\ref{sec:interactive} 
 
 %\commenta{this doesn't fit any more.}
@@ -223,11 +219,10 @@ their discovered social preferences reinforce one another.  We then go
 one step further and show that our approach can also learn (in an
 off-line, batch fashion) from human--human trace data so that the
 collaborative behavior that is learned mimics that of the trace data.
-While these two experiments
-% (on machine--machine interactive, and human--human batch data) 
-are indeed promising, it
-remains to extend these techniques to human--machine interactions,
-ultimately in experimental worlds with embodied robots.
+While these two experiments (on machine--machine interactive, and
+human--human batch data) are indeed promising, it remains to extend
+these techniques to human--machine interactions, ultimately in
+experimental worlds with embodied robots.
 %%% \commenta{HUMAN TRACE DATA!}
 
 The ultimate goal in developing artificial agents that act

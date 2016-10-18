@@ -3,145 +3,136 @@
 \paragraph{EM Algorithm}
 
 The problem with estimating the parameters ($\bm{\theta}$) of a
-utility function in this setting is that there is a latent variable vector $X$ (or
-rather, some of the elements of the $X$ vector are latent, and some
-may be observed), which makes it difficult to compute the
-likelihood of the model and maximizing its parameters.  The EM
+utility function in this setting is that there is a latent variable
+vector $X$ (or rather, some of the elements of the $X$ vector are
+latent, and some may be observed), which makes it difficult to compute
+the likelihood of the model and maximize its parameters.  The EM
 approach to solving this problem is to first choose values for
 $\bm{\theta}$; then choose a new $\bm{\theta}$ that maximizes the
 expected value of the log likelihood function, where the distribution
 in the expectation is the probability of the latent variables (the
 $X$s in our case), given the observed data and previous choice of
-$\bm{\theta}$. The maximization can be performed using gradient
+$\bm{\theta}$.  The maximization can be performed using gradient
 ascent, and this process repeats until convergence.
 
-% To simplify the exposition of the EM algorithm, we introduce the
-% notation $\bm{x}_k$ to indicate the values of the subset of observed
-% (i.e., known) elements in an $\bm{x}$ vector, and $\bm{x}_u$ to
-% represent a possible assignment to the subset of unobserved values.
-% Using this notation, the EM algorithm is summarized in
-% Algorithm~\ref{alg:em}:
-% 
-% \begin{algorithm}
-% \caption{EM Algorithm for GIRL}
-% \begin{algorithmic}
-% \Require{initial $\bm{\theta}^0$, and data $\bm{s}, \bm{a}, \bm{x}_k, l$}
-% \For{$t=0$ to $T$}
-% \State $\bm{\theta}_{t+1} \gets \arg \max_{\bm{\theta'}} E_{\bm{x}_u \sim \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})} \left[ \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}) \right]$
-% \EndFor
-% \end{algorithmic}
-% \label{alg:em}
-% \end{algorithm}
-% 
-% The log likelihood given our plate diagram (i.e., the joint likelihood
-% of the data and our parameters, given label $l$ and a vector $\bm{x}$)
-% is
-% %
-% \comment{
-% \begin{align}
-% \Pr(l, \bm{x} \mid \bm{s}, \bm{a}, \bm{\theta}) 
-% &= \mathcal{L}(\bm{s}, \bm{a}, \bm{\theta} \mid l, \bm{x}) \Pr(l, \bm{x}).
-% \end{align}
-% }
-% %
-% %\begin{align}
-% $\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta} \mid l, \bm{x}) 
-% = \Pr(l \mid \bm{x}) \prod_i \Pr(x_i \mid s_i, a_i, \bm{\theta})$.
-% %\end{align}
-% %
-% \noindent
-% Likewise, the log likelihood is
-% %
-% %\begin{align}
-% $\log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta} \mid l, \bm{x}) = 
-% \log \Pr(l \mid \bm{x}) + \sum_i \log \Pr(x_i \mid s_i, a_i, \bm{\theta})$.
-% %\end{align}
-% %
-% \noindent
-% Additionally, the gradient of the log likelihood is
-% %
-% %\begin{align}
-% $\nabla_{\bm{\theta}} \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta} \mid l, \bm{x}) = \sum_i  \frac{\nabla_{\bm{\theta}} \Pr(x_i \mid s_i, a_i, \bm{\theta})}{\Pr(x_i \mid s_i, a_i, \bm{\theta})}$.
-% %\end{align}
-% %
-% This gradient forms the basis for the maximization step in EM.
-% 
-% The expectation in our EM algorithm is the expected value of the log
-% likelihood under some candidate parameter $\bm{\theta}'$, assuming
-% unknown values are distributed according to $\bm{\theta}$, is:
-% %
-% \begin{align*}
-% E_{\bm{x}_u \sim \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})} \left[ \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}) \right]
-% = \sum_{\bm{x}_u} \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}) \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}_k, \bm{x}_u).
-% \end{align*}
-% %
-% To compute this expectation, we need to enumerate each of the
-% possible assignments to $\bm{x}_u$, and compute their probabilities,
-% given the observed data and model parameters $\bm{\theta}$.  This
-% probability is defined as follows:
-% %
-% \begin{align*}
-% \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}) &= \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u) \Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{x}_k \mid \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{s}, \bm{a}, \bm{\theta})}{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{x}_k \mid \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{s}, \bm{a}, \bm{\theta})} \\
-%  &= \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u) \Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta}) }{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})} \\
-%  &= \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u) \prod_i \Pr(\bm{x}_{u,i} \mid s_i, a_i, \bm{\theta}) }{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}. 
-% \end{align*}
-% 
-% Unfortunately, 
-% %even with an efficient means to compute
-% %$\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})$, 
-% the number of assignments enumerated in the expectation's outer sum
-% grows exponentially, and the product series in the above equation
-% ($\prod_i \Pr(\bm{x}_{u,i} \mid s_i, a_i, \bm{\theta})$) can have
-% underflow issues.  A resolution to this first problem is to estimate
-% the expectation with sampling.  However
-% %Monte Carlo sampling is unfortunately intractable because 
-% it is not easy to sample from $\Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, 
-% \bm{a}, \bm{\theta})$; moreover, doing so would not address the
-% underflow issue in the product series.  On the other hand, it is easy
-% to sample from $\Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta})$
-% (removing the conditioning on the label).
-% %
-% %\begin{align*}
-% %E_{\bm{x}_u \sim \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})} \left[ \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}) \right]
-% %&= \sum_{\bm{x}_u} \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}) \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}_k, \bm{x}_u) \\
-% %&= \sum_{\bm{x}_u} \left( \frac{\Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}{\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})}\right) {\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})} \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}_k, \bm{x}_u)
-% %\end{align*}
-% %
-% So, using importance sampling, we replace the expectation computation
-% with the sample-estimate
-% \begin{equation}
-% \frac{1}{C} \sum_{j=1}^C \frac{\Pr(\bm{x}_u^j \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}{\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})} \log\mathcal{L}(l, \bm{x}_k, \bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta}).
-% \end{equation}
-% where $\bm{x}_u^j$ is the $j$th sample from the distribution $\Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta})$.
-% 
-% Note that this simplifies a bit further too:
-% \begin{equation*}
-% \frac{\Pr(\bm{x}_u^j \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}{\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})} 
-% = \left( \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u) \Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta}) }{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})} \right) \left( \frac{1}{\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})} \right)
-% = \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u)}{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}
-% \end{equation*}
-% 
-% \noindent
-% Consequently, we have removed the product series from the expectation
-% weight, thereby avoiding underflow issues. Also, while a
-% straightforward computation of
-% $\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})$ requires
-% marginalizing over all possible assignments to $\bm{x}_u$, this term
-% can be actually computed efficiently using dynamic programming,
-% because the probability of a label is a sigmoid function that operates
-% on the \emph{sum\/} of the entries in the $\bm{x}$ vector.
-% %
-% Putting all of these pieces together yields a tractable version of the
-% EM algorithm for generalized IRL.
-% 
-% \comment{
-% Now we can write a tractable version of the EM algorithm for
-% generalized IRL (Algorithm~\ref{alg:tractable}).
+To simplify the exposition of the EM algorithm, we introduce the
+notation $\bm{x}_k$ to indicate the values of the subset of observed
+(i.e., known) elements in an $\bm{x}$ vector, and $\bm{x}_u$ to
+represent a possible assignment to the subset of unobserved values.
+Using this notation, the EM algorithm is summarized in
+Algorithm~\ref{alg:em}.
 
-We have derived a dynamic programming algorithm that, coupled with
-importance sampling, forms a tractable version of the EM algorithm for
-generalized IRL.
+\begin{algorithm}
+\caption{EM Algorithm for GIRL}
+\begin{algorithmic}
+\Require{initial $\bm{\theta}^0$, and data $\bm{s}, \bm{a}, \bm{x}_k, l$}
+\For{$t=0$ to $T$}
+\State $\bm{\theta}_{t+1} \gets \arg \max_{\bm{\theta'}} \E_{\bm{x}_u \sim \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})} \left[ \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}) \right]$
+\EndFor
+\end{algorithmic}
+\label{alg:em}
+\end{algorithm}
 
+The log likelihood given our plate diagram (i.e., the joint likelihood
+of the data and our parameters, given label $l$ and a vector $\bm{x}$)
+is
+%
+\comment{
+\begin{align}
+\Pr(l, \bm{x} \mid \bm{s}, \bm{a}, \bm{\theta}) 
+&= \mathcal{L}(\bm{s}, \bm{a}, \bm{\theta} \mid l, \bm{x}) \Pr(l, \bm{x}).
+\end{align}
+}
+%
+\begin{align}
+\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta} \mid l, \bm{x}) 
+= \Pr(l \mid \bm{x}) \prod_i \Pr(x_i \mid s_i, a_i, \bm{\theta}).
+\end{align}
+
+\noindent
+Likewise, the log likelihood is
+%
+\begin{align}
+\log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta} \mid l, \bm{x}) = 
+\log \Pr(l \mid \bm{x}) + \sum_i \log \Pr(x_i \mid s_i, a_i, \bm{\theta}).
+\end{align}
+%
+\noindent
+Additionally, the gradient of the log likelihood is
+%
+\begin{align}
+\nabla_{\bm{\theta}} \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta} \mid l, \bm{x}) = \sum_i  \frac{\nabla_{\bm{\theta}} \Pr(x_i \mid s_i, a_i, \bm{\theta})}{\Pr(x_i \mid s_i, a_i, \bm{\theta})}.
+\end{align}
+%
+This gradient forms the basis for the maximization step in EM.
+ 
+The expectation in our EM algorithm is the expected value of the log
+likelihood under some candidate parameter $\bm{\theta}'$, assuming
+unknown values are distributed according to $\bm{\theta}$, is:
+%
+\begin{align*}
+\E_{\bm{x}_u \sim \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})} \left[ \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}) \right]
+= \sum_{\bm{x}_u} \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}) \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}_k, \bm{x}_u).
+\end{align*}
+%
+To compute this expectation, we need to enumerate each of the
+possible assignments to $\bm{x}_u$, and compute their probabilities,
+given the observed data and model parameters $\bm{\theta}$.  This
+probability is defined as follows:
+%
+\begin{align*}
+\Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}) &= \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u) \Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{x}_k \mid \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{s}, \bm{a}, \bm{\theta})}{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{x}_k \mid \bm{s}, \bm{a}, \bm{\theta}) \Pr(\bm{s}, \bm{a}, \bm{\theta})} \\
+&= \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u) \Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta}) }{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})} \\
+&= \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u) \prod_i \Pr(\bm{x}_{u,i} \mid s_i, a_i, \bm{\theta}) }{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}. 
+\end{align*}
+
+Unfortunately, 
+%even with an efficient means to compute
+%$\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})$, 
+the number of assignments enumerated in the expectation's outer sum
+grows exponentially, and the product series in the above equation
+($\prod_i \Pr(\bm{x}_{u,i} \mid s_i, a_i, \bm{\theta})$) can have
+underflow issues.  A resolution to this first problem is to estimate
+the expectation with sampling.  However
+%Monte Carlo sampling is unfortunately intractable because 
+it is not easy to sample from $\Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, 
+\bm{a}, \bm{\theta})$; moreover, doing so would not address the
+underflow issue in the product series.  On the other hand, it is easy
+to sample from $\Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta})$
+(removing the conditioning on the label).
+%
+%\begin{align*}
+%E_{\bm{x}_u \sim \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})} \left[ \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}) \right]
+%&= \sum_{\bm{x}_u} \Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta}) \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}_k, \bm{x}_u) \\
+%&= \sum_{\bm{x}_u} \left( \frac{\Pr(\bm{x}_u \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}{\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})}\right) {\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})} \log\mathcal{L}(\bm{s}, \bm{a}, \bm{\theta}' \mid l, \bm{x}_k, \bm{x}_u)
+%\end{align*}
+%
+So, using importance sampling, we replace the expectation computation
+with the sample-estimate
+\begin{equation}
+\frac{1}{C} \sum_{j=1}^C \frac{\Pr(\bm{x}_u^j \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}{\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})} \log\mathcal{L}(l, \bm{x}_k, \bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta}).
+\end{equation}
+where $\bm{x}_u^j$ is the $j$th sample from the distribution $\Pr(\bm{x}_u \mid \bm{s}, \bm{a}, \bm{\theta})$.
+
+Note that this simplifies a bit further too:
+\begin{equation*}
+\frac{\Pr(\bm{x}_u^j \mid l, \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}{\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})} 
+= \left( \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u) \Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta}) }{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})} \right) \left( \frac{1}{\Pr(\bm{x}_u^j \mid \bm{s}, \bm{a}, \bm{\theta})} \right)
+= \frac{\Pr(l \mid \bm{x}_k, \bm{x}_u)}{\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})}
+\end{equation*}
+
+\noindent
+Consequently, we have removed the product series from the expectation
+weight, thereby avoiding underflow issues. Also, while a
+straightforward computation of
+$\Pr(l \mid \bm{x}_k, \bm{s}, \bm{a}, \bm{\theta})$ requires
+marginalizing over all possible assignments to $\bm{x}_u$, this term
+can be actually computed efficiently using dynamic programming,
+because the probability of a label is a sigmoid function that operates
+on the \emph{sum\/} of the entries in the $\bm{x}$ vector.
+
+Putting all of these pieces together yields a tractable version of the
+EM algorithm for generalized IRL (Algorithm~\ref{alg:tractable}).
 
 %%% DELETED B/C OF SPACE CONSTRAINTS !!!
 \begin{algorithm}
@@ -162,4 +153,4 @@ generalized IRL.
 \end{algorithmic}
 \label{alg:tractable}
 \end{algorithm}
-}
+
