@@ -1,0 +1,5 @@
+#/bin/sh
+pdftk main.pdf cat 1 output summary.pdf
+pdftk main.pdf cat 2-16 output description.pdf
+pdftk main.pdf cat 17 output data.pdf
+pdftk main.pdf cat 18-end output references.pdf
