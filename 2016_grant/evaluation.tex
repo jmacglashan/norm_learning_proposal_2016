@@ -7,14 +7,13 @@ We will evaluate how our socially rational agents fare in
 collaborative learning tasks using an experimental platform that
 simulates interactions between humans and artificial agents.
 Specifically, we will compare how often and how quickly humans are
-able to arrive at coordinated plans among themselves and compare to what happens with
-socially rational agents.  We will also assess the quality of the
-plans that emerge under these varying conditions.  
-% To test the
-% expressiveness of the space of learnable solutions afforded by our
-% approach, we will also measure tendencies among humans to converge to
-% certain types of plans (e.g., trading off simplicity for optimality),
-% and whether those types persist when there are agents in the mix.
+able to arrive at coordinated plans among themselves vs.\ what happens
+when socially rational agents are involved.  We will also assess the
+quality of the plans that emerge under these varying conditions.
+%To test the expressiveness of the space of learnable solutions
+%afforded by our approach, we will also measure tendencies among humans
+%to converge to certain types of plans (e.g., trading off simplicity
+%for optimality), and whether those types persist when agents are in the mix.
 Subjective evaluations will be used to assess whether humans
 find interacting with agents ``natural.''
 
@@ -45,13 +44,13 @@ An underlying goal, therefore, will be to engineer the underlying
 structure of social utility functions so that they generalize well
 across environments.  We we will start by examining standard
 feature-selection methods used in existing reinforcement-learning and
-IRL 
-research (e.g., linear models, neural networks,
+IRL research (e.g., linear models, neural networks,
 etc.)~\cite{diuk2009adaptive,kolter2009regularization,li2009reinforcement,parr2008analysis},
-and build on them, as necessary. Given that MLIRL is a gradient-based
-approach, we will explore the use of existing deep learning packages
-to scale to richer utility functions and input spaces.
-%
+and build on them, as necessary.  We will also explore available deep
+learning packages, as they are compatible with gradient-based methods
+to IRL, as they may enable us to scale to richer utility functions and
+environments.
+
 % We will evaluate our efforts at generalization by first having humans
 % learn in one environment.  Afterwards, they will be exposed to a new
 % environment where their previous behavior is no longer directly
@@ -65,15 +64,16 @@ to scale to richer utility functions and input spaces.
 
 % \commenta{do we want to say something about generalizing to other players? maybe humans are better at this than our agents will be?} ML: No, I think the notion of generalizing rapidly to new users is a distinct learning problem.
 
-In Year Three, we will test our approach in a real-world robot--human
+In year three, we will test our approach in a real-world robot--human
 collaboration domain.  Even if (as we expect), our simulated worlds
 show that our agents collaborate well with people, the capabilities
-(or lack thereof) of robots may inhibit the effectiveness of our
-approach (e.g., robots might move slower than people expect and/or may
-misperceive important details).  We will evaluate our algorithmic
-framework in real-world scenarios by comparing its performance at
-controlling a robot to another human controlling the robot via
-teleoperation.  We expect this approach to raise novel research
+(or lack thereof) of robots may bring to the fore as-yet-unanticipated
+hurdles (e.g., robots might move slower than people expect).
+% or might misperceive important details.
+%%% LIKE WHAT ???
+We will evaluate our approach in real-world scenarios by comparing a
+socially rational robot to a robot controlled by a human via
+teleoperation.  We expect this investigation to raise novel research
 questions appropriate to real-world problems.
 %Amy: sounds too generic, i think. we always want to develop more efficient implementations, don't we?
 %%For example, computation time may be a limiting factor to the success

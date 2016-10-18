@@ -2,18 +2,14 @@
 \subsubsection*{\large Learning Social Utility Functions}
 \label{sec:learning}
 
-\commentm{I wasn't surew what ``collaborative learning'' was, so I changed it. I hope that's ok.}
-\commenta{I agree that this is not well-defined, but it PERVASIVE---possibly even in the title.
-we should figure out among ourselves what it means, and then check that it is used consistently throughout.}
-
 Given our representation of social preferences by a social utility
 function that is parameterized by a family of bias functions, our
 approach to learning these functions is to optimize those parameters
 to best incentivize observed behavior.  We consider two learning
 frameworks.  In \mydef{batch} learning, an agent learns offline from
-demonstrations of other agents playing collaboratively.\commenta{actually, the other agents need not be collaborating at all!}
-In \mydef{interactive} learning, agents learn the social preferences
-of the collective in the context of repeated interactions.
+demonstrations.  In \mydef{interactive} learning, agents learn the
+social preferences of the collective in the context of repeated
+interactions.
 %
 At the core of both algorithms is team reasoning.
 

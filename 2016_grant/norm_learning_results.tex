@@ -71,15 +71,15 @@ proof of concept for our approach.
 We tested our batch-learning algorithm on datasets in which
 agents followed three different equilibrium strategies. 
 %All three equilibrium behaviors are shown in \ref{fig:batchRes}. 
-The first (Figure~\ref{fig:batch1}) shows Orange going
-north and then traveling along the top row of the grid, while Blue goes south and then travels along the bottom row. The second
-(Figure~\ref{fig:batch2}) shows Blue going north and then
-traveling along the top row while Orange waits, then goes
-east, and then waits again for Blue to catch up so they can enter
-their goals together.  The third (Figure~\ref{fig:batch3}) has 
-Orange go south and then traveling along the bottow row, while
-Blue immediately goes west toward its goal and then waits
-two steps.
+The first (Figure~\ref{fig:batch1}) shows Orange going north and then
+traveling along the top row of the grid, while Blue goes south and
+then travels along the bottom row. The second
+(Figure~\ref{fig:batch2}) shows Blue going north and then traveling
+along the top row while Orange waits, then goes east, and then waits
+again for Blue to catch up so they can enter their goals together.
+The third (Figure~\ref{fig:batch3}) has Orange go south and then
+traveling along the bottow row, while Blue immediately goes west
+toward its goal and then waits two steps.
 %for orange to catch up so they can enter their goals together.
 
 For each of these three equilibria, we generated five demonstrations,
@@ -146,8 +146,8 @@ However, in each match, a different equilibrium was learned, showing
 that agents employing our algorithm quickly adapt to the particular
 shared experience they have with other agents.
 %, and then maintain the learned equilibrium behavior.
-\commentm{can we quantify how much faster it is than straight Q-learning?}
-\commenta{it is pretty much instantaneous. none of these tests were even run for more than 5 rounds of learning. but remember, they are using team reasoning, and not solving a coordination problem---it's like they have one brain. so it is MUCH easier.}
+% zzz can we quantify how much faster it is than straight Q-learning?
+%AMY: it is pretty much instantaneous. none of these tests were even run for more than 5 rounds of learning. but remember, they are using team reasoning, and are not solving a coordination problem---it's like they have one brain. so it is MUCH easier.
 
 Figure~\ref{fig:interRes} shows the results of learning in each of the
 five matches (with the top image showing the behavior in the first
@@ -156,7 +156,7 @@ different equilibria emerged in different matches, once learned, that
 equilibrium was consistently employed in all subsequent rounds.  Of
 particular interest are the results in the fifth match
 (Figure~\ref{fig:inter5}). In the first round of this match, both
-players wait (a suboptimal joint action), and Blue then moves in an
+players wait (a suboptimal joint action); Blue then moves in an
 odd looping motion. Nevertheless, the agents learn from the experience,
 ultimately finding collaborative behavior that works well for them both.
 

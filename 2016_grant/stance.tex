@@ -2,46 +2,48 @@
 \subsubsection*{\large Selecting a Selfish or Social Stance}
 \label{sec:stance}
 
-We expect the artificial agents we build to be able to interact
-with other agents or humans and infer social utilities that will guide
-it to mutually beneficial behavior.  In contrast to existing
-machine-learning approaches that achieve cooperative behavior by
-making strong assumptions about the algorithms adopted by the other
-agents (e.g.,~\cite{conitzer07}), our approach to coordinatation
-relies only on shared history among agents---at a purely behavioral
-(i.e., observational) level.
+We expect the artificial agents we build to be able to interact with
+one another, and with humans, and infer social utilities that will
+guide the collective towards mutually beneficial behavior.  In
+contrast to existing machine-learning approaches that achieve
+cooperative behavior by making strong assumptions about the algorithms
+other agents in the environment adopt (e.g.,~\cite{conitzer07}), our
+approach to coordinatation relies only on a shared history among
+agents, at a purely behavioral (i.e., observational) level.
 
-Nevertheless, there is a key assumption the algorithm is making about
-other agents---that they, too, have the goal of adopting joint
-goals.  In our initial experiments on human--human play in the Hallway
-game, we observed that some pairs readily cooperated while some
-adopted a competitive or selfish stance toward the interaction.  In the
-most interesting cases, one player began with a selfish stance, trying
-to block the other agent and get to the goal first, while the other
-adopted a social stance, creating opportunities for both players to
-succeed.  There are several interesting and important computational
-problems that arise when the two agents adopt conflicting stances.  We
-briefly list these problems and our proposed approach to each:
+Nevertheless, we have for some time now been making a key assumption
+about the intentions of other agents, namely that they, too, have the
+goal of adopting joint goals.  In our initial experiments among humans
+(only) in the Hallway game, we observed that some pairs readily
+cooperated, while others adopted a competitive or selfish stance
+toward the interaction.  In the most interesting cases, one player
+began with a selfish stance, trying to block the other agent by
+getting to the goal first, while the other adopted a social stance,
+creating opportunities for both players to succeed.  There are several
+interesting and important computational problems that arise when the
+two agents adopt conflicting stances.  We briefly list these problems
+here, and a proposed approach to each:
 
 \begin{enumerate}
 
 \item \emph{How can an agent detect that its stance differs from another's?}
   We will build on our preliminary work~\cite{kleiman16} that uses
-  Bayesian reasoning, given observed trajectories, to infer whether
-  other agents in one's environment are selfish or social (competitive
-  or cooperative, in the terminology of that paper).
+  Bayesian reasoning, given observed trajectories, to develop
+  algorithms that can infer whether other agents in one's environment
+  are selfish or social (competitive or cooperative, in the
+  terminology of that paper).
   
 \item \emph{If an agent adopts a social stance while another agent in 
   its environment adopts a selfish stance, what should the social
-  agent do?}  Our analysis of CD strategies, described earlier,
-  provides a partial answer---an agent using such a strategy
-  encourages another, even if it is inherently selfish---to behave in
-  a mutually beneficial way.  In particular, a CD strategy allows for
-  cooperation but prevents exploitation, by making the other player an
-  offer it would be foolish to refuse.  If a CD strategy is not
-  possible\commenta{available?}, an agent could use a strategy that, across
-  repeated games, provides the same benefits as CD strategies within
-  games~\cite{munoz08}.
+  agent do?}  Our analysis of CD strategies (see
+  Section~\ref{sec:grid_games}) provides a partial answer---an agent
+  using such a strategy encourages another, even if it is inherently
+  selfish---to behave in a mutually beneficial way.  In particular, a
+  CD strategy allows for cooperation but prevents exploitation, by
+  making the other player an offer it would be foolish to refuse.  If
+  a CD strategy is not possible\commenta{available?}, an agent could
+  use a strategy that, across repeated games, provides the same
+  benefits as CD strategies within games~\cite{munoz08}.
   
 \end{enumerate}
 

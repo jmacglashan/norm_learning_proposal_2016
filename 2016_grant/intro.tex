@@ -2,14 +2,15 @@
 \section{Introduction}
 \label{sec:intro}
 
-Much of human social life occurs in contexts where people must
-coordinate their actions with those of others.  From party planning to
-space exploration, groups of people have accomplished great things by
-reasoning as a team and engaging in jointly intentional
-behavior~\cite{searle1995construction}.  Indeed, some have argued
-that, because most other animals lack the capacity to work adaptively
-as a cohesive unit across many domains, team reasoning may be the
-hallmark of human sociality~\cite{tomasello2005understanding}.
+Much of human life occurs in contexts where people must coordinate
+their actions with those of others.  From party planning to space
+exploration, to grant-proposal evaluation, groups of people have
+accomplished great things by reasoning as a team and engaging in
+jointly intentional behavior~\cite{searle1995construction}.  Indeed,
+some have argued that, because most other animals lack the capacity to
+work adaptively as a cohesive unit across many domains, team reasoning
+may be the hallmark of human
+sociality~\cite{tomasello2005understanding}.
 
 %Can artificial agents be successfully designed to join in human collective behavior?
 %What are the psychological processes and computational mechanisms underlying this phenomenon?
@@ -83,44 +84,53 @@ Following Bacharach~\cite{bacharach2006beyond}, not only do we assume
 that preferences are social rather than individual, we go one step
 further and assume that decision making can take the form of ``What
 should \emph{we\/} do?'' rather than ``What should \emph{I\/} do?''
-In other words, we move from the usual assumption of best-reply
-reasoning~\cite{cournot} in games to one of \mydef{team
-  reasoning}~\cite{RePEc:eee:reecon:v:53:y:1999:i:2:p:117-147}.
 %
-Note, however, that our agents continue to reason for themselves;
-they just do so taking account of the collective.
+This form of reasoning is called \mydef{team
+  reasoning}~\cite{RePEc:eee:reecon:v:53:y:1999:i:2:p:117-147}, and we
+consider it a viable alternative to the usual notion of best-reply
+reasoning~\cite{cournot} in games.
+%
+%(Note that team reasoners continue to reason for themselves---as
+%individuals; they just do so taking account of the collective.)
+%
 
-We call optimal decision making, when agents can hold
-%learn
-social preferences and employ team reasoning, \mydef{socially
-  rational} behavior.  Social rationality is a blend of the \emph{Homo
+We call optimal decision making, when agents can hold social
+preferences and employ team reasoning, \mydef{socially rational}
+behavior.  Social rationality is a blend of the \emph{Homo
   economicus\/} and \emph{Homo sociologicus\/} concepts---agents
-individually optimize a \mydef{social utility function} that
+optimize a \mydef{social utility function} that
+%(either from the point of view of the team, or just themselves)
 represents social preferences, which incorporate perceived (possibly
 inferred, possibly imagined) societal benefits.
+
+In reality, when an agent arrives on the playing field, it does not
+know whether the other agents it faces err on the side of being social
+(team reasoners) or selfish (best-repliers).  Before taking a stance,
+it behooves a socially rational agent to first decide upon a strategy
+for itself---social or selfish?  There is no point in an individual
+agent adopting a joint plan, unilaterally.
 
 We contend that the computational process by which collaborative
 behavior emerges strongly depends on social rationality, coupled with
 learning via repeated interaction.
 %
-Specifically, the computational process is:
-1.~agents represent social preferences using a social utility function
-tailored to the environment and the actors;%
+Specifically, the computational process is as follows: initialize
+agents with an appropriate representation of social preferences using
+a social utility function tailored to the environment and the actors;%
 \footnote{This utility function is described in terms of features of the environment and the actors;
 as such, it is applicable to other environments and actors with similar features.}
-2.~based on their estimate of this function, agents use team reasoning to make plans to act;
-3.~agents decide whether selfish or social behavior is apt;
-\commenta{i'm confused; shouldn't they decide this before they employ team reasoning; and if they choose selfish, they can drop the team reasoning bit}
-4.~agents act, simultaneously or sequentially, as is appropriate in their environment;
-5.~agents update their estimates of their social utility functions.
-Steps~2 through~5 then repeat.
+1.~agents decide whether selfish or social behavior is appropriate;
+2.~agents plan accordingly, using best-reply or team reasoning;
+3.~agents act, simultaneously or sequentially, as dictated by their environment;
+4.~agents update their estimates of their social utility functions.
+Steps~1 through~4 then repeat.
 
 When agents use team reasoning to make a plan that optimizes a social
-utility function, they are choosing actions that jointly optimize the
+utility function, they choose actions that jointly optimize the
 behavior of the collective.
 %, as specified by the social preferences encoded in that function.  
 When agents update their estimate of the social utility function, they
-do so using the \emph{observed history\/} of joint actions in the environment.
+do so using the observed history of joint actions.
 %%%can we guarantee convergence!!??
 If this process stabilizes, the social utility function represents the
 preferences of the community as a whole, 
@@ -129,6 +139,18 @@ and the equilibrium implements a joint plan of action that optimizes
 that social utility function.  Indeed, in our computational model,
 emergent collaborative behavior and social preferences are expected to
 reinforce one another.
+
+\comment{
+Missing from our basic computational model is the possibility that
+agents might in fact be more selfish than social.  Indeed, before
+engaging in team reasoning, it behooves an agent to first decide
+whether such reasoning is appropriate.  This observation yields a more
+robust computational model, preceded by a Step~0, in which agents
+decide whether selfish or social behavior would be apt in their
+present circumstances.  A classification of an environment as selfish
+would then induce best-reply, rather than team, reasoning.  There is
+no point in one adopting a joint plan, unilaterally.
+}
 
 \comment{
 Support for this model can be found in the work of
@@ -147,22 +169,19 @@ like this one, you may proactively bring the milk over to your son.
 }
 
 Classical game theory assumes that utility functions are exogeneously
-determined---agents come to the table with fixed
-extrinsically-set utilities.
+determined---agents come to the table with fixed extrinsically-set utilities.
 %``Social'' game theory, with its emphasis on social preferences, must
 %answer the question of where social utility functions come from: i.e.,
 %how does one agent know the social preferences of another?
 However, there is broad agreement in the judgment and decision-making
 community that preferences are \emph{constructed}, not
 elicited~\cite{Payne_Bettman_Johnson_1993}, in response to available
-choices.  Likewise, our computational framework does not assume that
-social preferences exist extrinsically; rather, they are constructs
-social preferences in response to observed behaviors.  In our
-conception of social rationality, agents \emph{learn\/} social
-preferences through repeated play of the game.\footnote{As Shakespeare
-  said, ``the play's the thing.''} They also learn whether social
-behavior makes sense given the observed behavior of the other
-agents---there's no point in unilaterally adopting a joint plan.
+choices.  Likewise, we do not assume that social preferences exist
+extrinsically.
+%; rather, agents construct social preferences in response to observed behaviors.  
+In our conception of social rationality, agents \emph{learn\/} social
+preferences through repeated play of the game.
+%\footnote{As Shakespeare said, ``the play's the thing.''}
 
 A social utility function is an immediate generalization of the usual
 notion of an individual's utility function, but it ascribes value to
@@ -182,19 +201,16 @@ sanctions against others who exhibit anti-social
 behavior~\cite{macglashan14c}.
 
 We further assume that social utilities can be broken down into two
-components---an objective component, which is usually a direct
-function of the rules of the game, and a subjective component, which
-captures notions of distributivity and reciprocity.
+components: one objective, which is a direct function of the rules of
+the game; and the other, subjective, which can capture, among other
+things, notions of distributivity and reciprocity.
 %
 Often, the rules of a game alone give rise to multiple (objective)
-equilibria, and agents face a difficult equilibrium-selection
-problem (e.g.,~\cite{schelling1980strategy}) in the underlying game;
-learned social utility functions provide a solution.
-\commenta{i don't think this is enough. i prefer what was there before.}
-We contend that socially rational behavior, in which agents optimize a
+equilibria, and agents face a difficult equilibrium-selection problem
+(e.g.,~\cite{schelling1980strategy}) in the underlying game.  We
+contend that socially rational behavior, whereby agents optimize a
 learned social utility function that reflects (constructed) social
-preferences, can provide a solution to this challenging, seemingly
-insoluable, problem.
+preferences, can provide a solution to this challenging problem.
 %see Section~\ref{sec:interactive} 
 
 %\commenta{this doesn't fit any more.}
