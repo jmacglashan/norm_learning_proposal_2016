@@ -14,13 +14,15 @@ hallmark of human sociality~\cite{tomasello2005understanding}.
 %Can artificial agents be successfully designed to join in human collective behavior?
 %What are the psychological processes and computational mechanisms underlying this phenomenon?
 
-Artificial agents are becoming ubiquitious in everyday life.  For
-these agents to collaborate effectively with humans, however, they will
-need to behave in human-like ways.  Unfortunately for agent designers,
-%there are many ways that people decide how to behave so that their actions result in coordinated behavior. 
-there is no simple behavioral rule (or set of rules) that could be
-prescribed to cover all contexts, communities, and cultures.  People
-perpetually learn new rules and alter their presumed roles,%
+Artificial agents are becoming ubiquitious in everyday life.  But they
+are not yet capable of collaborating with us effectively.  For this
+``partnership of our future''%
+\footnote{\url{http://www.slate.com/articles/technology/future_tense/2016/06/microsoft_ceo_satya_nadella_humans_and_a_i_can_work_together_to_solve_society.html}}
+to become a reality, artificial agents will need to possess human-like
+behavioral flexibility.  Unfortunately for agent designers, there is
+no simple behavioral rule (or set of rules) that could be prescribed
+to cover all contexts, communities, and cultures.  People perpetually
+learn new rules and alter their presumed roles,%
 \footnote{As Shakespeare said, ``one man in his time plays many parts.''}
 and so must artificial agents.
 
@@ -106,10 +108,8 @@ tailored to the environment and the actors;%
 \footnote{This utility function is described in terms of features of the environment and the actors;
 as such, it is applicable to other environments and actors with similar features.}
 2.~based on their estimate of this function, agents use team reasoning to make plans to act;
-\commenta{3.~agents decide whether selfish or social behavior is apt;}
-\commentm{seems like you aren't comfortable with adding this part in. it
-seems important, though, given the goal including ``stance''
-(are the agents acting jointly or not?).}
+3.~agents decide whether selfish or social behavior is apt;
+\commenta{i'm confused; shouldn't they decide this before they employ team reasoning; and if they choose selfish, they can drop the team reasoning bit}
 4.~agents act, simultaneously or sequentially, as is appropriate in their environment;
 5.~agents update their estimates of their social utility functions.
 Steps~2 through~5 then repeat.
@@ -194,7 +194,7 @@ Often, the rules of a game alone give rise to multiple (objective)
 equilibria, and agents face a difficult equilibrium-selection
 problem (e.g.,~\cite{schelling1980strategy}) in the underlying game;
 learned social utility functions provide a solution.
-%
+\commenta{i don't think this is enough. i prefer what was there before.}
 % We contend that socially rational behavior, in which agents optimize a
 % learned social utility function that reflects (constructed) social
 % preferences, can provide a solution to this challenging, seemingly
@@ -206,10 +206,10 @@ learned social utility functions provide a solution.
 %likewise, our aim is to design versatile artificial agents, capable of learning
 %their part in whatever equilibrium emerges in repeated play.
 
-\emph{Under the assumption that human agents are, perhaps boundedly
-  but nonetheless ideally, socially rational creatures, we propose to
-  design and build socially rational artificial agents that learn
-  via repeated interactions, with the aim being for such agents to
+\emph{Under the assumption that humans are, perhaps boundedly but
+  nonetheless ideally, socially rational creatures, we propose to
+  design and build socially rational artificial agents that learn via
+  repeated interactions, with the aim being for such agents to
   collaborate effectively with humans.}
 
 In this proposal, we set out to demonstrate our potential for success
@@ -222,10 +222,9 @@ function so that eventually their emergent collaborative behavior and
 their discovered social preferences reinforce one another.  We then go
 one step further and show that our approach can also learn (in an
 off-line, batch fashion) from human--human trace data so that the
-collaborative behavior that is learned mimics that which is
-in the trace data.  While these two experiments
-%  (on machine--machine,
-% interactive and human--human batch data) 
+collaborative behavior that is learned mimics that of the trace data.
+While these two experiments
+% (on machine--machine interactive, and human--human batch data) 
 are indeed promising, it
 remains to extend these techniques to human--machine interactions,
 ultimately in experimental worlds with embodied robots.
@@ -235,21 +234,17 @@ The ultimate goal in developing artificial agents that act
 intelligently in multi-agent scenarios is to apply them to real-world
 problems.  To a limited extent, this goal has already been achieved:
 artificial agents trade stocks and bid in online ad auctions.  In
-that setting,
-% these two market environments, 
-rationality may well be an appropriate
+these two market environments, rationality may well be an appropriate
 model of behavior for the participating agents.  However,
 %given the plethora of experimental results demonstrating that human
 %behavior does not abide by standard definitions of
 %rationality~\cite{Camerer:2003,kahnemanst82}, 
-an artificial agent that plans its collaboration by assuming the
-humans in its environment selfishly follow
-extrinsic utility functions is unlikely to be
+an artificial agent that plans its collaboration with humans assuming
+they selfishly follow extrinsic utility functions is unlikely to be
 successful~\cite{Camerer:2003,gal04,kahnemanst82}.  Instead of
 individual rationality as the underlying principle guiding human
-behavior, this proposal assumes that humans are
-socially rational beings whose preferences and behaviors emerge and
-reinforce one another through repeated interactions.  For artificial
-agents to successfully collaborate with humans, they should be thus,
-too!
+behavior, this proposal assumes that humans are socially rational
+beings whose preferences and behaviors emerge and reinforce one
+another through repeated interactions.  For artificial agents to
+successfully collaborate with humans, they should be thus, too!
 
