@@ -22,7 +22,6 @@ family in this MDP.
 \Require stochastic game $(I,S,A^I,T,R^I)$; discount factor $\gamma$; multi-agent demonstrations $D$; team function ${\mathcal T}$; and parameterized bias function family $B_\Theta$.
 \State $A^M := \times_i A^I$ \Comment{Joint action set}
 \State $R^M(s, a, s') := {\mathcal T}(R^I, s, a, s')$ \Comment{Team function}
-% zzz the word reward was in there, but I don't think that's something we defined.
 \State $R^S_\Theta(s, a, s') := R^M(s, a, s') + B_\Theta(s, a, s')$ \Comment{Social utility function family}
 \State $R^S_\theta :=$ IRL($(S,A^M,T,R^S_\Theta), \gamma, D$)
 \State \Return $R^S_\theta$ \Comment{Learned social utility function}
